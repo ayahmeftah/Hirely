@@ -76,6 +76,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		711B4EBE2CFC57E200910FB6 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				71BEBCE32CFC502900DF795E /* Main.storyboard */,
+				71BEBCE82CFC502A00DF795E /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		711B4EBF2CFC57F300910FB6 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				71BEBCE12CFC502900DF795E /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		711B4EC02CFC581300910FB6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		71BEBCD12CFC502900DF795E = {
 			isa = PBXGroup;
 			children = (
@@ -99,12 +123,12 @@
 		71BEBCDC2CFC502900DF795E /* Hirely */ = {
 			isa = PBXGroup;
 			children = (
+				711B4EC02CFC581300910FB6 /* Models */,
+				711B4EBF2CFC57F300910FB6 /* Controllers */,
+				711B4EBE2CFC57E200910FB6 /* Storyboards */,
 				71BEBCDD2CFC502900DF795E /* AppDelegate.swift */,
 				71BEBCDF2CFC502900DF795E /* SceneDelegate.swift */,
-				71BEBCE12CFC502900DF795E /* ViewController.swift */,
-				71BEBCE32CFC502900DF795E /* Main.storyboard */,
 				71BEBCE62CFC502A00DF795E /* Assets.xcassets */,
-				71BEBCE82CFC502A00DF795E /* LaunchScreen.storyboard */,
 				71BEBCEB2CFC502A00DF795E /* Info.plist */,
 			);
 			path = Hirely;
