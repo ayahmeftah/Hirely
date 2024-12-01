@@ -1,0 +1,606 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		71BEBCDE2CFC502900DF795E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEBCDD2CFC502900DF795E /* AppDelegate.swift */; };
+		71BEBCE02CFC502900DF795E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEBCDF2CFC502900DF795E /* SceneDelegate.swift */; };
+		71BEBCE22CFC502900DF795E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEBCE12CFC502900DF795E /* ViewController.swift */; };
+		71BEBCE52CFC502900DF795E /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 71BEBCE42CFC502900DF795E /* Base */; };
+		71BEBCE72CFC502A00DF795E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71BEBCE62CFC502A00DF795E /* Assets.xcassets */; };
+		71BEBCEA2CFC502A00DF795E /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 71BEBCE92CFC502A00DF795E /* Base */; };
+		71BEBCF52CFC502B00DF795E /* HirelyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEBCF42CFC502B00DF795E /* HirelyTests.swift */; };
+		71BEBCFF2CFC502B00DF795E /* HirelyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEBCFE2CFC502B00DF795E /* HirelyUITests.swift */; };
+		71BEBD012CFC502B00DF795E /* HirelyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEBD002CFC502B00DF795E /* HirelyUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		71BEBCF12CFC502B00DF795E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 71BEBCD22CFC502900DF795E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 71BEBCD92CFC502900DF795E;
+			remoteInfo = Hirely;
+		};
+		71BEBCFB2CFC502B00DF795E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 71BEBCD22CFC502900DF795E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 71BEBCD92CFC502900DF795E;
+			remoteInfo = Hirely;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		71BEBCDA2CFC502900DF795E /* Hirely.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hirely.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		71BEBCDD2CFC502900DF795E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		71BEBCDF2CFC502900DF795E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		71BEBCE12CFC502900DF795E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		71BEBCE42CFC502900DF795E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		71BEBCE62CFC502A00DF795E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		71BEBCE92CFC502A00DF795E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		71BEBCEB2CFC502A00DF795E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		71BEBCF02CFC502B00DF795E /* HirelyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HirelyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		71BEBCF42CFC502B00DF795E /* HirelyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HirelyTests.swift; sourceTree = "<group>"; };
+		71BEBCFA2CFC502B00DF795E /* HirelyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HirelyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		71BEBCFE2CFC502B00DF795E /* HirelyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HirelyUITests.swift; sourceTree = "<group>"; };
+		71BEBD002CFC502B00DF795E /* HirelyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HirelyUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		71BEBCD72CFC502900DF795E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		71BEBCED2CFC502B00DF795E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		71BEBCF72CFC502B00DF795E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		71BEBCD12CFC502900DF795E = {
+			isa = PBXGroup;
+			children = (
+				71BEBCDC2CFC502900DF795E /* Hirely */,
+				71BEBCF32CFC502B00DF795E /* HirelyTests */,
+				71BEBCFD2CFC502B00DF795E /* HirelyUITests */,
+				71BEBCDB2CFC502900DF795E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		71BEBCDB2CFC502900DF795E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				71BEBCDA2CFC502900DF795E /* Hirely.app */,
+				71BEBCF02CFC502B00DF795E /* HirelyTests.xctest */,
+				71BEBCFA2CFC502B00DF795E /* HirelyUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		71BEBCDC2CFC502900DF795E /* Hirely */ = {
+			isa = PBXGroup;
+			children = (
+				71BEBCDD2CFC502900DF795E /* AppDelegate.swift */,
+				71BEBCDF2CFC502900DF795E /* SceneDelegate.swift */,
+				71BEBCE12CFC502900DF795E /* ViewController.swift */,
+				71BEBCE32CFC502900DF795E /* Main.storyboard */,
+				71BEBCE62CFC502A00DF795E /* Assets.xcassets */,
+				71BEBCE82CFC502A00DF795E /* LaunchScreen.storyboard */,
+				71BEBCEB2CFC502A00DF795E /* Info.plist */,
+			);
+			path = Hirely;
+			sourceTree = "<group>";
+		};
+		71BEBCF32CFC502B00DF795E /* HirelyTests */ = {
+			isa = PBXGroup;
+			children = (
+				71BEBCF42CFC502B00DF795E /* HirelyTests.swift */,
+			);
+			path = HirelyTests;
+			sourceTree = "<group>";
+		};
+		71BEBCFD2CFC502B00DF795E /* HirelyUITests */ = {
+			isa = PBXGroup;
+			children = (
+				71BEBCFE2CFC502B00DF795E /* HirelyUITests.swift */,
+				71BEBD002CFC502B00DF795E /* HirelyUITestsLaunchTests.swift */,
+			);
+			path = HirelyUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		71BEBCD92CFC502900DF795E /* Hirely */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 71BEBD042CFC502B00DF795E /* Build configuration list for PBXNativeTarget "Hirely" */;
+			buildPhases = (
+				71BEBCD62CFC502900DF795E /* Sources */,
+				71BEBCD72CFC502900DF795E /* Frameworks */,
+				71BEBCD82CFC502900DF795E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Hirely;
+			productName = Hirely;
+			productReference = 71BEBCDA2CFC502900DF795E /* Hirely.app */;
+			productType = "com.apple.product-type.application";
+		};
+		71BEBCEF2CFC502B00DF795E /* HirelyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 71BEBD072CFC502B00DF795E /* Build configuration list for PBXNativeTarget "HirelyTests" */;
+			buildPhases = (
+				71BEBCEC2CFC502B00DF795E /* Sources */,
+				71BEBCED2CFC502B00DF795E /* Frameworks */,
+				71BEBCEE2CFC502B00DF795E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				71BEBCF22CFC502B00DF795E /* PBXTargetDependency */,
+			);
+			name = HirelyTests;
+			productName = HirelyTests;
+			productReference = 71BEBCF02CFC502B00DF795E /* HirelyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		71BEBCF92CFC502B00DF795E /* HirelyUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 71BEBD0A2CFC502B00DF795E /* Build configuration list for PBXNativeTarget "HirelyUITests" */;
+			buildPhases = (
+				71BEBCF62CFC502B00DF795E /* Sources */,
+				71BEBCF72CFC502B00DF795E /* Frameworks */,
+				71BEBCF82CFC502B00DF795E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				71BEBCFC2CFC502B00DF795E /* PBXTargetDependency */,
+			);
+			name = HirelyUITests;
+			productName = HirelyUITests;
+			productReference = 71BEBCFA2CFC502B00DF795E /* HirelyUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		71BEBCD22CFC502900DF795E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					71BEBCD92CFC502900DF795E = {
+						CreatedOnToolsVersion = 15.4;
+					};
+					71BEBCEF2CFC502B00DF795E = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 71BEBCD92CFC502900DF795E;
+					};
+					71BEBCF92CFC502B00DF795E = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 71BEBCD92CFC502900DF795E;
+					};
+				};
+			};
+			buildConfigurationList = 71BEBCD52CFC502900DF795E /* Build configuration list for PBXProject "Hirely" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 71BEBCD12CFC502900DF795E;
+			productRefGroup = 71BEBCDB2CFC502900DF795E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				71BEBCD92CFC502900DF795E /* Hirely */,
+				71BEBCEF2CFC502B00DF795E /* HirelyTests */,
+				71BEBCF92CFC502B00DF795E /* HirelyUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		71BEBCD82CFC502900DF795E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				71BEBCE72CFC502A00DF795E /* Assets.xcassets in Resources */,
+				71BEBCEA2CFC502A00DF795E /* Base in Resources */,
+				71BEBCE52CFC502900DF795E /* Base in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		71BEBCEE2CFC502B00DF795E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		71BEBCF82CFC502B00DF795E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		71BEBCD62CFC502900DF795E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				71BEBCE22CFC502900DF795E /* ViewController.swift in Sources */,
+				71BEBCDE2CFC502900DF795E /* AppDelegate.swift in Sources */,
+				71BEBCE02CFC502900DF795E /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		71BEBCEC2CFC502B00DF795E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				71BEBCF52CFC502B00DF795E /* HirelyTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		71BEBCF62CFC502B00DF795E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				71BEBCFF2CFC502B00DF795E /* HirelyUITests.swift in Sources */,
+				71BEBD012CFC502B00DF795E /* HirelyUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		71BEBCF22CFC502B00DF795E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 71BEBCD92CFC502900DF795E /* Hirely */;
+			targetProxy = 71BEBCF12CFC502B00DF795E /* PBXContainerItemProxy */;
+		};
+		71BEBCFC2CFC502B00DF795E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 71BEBCD92CFC502900DF795E /* Hirely */;
+			targetProxy = 71BEBCFB2CFC502B00DF795E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		71BEBCE32CFC502900DF795E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				71BEBCE42CFC502900DF795E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		71BEBCE82CFC502A00DF795E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				71BEBCE92CFC502A00DF795E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		71BEBD022CFC502B00DF795E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		71BEBD032CFC502B00DF795E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		71BEBD052CFC502B00DF795E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Hirely/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = AyahMeftah.Hirely;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		71BEBD062CFC502B00DF795E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Hirely/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = AyahMeftah.Hirely;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		71BEBD082CFC502B00DF795E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = AyahMeftah.HirelyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hirely.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Hirely";
+			};
+			name = Debug;
+		};
+		71BEBD092CFC502B00DF795E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = AyahMeftah.HirelyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hirely.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Hirely";
+			};
+			name = Release;
+		};
+		71BEBD0B2CFC502B00DF795E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = AyahMeftah.HirelyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Hirely;
+			};
+			name = Debug;
+		};
+		71BEBD0C2CFC502B00DF795E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = AyahMeftah.HirelyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Hirely;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		71BEBCD52CFC502900DF795E /* Build configuration list for PBXProject "Hirely" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				71BEBD022CFC502B00DF795E /* Debug */,
+				71BEBD032CFC502B00DF795E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		71BEBD042CFC502B00DF795E /* Build configuration list for PBXNativeTarget "Hirely" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				71BEBD052CFC502B00DF795E /* Debug */,
+				71BEBD062CFC502B00DF795E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		71BEBD072CFC502B00DF795E /* Build configuration list for PBXNativeTarget "HirelyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				71BEBD082CFC502B00DF795E /* Debug */,
+				71BEBD092CFC502B00DF795E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		71BEBD0A2CFC502B00DF795E /* Build configuration list for PBXNativeTarget "HirelyUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				71BEBD0B2CFC502B00DF795E /* Debug */,
+				71BEBD0C2CFC502B00DF795E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 71BEBCD22CFC502900DF795E /* Project object */;
+}
