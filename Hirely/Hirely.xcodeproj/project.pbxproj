@@ -10,6 +10,7 @@
 		2C9302F52CFC9E6500CAD615 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C9302F42CFC9E6500CAD615 /* GoogleService-Info.plist */; };
 		2C9302F82CFC9EDF00CAD615 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 2C9302F72CFC9EDF00CAD615 /* FirebaseAuth */; };
 		2C9302FA2CFC9EDF00CAD615 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 2C9302F92CFC9EDF00CAD615 /* FirebaseDatabase */; };
+		2C9303002CFCBE2500CAD615 /* Cloudinary in Frameworks */ = {isa = PBXBuildFile; productRef = 2C9302FF2CFCBE2500CAD615 /* Cloudinary */; };
 		71BEBCDE2CFC502900DF795E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEBCDD2CFC502900DF795E /* AppDelegate.swift */; };
 		71BEBCE02CFC502900DF795E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEBCDF2CFC502900DF795E /* SceneDelegate.swift */; };
 		71BEBCE22CFC502900DF795E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEBCE12CFC502900DF795E /* ViewController.swift */; };
@@ -62,6 +63,7 @@
 			files = (
 				2C9302FA2CFC9EDF00CAD615 /* FirebaseDatabase in Frameworks */,
 				2C9302F82CFC9EDF00CAD615 /* FirebaseAuth in Frameworks */,
+				2C9303002CFCBE2500CAD615 /* Cloudinary in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +84,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C9302FE2CFCBE2500CAD615 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		711B4EBE2CFC57E200910FB6 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +122,7 @@
 				71BEBCF32CFC502B00DF795E /* HirelyTests */,
 				71BEBCFD2CFC502B00DF795E /* HirelyUITests */,
 				71BEBCDB2CFC502900DF795E /* Products */,
+				2C9302FE2CFCBE2500CAD615 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -177,6 +187,7 @@
 			packageProductDependencies = (
 				2C9302F72CFC9EDF00CAD615 /* FirebaseAuth */,
 				2C9302F92CFC9EDF00CAD615 /* FirebaseDatabase */,
+				2C9302FF2CFCBE2500CAD615 /* Cloudinary */,
 			);
 			productName = Hirely;
 			productReference = 71BEBCDA2CFC502900DF795E /* Hirely.app */;
@@ -252,6 +263,7 @@
 			mainGroup = 71BEBCD12CFC502900DF795E;
 			packageReferences = (
 				2C9302F62CFC9EDF00CAD615 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				2C9302FB2CFCBD4300CAD615 /* XCRemoteSwiftPackageReference "cloudinary_ios" */,
 			);
 			productRefGroup = 71BEBCDB2CFC502900DF795E /* Products */;
 			projectDirPath = "";
@@ -488,6 +500,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -515,6 +528,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -650,6 +664,14 @@
 				minimumVersion = 11.5.0;
 			};
 		};
+		2C9302FB2CFCBD4300CAD615 /* XCRemoteSwiftPackageReference "cloudinary_ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/cloudinary/cloudinary_ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -662,6 +684,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2C9302F62CFC9EDF00CAD615 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseDatabase;
+		};
+		2C9302FF2CFCBE2500CAD615 /* Cloudinary */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2C9302FB2CFCBD4300CAD615 /* XCRemoteSwiftPackageReference "cloudinary_ios" */;
+			productName = Cloudinary;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
