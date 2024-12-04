@@ -108,13 +108,6 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		711B4EC02CFC581300910FB6 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		71BEBCD12CFC502900DF795E = {
 			isa = PBXGroup;
 			children = (
@@ -139,7 +132,6 @@
 		71BEBCDC2CFC502900DF795E /* Hirely */ = {
 			isa = PBXGroup;
 			children = (
-				711B4EC02CFC581300910FB6 /* Models */,
 				711B4EBF2CFC57F300910FB6 /* Controllers */,
 				711B4EBE2CFC57E200910FB6 /* Storyboards */,
 				71BEBCDD2CFC502900DF795E /* AppDelegate.swift */,
