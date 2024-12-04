@@ -8,9 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2C9302F52CFC9E6500CAD615 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C9302F42CFC9E6500CAD615 /* GoogleService-Info.plist */; };
-		2C9302F82CFC9EDF00CAD615 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 2C9302F72CFC9EDF00CAD615 /* FirebaseAuth */; };
-		2C9302FA2CFC9EDF00CAD615 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 2C9302F92CFC9EDF00CAD615 /* FirebaseDatabase */; };
-		2C9303002CFCBE2500CAD615 /* Cloudinary in Frameworks */ = {isa = PBXBuildFile; productRef = 2C9302FF2CFCBE2500CAD615 /* Cloudinary */; };
 		71BEBCDE2CFC502900DF795E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEBCDD2CFC502900DF795E /* AppDelegate.swift */; };
 		71BEBCE02CFC502900DF795E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEBCDF2CFC502900DF795E /* SceneDelegate.swift */; };
 		71BEBCE22CFC502900DF795E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEBCE12CFC502900DF795E /* ViewController.swift */; };
@@ -20,6 +17,9 @@
 		71BEBCF52CFC502B00DF795E /* HirelyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEBCF42CFC502B00DF795E /* HirelyTests.swift */; };
 		71BEBCFF2CFC502B00DF795E /* HirelyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEBCFE2CFC502B00DF795E /* HirelyUITests.swift */; };
 		71BEBD012CFC502B00DF795E /* HirelyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEBD002CFC502B00DF795E /* HirelyUITestsLaunchTests.swift */; };
+		C363937D2D006A4C00E14337 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = C363937C2D006A4C00E14337 /* FirebaseDatabase */; };
+		C363937F2D006A5600E14337 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = C363937E2D006A5600E14337 /* FirebaseAuth */; };
+		C36393812D006A7800E14337 /* Cloudinary in Frameworks */ = {isa = PBXBuildFile; productRef = C36393802D006A7800E14337 /* Cloudinary */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,9 +61,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C9302FA2CFC9EDF00CAD615 /* FirebaseDatabase in Frameworks */,
-				2C9302F82CFC9EDF00CAD615 /* FirebaseAuth in Frameworks */,
-				2C9303002CFCBE2500CAD615 /* Cloudinary in Frameworks */,
+				C363937D2D006A4C00E14337 /* FirebaseDatabase in Frameworks */,
+				C363937F2D006A5600E14337 /* FirebaseAuth in Frameworks */,
+				C36393812D006A7800E14337 /* Cloudinary in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,9 +177,9 @@
 			);
 			name = Hirely;
 			packageProductDependencies = (
-				2C9302F72CFC9EDF00CAD615 /* FirebaseAuth */,
-				2C9302F92CFC9EDF00CAD615 /* FirebaseDatabase */,
-				2C9302FF2CFCBE2500CAD615 /* Cloudinary */,
+				C363937C2D006A4C00E14337 /* FirebaseDatabase */,
+				C363937E2D006A5600E14337 /* FirebaseAuth */,
+				C36393802D006A7800E14337 /* Cloudinary */,
 			);
 			productName = Hirely;
 			productReference = 71BEBCDA2CFC502900DF795E /* Hirely.app */;
@@ -667,17 +667,17 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		2C9302F72CFC9EDF00CAD615 /* FirebaseAuth */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2C9302F62CFC9EDF00CAD615 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAuth;
-		};
-		2C9302F92CFC9EDF00CAD615 /* FirebaseDatabase */ = {
+		C363937C2D006A4C00E14337 /* FirebaseDatabase */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 2C9302F62CFC9EDF00CAD615 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseDatabase;
 		};
-		2C9302FF2CFCBE2500CAD615 /* Cloudinary */ = {
+		C363937E2D006A5600E14337 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2C9302F62CFC9EDF00CAD615 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		C36393802D006A7800E14337 /* Cloudinary */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 2C9302FB2CFCBD4300CAD615 /* XCRemoteSwiftPackageReference "cloudinary_ios" */;
 			productName = Cloudinary;
