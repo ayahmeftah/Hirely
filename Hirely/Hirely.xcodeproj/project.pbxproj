@@ -20,6 +20,14 @@
 		C363937D2D006A4C00E14337 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = C363937C2D006A4C00E14337 /* FirebaseDatabase */; };
 		C363937F2D006A5600E14337 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = C363937E2D006A5600E14337 /* FirebaseAuth */; };
 		C36393812D006A7800E14337 /* Cloudinary in Frameworks */ = {isa = PBXBuildFile; productRef = C36393802D006A7800E14337 /* Cloudinary */; };
+		C36393832D006C0300E14337 /* CVBuilder.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C36393822D006C0300E14337 /* CVBuilder.storyboard */; };
+		C36393852D006E6600E14337 /* CvBuilderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36393842D006E6600E14337 /* CvBuilderViewController.swift */; };
+		C36393872D00828D00E14337 /* CVPersonalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36393862D00828D00E14337 /* CVPersonalViewController.swift */; };
+		C36393892D00871D00E14337 /* CVSkillsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36393882D00871D00E14337 /* CVSkillsViewController.swift */; };
+		C363938B2D0089E800E14337 /* CVExperienceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C363938A2D0089E800E14337 /* CVExperienceViewController.swift */; };
+		C363938D2D00965A00E14337 /* CVEducationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C363938C2D00965A00E14337 /* CVEducationViewController.swift */; };
+		C363938F2D009CF500E14337 /* CVCertificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C363938E2D009CF500E14337 /* CVCertificationViewController.swift */; };
+		C36393912D009D3700E14337 /* CVGeneratedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36393902D009D3700E14337 /* CVGeneratedViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +62,14 @@
 		71BEBCFA2CFC502B00DF795E /* HirelyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HirelyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		71BEBCFE2CFC502B00DF795E /* HirelyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HirelyUITests.swift; sourceTree = "<group>"; };
 		71BEBD002CFC502B00DF795E /* HirelyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HirelyUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C36393822D006C0300E14337 /* CVBuilder.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CVBuilder.storyboard; sourceTree = "<group>"; };
+		C36393842D006E6600E14337 /* CvBuilderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CvBuilderViewController.swift; sourceTree = "<group>"; };
+		C36393862D00828D00E14337 /* CVPersonalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVPersonalViewController.swift; sourceTree = "<group>"; };
+		C36393882D00871D00E14337 /* CVSkillsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVSkillsViewController.swift; sourceTree = "<group>"; };
+		C363938A2D0089E800E14337 /* CVExperienceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVExperienceViewController.swift; sourceTree = "<group>"; };
+		C363938C2D00965A00E14337 /* CVEducationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVEducationViewController.swift; sourceTree = "<group>"; };
+		C363938E2D009CF500E14337 /* CVCertificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVCertificationViewController.swift; sourceTree = "<group>"; };
+		C36393902D009D3700E14337 /* CVGeneratedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVGeneratedViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +112,7 @@
 			children = (
 				71BEBCE32CFC502900DF795E /* Main.storyboard */,
 				71BEBCE82CFC502A00DF795E /* LaunchScreen.storyboard */,
+				C36393822D006C0300E14337 /* CVBuilder.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -104,6 +121,12 @@
 			isa = PBXGroup;
 			children = (
 				71BEBCE12CFC502900DF795E /* ViewController.swift */,
+				C36393842D006E6600E14337 /* CvBuilderViewController.swift */,
+				C36393862D00828D00E14337 /* CVPersonalViewController.swift */,
+				C36393882D00871D00E14337 /* CVSkillsViewController.swift */,
+				C363938A2D0089E800E14337 /* CVExperienceViewController.swift */,
+				C363938C2D00965A00E14337 /* CVEducationViewController.swift */,
+				C363938E2D009CF500E14337 /* CVCertificationViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -139,6 +162,7 @@
 				71BEBCE62CFC502A00DF795E /* Assets.xcassets */,
 				71BEBCEB2CFC502A00DF795E /* Info.plist */,
 				2C9302F42CFC9E6500CAD615 /* GoogleService-Info.plist */,
+				C36393902D009D3700E14337 /* CVGeneratedViewController.swift */,
 			);
 			path = Hirely;
 			sourceTree = "<group>";
@@ -274,6 +298,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				71BEBCE72CFC502A00DF795E /* Assets.xcassets in Resources */,
+				C36393832D006C0300E14337 /* CVBuilder.storyboard in Resources */,
 				71BEBCEA2CFC502A00DF795E /* Base in Resources */,
 				71BEBCE52CFC502900DF795E /* Base in Resources */,
 				2C9302F52CFC9E6500CAD615 /* GoogleService-Info.plist in Resources */,
@@ -302,8 +327,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				71BEBCE22CFC502900DF795E /* ViewController.swift in Sources */,
+				C36393912D009D3700E14337 /* CVGeneratedViewController.swift in Sources */,
+				C363938F2D009CF500E14337 /* CVCertificationViewController.swift in Sources */,
+				C36393872D00828D00E14337 /* CVPersonalViewController.swift in Sources */,
+				C363938B2D0089E800E14337 /* CVExperienceViewController.swift in Sources */,
 				71BEBCDE2CFC502900DF795E /* AppDelegate.swift in Sources */,
+				C36393892D00871D00E14337 /* CVSkillsViewController.swift in Sources */,
 				71BEBCE02CFC502900DF795E /* SceneDelegate.swift in Sources */,
+				C363938D2D00965A00E14337 /* CVEducationViewController.swift in Sources */,
+				C36393852D006E6600E14337 /* CvBuilderViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
