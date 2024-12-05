@@ -105,10 +105,10 @@
             </objects>
             <point key="canvasLocation" x="135.1145038167939" y="3.5211267605633805"/>
         </scene>
-        <!--Personal View Controller-->
+        <!--Cv Builder View Controller-->
         <scene sceneID="zs1-Sy-4WY">
             <objects>
-                <viewController id="Pee-0d-auO" customClass="CVPersonalViewController" customModule="Hirely" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Pee-0d-auO" customClass="CvBuilderViewController" customModule="Hirely" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ltJ-GT-uNR">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -188,10 +188,10 @@
             </objects>
             <point key="canvasLocation" x="983.96946564885491" y="3.5211267605633805"/>
         </scene>
-        <!--View Controller-->
+        <!--Cv Builder View Controller-->
         <scene sceneID="hBF-By-hor">
             <objects>
-                <viewController id="B35-yo-Ylc" sceneMemberID="viewController">
+                <viewController id="B35-yo-Ylc" customClass="CvBuilderViewController" customModule="Hirely" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WnF-nZ-ZnT">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -203,6 +203,16 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mNO-Gk-GQo">
+                                <rect key="frame" x="309" y="217" width="22" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="uncheckedbox"/>
+                                <state key="selected" image="checkmark.square.fill" catalog="system">
+                                    <color key="titleColor" red="0.18082806470000001" green="0.15686419609999999" blue="0.15686085820000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="titleShadowColor" name="gradient-first"/>
+                                </state>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="78N-SH-Htx"/>
                         <color key="backgroundColor" red="0.91001075509999996" green="0.91742658619999995" blue="0.93330389260000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -210,7 +220,7 @@
                     <navigationItem key="navigationItem" id="jvb-gh-PZw">
                         <barButtonItem key="rightBarButtonItem" title="Next" style="plain" id="Nr1-d2-6f1">
                             <connections>
-                                <segue destination="NWy-ks-cdn" kind="show" id="LyY-ZA-UhO"/>
+                                <segue destination="r4c-3n-C2e" kind="show" id="dqz-Dk-A6B"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -219,10 +229,10 @@
             </objects>
             <point key="canvasLocation" x="1676" y="4"/>
         </scene>
-        <!--Experience View Controller-->
+        <!--Cv Builder View Controller-->
         <scene sceneID="cFv-HY-1cN">
             <objects>
-                <viewController id="NWy-ks-cdn" customClass="CVExperienceViewController" customModule="Hirely" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="NWy-ks-cdn" customClass="CvBuilderViewController" customModule="Hirely" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Soc-PL-SY3">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -421,12 +431,12 @@
             </objects>
             <point key="canvasLocation" x="2426.7175572519081" y="3.5211267605633805"/>
         </scene>
-        <!--Education View Controller-->
+        <!--Cv Builder View Controller-->
         <scene sceneID="zla-7v-OhX">
             <objects>
-                <viewController id="H0l-6h-DYa" customClass="CVEducationViewController" customModule="Hirely" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="H0l-6h-DYa" customClass="CvBuilderViewController" customModule="Hirely" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ap0-nY-7cS">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Education" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JbL-Lr-RGN">
@@ -504,12 +514,12 @@
             </objects>
             <point key="canvasLocation" x="3116.7938931297708" y="3.5211267605633805"/>
         </scene>
-        <!--Certification View Controller-->
+        <!--Cv Builder View Controller-->
         <scene sceneID="Uy0-Y1-X4o">
             <objects>
-                <viewController id="Gwv-4P-nGz" customClass="CVCertificationViewController" customModule="Hirely" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Gwv-4P-nGz" customClass="CvBuilderViewController" customModule="Hirely" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="p0s-hL-CTJ">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Certifications" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rnl-bw-r2f">
@@ -616,12 +626,12 @@
             </objects>
             <point key="canvasLocation" x="3768.7022900763359" y="3.5211267605633805"/>
         </scene>
-        <!--Generated View Controller-->
+        <!--Cv Builder View Controller-->
         <scene sceneID="gk8-xl-Ljf">
             <objects>
-                <viewController id="wO7-Rj-DhP" customClass="CVGeneratedViewController" customModule="Hirely" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="wO7-Rj-DhP" customClass="CvBuilderViewController" customModule="Hirely" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="V2g-VM-UVg">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oJ3-NM-BrD">
@@ -630,6 +640,11 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Zv-Oa-NCW">
+                                <rect key="frame" x="28" y="136" width="339" height="651"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xoS-8Q-Lzf"/>
                         <color key="backgroundColor" red="0.91001075509999996" green="0.91742658619999995" blue="0.93330389260000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -638,13 +653,64 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RKB-vx-Hxi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4445" y="4"/>
+            <point key="canvasLocation" x="4443.5114503816794" y="3.5211267605633805"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="dNO-h9-ggJ">
+            <objects>
+                <navigationController id="r4c-3n-C2e" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="MDC-bk-tFu"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="lyb-J9-JWi">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BNm-cg-4kU" kind="show" id="HGj-Gm-Q7T"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BPb-tB-nVA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1749" y="894"/>
+        </scene>
+        <!--Skills Table View Controller-->
+        <scene sceneID="4iC-2d-MCf">
+            <objects>
+                <tableViewController id="BNm-cg-4kU" customClass="SkillsTableViewController" customModule="Hirely" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="tP7-a8-45g">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="skillCell" id="fJW-NF-kiJ">
+                                <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fJW-NF-kiJ" id="iWU-gB-HUh" customClass="skillCellTableViewCell" customModule="Hirely" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="BNm-cg-4kU" id="bi8-Kc-k3z"/>
+                            <outlet property="delegate" destination="BNm-cg-4kU" id="wbO-La-lHz"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="a49-7k-QEX"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U1c-be-doN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2498" y="894"/>
         </scene>
     </scenes>
     <resources>
         <image name="Background" width="402" height="874"/>
+        <image name="checkmark.square.fill" catalog="system" width="128" height="114"/>
+        <image name="uncheckedbox" width="22" height="22"/>
         <namedColor name="AccentColor">
             <color red="1" green="0.79199999570846558" blue="0.15700000524520874" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="gradient-first">
+            <color red="0.20392156862745098" green="0.28235294117647058" blue="0.77254901960784317" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
