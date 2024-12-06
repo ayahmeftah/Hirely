@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2C8508452D02FEE1008C9E0D /* AddJobPostingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8508442D02FEE1008C9E0D /* AddJobPostingViewController.swift */; };
+		2C8EEF3E2D0371D300F33B98 /* JobDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8EEF3D2D0371D300F33B98 /* JobDetailsViewController.swift */; };
 		2C9302F52CFC9E6500CAD615 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C9302F42CFC9E6500CAD615 /* GoogleService-Info.plist */; };
 		2C9302F82CFC9EDF00CAD615 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 2C9302F72CFC9EDF00CAD615 /* FirebaseAuth */; };
 		2C9302FA2CFC9EDF00CAD615 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 2C9302F92CFC9EDF00CAD615 /* FirebaseDatabase */; };
@@ -45,6 +46,7 @@
 
 /* Begin PBXFileReference section */
 		2C8508442D02FEE1008C9E0D /* AddJobPostingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddJobPostingViewController.swift; sourceTree = "<group>"; };
+		2C8EEF3D2D0371D300F33B98 /* JobDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobDetailsViewController.swift; sourceTree = "<group>"; };
 		2C9302F42CFC9E6500CAD615 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2CBADAD32D031E750078B78A /* JobPostingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobPostingViewController.swift; sourceTree = "<group>"; };
 		2CBADAD52D03205D0078B78A /* CustomJobPostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomJobPostTableViewCell.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 				2CBADAD32D031E750078B78A /* JobPostingViewController.swift */,
 				2CBADAD52D03205D0078B78A /* CustomJobPostTableViewCell.swift */,
 				2CBADAD62D03205D0078B78A /* CustomJobPostTableViewCell.xib */,
+				2C8EEF3D2D0371D300F33B98 /* JobDetailsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -317,6 +320,7 @@
 				71BEBCE22CFC502900DF795E /* ViewController.swift in Sources */,
 				2C8508452D02FEE1008C9E0D /* AddJobPostingViewController.swift in Sources */,
 				2CBADAD82D03205D0078B78A /* CustomJobPostTableViewCell.swift in Sources */,
+				2C8EEF3E2D0371D300F33B98 /* JobDetailsViewController.swift in Sources */,
 				2CBADAD42D031E750078B78A /* JobPostingViewController.swift in Sources */,
 				71BEBCDE2CFC502900DF795E /* AppDelegate.swift in Sources */,
 				71BEBCE02CFC502900DF795E /* SceneDelegate.swift in Sources */,

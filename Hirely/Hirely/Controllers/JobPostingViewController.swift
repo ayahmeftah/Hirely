@@ -16,7 +16,7 @@ class JobPostingViewController: UIViewController, UITableViewDelegate, UITableVi
     var jobTypes = ["Full-Time", "Part-Time", "Contract"]
     var jobTitles = ["Software Engineer", "Data Analyst", "Product Manager"]
     
-    var companyImages = ["microsoft","apple", "google"]
+    var companyImages = ["microsoft","google", "apple"]
 //    var hideIcon = "hideIcon"
 //    var editIcon = "editIcon"
 //    var delIcon = "deleteIcon"
