@@ -7,6 +7,7 @@
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="UIMenu" message="Requires Xcode 11 or later." minToolsVersion="11.0" requiredIntegratedClassName="UICommandDiff"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -117,13 +118,14 @@
         <!--Post-->
         <scene sceneID="UfV-X8-OiG">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="4Kb-Sc-evA" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="4Kb-Sc-evA" customClass="JobPostingViewController" customModule="Hirely" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hZB-eZ-JPU">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="vqg-q7-Klp">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <color key="backgroundColor" red="0.90980392156862744" green="0.91764705882352937" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Job Postings" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="djb-IX-tIa">
                                 <rect key="frame" x="16" y="97" width="158" height="32"/>
@@ -147,6 +149,14 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="450" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="aVv-6r-d6g">
+                                <rect key="frame" x="24" y="264" width="342" height="435"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="4Kb-Sc-evA" id="cUD-bo-xn0"/>
+                                    <outlet property="delegate" destination="4Kb-Sc-evA" id="GKI-8b-rBw"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2yb-9q-bHV"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -159,15 +169,18 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Post" image="plus.circle.fill" catalog="system" id="hsM-l8-O6a"/>
                     <navigationItem key="navigationItem" id="LA7-pa-2ZC"/>
+                    <connections>
+                        <outlet property="tableView" destination="aVv-6r-d6g" id="WJH-wu-jbW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lie-8S-IuN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2510.6870229007632" y="50.70422535211268"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Job Posting View Controller-->
         <scene sceneID="MTb-s9-UIh">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="COb-KR-l1T" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="COb-KR-l1T" customClass="AddJobPostingViewController" customModule="Hirely" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZUZ-EJ-fq4">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -209,12 +222,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5tM-nx-8pV">
-                                <rect key="frame" x="16" y="221" width="343" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TE3-pI-Fns">
                                 <rect key="frame" x="16" y="263" width="112" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -222,12 +229,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9ry-4a-cNE">
-                                <rect key="frame" x="16" y="291" width="343" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="City" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K3p-vb-1hv">
                                 <rect key="frame" x="16" y="333" width="32" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -262,12 +263,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8aN-yw-a68">
-                                <rect key="frame" x="16" y="431" width="343" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1000" minValue="300" maxValue="3000" translatesAutoresizingMaskIntoConstraints="NO" id="DDH-su-vtv">
                                 <rect key="frame" x="14" y="502" width="347" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -281,13 +276,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="300-2500 BD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XZs-li-xrS">
-                                <rect key="frame" x="269" y="477" width="90" height="17"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B0v-88-PCe">
                                 <rect key="frame" x="21" y="751" width="351" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -299,10 +287,123 @@
                                     <segue destination="zxT-f8-MQP" kind="show" id="0eU-g2-NTH"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" BD 300-2500" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XZs-li-xrS">
+                                <rect key="frame" x="263" y="477" width="96" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qym-Ib-OwB">
+                                <rect key="frame" x="16" y="221" width="343" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <menu key="menu" id="dza-79-wcm">
+                                    <menuOptions key="menuOptions" singleSelection="YES"/>
+                                    <children>
+                                        <command title="Full-Time" id="FYk-Pg-YbY">
+                                            <connections>
+                                                <action selector="jobTypeSelection:" destination="QQK-4f-O21" id="a6Z-Fz-kqj"/>
+                                            </connections>
+                                        </command>
+                                        <command title="Part-Time" id="oGr-Ih-Sen">
+                                            <connections>
+                                                <action selector="jobTypeSelection:" destination="QQK-4f-O21" id="yf3-4N-Zhx"/>
+                                            </connections>
+                                        </command>
+                                        <command title="Internship" id="cTE-yh-36A">
+                                            <connections>
+                                                <action selector="jobTypeSelection:" destination="QQK-4f-O21" id="lsg-Qv-Vhb"/>
+                                            </connections>
+                                        </command>
+                                        <command title="Contract" id="WGA-0A-CMU">
+                                            <connections>
+                                                <action selector="jobTypeSelection:" destination="QQK-4f-O21" id="RGK-Yc-FEB"/>
+                                            </connections>
+                                        </command>
+                                        <command title="Seasonal" id="gzZ-rQ-ZOg">
+                                            <connections>
+                                                <action selector="jobTypeSelection:" destination="QQK-4f-O21" id="w0Y-mj-uUp"/>
+                                            </connections>
+                                        </command>
+                                    </children>
+                                </menu>
+                                <state key="normal" title="Select a job type"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Select a job type"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gpS-Sf-XLm">
+                                <rect key="frame" x="16" y="292" width="343" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <menu key="menu" id="8Si-Ra-aAt">
+                                    <menuOptions key="menuOptions" singleSelection="YES"/>
+                                    <children>
+                                        <command title="Remote" id="TH7-3k-f7W">
+                                            <connections>
+                                                <action selector="locationTypeSelection:" destination="QQK-4f-O21" id="oHe-2w-GAb"/>
+                                            </connections>
+                                        </command>
+                                        <command title="On-Site" id="YV4-Jc-Fg1">
+                                            <connections>
+                                                <action selector="locationTypeSelection:" destination="QQK-4f-O21" id="57I-Qd-qRq"/>
+                                            </connections>
+                                        </command>
+                                    </children>
+                                </menu>
+                                <state key="normal" title="Select a job type"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Select a location type"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KHg-T7-MKx">
+                                <rect key="frame" x="16" y="431" width="343" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <menu key="menu" id="lwx-hO-2Zz">
+                                    <menuOptions key="menuOptions" singleSelection="YES"/>
+                                    <children>
+                                        <command title="Internship" id="qf4-af-Pjc">
+                                            <connections>
+                                                <action selector="experienceLevelSelection:" destination="QQK-4f-O21" id="4zg-Ml-5Ml"/>
+                                            </connections>
+                                        </command>
+                                        <command title="Entry Level" id="g9W-4s-xed">
+                                            <connections>
+                                                <action selector="experienceLevelSelection:" destination="QQK-4f-O21" id="DCP-jf-Y3Y"/>
+                                            </connections>
+                                        </command>
+                                        <command title="Associate" id="gPS-Zg-Ljm">
+                                            <connections>
+                                                <action selector="experienceLevelSelection:" destination="QQK-4f-O21" id="WxR-uD-loE"/>
+                                            </connections>
+                                        </command>
+                                        <command title="Mid-Senior Level" id="gEe-DZ-XPU">
+                                            <connections>
+                                                <action selector="experienceLevelSelection:" destination="QQK-4f-O21" id="Cg5-7i-WhS"/>
+                                            </connections>
+                                        </command>
+                                        <command title="Director" id="3vE-bA-4Hf">
+                                            <connections>
+                                                <action selector="experienceLevelSelection:" destination="QQK-4f-O21" id="Kca-gh-FDr"/>
+                                            </connections>
+                                        </command>
+                                        <command title="Executive" id="jC8-4m-BGE">
+                                            <connections>
+                                                <action selector="experienceLevelSelection:" destination="QQK-4f-O21" id="fXx-W9-Exl"/>
+                                            </connections>
+                                        </command>
+                                    </children>
+                                </menu>
+                                <state key="normal" title="Select a job type"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Select an experience level"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="CD2-KR-09v"/>
                         <color key="backgroundColor" red="0.90980392156862744" green="0.91764705882352937" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="btn_select_experience" destination="KHg-T7-MKx" id="9g3-nP-Pld"/>
+                        <outlet property="btn_select_jobType" destination="qym-Ib-OwB" id="90R-87-CIu"/>
+                        <outlet property="btn_select_locationType" destination="gpS-Sf-XLm" id="rdR-q2-sYq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QQK-4f-O21" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -355,8 +456,8 @@
                                 <rect key="frame" x="16" y="531" width="122" height="50"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </datePicker>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Experience Level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k1M-ZE-TlB">
-                                <rect key="frame" x="16" y="589" width="134" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Contact Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k1M-ZE-TlB">
+                                <rect key="frame" x="16" y="589" width="111" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -369,7 +470,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pPb-K7-HtX">
-                                <rect key="frame" x="21" y="686" width="351" height="49"/>
+                                <rect key="frame" x="21" y="683" width="351" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Post Job" cornerStyle="capsule">
@@ -405,6 +506,30 @@
             </objects>
             <point key="canvasLocation" x="1321" y="-385"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="wtB-mU-Af2">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="kDJ-mR-3Ct" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0AE-dv-ynh">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Review Job Applications" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KVk-Ci-Jcp">
+                                <rect key="frame" x="95" y="82" width="224" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="smE-kh-tvw"/>
+                        <color key="backgroundColor" red="0.90980392160000001" green="0.91764705879999997" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P8q-ao-591" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2511" y="794"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Background" width="402" height="874"/>
@@ -421,7 +546,7 @@
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="secondarySystemBackgroundColor">
-            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
