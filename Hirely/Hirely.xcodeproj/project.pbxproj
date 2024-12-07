@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C5217D22D046A4200C1040D /* ReviewApplicationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5217D12D046A4200C1040D /* ReviewApplicationsViewController.swift */; };
+		2C5217D52D046C0600C1040D /* ApplicationsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C5217D42D046C0600C1040D /* ApplicationsTableViewCell.xib */; };
+		2C5217D62D046C0600C1040D /* ApplicationsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5217D32D046C0600C1040D /* ApplicationsTableViewCell.swift */; };
+		2C5217D82D0490BF00C1040D /* ScheduledInterviewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5217D72D0490BF00C1040D /* ScheduledInterviewsViewController.swift */; };
+		2C5217DB2D0491A500C1040D /* ScheduledInterviewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C5217DA2D0491A500C1040D /* ScheduledInterviewsTableViewCell.xib */; };
+		2C5217DC2D0491A500C1040D /* ScheduledInterviewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5217D92D0491A500C1040D /* ScheduledInterviewsTableViewCell.swift */; };
 		2C8508452D02FEE1008C9E0D /* AddJobPostingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8508442D02FEE1008C9E0D /* AddJobPostingViewController.swift */; };
 		2C8EEF3E2D0371D300F33B98 /* JobDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8EEF3D2D0371D300F33B98 /* JobDetailsViewController.swift */; };
 		2C9302F52CFC9E6500CAD615 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C9302F42CFC9E6500CAD615 /* GoogleService-Info.plist */; };
@@ -16,6 +22,7 @@
 		2CBADAD42D031E750078B78A /* JobPostingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBADAD32D031E750078B78A /* JobPostingViewController.swift */; };
 		2CBADAD72D03205D0078B78A /* CustomJobPostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CBADAD62D03205D0078B78A /* CustomJobPostTableViewCell.xib */; };
 		2CBADAD82D03205D0078B78A /* CustomJobPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBADAD52D03205D0078B78A /* CustomJobPostTableViewCell.swift */; };
+		2CD7DBEA2D0441700076C40E /* ApplicantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD7DBE92D0441700076C40E /* ApplicantDetailViewController.swift */; };
 		71BEBCDE2CFC502900DF795E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEBCDD2CFC502900DF795E /* AppDelegate.swift */; };
 		71BEBCE02CFC502900DF795E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEBCDF2CFC502900DF795E /* SceneDelegate.swift */; };
 		71BEBCE22CFC502900DF795E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEBCE12CFC502900DF795E /* ViewController.swift */; };
@@ -45,12 +52,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2C5217D12D046A4200C1040D /* ReviewApplicationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewApplicationsViewController.swift; sourceTree = "<group>"; };
+		2C5217D32D046C0600C1040D /* ApplicationsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationsTableViewCell.swift; sourceTree = "<group>"; };
+		2C5217D42D046C0600C1040D /* ApplicationsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ApplicationsTableViewCell.xib; sourceTree = "<group>"; };
+		2C5217D72D0490BF00C1040D /* ScheduledInterviewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduledInterviewsViewController.swift; sourceTree = "<group>"; };
+		2C5217D92D0491A500C1040D /* ScheduledInterviewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduledInterviewsTableViewCell.swift; sourceTree = "<group>"; };
+		2C5217DA2D0491A500C1040D /* ScheduledInterviewsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScheduledInterviewsTableViewCell.xib; sourceTree = "<group>"; };
 		2C8508442D02FEE1008C9E0D /* AddJobPostingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddJobPostingViewController.swift; sourceTree = "<group>"; };
 		2C8EEF3D2D0371D300F33B98 /* JobDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobDetailsViewController.swift; sourceTree = "<group>"; };
 		2C9302F42CFC9E6500CAD615 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2CBADAD32D031E750078B78A /* JobPostingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobPostingViewController.swift; sourceTree = "<group>"; };
 		2CBADAD52D03205D0078B78A /* CustomJobPostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomJobPostTableViewCell.swift; sourceTree = "<group>"; };
 		2CBADAD62D03205D0078B78A /* CustomJobPostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomJobPostTableViewCell.xib; sourceTree = "<group>"; };
+		2CD7DBE92D0441700076C40E /* ApplicantDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicantDetailViewController.swift; sourceTree = "<group>"; };
 		71BEBCDA2CFC502900DF795E /* Hirely.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hirely.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71BEBCDD2CFC502900DF795E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		71BEBCDF2CFC502900DF795E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -119,6 +133,13 @@
 				2CBADAD52D03205D0078B78A /* CustomJobPostTableViewCell.swift */,
 				2CBADAD62D03205D0078B78A /* CustomJobPostTableViewCell.xib */,
 				2C8EEF3D2D0371D300F33B98 /* JobDetailsViewController.swift */,
+				2CD7DBE92D0441700076C40E /* ApplicantDetailViewController.swift */,
+				2C5217D12D046A4200C1040D /* ReviewApplicationsViewController.swift */,
+				2C5217D32D046C0600C1040D /* ApplicationsTableViewCell.swift */,
+				2C5217D42D046C0600C1040D /* ApplicationsTableViewCell.xib */,
+				2C5217D72D0490BF00C1040D /* ScheduledInterviewsViewController.swift */,
+				2C5217D92D0491A500C1040D /* ScheduledInterviewsTableViewCell.swift */,
+				2C5217DA2D0491A500C1040D /* ScheduledInterviewsTableViewCell.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -288,8 +309,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C5217DB2D0491A500C1040D /* ScheduledInterviewsTableViewCell.xib in Resources */,
 				71BEBCE72CFC502A00DF795E /* Assets.xcassets in Resources */,
 				2CBADAD72D03205D0078B78A /* CustomJobPostTableViewCell.xib in Resources */,
+				2C5217D52D046C0600C1040D /* ApplicationsTableViewCell.xib in Resources */,
 				71BEBCEA2CFC502A00DF795E /* Base in Resources */,
 				71BEBCE52CFC502900DF795E /* Base in Resources */,
 				2C9302F52CFC9E6500CAD615 /* GoogleService-Info.plist in Resources */,
@@ -317,11 +340,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C5217D82D0490BF00C1040D /* ScheduledInterviewsViewController.swift in Sources */,
+				2C5217DC2D0491A500C1040D /* ScheduledInterviewsTableViewCell.swift in Sources */,
 				71BEBCE22CFC502900DF795E /* ViewController.swift in Sources */,
 				2C8508452D02FEE1008C9E0D /* AddJobPostingViewController.swift in Sources */,
+				2C5217D62D046C0600C1040D /* ApplicationsTableViewCell.swift in Sources */,
 				2CBADAD82D03205D0078B78A /* CustomJobPostTableViewCell.swift in Sources */,
 				2C8EEF3E2D0371D300F33B98 /* JobDetailsViewController.swift in Sources */,
+				2CD7DBEA2D0441700076C40E /* ApplicantDetailViewController.swift in Sources */,
 				2CBADAD42D031E750078B78A /* JobPostingViewController.swift in Sources */,
+				2C5217D22D046A4200C1040D /* ReviewApplicationsViewController.swift in Sources */,
 				71BEBCDE2CFC502900DF795E /* AppDelegate.swift in Sources */,
 				71BEBCE02CFC502900DF795E /* SceneDelegate.swift in Sources */,
 			);
