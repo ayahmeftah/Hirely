@@ -33,15 +33,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qoK-Pf-4vP" customClass="applicationApplybtn">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qoK-Pf-4vP" customClass="applicationApplybtn">
                                 <rect key="frame" x="21" y="774" width="351" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Apply" cornerStyle="capsule">
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="25"/>
                                 </buttonConfiguration>
                             </button>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZG9-va-coV">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZG9-va-coV">
                                 <rect key="frame" x="24" y="196" width="345" height="564"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Personal Information" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eI8-tf-k9a">
                                         <rect key="frame" x="15" y="39" width="170" height="21"/>
@@ -189,28 +191,162 @@
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" red="0.90980392156862744" green="0.91764705882352937" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <constraints>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="qoK-Pf-4vP" secondAttribute="trailing" constant="21" id="4dy-Pe-w5q"/>
-                            <constraint firstItem="qoK-Pf-4vP" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="21" id="C6O-Dt-hlB"/>
-                            <constraint firstItem="qoK-Pf-4vP" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="OGA-Tr-1g4"/>
-                            <constraint firstItem="qoK-Pf-4vP" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="Qyz-co-F7t"/>
-                            <constraint firstItem="qoK-Pf-4vP" firstAttribute="top" secondItem="ZG9-va-coV" secondAttribute="bottom" constant="20" id="cJp-6V-4dX"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ZG9-va-coV" secondAttribute="trailing" constant="24" id="pet-pu-E76"/>
-                            <constraint firstItem="ZG9-va-coV" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="taP-XX-0Ko"/>
-                        </constraints>
+                        <color key="backgroundColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="IcZ-Qx-PHC">
-                        <barButtonItem key="rightBarButtonItem" title="Company Details" style="plain" id="QjA-5f-YWx"/>
+                        <barButtonItem key="rightBarButtonItem" title="Company Details" style="plain" id="QjA-5f-YWx">
+                            <connections>
+                                <segue destination="1AS-R3-AZ6" kind="show" id="8HM-Re-YQT"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="135.1145038167939" y="3.5211267605633805"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="3jm-Ww-eGH">
+            <objects>
+                <viewController id="1AS-R3-AZ6" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4s4-iH-bQp">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="OhA-VZ-oQU">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XgN-lH-gdl" customClass="companyLogo">
+                                <rect key="frame" x="170" y="59" width="53" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Company" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="leW-zG-rEM" customClass="companylbl">
+                                <rect key="frame" x="155" y="119" width="82" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="highlightedColor" red="0.8980392157" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
+                            </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4qp-AM-akf">
+                                <rect key="frame" x="0.0" y="198" width="393" height="654"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mEF-b9-NXm">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="1500"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Company Overview" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dbY-OT-6Gi" customClass="companyOverviewlbl">
+                                                <rect key="frame" x="24" y="20" width="158" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X8g-0W-6Es" customClass="overviewtxt">
+                                                <rect key="frame" x="24" y="49" width="345" height="128"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="0.83525323870000001" green="0.84282028679999998" blue="0.86275237800000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                                <color key="textColor" systemColor="labelColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ePj-xj-2NV" customClass="specializationtxt">
+                                                <rect key="frame" x="24" y="230" width="345" height="128"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="0.83525323870000001" green="0.84282028679999998" blue="0.86275237800000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                <color key="textColor" systemColor="labelColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zj3-42-GHD" customClass="growthtxt">
+                                                <rect key="frame" x="24" y="411" width="345" height="128"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="0.83525323870000001" green="0.84282028679999998" blue="0.86275237800000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                                <color key="textColor" systemColor="labelColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Our Specialization" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Icz-QL-7mh" customClass="specializationlbl">
+                                                <rect key="frame" x="24" y="201" width="149" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Growth &amp; Development" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8O6-WK-EYV" customClass="growthlbl">
+                                                <rect key="frame" x="24" y="382" width="188" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Benefit &amp; Culture" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J4P-8v-RhK" customClass="benefitlbl">
+                                                <rect key="frame" x="24" y="563" width="140" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V13-sm-EID" customClass="growthtxt">
+                                                <rect key="frame" x="24" y="592" width="345" height="128"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="0.83525323870000001" green="0.84282028679999998" blue="0.86275237800000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                                <color key="textColor" systemColor="labelColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.83525323870000001" green="0.84282028679999998" blue="0.86275237800000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1500" id="Wkl-e5-TCB"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="mEF-b9-NXm" firstAttribute="leading" secondItem="4qp-AM-akf" secondAttribute="leading" id="02e-k2-MQr"/>
+                                    <constraint firstItem="mEF-b9-NXm" firstAttribute="leading" secondItem="4qp-AM-akf" secondAttribute="leading" id="9eF-Vn-9UI"/>
+                                    <constraint firstAttribute="bottom" secondItem="mEF-b9-NXm" secondAttribute="bottom" id="Smt-cH-JDS"/>
+                                    <constraint firstAttribute="trailing" secondItem="mEF-b9-NXm" secondAttribute="trailing" id="SsS-o2-n2t"/>
+                                    <constraint firstAttribute="trailing" secondItem="mEF-b9-NXm" secondAttribute="trailing" id="giS-o7-Qti"/>
+                                    <constraint firstAttribute="bottom" secondItem="mEF-b9-NXm" secondAttribute="bottom" id="ryV-cd-XTS"/>
+                                    <constraint firstItem="mEF-b9-NXm" firstAttribute="top" secondItem="4qp-AM-akf" secondAttribute="top" id="sTR-bO-XE1"/>
+                                    <constraint firstItem="mEF-b9-NXm" firstAttribute="top" secondItem="4qp-AM-akf" secondAttribute="top" id="wba-5F-jhW"/>
+                                </constraints>
+                            </scrollView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Company Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jfE-vF-Sld" customClass="companyEmailelbl">
+                                <rect key="frame" x="140" y="149" width="112" height="17"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                <color key="textColor" red="0.53987582764583752" green="0.76595449052454367" blue="0.94085097312927246" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="e5n-mg-n4h"/>
+                        <color key="backgroundColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="4qp-AM-akf" firstAttribute="top" secondItem="jfE-vF-Sld" secondAttribute="bottom" id="a88-MD-N1s"/>
+                            <constraint firstItem="4qp-AM-akf" firstAttribute="trailing" secondItem="e5n-mg-n4h" secondAttribute="trailing" id="f5l-ee-0jk"/>
+                            <constraint firstAttribute="bottom" secondItem="4qp-AM-akf" secondAttribute="bottom" id="s7y-cK-0hH"/>
+                            <constraint firstItem="4qp-AM-akf" firstAttribute="leading" secondItem="e5n-mg-n4h" secondAttribute="leading" id="sFK-Kc-TYH"/>
+                            <constraint firstItem="mEF-b9-NXm" firstAttribute="width" secondItem="4s4-iH-bQp" secondAttribute="width" id="zU3-wu-JSF"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="zcK-sY-kxP"/>
+                    <size key="freeformSize" width="393" height="852"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O8C-C4-cxr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1119.8473282442749" y="2.8169014084507045"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="Background" width="402" height="874"/>
         <image name="square.and.arrow.up" catalog="system" width="108" height="128"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemGray2Color">
             <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
