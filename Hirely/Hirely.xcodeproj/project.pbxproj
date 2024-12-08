@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2C9302F52CFC9E6500CAD615 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C9302F42CFC9E6500CAD615 /* GoogleService-Info.plist */; };
 		2CBC8FE82D05E6E500C6AD02 /* ViewPostDeatilsAdminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBC8FE72D05E6E500C6AD02 /* ViewPostDeatilsAdminViewController.swift */; };
+		2CBC8FEA2D05F2B500C6AD02 /* ReportedPostDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBC8FE92D05F2B500C6AD02 /* ReportedPostDetailsViewController.swift */; };
 		71BEBCDE2CFC502900DF795E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEBCDD2CFC502900DF795E /* AppDelegate.swift */; };
 		71BEBCE02CFC502900DF795E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEBCDF2CFC502900DF795E /* SceneDelegate.swift */; };
 		71BEBCE22CFC502900DF795E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEBCE12CFC502900DF795E /* ViewController.swift */; };
@@ -43,6 +44,7 @@
 /* Begin PBXFileReference section */
 		2C9302F42CFC9E6500CAD615 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2CBC8FE72D05E6E500C6AD02 /* ViewPostDeatilsAdminViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPostDeatilsAdminViewController.swift; sourceTree = "<group>"; };
+		2CBC8FE92D05F2B500C6AD02 /* ReportedPostDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportedPostDetailsViewController.swift; sourceTree = "<group>"; };
 		71BEBCDA2CFC502900DF795E /* Hirely.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hirely.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71BEBCDD2CFC502900DF795E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		71BEBCDF2CFC502900DF795E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 			children = (
 				71BEBCE12CFC502900DF795E /* ViewController.swift */,
 				2CBC8FE72D05E6E500C6AD02 /* ViewPostDeatilsAdminViewController.swift */,
+				2CBC8FE92D05F2B500C6AD02 /* ReportedPostDetailsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 				71BEBCE22CFC502900DF795E /* ViewController.swift in Sources */,
 				71BEBCDE2CFC502900DF795E /* AppDelegate.swift in Sources */,
 				2CBC8FE82D05E6E500C6AD02 /* ViewPostDeatilsAdminViewController.swift in Sources */,
+				2CBC8FEA2D05F2B500C6AD02 /* ReportedPostDetailsViewController.swift in Sources */,
 				71BEBCE02CFC502900DF795E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
