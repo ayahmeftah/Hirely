@@ -8,9 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2C9302F52CFC9E6500CAD615 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C9302F42CFC9E6500CAD615 /* GoogleService-Info.plist */; };
-		3FA316B22D01DC0700AD7893 /* Skill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA316B12D01DC0700AD7893 /* Skill.swift */; };
-		3FA316B62D01DDEF00AD7893 /* SkillsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA316B52D01DDEF00AD7893 /* SkillsTableViewController.swift */; };
-		3FA316B82D01E48500AD7893 /* skillCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA316B72D01E48500AD7893 /* skillCellTableViewCell.swift */; };
 		71BEBCDE2CFC502900DF795E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEBCDD2CFC502900DF795E /* AppDelegate.swift */; };
 		71BEBCE02CFC502900DF795E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEBCDF2CFC502900DF795E /* SceneDelegate.swift */; };
 		71BEBCE22CFC502900DF795E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEBCE12CFC502900DF795E /* ViewController.swift */; };
@@ -20,6 +17,13 @@
 		71BEBCF52CFC502B00DF795E /* HirelyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEBCF42CFC502B00DF795E /* HirelyTests.swift */; };
 		71BEBCFF2CFC502B00DF795E /* HirelyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEBCFE2CFC502B00DF795E /* HirelyUITests.swift */; };
 		71BEBD012CFC502B00DF795E /* HirelyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEBD002CFC502B00DF795E /* HirelyUITestsLaunchTests.swift */; };
+		C33E86E22D055D9B00EF1062 /* personalInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33E86E12D055D9B00EF1062 /* personalInfoViewController.swift */; };
+		C33E86E42D055DB600EF1062 /* skillsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33E86E32D055DB600EF1062 /* skillsViewController.swift */; };
+		C33E86E62D055DD100EF1062 /* expViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33E86E52D055DD100EF1062 /* expViewController.swift */; };
+		C33E86E82D055DED00EF1062 /* educationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33E86E72D055DED00EF1062 /* educationViewController.swift */; };
+		C33E86EA2D055E0100EF1062 /* certiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33E86E92D055E0100EF1062 /* certiViewController.swift */; };
+		C33E86EC2D055E1900EF1062 /* generatedCvViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33E86EB2D055E1900EF1062 /* generatedCvViewController.swift */; };
+		C33E86EE2D055F0200EF1062 /* CVData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33E86ED2D055F0200EF1062 /* CVData.swift */; };
 		C363937D2D006A4C00E14337 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = C363937C2D006A4C00E14337 /* FirebaseDatabase */; };
 		C363937F2D006A5600E14337 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = C363937E2D006A5600E14337 /* FirebaseAuth */; };
 		C36393812D006A7800E14337 /* Cloudinary in Frameworks */ = {isa = PBXBuildFile; productRef = C36393802D006A7800E14337 /* Cloudinary */; };
@@ -46,9 +50,6 @@
 
 /* Begin PBXFileReference section */
 		2C9302F42CFC9E6500CAD615 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		3FA316B12D01DC0700AD7893 /* Skill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Skill.swift; sourceTree = "<group>"; };
-		3FA316B52D01DDEF00AD7893 /* SkillsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillsTableViewController.swift; sourceTree = "<group>"; };
-		3FA316B72D01E48500AD7893 /* skillCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = skillCellTableViewCell.swift; sourceTree = "<group>"; };
 		71BEBCDA2CFC502900DF795E /* Hirely.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hirely.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71BEBCDD2CFC502900DF795E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		71BEBCDF2CFC502900DF795E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,6 +63,13 @@
 		71BEBCFA2CFC502B00DF795E /* HirelyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HirelyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		71BEBCFE2CFC502B00DF795E /* HirelyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HirelyUITests.swift; sourceTree = "<group>"; };
 		71BEBD002CFC502B00DF795E /* HirelyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HirelyUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C33E86E12D055D9B00EF1062 /* personalInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = personalInfoViewController.swift; sourceTree = "<group>"; };
+		C33E86E32D055DB600EF1062 /* skillsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = skillsViewController.swift; sourceTree = "<group>"; };
+		C33E86E52D055DD100EF1062 /* expViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = expViewController.swift; sourceTree = "<group>"; };
+		C33E86E72D055DED00EF1062 /* educationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = educationViewController.swift; sourceTree = "<group>"; };
+		C33E86E92D055E0100EF1062 /* certiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = certiViewController.swift; sourceTree = "<group>"; };
+		C33E86EB2D055E1900EF1062 /* generatedCvViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = generatedCvViewController.swift; sourceTree = "<group>"; };
+		C33E86ED2D055F0200EF1062 /* CVData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVData.swift; sourceTree = "<group>"; };
 		C36393822D006C0300E14337 /* CVBuilder.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CVBuilder.storyboard; sourceTree = "<group>"; };
 		C36393842D006E6600E14337 /* CvBuilderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CvBuilderViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -107,7 +115,7 @@
 				71BEBCE32CFC502900DF795E /* Main.storyboard */,
 				71BEBCE82CFC502A00DF795E /* LaunchScreen.storyboard */,
 				C36393822D006C0300E14337 /* CVBuilder.storyboard */,
-				3FA316B12D01DC0700AD7893 /* Skill.swift */,
+				C33E86ED2D055F0200EF1062 /* CVData.swift */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -117,8 +125,12 @@
 			children = (
 				71BEBCE12CFC502900DF795E /* ViewController.swift */,
 				C36393842D006E6600E14337 /* CvBuilderViewController.swift */,
-				3FA316B52D01DDEF00AD7893 /* SkillsTableViewController.swift */,
-				3FA316B72D01E48500AD7893 /* skillCellTableViewCell.swift */,
+				C33E86E12D055D9B00EF1062 /* personalInfoViewController.swift */,
+				C33E86E32D055DB600EF1062 /* skillsViewController.swift */,
+				C33E86E52D055DD100EF1062 /* expViewController.swift */,
+				C33E86E72D055DED00EF1062 /* educationViewController.swift */,
+				C33E86E92D055E0100EF1062 /* certiViewController.swift */,
+				C33E86EB2D055E1900EF1062 /* generatedCvViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -319,10 +331,14 @@
 			files = (
 				71BEBCE22CFC502900DF795E /* ViewController.swift in Sources */,
 				71BEBCDE2CFC502900DF795E /* AppDelegate.swift in Sources */,
-				3FA316B22D01DC0700AD7893 /* Skill.swift in Sources */,
-				3FA316B62D01DDEF00AD7893 /* SkillsTableViewController.swift in Sources */,
+				C33E86EC2D055E1900EF1062 /* generatedCvViewController.swift in Sources */,
+				C33E86E42D055DB600EF1062 /* skillsViewController.swift in Sources */,
 				71BEBCE02CFC502900DF795E /* SceneDelegate.swift in Sources */,
-				3FA316B82D01E48500AD7893 /* skillCellTableViewCell.swift in Sources */,
+				C33E86E22D055D9B00EF1062 /* personalInfoViewController.swift in Sources */,
+				C33E86EA2D055E0100EF1062 /* certiViewController.swift in Sources */,
+				C33E86E82D055DED00EF1062 /* educationViewController.swift in Sources */,
+				C33E86EE2D055F0200EF1062 /* CVData.swift in Sources */,
+				C33E86E62D055DD100EF1062 /* expViewController.swift in Sources */,
 				C36393852D006E6600E14337 /* CvBuilderViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
