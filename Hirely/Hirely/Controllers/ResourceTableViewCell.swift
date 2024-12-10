@@ -12,12 +12,15 @@ class ResourceTableViewCell: UITableViewCell {
     
     @IBOutlet weak var resiurceTitleLbl: ResourceTableViewCell!
     
-    @IBOutlet weak var resourceTitle: UILabel!
-    @IBOutlet weak var resourceCatLbl: UILabel!
+    //    @IBOutlet weak var resourceTitle: UILabel!
+//    @IBOutlet weak var resourceCatLbl: UILabel!
+//    
+//    @IBOutlet weak var resourceDeleteBtn: UIButton!
     
     @IBOutlet weak var resourceDeleteBtn: UIButton!
+    @IBOutlet weak var resourceCatLbl: UILabel!
     
- 
+    @IBOutlet weak var resourceTitle: UILabel!
     
     
     override func awakeFromNib() {
@@ -28,11 +31,11 @@ class ResourceTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
+       
     }
     func update(with resource: Resource) {
         resourceTitle.text = resource.title
-        resourceCatLbl.text = resource.link
+        resourceCatLbl.text = resource.category
         
     }
    

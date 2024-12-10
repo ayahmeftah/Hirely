@@ -10,8 +10,21 @@ import UIKit
 class ResourceManagmentTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var resources: [Resource]=[Resource(title: "hpw to prepare for an interview", category: "video", link: "uhfuhuhfguhrfuhruh")]
     
+    @IBOutlet weak var resoureTitleText: UILabel!
     @IBOutlet var tableView: UITableView!
     
+    @IBOutlet weak var resourceCatText: UILabel!
+    
+    
+    
+    
+    
+    
+    
+    // @IBOutlet weak var resoureTitleText: UILabel!
+   // @IBOutlet weak var resourceCatText: UILabel!
+    // @IBOutlet weak var resourceCatText: UILabel!
+   // @IBOutlet weak var resoureTitleText: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 
