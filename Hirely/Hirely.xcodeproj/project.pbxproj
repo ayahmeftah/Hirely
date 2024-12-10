@@ -20,6 +20,11 @@
 		C363937D2D006A4C00E14337 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = C363937C2D006A4C00E14337 /* FirebaseDatabase */; };
 		C363937F2D006A5600E14337 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = C363937E2D006A5600E14337 /* FirebaseAuth */; };
 		C36393812D006A7800E14337 /* Cloudinary in Frameworks */ = {isa = PBXBuildFile; productRef = C36393802D006A7800E14337 /* Cloudinary */; };
+		D17E38332D083EB800C64293 /* ResourceManagment.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D17E38322D083EB800C64293 /* ResourceManagment.storyboard */; };
+		D17E38352D084BDC00C64293 /* ResourceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17E38342D084BDC00C64293 /* ResourceTableViewCell.swift */; };
+		D17E38372D084D0000C64293 /* ResourceManagmentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17E38362D084D0000C64293 /* ResourceManagmentTableViewController.swift */; };
+		D17E38392D084E5B00C64293 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17E38382D084E5B00C64293 /* Resource.swift */; };
+		D17E383B2D08538B00C64293 /* AddEditResourceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17E383A2D08538B00C64293 /* AddEditResourceTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +59,11 @@
 		71BEBCFA2CFC502B00DF795E /* HirelyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HirelyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		71BEBCFE2CFC502B00DF795E /* HirelyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HirelyUITests.swift; sourceTree = "<group>"; };
 		71BEBD002CFC502B00DF795E /* HirelyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HirelyUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D17E38322D083EB800C64293 /* ResourceManagment.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ResourceManagment.storyboard; sourceTree = "<group>"; };
+		D17E38342D084BDC00C64293 /* ResourceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceTableViewCell.swift; sourceTree = "<group>"; };
+		D17E38362D084D0000C64293 /* ResourceManagmentTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceManagmentTableViewController.swift; sourceTree = "<group>"; };
+		D17E38382D084E5B00C64293 /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
+		D17E383A2D08538B00C64293 /* AddEditResourceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditResourceTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +114,8 @@
 			isa = PBXGroup;
 			children = (
 				71BEBCE12CFC502900DF795E /* ViewController.swift */,
+				D17E38342D084BDC00C64293 /* ResourceTableViewCell.swift */,
+				D17E38382D084E5B00C64293 /* Resource.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -111,6 +123,8 @@
 		71BEBCD12CFC502900DF795E = {
 			isa = PBXGroup;
 			children = (
+				D17E38322D083EB800C64293 /* ResourceManagment.storyboard */,
+				D17E383A2D08538B00C64293 /* AddEditResourceTableViewController.swift */,
 				71BEBCDC2CFC502900DF795E /* Hirely */,
 				71BEBCF32CFC502B00DF795E /* HirelyTests */,
 				71BEBCFD2CFC502B00DF795E /* HirelyUITests */,
@@ -136,6 +150,7 @@
 				711B4EBE2CFC57E200910FB6 /* Storyboards */,
 				71BEBCDD2CFC502900DF795E /* AppDelegate.swift */,
 				71BEBCDF2CFC502900DF795E /* SceneDelegate.swift */,
+				D17E38362D084D0000C64293 /* ResourceManagmentTableViewController.swift */,
 				71BEBCE62CFC502A00DF795E /* Assets.xcassets */,
 				71BEBCEB2CFC502A00DF795E /* Info.plist */,
 				2C9302F42CFC9E6500CAD615 /* GoogleService-Info.plist */,
@@ -275,6 +290,7 @@
 			files = (
 				71BEBCE72CFC502A00DF795E /* Assets.xcassets in Resources */,
 				71BEBCEA2CFC502A00DF795E /* Base in Resources */,
+				D17E38332D083EB800C64293 /* ResourceManagment.storyboard in Resources */,
 				71BEBCE52CFC502900DF795E /* Base in Resources */,
 				2C9302F52CFC9E6500CAD615 /* GoogleService-Info.plist in Resources */,
 			);
@@ -301,7 +317,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D17E38372D084D0000C64293 /* ResourceManagmentTableViewController.swift in Sources */,
 				71BEBCE22CFC502900DF795E /* ViewController.swift in Sources */,
+				D17E383B2D08538B00C64293 /* AddEditResourceTableViewController.swift in Sources */,
+				D17E38352D084BDC00C64293 /* ResourceTableViewCell.swift in Sources */,
+				D17E38392D084E5B00C64293 /* Resource.swift in Sources */,
 				71BEBCDE2CFC502900DF795E /* AppDelegate.swift in Sources */,
 				71BEBCE02CFC502900DF795E /* SceneDelegate.swift in Sources */,
 			);
