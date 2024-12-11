@@ -12,7 +12,8 @@ class AddEditResourceTableViewController: UITableViewController {
     
     var resource: Resource?
     
-    @IBOutlet weak var resourceTitlelbl: UITextField!
+    
+    @IBOutlet weak var resoureTitleText: UITextField!
     
     @IBOutlet weak var resourceCatlbl: UITextField!
     @IBOutlet weak var resourceLinkLbl: UITextField!
@@ -20,7 +21,7 @@ class AddEditResourceTableViewController: UITableViewController {
     @IBOutlet weak var savebtn: UIBarButtonItem!
     
     func updateSaveButtonState() {
-        let titleText = resourceTitlelbl.text ?? ""
+        let titleText = resoureTitleText.text ?? ""
         let catText = resourceCatlbl.text ?? ""
         let linkText = resourceLinkLbl.text ?? ""
         savebtn.isEnabled =  !titleText.isEmpty && !catText.isEmpty && !linkText.isEmpty
@@ -28,6 +29,9 @@ class AddEditResourceTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        tableView.delegate = self
+        tableView.dataSource = self
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -37,7 +41,7 @@ class AddEditResourceTableViewController: UITableViewController {
         
         
         if let resource = resource {
-            resourceTitlelbl.text = resource.title
+            resoureTitleText.text = resource.title
             resourceCatlbl.text = resource.category
             resourceLinkLbl.text = resource.link
            
@@ -73,24 +77,14 @@ class AddEditResourceTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard segue.identifier == "saveUnwind" else { return }
 
-        let title =  resourceTitlelbl.text ?? ""
+        let title =  resoureTitleText.text ?? ""
         let cat = resourceCatlbl.text ?? ""
         let link = resourceLinkLbl.text ?? ""
         
         resource = Resource(title: title, category: cat, link: link)
     }
     
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
-    }
+    // MARK: - Table view data sourc
 
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

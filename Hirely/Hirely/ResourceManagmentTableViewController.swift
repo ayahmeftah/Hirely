@@ -8,15 +8,16 @@
 import UIKit
 
 class ResourceManagmentTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    var resources: [Resource]=[Resource(title: "hpw to prepare for an interview", category: "video", link: "uhfuhuhfguhrfuhruh")]
+    var resources: [Resource]=[Resource(title: "how to prepare for an interview", category: "video", link: "uhfuhuhfguhrfuhruh")]
     
-    @IBOutlet weak var resoureTitleText: UILabel!
+    
     @IBOutlet var tableView: UITableView!
     
-    @IBOutlet weak var resourceCatText: UILabel!
+    //@IBOutlet weak var resourceCatText: UILabel!
     
     
     
+   // @IBOutlet weak var titleText: UILabel!
     
     
     
@@ -35,6 +36,7 @@ class ResourceManagmentTableViewController: UIViewController, UITableViewDelegat
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
     }
+    
 
     // MARK: - Table view data source
     

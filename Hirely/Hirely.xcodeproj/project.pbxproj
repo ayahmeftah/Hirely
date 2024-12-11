@@ -25,6 +25,9 @@
 		D17E38372D084D0000C64293 /* ResourceManagmentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17E38362D084D0000C64293 /* ResourceManagmentTableViewController.swift */; };
 		D17E38392D084E5B00C64293 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17E38382D084E5B00C64293 /* Resource.swift */; };
 		D17E383B2D08538B00C64293 /* AddEditResourceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17E383A2D08538B00C64293 /* AddEditResourceTableViewController.swift */; };
+		D17E383D2D09682700C64293 /* ResourcesPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17E383C2D09682700C64293 /* ResourcesPageViewController.swift */; };
+		D17E383F2D09688C00C64293 /* VideosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17E383E2D09688C00C64293 /* VideosViewController.swift */; };
+		D17E38412D0971B000C64293 /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17E38402D0971B000C64293 /* VideoTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +67,9 @@
 		D17E38362D084D0000C64293 /* ResourceManagmentTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceManagmentTableViewController.swift; sourceTree = "<group>"; };
 		D17E38382D084E5B00C64293 /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
 		D17E383A2D08538B00C64293 /* AddEditResourceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditResourceTableViewController.swift; sourceTree = "<group>"; };
+		D17E383C2D09682700C64293 /* ResourcesPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcesPageViewController.swift; sourceTree = "<group>"; };
+		D17E383E2D09688C00C64293 /* VideosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideosViewController.swift; sourceTree = "<group>"; };
+		D17E38402D0971B000C64293 /* VideoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +122,8 @@
 				71BEBCE12CFC502900DF795E /* ViewController.swift */,
 				D17E38342D084BDC00C64293 /* ResourceTableViewCell.swift */,
 				D17E38382D084E5B00C64293 /* Resource.swift */,
+				D17E383E2D09688C00C64293 /* VideosViewController.swift */,
+				D17E38402D0971B000C64293 /* VideoTableViewCell.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -123,6 +131,7 @@
 		71BEBCD12CFC502900DF795E = {
 			isa = PBXGroup;
 			children = (
+				D17E383C2D09682700C64293 /* ResourcesPageViewController.swift */,
 				D17E38322D083EB800C64293 /* ResourceManagment.storyboard */,
 				D17E383A2D08538B00C64293 /* AddEditResourceTableViewController.swift */,
 				71BEBCDC2CFC502900DF795E /* Hirely */,
@@ -317,13 +326,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D17E383F2D09688C00C64293 /* VideosViewController.swift in Sources */,
 				D17E38372D084D0000C64293 /* ResourceManagmentTableViewController.swift in Sources */,
+				D17E383D2D09682700C64293 /* ResourcesPageViewController.swift in Sources */,
 				71BEBCE22CFC502900DF795E /* ViewController.swift in Sources */,
 				D17E383B2D08538B00C64293 /* AddEditResourceTableViewController.swift in Sources */,
 				D17E38352D084BDC00C64293 /* ResourceTableViewCell.swift in Sources */,
 				D17E38392D084E5B00C64293 /* Resource.swift in Sources */,
 				71BEBCDE2CFC502900DF795E /* AppDelegate.swift in Sources */,
 				71BEBCE02CFC502900DF795E /* SceneDelegate.swift in Sources */,
+				D17E38412D0971B000C64293 /* VideoTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
