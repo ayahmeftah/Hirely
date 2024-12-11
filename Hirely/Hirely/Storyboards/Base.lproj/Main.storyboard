@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wz8-4t-xPJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2Fb-7f-iMF">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
@@ -70,29 +70,32 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="rPP-Pq-OZ2">
                                 <rect key="frame" x="20" y="197.66666666666669" width="353" height="610.33333333333326"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="zJP-Hw-7VL">
-                                        <rect key="frame" x="0.0" y="0.0" width="353" height="101"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="zJP-Hw-7VL">
+                                        <rect key="frame" x="0.0" y="0.0" width="353" height="90"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total number of registered users:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C6I-NO-wWO">
-                                                <rect key="frame" x="41.333333333333343" y="0.0" width="270.66666666666663" height="20.333333333333332"/>
+                                                <rect key="frame" x="41.333333333333343" y="0.0" width="270.66666666666663" height="26.666666666666668"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- Employers:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vO7-3q-rlH">
-                                                <rect key="frame" x="132.33333333333334" y="40.333333333333343" width="88.666666666666657" height="20.333333333333329"/>
+                                                <rect key="frame" x="132.33333333333334" y="31.666666666666686" width="88.666666666666657" height="26.666666666666671"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                                 <color key="textColor" red="0.015686274509803921" green="0.074509803921568626" blue="0.30588235294117649" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- Job Seekers:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y8G-cd-vub">
-                                                <rect key="frame" x="125.66666666666666" y="80.666666666666657" width="101.66666666666666" height="20.333333333333329"/>
+                                                <rect key="frame" x="125.66666666666666" y="63.333333333333336" width="101.66666666666666" height="26.666666666666664"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                                 <color key="textColor" red="0.015686274510000001" green="0.074509803920000006" blue="0.30588235289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="90" id="8ed-J8-sC4"/>
+                                        </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                 <integer key="value" value="12"/>
@@ -100,28 +103,31 @@
                                         </userDefinedRuntimeAttributes>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Wd9-Ht-VMi">
-                                        <rect key="frame" x="0.0" y="121.00000000000003" width="353" height="84"/>
+                                        <rect key="frame" x="0.0" y="110.00000000000003" width="353" height="115"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total job postings:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XL1-yI-JVC">
-                                                <rect key="frame" x="109.33333333333336" y="0.0" width="134.66666666666663" height="18"/>
+                                                <rect key="frame" x="109.33333333333336" y="0.0" width="134.66666666666663" height="28.333333333333332"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total flagged job postings:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I66-qz-ovJ">
-                                                <rect key="frame" x="79.333333333333329" y="33" width="194.33333333333337" height="18"/>
+                                                <rect key="frame" x="79.333333333333329" y="43.333333333333314" width="194.33333333333337" height="28.333333333333329"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total reported job postings:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BgJ-UO-ZG4">
-                                                <rect key="frame" x="75.333333333333329" y="66" width="202.66666666666669" height="18"/>
+                                                <rect key="frame" x="75.333333333333329" y="86.666666666666629" width="202.66666666666669" height="28.333333333333329"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="115" id="Ac8-Fb-0Fu"/>
+                                        </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                 <integer key="value" value="12"/>
@@ -129,13 +135,13 @@
                                         </userDefinedRuntimeAttributes>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="z5n-GZ-lua">
-                                        <rect key="frame" x="0.0" y="225.00000000000003" width="353" height="385.33333333333337"/>
+                                        <rect key="frame" x="0.0" y="245.00000000000003" width="353" height="365.33333333333337"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="T8v-ms-tQb">
-                                                <rect key="frame" x="0.0" y="0.0" width="171.66666666666666" height="385.33333333333331"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="171.66666666666666" height="365.33333333333331"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Al4-PU-KUR">
-                                                        <rect key="frame" x="0.0" y="0.0" width="171.66666666666666" height="121.66666666666667"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="171.66666666666666" height="115"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="View job postings">
@@ -152,7 +158,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C70-Y5-JqR">
-                                                        <rect key="frame" x="0.0" y="131.66666666666669" width="171.66666666666666" height="122"/>
+                                                        <rect key="frame" x="0.0" y="124.99999999999994" width="171.66666666666666" height="115.33333333333331"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="Manage flagged job postings">
@@ -169,7 +175,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TVp-Iw-QHy">
-                                                        <rect key="frame" x="0.0" y="263.66666666666669" width="171.66666666666666" height="121.66666666666669"/>
+                                                        <rect key="frame" x="0.0" y="250.33333333333331" width="171.66666666666666" height="115"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="Manage job seekers accounts">
@@ -188,10 +194,10 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="GYk-h8-Jt4">
-                                                <rect key="frame" x="181.66666666666663" y="0.0" width="171.33333333333337" height="385.33333333333331"/>
+                                                <rect key="frame" x="181.66666666666663" y="0.0" width="171.33333333333337" height="365.33333333333331"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sI6-qx-b4Q">
-                                                        <rect key="frame" x="0.0" y="0.0" width="171.33333333333334" height="121.66666666666667"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="171.33333333333334" height="115"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="Manage job resources hub">
@@ -208,7 +214,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p6l-Ym-MWQ">
-                                                        <rect key="frame" x="0.0" y="131.66666666666669" width="171.33333333333334" height="122"/>
+                                                        <rect key="frame" x="0.0" y="124.99999999999994" width="171.33333333333334" height="115.33333333333331"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="Manage employers accounts">
@@ -225,7 +231,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KoD-lW-KUt">
-                                                        <rect key="frame" x="0.0" y="263.66666666666669" width="171.33333333333334" height="121.66666666666669"/>
+                                                        <rect key="frame" x="0.0" y="250.33333333333331" width="171.33333333333334" height="115"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="Manage reported job postings">
