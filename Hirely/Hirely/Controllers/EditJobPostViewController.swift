@@ -1,31 +1,30 @@
 //
-//  AddJobPostingViewController.swift
+//  EditJobPostViewController.swift
 //  Hirely
 //
-//  Created by Manar Alsatrawi on 06/12/2024.
+//  Created by Manar Alsatrawi on 13/12/2024.
 //
 
 import UIKit
 
-class AddJobPostingViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
-
-    @IBOutlet weak var btn_select_jobType: UIButton!
+class EditJobPostViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
     
-    @IBOutlet weak var btn_select_locationType: UIButton!
-    
-    @IBOutlet weak var btn_select_experience: UIButton!
     
     @IBOutlet weak var selectCityTxt: UITextField!
+    
+    @IBOutlet weak var maxSalarySlider: UISlider!
+    
+    @IBOutlet weak var minSalarySlider: UISlider!
     
     @IBOutlet weak var minimumLbl: UILabel!
     
     @IBOutlet weak var maximumLbl: UILabel!
     
-    @IBOutlet weak var minSalarySlider: UISlider!
+    @IBOutlet weak var selectJobTypeBtn: UIButton!
     
-    @IBOutlet weak var maxSalarySlider: UISlider!
+    @IBOutlet weak var selectExperienceBtn: UIButton!
     
-    
+    @IBOutlet weak var selectLocationBtn: UIButton!
     
     @IBAction func minimumSlider(_ sender: UISlider) {
         // Update the minimum salary label
@@ -38,38 +37,37 @@ class AddJobPostingViewController: UIViewController, UIPickerViewDelegate, UIPic
         maximumLbl.text = "\(maxSalary) BHD"
     }
     
-    
     let cityPicker = UIPickerView()
     
     var currentIndex = 0
     
     var cities = ["Manama",
-    "Muharraq",
-    "Isa Town",
-    "Riffa",
-    "Sitra",
-    "Hamad Town",
-    "Budaiya",
-    "Jidhafs",
-    "A'ali",
-    "Sanabis",
-    "Zallaq",
-    "Amwaj Islands",
-    "Duraz",
-    "Tubli",
-    "Seef",
-    "Hoora",
-    "Adliya",
-    "Juffair",
-    "Salmaniya",
-    "Diyar Al Muharraq"]
+                  "Muharraq",
+                  "Isa Town",
+                  "Riffa",
+                  "Sitra",
+                  "Hamad Town",
+                  "Budaiya",
+                  "Jidhafs",
+                  "A'ali",
+                  "Sanabis",
+                  "Zallaq",
+                  "Amwaj Islands",
+                  "Duraz",
+                  "Tubli",
+                  "Seef",
+                  "Hoora",
+                  "Adliya",
+                  "Juffair",
+                  "Salmaniya",
+                  "Diyar Al Muharraq"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         cityPicker.delegate = self
         cityPicker.dataSource = self
-         
+        
         let toolBar = UIToolbar()
         toolBar.sizeToFit()
         let btnDone = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(closePicker))
@@ -114,27 +112,18 @@ class AddJobPostingViewController: UIViewController, UIPickerViewDelegate, UIPic
         view.endEditing(true)
     }
     
-    @IBAction func jobTypeSelection(_ sender: UIAction){
-        self.btn_select_jobType.setTitle(sender.title, for: .normal)
+    @IBAction func selectJobType(_ sender: UIAction){
+        print (sender.title)
+        self.selectJobTypeBtn.setTitle(sender.title, for: .normal)
     }
     
-    @IBAction func locationTypeSelection(_ sender: UIAction){
-        self.btn_select_locationType.setTitle(sender.title, for: .normal)
+    @IBAction func selectLocationType(_ sender: UIAction){
+        print (sender.title)
+        self.selectLocationBtn.setTitle(sender.title, for: .normal)
     }
     
-    @IBAction func experienceLevelSelection(_ sender: UIAction){
-        self.btn_select_experience.setTitle(sender.title, for: .normal)
+    @IBAction func selectExperience(_ sender: UIAction){
+        print (sender.title)
+        self.selectExperienceBtn.setTitle(sender.title, for: .normal)
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

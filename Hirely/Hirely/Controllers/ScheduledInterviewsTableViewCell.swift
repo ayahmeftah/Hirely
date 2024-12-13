@@ -9,6 +9,22 @@ import UIKit
 
 class ScheduledInterviewsTableViewCell: UITableViewCell {
     
+    weak var parentViewController: UIViewController? // Reference to the parent VC
+
+    @IBAction func buttonTapped(_ sender: UIButton) {
+        switch sender.tag {
+        case 1:
+            // Perform a segue for the first button
+            parentViewController?.performSegue(withIdentifier: "goToInterviewDetails", sender: self)
+        case 2:
+            // Perform a segue for the second button
+            parentViewController?.performSegue(withIdentifier: "goToEditInterview", sender: self)
+        default:
+            print("Unhandled button tapped")
+        }
+
+    }
+    
     @IBOutlet weak var applicantName: UILabel!
     
     override func awakeFromNib() {

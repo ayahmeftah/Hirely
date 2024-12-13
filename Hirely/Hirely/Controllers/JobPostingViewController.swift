@@ -7,8 +7,7 @@
 
 import UIKit
 
-class JobPostingViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+class JobPostingViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -47,7 +46,7 @@ class JobPostingViewController: UIViewController, UITableViewDelegate, UITableVi
 
 }
 
-extension JobPostingViewController{
+extension JobPostingViewController {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return companies.count
     }
@@ -58,10 +57,24 @@ extension JobPostingViewController{
         cell?.commonInit(companies[indexPath.row], companyImages[indexPath.row], jobTitles[indexPath.row], jobTypes[indexPath.row])
         cell?.backgroundColor = .clear
         cell?.contentView.backgroundColor = .clear
+        cell?.parentViewController = self // Pass the view controller to the cell
 
         return cell!
+        
     }
-
-
     
+    // Prepare for Segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let cell = sender as? CustomJobPostTableViewCell,
+           let _ = tableView.indexPath(for: cell) {
+            if segue.identifier == "goToDetails" {
+                _ = segue.destination as? JobDetailsViewController
+            } else if segue.identifier == "goToApplicants" {
+                _ = segue.destination as? ReviewApplicationsViewController
+            }else if segue.identifier == "editJobDetails" {
+                _ = segue.destination as? EditJobPostViewController
+            }
+        }
+    }
+ 
 }

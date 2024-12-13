@@ -9,6 +9,19 @@ import UIKit
 
 class ApplicationsTableViewCell: UITableViewCell {
     
+    weak var parentViewController: UIViewController? // Reference to the parent VC
+
+    @IBAction func buttonTapped(_ sender: UIButton) {
+        switch sender.tag {
+        case 1:
+            // Perform a segue for the first button
+            parentViewController?.performSegue(withIdentifier: "goToApplicantDetails", sender: self)
+        default:
+            print("Unhandled button tapped")
+        }
+
+    }
+    
     @IBOutlet weak var applicantImage: UIImageView!
     @IBOutlet weak var applicantLbl: UILabel!
     @IBOutlet weak var badgeContainerView: UIView!

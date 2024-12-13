@@ -7,7 +7,28 @@
 
 import UIKit
 
+
 class CustomJobPostTableViewCell: UITableViewCell {
+    
+    weak var parentViewController: UIViewController? // Reference to the parent VC
+
+    @IBAction func buttonTapped(_ sender: UIButton) {
+        switch sender.tag {
+        case 1:
+            // Perform a segue for the first button
+            parentViewController?.performSegue(withIdentifier: "goToDetails", sender: self)
+        case 2:
+            // Perform a segue for the second button
+            parentViewController?.performSegue(withIdentifier: "goToApplicants", sender: self)
+            
+        case 3:
+            // Perform a segue for the third button
+            parentViewController?.performSegue(withIdentifier: "editJobDetails", sender: self)
+        default:
+            print("Unhandled button tapped")
+        }
+
+    }
     
     @IBOutlet weak var companyImage: UIImageView!
     
@@ -28,6 +49,16 @@ class CustomJobPostTableViewCell: UITableViewCell {
     @IBOutlet weak var postedLbl: UILabel!
     
     @IBOutlet weak var deadlineLbl: UILabel!
+    
+
+    @IBAction func ViewApplicantsBtnTapped(_ sender: UIButton) {
+    }
+    
+    
+    @IBAction func EditPostBtnTapped(_ sender: UIButton) {
+    }
+    
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -57,5 +88,8 @@ class CustomJobPostTableViewCell: UITableViewCell {
         jobTitleLbl.text = jobTitle
         jobTypeLbl.text = jobType
     }
+    
+
+
     
 }
