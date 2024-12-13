@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4Ed-m8-ugN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lMH-fZ-Lnf">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
@@ -36,25 +36,104 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="853" y="-35"/>
+            <point key="canvasLocation" x="60" y="-35"/>
         </scene>
         <!--View Controller-->
-        <scene sceneID="X4G-I3-fYu">
+        <scene sceneID="1jf-pP-vUm">
             <objects>
-                <viewController id="4Ed-m8-ugN" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="i6q-78-Sqi">
+                <viewController id="lMH-fZ-Lnf" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EOD-jr-M1A">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="RhE-Ek-Uue"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BackTop" translatesAutoresizingMaskIntoConstraints="NO" id="Nj6-1P-46a">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="197"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="197" id="JvH-Z1-cai"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Ltm-XE-uXL">
+                                <rect key="frame" x="23" y="207" width="347" height="255"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Fox-RD-wX7">
+                                        <rect key="frame" x="0.0" y="0.0" width="347" height="120"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wAN-yw-MKV">
+                                                <rect key="frame" x="0.0" y="0.0" width="166" height="120"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Applications Tracker" cornerStyle="medium">
+                                                    <fontDescription key="titleFontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                                    <color key="baseBackgroundColor" red="0.87450981139999995" green="0.52549022440000004" blue="0.231372565" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </buttonConfiguration>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YXu-dk-r2r">
+                                                <rect key="frame" x="181" y="0.0" width="166" height="120"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Scheduled Interviews" cornerStyle="medium">
+                                                    <fontDescription key="titleFontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                                    <color key="baseBackgroundColor" red="0.27450981740000002" green="0.53725492949999998" blue="0.84313726430000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </buttonConfiguration>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="120" id="6pr-cV-PX9"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="TZu-DJ-6Al">
+                                        <rect key="frame" x="0.0" y="135" width="347" height="120"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TyY-fB-X2y">
+                                                <rect key="frame" x="0.0" y="0.0" width="166" height="120"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="CV Builder" cornerStyle="medium">
+                                                    <fontDescription key="titleFontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                                    <color key="baseBackgroundColor" red="0.27450981740000002" green="0.53725492949999998" blue="0.84313726430000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </buttonConfiguration>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BdN-F9-Zr0">
+                                                <rect key="frame" x="181" y="0.0" width="166" height="120"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Career Resources Hub" cornerStyle="medium">
+                                                    <fontDescription key="titleFontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                                    <color key="baseBackgroundColor" red="0.87450981139999995" green="0.52549022440000004" blue="0.231372565" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </buttonConfiguration>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="120" id="uTC-9Q-TxL"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dashboard" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LK4-fG-PyS">
+                                <rect key="frame" x="38" y="83" width="130.66666666666666" height="30"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="OHB-sN-lEJ"/>
+                        <color key="backgroundColor" red="0.91372549530000002" green="0.91764706370000004" blue="0.93333333730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="LK4-fG-PyS" firstAttribute="top" secondItem="OHB-sN-lEJ" secondAttribute="top" constant="24" id="1zO-G7-oxR"/>
+                            <constraint firstItem="Nj6-1P-46a" firstAttribute="leading" secondItem="OHB-sN-lEJ" secondAttribute="leading" id="3tH-IO-unc"/>
+                            <constraint firstItem="LK4-fG-PyS" firstAttribute="leading" secondItem="OHB-sN-lEJ" secondAttribute="leading" constant="38" id="6bQ-Nm-FKn"/>
+                            <constraint firstItem="Ltm-XE-uXL" firstAttribute="leading" secondItem="EOD-jr-M1A" secondAttribute="leading" constant="23" id="E0l-ge-ALw"/>
+                            <constraint firstItem="Ltm-XE-uXL" firstAttribute="top" secondItem="Nj6-1P-46a" secondAttribute="bottom" constant="10" id="KcP-Wc-VGl"/>
+                            <constraint firstItem="Nj6-1P-46a" firstAttribute="trailing" secondItem="OHB-sN-lEJ" secondAttribute="trailing" id="Qat-t6-NuI"/>
+                            <constraint firstAttribute="trailing" secondItem="Ltm-XE-uXL" secondAttribute="trailing" constant="23" id="Sjz-9n-pE1"/>
+                            <constraint firstItem="Ltm-XE-uXL" firstAttribute="centerX" secondItem="EOD-jr-M1A" secondAttribute="centerX" id="iw4-IN-j9d"/>
+                            <constraint firstItem="Nj6-1P-46a" firstAttribute="top" secondItem="EOD-jr-M1A" secondAttribute="top" id="sFf-AF-x8X"/>
+                        </constraints>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FXb-h1-PNv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SvK-gj-1Ut" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1805" y="359"/>
+            <point key="canvasLocation" x="1399.2366412213739" y="-35.211267605633807"/>
         </scene>
     </scenes>
     <resources>
+        <image name="BackTop" width="134" height="65.666664123535156"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
