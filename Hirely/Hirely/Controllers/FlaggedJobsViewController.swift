@@ -57,6 +57,20 @@ extension FlaggedJobsViewController{
         let status = flagStatuses[indexPath.row]
 
         cell?.configureBadge(for: status)
+        
+        cell?.parentViewController = self //pass view controller to cell
+
         return cell!
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let cell = sender as? FlaggedJobsTableViewCell,
+           let _ = flaggedJob.indexPath(for: cell){
+            if segue.identifier == "goToFlagInfo"{
+                if segue.destination is FlagDetailsViewController{
+                    //passing data
+                }
+            }
+        }
     }
 }

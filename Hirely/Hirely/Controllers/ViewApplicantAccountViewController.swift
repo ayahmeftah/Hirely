@@ -8,13 +8,20 @@
 import UIKit
 
 class ViewApplicantAccountViewController: UIViewController {
-
+    
+    
+    @IBOutlet weak var actionBtn: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func selectAction(_ sender: UIAction){
+        print(sender.title)
+        self.actionBtn.setTitle(sender.title, for: .normal)
+    }
 
     /*
     // MARK: - Navigation

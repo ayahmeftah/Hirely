@@ -49,7 +49,19 @@ extension ReportedJobsViewController{
         
         cell?.reportediInit(companies[indexPath.row], jobs[indexPath.row], image)
         cell?.backgroundColor = .clear
+        cell?.parentViewController = self //pass view controller to cell
         return cell!
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let cell = sender as? ReportedJobsTableViewCell,
+           let _ = reportedJobs.indexPath(for: cell){
+            if segue.identifier == "goToReportDetails"{
+                if segue.destination is ReportedPostDetailsViewController{
+                    //passing data
+                }
+            }
+        }
     }
     
 }

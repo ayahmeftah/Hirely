@@ -51,7 +51,19 @@ extension ManageJobSeekersAccViewController{
         let status = accountStatuses[indexPath.row]
 
         cell?.configureBadge(for: status)
+        cell?.parentViewController = self //pass view controller to cell
 
         return cell!
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let cell = sender as? ManageJobSeekersAccTableViewCell,
+           let _ = jobSeekers.indexPath(for: cell){
+            if segue.identifier == "goToApplicantDetails"{
+                if segue.destination is ViewApplicantAccountViewController{
+                    //passing data
+                }
+            }
+        }
     }
 }

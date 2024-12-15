@@ -15,7 +15,17 @@ class ManageEmployersTableViewCell: UITableViewCell {
     
     @IBOutlet weak var employerAccStatus: UILabel!
     
+    weak var parentViewController: UIViewController? //reference the parent view controller
     
+    @IBAction func buttonTapped(_ sender:UIButton){
+        switch sender.tag{
+        case 1:
+            parentViewController?.performSegue(withIdentifier: "goToEmployerAccount", sender: self)
+        default:
+            print("Unhandled button tapped")
+        }
+
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -15,6 +15,18 @@ class ReportedJobsTableViewCell: UITableViewCell {
     
     @IBOutlet weak var companyName: UILabel!
     
+    weak var parentViewController: UIViewController? //reference the parent view controller
+    
+    @IBAction func buttonTapped(_ sender:UIButton){
+        switch sender.tag{
+        case 1:
+            parentViewController?.performSegue(withIdentifier: "goToReportDetails", sender: self)
+        default:
+            print("Unhandled button tapped")
+        }
+
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // round image

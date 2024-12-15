@@ -50,7 +50,23 @@ extension ViewJobsViewController{
         let cell = tableView.dequeueReusableCell(withIdentifier: "customJob", for: indexPath) as? ViewJobsAdminTableViewCell
         cell?.postInit(companies[indexPath.row], jobTypes[indexPath.row], jobs[indexPath.row], imageName)
         cell?.backgroundColor = .clear
+        cell?.parentViewController = self //pass view controller to cell
         return cell!
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let cell = sender as? ViewJobsAdminTableViewCell,
+           let _ = jobPosts.indexPath(for: cell){
+            if segue.identifier == "goToJobDetails"{
+                if segue.destination is ViewPostDeatilsAdminViewController{
+                    //passing data
+                }
+            }else if segue.identifier == "goToFlagJob"{
+                if segue.destination is FlagPostViewController{
+                    //passing data
+                }
+            }
+        }
     }
     
 }

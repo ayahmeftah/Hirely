@@ -15,6 +15,18 @@ class ManageJobSeekersAccTableViewCell: UITableViewCell {
     
     @IBOutlet weak var jobSeekerAccStatus: UILabel!
     
+    weak var parentViewController: UIViewController? //reference the parent view controller
+
+    @IBAction func buttonTapped(_ sender:UIButton){
+        switch sender.tag{
+        case 1:
+            parentViewController?.performSegue(withIdentifier: "goToApplicantDetails", sender: self)
+        default:
+            print("Unhandled button tapped")
+        }
+
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Round image

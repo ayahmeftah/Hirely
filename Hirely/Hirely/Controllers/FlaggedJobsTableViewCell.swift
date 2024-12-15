@@ -17,6 +17,18 @@ class FlaggedJobsTableViewCell: UITableViewCell {
     
     @IBOutlet weak var postStatus: UILabel!
     
+    weak var parentViewController: UIViewController? //reference the parent view controller
+    
+    @IBAction func buttonTapped(_ sender:UIButton){
+        switch sender.tag{
+        case 1:
+            parentViewController?.performSegue(withIdentifier: "goToFlagInfo", sender: self)
+        default:
+            print("Unhandled button tapped")
+        }
+
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Round image

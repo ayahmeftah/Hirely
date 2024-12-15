@@ -58,7 +58,18 @@ extension ManageEmployersViewController{
         let status = accountStatuses[indexPath.row]
 
         cell?.configureBadge(for: status)
-
+        cell?.parentViewController = self //pass view controller to cell
         return cell!
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let cell = sender as? ManageEmployersTableViewCell,
+           let _ = employersTableView.indexPath(for: cell){
+            if segue.identifier == "goToEmployerAccount"{
+                if segue.destination is EmployerAccountDetailsViewController{
+                    //passing data
+                }
+            }
+        }
     }
 }

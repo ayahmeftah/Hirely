@@ -15,6 +15,9 @@ class EmployerAccountDetailsViewController: UIViewController {
     
     @IBOutlet weak var editPostingsBtn: UIButton!
     
+    
+    @IBOutlet weak var selectActionBtn: UIButton!
+    
     var isAddChecked = true
     var isDeleteChecked = true
     var isEditChecked = true
@@ -72,6 +75,10 @@ class EmployerAccountDetailsViewController: UIViewController {
         
     }
 
+    @IBAction func actionSelection(_ sender: UIAction){
+        print(sender.title)
+        self.selectActionBtn.setTitle(sender.title, for: .normal)
+    }
 
     
 
