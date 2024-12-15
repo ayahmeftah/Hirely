@@ -33,7 +33,12 @@ class EditJobPostViewController: UIViewController, UITextFieldDelegate, UIPicker
         "Zallaq", "Amwaj Islands", "Duraz", "Tubli", "Seef",
         "Hoora", "Adliya", "Juffair", "Salmaniya", "Diyar Al Muharraq"
     ]
+    
+    
+    var selectedSkills: [String] = ["Teamwork", "Python"] // Pre-selected skills
 
+    @IBOutlet weak var editSkillsButton: UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,6 +54,11 @@ class EditJobPostViewController: UIViewController, UITextFieldDelegate, UIPicker
             print("One or more sliders/labels are nil")
         }
     }
+
+    @IBAction func editSkillsTapped(_ sender: Any) {
+        openSkillsSelection()
+    }
+    
     
     func setupPickerView() {
             // Create the container view
@@ -129,5 +139,48 @@ class EditJobPostViewController: UIViewController, UITextFieldDelegate, UIPicker
         selectExperienceBtn.setTitle(title, for: .normal)
     }
     
+    func openSkillsSelection() {
+            let skillsVC = SkillsSelectionViewController()
+            skillsVC.skills =  ["Communication",
+        "Teamwork",
+        "Problem-solving",
+        "Time Management",
+        "Leadership",
+        "Adaptability",
+        "Attention to Detail",
+        "Critical Thinking",
+        "Customer Service",
+        "Planning",
+        "Multitasking",
+        "Basic Computer Skills",
+        "Microsoft Office",
+        "Data Analysis",
+        "Cloud Computing",
+        "Technical Support",
+        "Cybersecurity",
+        "SQL",
+        "Troubleshooting",
+        "Python",
+        "HTML/CSS",
+        "JavaScript",
+        "Networking",
+        "IT Project Management",
+        "System Administration",
+        "Version Control (Git)",
+        "Software Installation",
+        "Technical Writing",
+        "UI/UX Design"]
+            skillsVC.selectedSkills = selectedSkills
+            
+            // Callback to handle selected skills
+            skillsVC.onSkillsSelected = { [weak self] selected in
+                self?.selectedSkills = selected
+                print("Selected Skills: \(selected)")
+            }
+        // Set presentation style to full screen
+        skillsVC.modalPresentationStyle = .fullScreen
+
+            present(skillsVC, animated: true, completion: nil)
+        }
     
 }

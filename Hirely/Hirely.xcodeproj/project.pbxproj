@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C4B28DB2D0F04B600A5DE73 /* SkillsSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4B28DA2D0F04B600A5DE73 /* SkillsSelectionViewController.swift */; };
 		2C5217D22D046A4200C1040D /* ReviewApplicationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5217D12D046A4200C1040D /* ReviewApplicationsViewController.swift */; };
 		2C5217D52D046C0600C1040D /* ApplicationsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C5217D42D046C0600C1040D /* ApplicationsTableViewCell.xib */; };
 		2C5217D62D046C0600C1040D /* ApplicationsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5217D32D046C0600C1040D /* ApplicationsTableViewCell.swift */; };
@@ -55,6 +56,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2C4B28DA2D0F04B600A5DE73 /* SkillsSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillsSelectionViewController.swift; sourceTree = "<group>"; };
 		2C5217D12D046A4200C1040D /* ReviewApplicationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewApplicationsViewController.swift; sourceTree = "<group>"; };
 		2C5217D32D046C0600C1040D /* ApplicationsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationsTableViewCell.swift; sourceTree = "<group>"; };
 		2C5217D42D046C0600C1040D /* ApplicationsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ApplicationsTableViewCell.xib; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 				2C6199852D0C6C3E001DBF1F /* EditInterviewViewController.swift */,
 				2C6199872D0C6D53001DBF1F /* EditJobPostViewController.swift */,
 				2C6199892D0CA7EA001DBF1F /* InterviewDetailsViewController.swift */,
+				2C4B28DA2D0F04B600A5DE73 /* SkillsSelectionViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -362,6 +365,7 @@
 				2C5217D22D046A4200C1040D /* ReviewApplicationsViewController.swift in Sources */,
 				71BEBCDE2CFC502900DF795E /* AppDelegate.swift in Sources */,
 				2C6199862D0C6C3E001DBF1F /* EditInterviewViewController.swift in Sources */,
+				2C4B28DB2D0F04B600A5DE73 /* SkillsSelectionViewController.swift in Sources */,
 				71BEBCE02CFC502900DF795E /* SceneDelegate.swift in Sources */,
 				2C61998A2D0CA7EA001DBF1F /* InterviewDetailsViewController.swift in Sources */,
 			);
