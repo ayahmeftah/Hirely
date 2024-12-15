@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2C4B28DB2D0F04B600A5DE73 /* SkillsSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4B28DA2D0F04B600A5DE73 /* SkillsSelectionViewController.swift */; };
+		2C4B28E52D0F7B6500A5DE73 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 2C4B28E42D0F7B6500A5DE73 /* FirebaseFirestore */; };
 		2C5217D22D046A4200C1040D /* ReviewApplicationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5217D12D046A4200C1040D /* ReviewApplicationsViewController.swift */; };
 		2C5217D52D046C0600C1040D /* ApplicationsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C5217D42D046C0600C1040D /* ApplicationsTableViewCell.xib */; };
 		2C5217D62D046C0600C1040D /* ApplicationsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5217D32D046C0600C1040D /* ApplicationsTableViewCell.swift */; };
@@ -94,6 +95,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C9302FA2CFC9EDF00CAD615 /* FirebaseDatabase in Frameworks */,
+				2C4B28E52D0F7B6500A5DE73 /* FirebaseFirestore in Frameworks */,
 				2C9302F82CFC9EDF00CAD615 /* FirebaseAuth in Frameworks */,
 				2C9303002CFCBE2500CAD615 /* Cloudinary in Frameworks */,
 			);
@@ -228,6 +230,7 @@
 				2C9302F72CFC9EDF00CAD615 /* FirebaseAuth */,
 				2C9302F92CFC9EDF00CAD615 /* FirebaseDatabase */,
 				2C9302FF2CFCBE2500CAD615 /* Cloudinary */,
+				2C4B28E42D0F7B6500A5DE73 /* FirebaseFirestore */,
 			);
 			productName = Hirely;
 			productReference = 71BEBCDA2CFC502900DF795E /* Hirely.app */;
@@ -731,6 +734,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		2C4B28E42D0F7B6500A5DE73 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2C9302F62CFC9EDF00CAD615 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
 		2C9302F72CFC9EDF00CAD615 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 2C9302F62CFC9EDF00CAD615 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

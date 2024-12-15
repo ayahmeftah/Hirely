@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import FirebaseFirestore
+
 
 class AddJobPostingViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
     
@@ -87,6 +89,9 @@ class AddJobPostingViewController: UIViewController, UITextFieldDelegate, UIPick
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //database reference
+        let db = Firestore.firestore()
+
         setupPickerView()
         // Safely set slider values and labels
         if let minSlider = minSalarySlider, let maxSlider = maxSalarySlider,

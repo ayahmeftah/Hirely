@@ -8,7 +8,6 @@
 import UIKit
 import Cloudinary
 
-
 class ViewController: UIViewController {
     
     //    let cloudName: String = "drkt3vace"
