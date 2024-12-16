@@ -7,7 +7,7 @@
 
 import UIKit
 
-class personalInfoViewController: UIViewController, UITextViewDelegate {
+class personalInfoViewController: UITableViewController, UITextViewDelegate {
     
     // MARK: - Properties
     var cvData: CVData? // CVData object to pass data between screens
@@ -28,44 +28,72 @@ class personalInfoViewController: UIViewController, UITextViewDelegate {
         professionalSummaryTextView.delegate = self
     }
     
-    // MARK: - Actions
-    @IBAction func nextButtonTapped(_ sender: Any) {
+//    @IBAction func nextButtonTapped(_ sender: UIBarButtonItem) {
+//        print("tapped")
+//        performSegue(withIdentifier: "toExperienceScreen", sender: self)
+//        
+//    }
+
+   
+    //MARK: - Actions
+    @IBAction func nextButtonTapped2(_ sender: Any) {
         // Validate input fields
-        guard let name = nameTextField.text, !name.isEmpty,
-              let phoneNumber = phoneNumberTextField.text, !phoneNumber.isEmpty,
-              let email = emailTextField.text, !email.isEmpty else {
-            showAlert(title: "Missing Information", message: "Please fill out all fields before proceeding.")
-            return
-        }
-        
-        // Initialize cvData if nil
-        if cvData == nil {
-            cvData = CVData()
-        }
-        
-        // Update CVData with personal info
-        cvData?.personalInfo = CVData.PersonalInfo(
-            name: name,
-            email: email,
-            phoneNumber: phoneNumber,
-            professionalSummary: professionalSummaryTextView.text == "Write a short professional summary..." ? "" : professionalSummaryTextView.text
-        )
-        
-        // Debug: Print updated cvData
-        print("Updated CV Data (Personal Info): \(String(describing: cvData?.personalInfo))")
-        
-        // Navigate to the Skills Screen
-        performSegue(withIdentifier: "toSkillsScreen", sender: self)
+            guard let name = nameTextField.text, !name.isEmpty,
+                  let phoneNumber = phoneNumberTextField.text, !phoneNumber.isEmpty,
+                  let email = emailTextField.text, !email.isEmpty else {
+                showAlert(title: "Missing Information", message: "Please fill out all fields before proceeding.")
+                return
+            }
+
+            print("Next button tapped") // Debug log
+
+            // Explicitly initialize cvData
+            let personalInfo = CVData.PersonalInfo(
+                name: name,
+                email: email,
+                phoneNumber: phoneNumber,
+                professionalSummary: professionalSummaryTextView.text == "Write a short professional summary..." ? "" : professionalSummaryTextView.text
+            )
+
+            if cvData == nil {
+                cvData = CVData()
+            }
+
+            // Update CVData with personal info
+            cvData?.personalInfo = personalInfo
+
+            // Debug: Print updated cvData
+            print("Updated CV Data: \(String(describing: cvData))")
+
+            // Trigger the segue
+            performSegue(withIdentifier: "toExperienceScreen", sender: self)
     }
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toSkillsScreen", // Match the segue identifier
-           let destinationVC = segue.destination as? skillsViewController { // Cast to SkillsViewController
-            destinationVC.cvData = self.cvData // Pass the cvData object
-            print("Passing CV Data to SkillsViewController: \(String(describing: cvData))")
-        }
+        print("Preparing for segue: \(segue.identifier ?? "No identifier")")
+
+           if segue.identifier == "toExperienceScreen" {
+               if let destinationVC = segue.destination as? expViewController {
+                   if cvData == nil {
+                       // Create cvData explicitly
+                       cvData = CVData()
+                       cvData?.personalInfo = CVData.PersonalInfo(
+                           name: nameTextField.text ?? "",
+                           email: emailTextField.text ?? "",
+                           phoneNumber: phoneNumberTextField.text ?? "",
+                           professionalSummary: professionalSummaryTextView.text == "Write a short professional summary..." ? "" : professionalSummaryTextView.text
+                       )
+                   }
+                   destinationVC.cvData = self.cvData
+                   print("CV Data passed to expViewController: \(String(describing: cvData))")
+               } else {
+                   print("Destination VC could not be cast to expViewController")
+               }
+           }
     }
+
+
     
     // MARK: - UITextViewDelegate
     func textViewDidBeginEditing(_ textView: UITextView) {

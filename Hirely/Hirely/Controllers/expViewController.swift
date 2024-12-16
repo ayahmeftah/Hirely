@@ -7,7 +7,7 @@
 
 import UIKit
 
-class expViewController: UIViewController {
+class expViewController: UITableViewController, UITextViewDelegate {
     
     // MARK: - Properties
     var cvData: CVData? // Property to hold the data passed from PersonalInfoViewController, SkillsViewController
@@ -17,11 +17,15 @@ class expViewController: UIViewController {
     @IBOutlet weak var companyTextField: UITextField!
     @IBOutlet weak var fromDateTextField: UITextField!
     @IBOutlet weak var toDateTextField: UITextField!
-    @IBOutlet weak var descriptionTextField: UITextField!
+   @IBOutlet weak var descriptionTextField: UITextField!
 
+ //  @IBOutlet weak var descriptionTextField: UITextView!
+    
     // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Debug: Verify cvData
+               print("Received CV Data: \(String(describing: cvData))")
         setupUI()
     }
 
@@ -32,30 +36,56 @@ class expViewController: UIViewController {
 
     // MARK: - Actions
     @IBAction func nextButtonTapped(_ sender: Any) {
-        // Validate input and update experience
-        guard validateInputFields() else {
-            return
-        }
-        
-        // Initialize cvData if nil
-        if cvData == nil {
-            cvData = CVData()
-        }
-        
-        // Update the experience section of cvData
-        addExperienceToCVData()
+        // Validate input fields
+                guard validateInputFields() else {
+                    return
+                }
 
-        // Perform segue to the next screen
-        performSegue(withIdentifier: "toEducationScreen", sender: self)
+                print("Next button tapped") // Debug log
+
+                // Explicitly initialize cvData if nil
+                let experience = CVData.JobExperience(
+                    title: jobTitleTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? "",
+                    company: companyTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? "",
+                    duration: "\(fromDateTextField.text ?? "") - \(toDateTextField.text ?? "")"
+                )
+
+                if cvData == nil {
+                    cvData = CVData()
+                }
+
+                // Update cvData with experience
+                cvData?.experience.append(experience)
+
+                // Debug: Print updated cvData
+                print("Updated CV Data (Experience): \(String(describing: cvData?.experience))")
+
+                // Trigger the segue
+                performSegue(withIdentifier: "toEducationScreen", sender: self)
     }
 
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toEducationScreen",
-           let destinationVC = segue.destination as? educationViewController {
-            destinationVC.cvData = self.cvData // Pass the updated cvData
-            print("Passing CV Data to EducationViewController: \(String(describing: cvData))")
-        }
+        if segue.identifier == "toEducationScreen" {
+                if let destinationVC = segue.destination as? educationViewController {
+                    // Initialize cvData if nil
+                    if cvData == nil {
+                        cvData = CVData()
+                    }
+
+                    // Add experience to cvData
+                    let experience = CVData.JobExperience(
+                        title: jobTitleTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? "",
+                        company: companyTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? "",
+                        duration: "\(fromDateTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? "") - \(toDateTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? "")"
+                    )
+                    cvData?.experience.append(experience)
+
+                    // Pass the updated cvData
+                    destinationVC.cvData = self.cvData
+                    print("Passing CV Data to educationViewController: \(String(describing: cvData))")
+                }
+            }
     }
 
     // MARK: - Helper Methods

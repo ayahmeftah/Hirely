@@ -7,7 +7,7 @@
 
 import UIKit
 
-class certiViewController: UIViewController {
+class certiViewController: UITableViewController, UITextViewDelegate {
 
     // MARK: - Properties
     var cvData: CVData? // Property to hold the data passed from previous screens
@@ -29,50 +29,60 @@ class certiViewController: UIViewController {
     // MARK: - Setup Methods
     private func setupUI() {
         // Ensure text fields are cleared or pre-populated (if needed)
-        [cert1NameTextField, cert1IssuedByTextField,
-         cert2NameTextField, cert2IssuedByTextField,
-         cert3NameTextField, cert3IssuedByTextField].forEach { $0?.text = "" }
+                [cert1NameTextField, cert1IssuedByTextField,
+                 cert2NameTextField, cert2IssuedByTextField,
+                 cert3NameTextField, cert3IssuedByTextField].forEach { $0?.text = "" }
     }
 
     // MARK: - Actions
     @IBAction func generateButtonTapped(_ sender: Any) {
-        print("Generate button tapped.") // Debugging message
+        print("Generate button tapped.") // Debugging
 
-        // Initialize cvData if nil
-        if cvData == nil {
-            cvData = CVData()
-        }
+                // Initialize cvData if nil
+                if cvData == nil {
+                    cvData = CVData()
+                }
 
-        
-        
-        
-        
-        
-        // Validate and add certifications
-        addCertification(from: cert1NameTextField, issuedBy: cert1IssuedByTextField)
-        addCertification(from: cert2NameTextField, issuedBy: cert2IssuedByTextField)
-        addCertification(from: cert3NameTextField, issuedBy: cert3IssuedByTextField)
+                // Create and add the certifications to cvData
+                addCertification(from: cert1NameTextField, issuedBy: cert1IssuedByTextField)
+                addCertification(from: cert2NameTextField, issuedBy: cert2IssuedByTextField)
+                addCertification(from: cert3NameTextField, issuedBy: cert3IssuedByTextField)
 
-        // Ensure at least one certification has been added
-        guard let certifications = cvData?.certifications, !certifications.isEmpty else {
-            showAlert(title: "Missing Certifications", message: "Please enter at least one certification before generating the CV.")
-            return
-        }
+                // Ensure at least one certification is added
+                guard let certifications = cvData?.certifications, !certifications.isEmpty else {
+                    showAlert(title: "Missing Certifications", message: "Please enter at least one certification before generating the CV.")
+                    return
+                }
 
-        // Debugging: Log updated certifications
-        print("Updated Certifications: \(certifications)")
+                // Debugging: Log updated certifications
+                print("Updated Certifications: \(certifications)")
 
-        // Navigate to the next screen
-        performSegue(withIdentifier: "toGeneratedCVScreen", sender: self)
+                // Trigger segue to the generated CV screen
+                performSegue(withIdentifier: "toGeneratedCVScreen", sender: self)
     }
 
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toGeneratedCVScreen",
-           let destinationVC = segue.destination as? generatedCvViewController {
-            destinationVC.cvData = self.cvData // Pass the updated cvData
-            print("Passing CV Data to GeneratedCVViewController: \(String(describing: self.cvData))")
-        }
+        print("Preparing for segue: \(segue.identifier ?? "No identifier")")
+
+                if segue.identifier == "toGeneratedCVScreen" {
+                    // Ensure cvData contains updated certifications
+                    if cvData == nil {
+                        cvData = CVData()
+                    }
+
+                    // Create and add the certifications to cvData
+                    addCertification(from: cert1NameTextField, issuedBy: cert1IssuedByTextField)
+//                    addCertification(from: cert2NameTextField, issuedBy: cert2IssuedByTextField)
+                   // addCertification(from: cert3NameTextField, issuedBy: cert3IssuedByTextField)
+
+                    if let destinationVC = segue.destination as? generatedCvViewController {
+                        destinationVC.cvData = self.cvData
+                        print("Passing CV Data to GeneratedCVViewController: \(String(describing: self.cvData))")
+                    } else {
+                        print("Destination VC could not be cast to GeneratedCVViewController.")
+                    }
+                }
     }
 
     // MARK: - Helper Methods

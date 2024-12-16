@@ -7,7 +7,7 @@
 
 import UIKit
 
-class educationViewController: UIViewController {
+class educationViewController: UITableViewController, UITextViewDelegate {
     
     // MARK: - Properties
     var cvData: CVData? // Property to hold the data passed from previous view controllers
@@ -31,30 +31,65 @@ class educationViewController: UIViewController {
 
     // MARK: - Actions
     @IBAction func nextButtonTapped(_ sender: Any) {
-        // Validate and update education
-        guard validateInputFields() else {
+        // Validate input fields
+        guard let degree = degreeTextField.text, !degree.isEmpty,
+              let major = majorTextField.text, !major.isEmpty,
+              let institution = institutionTextField.text, !institution.isEmpty,
+              let graduationYear = graduationYearTextField.text, !graduationYear.isEmpty else {
+            showAlert(title: "Missing Information", message: "Please fill out all fields before proceeding.")
             return
         }
-        
+
+        // Ensure graduation year is numeric
+        if Int(graduationYear) == nil {
+            showAlert(title: "Invalid Graduation Year", message: "Please enter a valid numeric graduation year.")
+            return
+        }
+
+        print("Next button tapped") // Debug log
+
         // Initialize cvData if nil
         if cvData == nil {
             cvData = CVData()
         }
-        
-        // Update the education section of cvData
-        addEducationToCVData()
 
-        // Perform segue to the next screen
+        // Create and add the education entry to cvData
+        let newEducation = CVData.Education(
+            degree: degree,
+            institution: "\(major) - \(institution)", // Combine major and institution
+            year: graduationYear
+        )
+        cvData?.education.append(newEducation)
+
+        // Debug: Print updated cvData
+        print("Updated CV Data: \(String(describing: cvData))")
+
+        // Trigger the segue
         performSegue(withIdentifier: "toCertificationsScreen", sender: self)
     }
 
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toCertificationsScreen",
-           let destinationVC = segue.destination as? certiViewController {
-            destinationVC.cvData = self.cvData // Pass the updated cvData
-            print("Passing CV Data to CertiViewController: \(String(describing: cvData))")
-        }
+        if segue.identifier == "toCertificationsScreen" {
+                if let destinationVC = segue.destination as? certiViewController {
+                    // Initialize cvData if nil
+                    if cvData == nil {
+                        cvData = CVData()
+                    }
+
+                    // Add education to cvData
+                    let education = CVData.Education(
+                        degree: degreeTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? "",
+                        institution: "\(majorTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? "") - \(institutionTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? "")",
+                        year: graduationYearTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+                    )
+                    cvData?.education.append(education)
+
+                    // Pass the updated cvData
+                    destinationVC.cvData = self.cvData
+                    print("Passing CV Data to certiViewController: \(String(describing: cvData))")
+                }
+            }
     }
 
     // MARK: - Helper Methods

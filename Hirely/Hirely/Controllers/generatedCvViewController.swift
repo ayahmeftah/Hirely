@@ -27,70 +27,102 @@ class generatedCvViewController: UIViewController {
         displayCV()
     }
 
-    // MARK: - Display CV
     private func displayCV() {
         guard let cvData = cvData else {
             cvTextView.text = "Your CV is empty. Please provide details to generate your CV."
             return
         }
 
-        var cvContent = ""
+        let cvContent = NSMutableAttributedString()
 
         // Add Personal Info
         if let personalInfo = cvData.personalInfo {
-            cvContent += """
-            Personal Information:
-            Name: \(personalInfo.name)
-            Email: \(personalInfo.email)
-            Phone: \(personalInfo.phoneNumber)
-            Summary: \(personalInfo.professionalSummary)
-            
+            cvContent.append(makeTitle("PERSONAL INFORMATION"))
+            let personalInfoLine = """
+            \(personalInfo.name) | \(personalInfo.email) | \(personalInfo.phoneNumber)
             """
+            cvContent.append(makeBody("\(personalInfoLine)\n\n"))
+
+            if !personalInfo.professionalSummary.isEmpty {
+                cvContent.append(makeSubtitle("Professional Summary"))
+                cvContent.append(makeBody("\(personalInfo.professionalSummary)\n\n"))
+            }
         }
 
         // Add Skills
         if !cvData.skills.isEmpty {
-            cvContent += "Skills:\n"
-            cvContent += cvData.skills.map { $0.name }.joined(separator: ", ") + "\n\n"
+            cvContent.append(makeTitle("SKILLS"))
+            let skills = cvData.skills.map { $0.name }.joined(separator: ", ")
+            cvContent.append(makeBody("\(skills)\n\n"))
         }
 
         // Add Experience
         if !cvData.experience.isEmpty {
-            cvContent += "Experience:\n"
+            cvContent.append(makeTitle("PROFESSIONAL EXPERIENCE"))
             for experience in cvData.experience {
-                cvContent += """
-                Title: \(experience.title)
+                cvContent.append(makeSubtitle(experience.title))
+                cvContent.append(makeBody("""
                 Company: \(experience.company)
                 Duration: \(experience.duration)
-                \n
-                """
+
+                """))
             }
         }
 
         // Add Education
         if !cvData.education.isEmpty {
-            cvContent += "Education:\n"
+            cvContent.append(makeTitle("EDUCATION"))
             for education in cvData.education {
-                cvContent += """
-                Degree: \(education.degree)
+                cvContent.append(makeSubtitle(education.degree))
+                cvContent.append(makeBody("""
                 Institution: \(education.institution)
                 Graduation Year: \(education.year)
-                \n
-                """
+
+                """))
             }
         }
 
         // Add Certifications
         if !cvData.certifications.isEmpty {
-            cvContent += "Certifications:\n"
+            cvContent.append(makeTitle("CERTIFICATIONS"))
             for certification in cvData.certifications {
-                cvContent += "\(certification.name) - Issued Year: \(certification.year)\n"
+                cvContent.append(makeSubtitle(certification.name))
+                cvContent.append(makeBody("Issued Year: \(certification.year)\n"))
             }
         }
 
-        // Update the TextView
-        cvTextView.text = cvContent.isEmpty ? "Your CV is empty. Please provide details to generate your CV." : cvContent
+        // Update the TextView with styled content
+        cvTextView.attributedText = cvContent
+        cvTextView.textAlignment = .left
     }
+
+
+    private func makeTitle(_ text: String) -> NSAttributedString {
+        let attributes: [NSAttributedString.Key: Any] = [
+            .font: UIFont.boldSystemFont(ofSize: 18),
+            .foregroundColor: UIColor.systemBlue
+        ]
+        return NSAttributedString(string: "\(text)\n", attributes: attributes)
+    }
+
+    private func makeSubtitle(_ text: String) -> NSAttributedString {
+        let attributes: [NSAttributedString.Key: Any] = [
+            .font: UIFont.boldSystemFont(ofSize: 16),
+            .foregroundColor: UIColor.black
+        ]
+        return NSAttributedString(string: "\(text)\n", attributes: attributes)
+    }
+
+    private func makeBody(_ text: String) -> NSAttributedString {
+        let attributes: [NSAttributedString.Key: Any] = [
+            .font: UIFont.systemFont(ofSize: 14),
+            .foregroundColor: UIColor.darkGray
+        ]
+        return NSAttributedString(string: text, attributes: attributes)
+    }
+
+
+
 
     // MARK: - Actions
     @IBAction func shareCVButtonTapped(_ sender: UIButton) {

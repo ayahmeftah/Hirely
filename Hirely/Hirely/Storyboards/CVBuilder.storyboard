@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3wP-bu-qOO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3wP-bu-qOO">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -290,17 +291,17 @@
             <objects>
                 <viewController id="B35-yo-Ylc" customClass="skillsViewController" customModule="Hirely" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WnF-nZ-ZnT">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Skills" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cBj-iq-0b4">
-                                <rect key="frame" x="26" y="0.0" width="53" height="26"/>
+                                <rect key="frame" x="26" y="59" width="53" height="26"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fvn-BZ-OEz">
-                                <rect key="frame" x="33" y="68" width="323" height="386"/>
+                                <rect key="frame" x="33" y="127" width="323" height="268"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -341,7 +342,7 @@
             <objects>
                 <viewController id="NWy-ks-cdn" customClass="expViewController" customModule="Hirely" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Soc-PL-SY3">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Experiences" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PD2-MY-9L4">
@@ -452,7 +453,7 @@
             <objects>
                 <viewController id="H0l-6h-DYa" customClass="educationViewController" customModule="Hirely" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ap0-nY-7cS">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Education" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JbL-Lr-RGN">
@@ -542,7 +543,7 @@
             <objects>
                 <viewController id="Gwv-4P-nGz" customClass="certiViewController" customModule="Hirely" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="p0s-hL-CTJ">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Certifications" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rnl-bw-r2f">
@@ -663,7 +664,7 @@
             <objects>
                 <viewController id="wO7-Rj-DhP" customClass="generatedCvViewController" customModule="Hirely" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="V2g-VM-UVg">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oJ3-NM-BrD">
@@ -693,10 +694,10 @@
             </objects>
             <point key="canvasLocation" x="9028" y="4"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Personal Info View Controller-->
         <scene sceneID="aUG-ma-Oop">
             <objects>
-                <tableViewController id="2ek-2X-Mxu" sceneMemberID="viewController">
+                <tableViewController id="2ek-2X-Mxu" customClass="personalInfoViewController" customModule="Hirely" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="cFi-Lw-GNU">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -823,19 +824,26 @@
                     <navigationItem key="navigationItem" id="aRs-3A-Q3u">
                         <barButtonItem key="rightBarButtonItem" title="Next" style="plain" id="Nzo-mL-3zc">
                             <connections>
-                                <segue destination="PIh-td-oFB" kind="show" id="4BC-Hg-29Q"/>
+                                <action selector="nextButtonTapped2:" destination="2ek-2X-Mxu" id="suo-8c-3Zr"/>
+                                <segue destination="PIh-td-oFB" kind="show" identifier="toExperienceScreen" id="aup-Sg-C2a"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="emailTextField" destination="SDh-VV-EKW" id="NsF-GM-mGy"/>
+                        <outlet property="nameTextField" destination="4HV-MQ-6UY" id="cw6-u4-mh5"/>
+                        <outlet property="phoneNumberTextField" destination="VNy-MK-pXt" id="eYV-m7-62p"/>
+                        <outlet property="professionalSummaryTextView" destination="9I0-rS-5bT" id="H5Y-Sg-JaF"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w11-YL-aqt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1079" y="785"/>
+            <point key="canvasLocation" x="-1317" y="785"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Exp View Controller-->
         <scene sceneID="RDN-x8-jZq">
             <objects>
-                <tableViewController id="PIh-td-oFB" sceneMemberID="viewController">
+                <tableViewController id="PIh-td-oFB" customClass="expViewController" customModule="Hirely" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="OQT-O9-h6y">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1061,7 +1069,7 @@
                                         <rect key="frame" x="0.0" y="991.66667366027832" width="393" height="139"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Lkq-St-dWB" id="0Yi-ch-iWM">
-                                            <rect key="frame" x="0.0" y="0.0" width="1024" height="139"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="139"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="goL-92-wdj">
@@ -1087,19 +1095,27 @@
                     <navigationItem key="navigationItem" id="yuC-EY-Jzf">
                         <barButtonItem key="rightBarButtonItem" title="Next" style="plain" id="11j-pW-Vgc">
                             <connections>
-                                <segue destination="6D5-EC-9ns" kind="show" id="PL0-Hd-EaW"/>
+                                <action selector="nextButtonTapped:" destination="PIh-td-oFB" id="DKH-cv-kql"/>
+                                <segue destination="6D5-EC-9ns" kind="show" identifier="toEducationScreen" id="PL0-Hd-EaW"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="companyTextField" destination="Gze-02-YOu" id="rA6-gm-ewS"/>
+                        <outlet property="descriptionTextField" destination="kgI-r3-o90" id="ua4-xx-5z9"/>
+                        <outlet property="fromDateTextField" destination="HHq-03-JZn" id="dId-2D-9JW"/>
+                        <outlet property="jobTitleTextField" destination="iER-D1-o90" id="7ov-fN-bL3"/>
+                        <outlet property="toDateTextField" destination="cdf-Wc-vRC" id="Nec-WQ-0Au"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H34-Oi-xdO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-425" y="785"/>
+            <point key="canvasLocation" x="-527" y="785"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Education View Controller-->
         <scene sceneID="CfP-95-ZMW">
             <objects>
-                <tableViewController id="6D5-EC-9ns" sceneMemberID="viewController">
+                <tableViewController id="6D5-EC-9ns" customClass="educationViewController" customModule="Hirely" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="bdY-iQ-zP6">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1288,19 +1304,26 @@
                     <navigationItem key="navigationItem" id="lxK-OD-S8B">
                         <barButtonItem key="rightBarButtonItem" title="Next" style="plain" id="UkF-4g-XLX">
                             <connections>
-                                <segue destination="faI-TN-vY0" kind="show" id="Po7-4P-6HC"/>
+                                <action selector="nextButtonTapped:" destination="6D5-EC-9ns" id="VMR-WI-ycl"/>
+                                <segue destination="faI-TN-vY0" kind="show" identifier="toCertificationsScreen" id="Po7-4P-6HC"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="degreeTextField" destination="0YO-kk-ix1" id="7fG-KZ-Zhw"/>
+                        <outlet property="graduationYearTextField" destination="xU7-36-noe" id="uon-4Y-laf"/>
+                        <outlet property="institutionTextField" destination="uNl-9h-L3Y" id="Ivk-fc-Zft"/>
+                        <outlet property="majorTextField" destination="bQs-yc-OZQ" id="QzJ-zX-fk4"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XuO-Ql-CjO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="224" y="785"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Certi View Controller-->
         <scene sceneID="zdK-zr-NKM">
             <objects>
-                <tableViewController id="faI-TN-vY0" sceneMemberID="viewController">
+                <tableViewController id="faI-TN-vY0" customClass="certiViewController" customModule="Hirely" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="SX7-hs-YQf">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1474,10 +1497,15 @@
                     <navigationItem key="navigationItem" id="nRa-oc-8JP">
                         <barButtonItem key="rightBarButtonItem" title="Generate" style="plain" id="jlL-xp-CcJ">
                             <connections>
-                                <segue destination="BbI-dD-25a" kind="show" id="iwA-15-RXL"/>
+                                <action selector="generateButtonTapped:" destination="faI-TN-vY0" id="tqW-Si-w42"/>
+                                <segue destination="BbI-dD-25a" kind="show" identifier="toGeneratedCVScreen" id="iwA-15-RXL"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="cert1IssuedByTextField" destination="9Fl-kK-pfi" id="XRD-ck-npf"/>
+                        <outlet property="cert1NameTextField" destination="LYm-fa-k9x" id="7zQ-oj-fjS"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fx7-Le-bGB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1496,6 +1524,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Exit"/>
+                                <connections>
+                                    <action selector="shareCVButtonTapped:" destination="BbI-dD-25a" eventType="touchUpInside" id="EMs-g8-oBT"/>
+                                </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="XQK-eT-Qh2">
                                 <rect key="frame" x="28" y="103" width="335" height="660"/>
@@ -1516,7 +1547,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Bg-0i-cZr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1567" y="785"/>
+            <point key="canvasLocation" x="1671" y="785"/>
         </scene>
     </scenes>
     <resources>
@@ -1528,7 +1559,7 @@
             <color red="1" green="0.79199999570846558" blue="0.15700000524520874" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
