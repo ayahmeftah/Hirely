@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XfE-uF-fK7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XfE-uF-fK7">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -127,9 +128,10 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="DBq-Z3-xGI">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="rpy-xn-Msv">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="rpy-xn-Msv">
                                 <rect key="frame" x="0.0" y="253.33333333333331" width="393" height="598.66666666666674"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="sectionIndexBackgroundColor" red="0.91008210180000004" green="0.91728574039999999" blue="0.93333584069999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="sectionIndexTrackingBackgroundColor" red="0.91008210180000004" green="0.91728574039999999" blue="0.93333584069999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ResourceCell" rowHeight="161" id="WhR-kM-uZB" customClass="ResourceTableViewCell" customModule="Hirely" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="393" height="161"/>
@@ -138,7 +140,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="161"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vbn-7n-eN2">
+                                                <view contentMode="scaleAspectFit" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vbn-7n-eN2">
                                                     <rect key="frame" x="20" y="21" width="353" height="119"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" red="0.25257447360000002" green="0.56232458350000003" blue="0.83164590599999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -188,8 +190,10 @@
                                                 <constraint firstItem="Uhb-83-eiO" firstAttribute="leading" secondItem="F84-ni-qQ4" secondAttribute="leadingMargin" constant="10" id="zp2-yw-pWg"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.91008210180000004" green="0.91728574039999999" blue="0.93333584069999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <color key="tintColor" red="0.90978568790000003" green="0.91735887530000004" blue="0.93335336449999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
+                                            <outlet property="containerView" destination="Vbn-7n-eN2" id="e3w-yL-VXG"/>
                                             <outlet property="resourceCatLbl" destination="Bii-o3-BaZ" id="AoR-MI-onu"/>
                                             <outlet property="resourceDeleteBtn" destination="WiW-NH-aqT" id="LHs-Dd-Eum"/>
                                             <outlet property="resourceTitle" destination="brM-Iu-9bn" id="vh3-yJ-S95"/>
@@ -228,6 +232,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="K6D-30-3TN"/>
+                    <connections>
+                        <outlet property="tableView" destination="rpy-xn-Msv" id="YQ1-mN-eXC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="84U-6P-E1a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -498,7 +505,7 @@
             <objects>
                 <tableViewController id="Des-TW-GsW" customClass="AddEditResourceTableViewController" customModule="Hirely" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" sectionIndexMinimumDisplayRowCount="-1" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="8iK-I2-QiU">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <sections>
@@ -894,7 +901,7 @@
         <image name="bookmark" catalog="system" width="110" height="128"/>
         <image name="courses" width="186" height="165"/>
         <image name="coverLetter" width="187" height="249"/>
-        <image name="trash.fill" catalog="system" width="117" height="128"/>
+        <image name="trash.fill" catalog="system" width="119" height="128"/>
         <image name="videos" width="187" height="249"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

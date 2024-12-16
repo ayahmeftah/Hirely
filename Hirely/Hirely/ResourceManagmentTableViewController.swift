@@ -7,20 +7,67 @@
 
 import UIKit
 
-class ResourceManagmentTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    var resources: [Resource]=[Resource(title: "how to prepare for an interview", category: "video", link: "uhfuhuhfguhrfuhruh")]
+class ResourceManagmentTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource,UISearchBarDelegate {
+    var resources: [Resource] = []
+    var filteredResources: [Resource] = [] // For search results
     
     
-    @IBOutlet var tableView: UITableView!
+    @IBOutlet weak var tableView: UITableView!
     
-    //@IBOutlet weak var resourceCatText: UILabel!
+    @IBOutlet weak var deleteBtn: UIButton!
+    
+    @IBOutlet weak var resourceCatText: UILabel!
+    
+    //@IBOutlet weak var tableView: UITableView!
+    
+    @IBOutlet weak var resourcecat: UILabel!
+    
+   @IBOutlet weak var titleText: UILabel!
     
     
     
-   // @IBOutlet weak var titleText: UILabel!
+    @IBAction func deleteButtonTapped(_ sender: Any) {
+        // Determine the button's position within the table view
+        let buttonPosition = (sender as AnyObject).convert(CGPoint.zero, to: tableView)
+            guard let indexPath = tableView.indexPathForRow(at: buttonPosition) else {
+                showAlert(title: "Error", message: "Unable to find the cell to delete.")
+                return
+            }
+
+            // Confirm Deletion Alert
+            let alert = UIAlertController(
+                title: "Confirm Deletion",
+                message: "Are you sure you want to delete this resource?",
+                preferredStyle: .alert
+            )
+
+            // Add "Delete" action
+            alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { _ in
+                // Perform the deletion
+                self.resources.remove(at: indexPath.row)
+                self.filteredResources = self.resources // Sync filtered resources
+                self.tableView.deleteRows(at: [indexPath], with: .fade)
+
+                // Save updated resources
+                Resource.saveResources(self.resources)
+
+                // Success feedback
+                self.showAlert(title: "Deleted", message: "Resource deleted successfully.")
+            }))
+
+            // Add "Cancel" action
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+
+            // Present the alert
+            present(alert, animated: true, completion: nil)
+    }
     
-    
-    
+    private func showAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
+
     
     // @IBOutlet weak var resoureTitleText: UILabel!
    // @IBOutlet weak var resourceCatText: UILabel!
@@ -28,6 +75,11 @@ class ResourceManagmentTableViewController: UIViewController, UITableViewDelegat
    // @IBOutlet weak var resoureTitleText: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        resources = Resource.loadResources() ?? []
+                  filteredResources = resources // Initially, show all resources
+                  
+                  // Setup Search Bar
+                  setupSearchBar()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -36,6 +88,26 @@ class ResourceManagmentTableViewController: UIViewController, UITableViewDelegat
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
     }
+    private func setupSearchBar() {
+            let searchBar = UISearchBar()
+            searchBar.placeholder = "Search Resources"
+            searchBar.delegate = self
+            searchBar.sizeToFit() // Adjust size to fit content
+            
+            // Remove the default white background
+            searchBar.backgroundImage = UIImage() // Removes the background
+            searchBar.barTintColor = .clear // Make the bar background clear
+            searchBar.isTranslucent = true // Make the search bar translucent
+            
+            // Customize the search text field to remove its background
+            if let textField = searchBar.value(forKey: "searchField") as? UITextField {
+                textField.backgroundColor = .clear // Make the text field background clear
+                textField.textColor = .black // Set text color (adjust as needed)
+            }
+            
+            // Attach the search bar to the table's header
+            tableView.tableHeaderView = searchBar
+        }
     
 
     // MARK: - Table view data source
@@ -43,17 +115,24 @@ class ResourceManagmentTableViewController: UIViewController, UITableViewDelegat
     
     @IBAction func unwindToResourceTableView(segue: UIStoryboardSegue) {
         guard segue.identifier == "saveUnwind",
-            let sourceViewController = segue.source as? AddEditResourceTableViewController,
-            let resource = sourceViewController.resource else { return }
-        
+              let sourceViewController = segue.source as? AddEditResourceTableViewController,
+              let resource = sourceViewController.resource else { return }
+
         if let selectedIndexPath = tableView.indexPathForSelectedRow {
+            // Editing an existing resource
             resources[selectedIndexPath.row] = resource
+            filteredResources = resources // Update filtered resources
             tableView.reloadRows(at: [selectedIndexPath], with: .none)
         } else {
+            // Adding a new resource
             let newIndexPath = IndexPath(row: resources.count, section: 0)
-            resources.append(resource)
+            resources.append(resource) // Update the data source
+            filteredResources = resources // Update filtered resources
             tableView.insertRows(at: [newIndexPath], with: .automatic)
         }
+
+        // Save the updated resources
+        Resource.saveResources(resources)
     }
     
     
@@ -71,15 +150,25 @@ class ResourceManagmentTableViewController: UIViewController, UITableViewDelegat
     }
         
         
+    @IBAction func editButtonTapped(_ sender: Any) {
+        // Determine the button's position within the table view
+        let buttonPosition = (sender as AnyObject).convert(CGPoint.zero, to: tableView)
+            guard let indexPath = tableView.indexPathForRow(at: buttonPosition) else {
+                showAlert(title: "Error", message: "Unable to find the cell to edit.")
+                return
+            }
+
+            // Perform the segue programmatically
+            let cell = tableView.cellForRow(at: indexPath)
+            performSegue(withIdentifier: "addEdirResource", sender: cell)
+    }
+    
         
-        
-    func numberOfSections(in tableView: UITableView) -> Int {
-            return 1
-        }
+    
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
             if section == 0 {
-                return resources.count
+                return filteredResources.count
             } else {
                 return 0
             }
@@ -90,26 +179,19 @@ class ResourceManagmentTableViewController: UIViewController, UITableViewDelegat
             let cell = tableView.dequeueReusableCell(withIdentifier: "ResourceCell", for: indexPath) as! ResourceTableViewCell
 
             //Step 2: Fetch model object to display
-            let resource = resources[indexPath.row]
+            let resource = filteredResources[indexPath.row]
 
             //Step 3: Configure cell
             cell.update(with: resource)
             cell.showsReorderControl = true
+        
 
             //Step 4: Return cell
             return cell
         }
 
-        // Override to support editing the table view.
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-            if editingStyle == .delete {
-                // Delete the row from the data source
-                resources.remove(at: indexPath.row)
-                tableView.deleteRows(at: [indexPath], with: .fade)
-            } else if editingStyle == .insert {
-                // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-            }
-        }
+       
+    
 
         // Override to support rearranging the table view.
     func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
@@ -121,6 +203,65 @@ class ResourceManagmentTableViewController: UIViewController, UITableViewDelegat
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
             return .delete
         }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            // Show confirmation alert
+            let alert = UIAlertController(
+                title: "Confirm Deletion",
+                message: "Are you sure you want to delete this resource?",
+                preferredStyle: .alert
+            )
+            
+            // Add "Delete" action
+            alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { _ in
+                // Perform the deletion in the data source
+                self.resources.remove(at: indexPath.row)
+                self.filteredResources = self.resources // Sync filtered resources
+                
+                // Update the table view
+                tableView.deleteRows(at: [indexPath], with: .fade)
+                
+                // Save updated resources
+                Resource.saveResources(self.resources)
+                
+                // Show success alert
+                let successAlert = UIAlertController(
+                    title: "Deleted",
+                    message: "Resource deleted successfully.",
+                    preferredStyle: .alert
+                )
+                successAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                self.present(successAlert, animated: true, completion: nil)
+            }))
+            
+            // Add "Cancel" action
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            
+            // Present the alert
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText.isEmpty {
+            filteredResources = resources // Show all resources if search is cleared
+        } else {
+            filteredResources = resources.filter { resource in
+                resource.title.lowercased().contains(searchText.lowercased()) ||
+                resource.category.lowercased().contains(searchText.lowercased())
+            }
+        }
+        tableView.reloadData()
+    }
+
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.text = ""
+        searchBar.resignFirstResponder() // Dismiss the keyboard
+        filteredResources = resources
+        tableView.reloadData()
+    }
 
         
         
