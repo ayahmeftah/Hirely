@@ -8,26 +8,19 @@
 import UIKit
 import FirebaseFirestore
 
-
 class AddJobPostingViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
     
-    
     @IBOutlet weak var btn_select_jobType: UIButton!
-    
     @IBOutlet weak var btn_select_locationType: UIButton!
-    
     @IBOutlet weak var btn_select_experience: UIButton!
-    
     @IBOutlet weak var minimumLbl: UILabel!
-    
     @IBOutlet weak var maximumLbl: UILabel!
-    
     @IBOutlet weak var minSalarySlider: UISlider!
-    
     @IBOutlet weak var maxSalarySlider: UISlider!
-    
     @IBOutlet weak var chooseCityBtn: UIButton!
-    
+    @IBOutlet weak var jobTitleTxt: UITextField!
+    @IBOutlet weak var jobDescTxt: UITextView!
+        
     var pickerContainerView: UIView! // Container for the picker
     var cityPicker: UIPickerView! // Picker view
     
@@ -36,7 +29,6 @@ class AddJobPostingViewController: UIViewController, UITextFieldDelegate, UIPick
                   "Zallaq", "Amwaj Islands", "Duraz", "Tubli", "Seef",
                   "Hoora", "Adliya", "Juffair", "Salmaniya", "Diyar Al Muharraq"
     ]
-    
     
     @IBAction func minimumSlider(_ sender: UISlider) {
         // Update the minimum salary label
@@ -48,50 +40,9 @@ class AddJobPostingViewController: UIViewController, UITextFieldDelegate, UIPick
         let maxSalary = Int(sender.value)
         maximumLbl.text = "\(maxSalary) BHD"
     }
-    
-    var selectedSkills: [String] = [] // To store selected skills
-    
-    @IBOutlet weak var selectSkillsButton: UIButton!
-    // MARK: - Data
-    
-//    let allSkills = [
-//        "Communication",
-//        "Teamwork",
-//        "Problem-solving",
-//        "Time Management",
-//        "Leadership",
-//        "Adaptability",
-//        "Attention to Detail",
-//        "Critical Thinking",
-//        "Customer Service",
-//        "Planning",
-//        "Multitasking",
-//        "Basic Computer Skills",
-//        "Microsoft Office",
-//        "Data Analysis",
-//        "Cloud Computing",
-//        "Technical Support",
-//        "Cybersecurity",
-//        "SQL",
-//        "Troubleshooting",
-//        "Python",
-//        "HTML/CSS",
-//        "JavaScript",
-//        "Networking",
-//        "IT Project Management",
-//        "System Administration",
-//        "Version Control (Git)",
-//        "Software Installation",
-//        "Technical Writing",
-//        "UI/UX Design"
-//    ]
-
+        
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //database reference
-        let db = Firestore.firestore()
-
         setupPickerView()
         // Safely set slider values and labels
         if let minSlider = minSalarySlider, let maxSlider = maxSalarySlider,
@@ -105,11 +56,6 @@ class AddJobPostingViewController: UIViewController, UITextFieldDelegate, UIPick
         }
     }
     
-    @IBAction func selectSkillsTapped(_ sender: UIButton) {
-        openSkillsSelection()
-    }
-    
-
     func setupPickerView() {
         // Create the container view
         pickerContainerView = UIView(frame: CGRect(x: 0, y: view.frame.height, width: view.frame.width, height: 250))
@@ -164,8 +110,6 @@ class AddJobPostingViewController: UIViewController, UITextFieldDelegate, UIPick
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return cities[row]
     }
- 
-    
     
     @IBAction func jobTypeSelection(_ sender: UIAction){
         self.btn_select_jobType.setTitle(sender.title, for: .normal)
@@ -178,54 +122,23 @@ class AddJobPostingViewController: UIViewController, UITextFieldDelegate, UIPick
     @IBAction func experienceLevelSelection(_ sender: UIAction){
         self.btn_select_experience.setTitle(sender.title, for: .normal)
     }
-    
-    func openSkillsSelection() {
-            let skillsVC = SkillsSelectionViewController()
-            skillsVC.skills =  ["Communication",
-        "Teamwork",
-        "Problem-solving",
-        "Time Management",
-        "Leadership",
-        "Adaptability",
-        "Attention to Detail",
-        "Critical Thinking",
-        "Customer Service",
-        "Planning",
-        "Multitasking",
-        "Basic Computer Skills",
-        "Microsoft Office",
-        "Data Analysis",
-        "Cloud Computing",
-        "Technical Support",
-        "Cybersecurity",
-        "SQL",
-        "Troubleshooting",
-        "Python",
-        "HTML/CSS",
-        "JavaScript",
-        "Networking",
-        "IT Project Management",
-        "System Administration",
-        "Version Control (Git)",
-        "Software Installation",
-        "Technical Writing",
-        "UI/UX Design"]
-            skillsVC.selectedSkills = selectedSkills
-            
-            // Callback to handle selected skills
-            skillsVC.onSkillsSelected = { [weak self] selected in
-                self?.selectedSkills = selected
-                print("Selected Skills: \(selected)")
-            }
-        // Set presentation style to full screen
-        skillsVC.modalPresentationStyle = .fullScreen
 
-            present(skillsVC, animated: true, completion: nil)
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToPosting" {
+            if let destinationVC = segue.destination as? PostingJobViewController {
+                // Pass the data to the next screen
+                destinationVC.jobTitle = jobTitleTxt.text
+                destinationVC.jobType = btn_select_jobType.currentTitle
+                destinationVC.jobLocationType = btn_select_locationType.currentTitle
+                destinationVC.jobCity = chooseCityBtn.currentTitle
+                destinationVC.experienceLevel = btn_select_experience.currentTitle
+                destinationVC.minSalary = Int(minSalarySlider.value)
+                destinationVC.maxSalary = Int(maxSalarySlider.value)
+                destinationVC.jobDescription = jobDescTxt.text
+            }
         }
-    
     }
-    
-    
     /*
      // MARK: - Navigation
      
@@ -236,4 +149,5 @@ class AddJobPostingViewController: UIViewController, UITextFieldDelegate, UIPick
      }
      */
     
-
+    
+}

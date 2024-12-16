@@ -32,12 +32,6 @@ class CustomJobPostTableViewCell: UITableViewCell {
     
     @IBOutlet weak var companyImage: UIImageView!
     
-    @IBOutlet weak var unhideIcon: UIImageView!
-    
-    @IBOutlet weak var deleteIcon: UIImageView!
-    
-    @IBOutlet weak var editIcon: UIImageView!
-    
     @IBOutlet weak var jobTitleLbl: UILabel!
     
     @IBOutlet weak var companyLbl: UILabel!
@@ -59,7 +53,6 @@ class CustomJobPostTableViewCell: UITableViewCell {
     }
     
     
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Round image
@@ -74,22 +67,13 @@ class CustomJobPostTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func commonInit(_ company: String, _ companyImg: String, _ jobTitle: String, _ jobType: String){
-        
+    func commonInit(_ company: String, _ companyImg: String, _ jobTitle: String, _ jobType: String, _ datePosted: String, _ deadlineDate: String, _ applicantsCount: String){
         companyImage.image = UIImage(named: companyImg)
-        
-//        unhideIcon.image = UIImage(named: hideIcon)
-//        
-//        deleteIcon.image = UIImage(named: trashIcon)
-//        
-//        editIcon.image = UIImage(named: penIcon)
-        
         companyLbl.text = company
         jobTitleLbl.text = jobTitle
         jobTypeLbl.text = jobType
+        postedLbl.text = datePosted
+        deadlineLbl.text = deadlineDate
+        applicantsLbl.text = applicantsCount
     }
-    
-
-
-    
 }

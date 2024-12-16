@@ -11,14 +11,36 @@ class JobDetailsViewController: UIViewController {
 
     @IBOutlet weak var mainStackView: UIStackView!
     
+    @IBOutlet weak var companyImage: UIImageView!
+    
+    @IBOutlet weak var companyNameLabel: UILabel!
+    
+    @IBOutlet weak var postedDateLabel: UILabel!
+    
+    @IBOutlet weak var deadlineDateLabel: UILabel!
+    
+    @IBOutlet weak var contactEmailLabel: UILabel!
+    
+    @IBOutlet weak var jobTitleLabel: UILabel!
+    
+    @IBOutlet weak var jobTypeLabel: UILabel!
+    
+    @IBOutlet weak var locationTypeLabel: UILabel!
+    
+    @IBOutlet weak var cityLabel: UILabel!
+    
+    @IBOutlet weak var experienceLevelLabel: UILabel!
+    
+    @IBOutlet weak var jobDescriptionLabel: UILabel!
+    
+    @IBOutlet weak var jobRequirementsLabel: UILabel!
+    
+    // MARK: - Data Property
+    var jobPosting: JobPosting? // Selected Job Data
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let skills = ["C++", "Azure Cloud Services", "Problem-solving","Python","critical thinking", "sql","AWS", "C#","Oracle", "web devlopment"]
-        for skill in skills {
-            addSkill(skill)
-        }
-
+        setupUI()
     }
     
     func addSkill(_ skill: String) {
@@ -53,6 +75,28 @@ class JobDetailsViewController: UIViewController {
         mainStackView.addArrangedSubview(hStack)
         
     }
+    // MARK: - Setup UI with Job Data
+        func setupUI() {
+            guard let job = jobPosting else { return } // Ensure data is passed
+
+            // Assign values to the UI
+            companyNameLabel.text = "Microsoft Corporation"
+            jobTitleLabel.text = job.jobTitle
+            jobTypeLabel.text = job.jobType
+            locationTypeLabel.text = job.locationType
+            cityLabel.text = job.city
+            experienceLevelLabel.text = job.experienceLevel
+            jobDescriptionLabel.text = job.jobDescription
+            jobRequirementsLabel.text = job.jobRequirements
+            contactEmailLabel.text = job.contactEmail
+            postedDateLabel.text = job.postedDate
+            deadlineDateLabel.text = ("Deadline \(job.deadline)")
+            postedDateLabel.text = ("Posted \(job.postedDate)")
+            for skill in job.skills {
+                addSkill(skill)
+            }
+            companyImage.image = UIImage(named: "microsoft")
+        }
     
 
     /*
