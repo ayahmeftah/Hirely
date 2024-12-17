@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C31A9D52D11872800214FE1 /* AdminFeature.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C31A9D42D11872800214FE1 /* AdminFeature.storyboard */; };
 		2C4B28DD2D0F24BD00A5DE73 /* ViewApplicantAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4B28DC2D0F24BD00A5DE73 /* ViewApplicantAccountViewController.swift */; };
 		2C4B28DF2D0F250100A5DE73 /* FlagPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4B28DE2D0F250100A5DE73 /* FlagPostViewController.swift */; };
 		2C4B28E12D0F268000A5DE73 /* AdminDashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4B28E02D0F268000A5DE73 /* AdminDashboardViewController.swift */; };
@@ -64,6 +65,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2C31A9D42D11872800214FE1 /* AdminFeature.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AdminFeature.storyboard; sourceTree = "<group>"; };
 		2C4B28DC2D0F24BD00A5DE73 /* ViewApplicantAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewApplicantAccountViewController.swift; sourceTree = "<group>"; };
 		2C4B28DE2D0F250100A5DE73 /* FlagPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagPostViewController.swift; sourceTree = "<group>"; };
 		2C4B28E02D0F268000A5DE73 /* AdminDashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminDashboardViewController.swift; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 			children = (
 				71BEBCE32CFC502900DF795E /* Main.storyboard */,
 				71BEBCE82CFC502A00DF795E /* LaunchScreen.storyboard */,
+				2C31A9D42D11872800214FE1 /* AdminFeature.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -356,6 +359,7 @@
 				2C6940482D0655DB00823F72 /* ManageJobSeekersAccTableViewCell.xib in Resources */,
 				2C6940402D064CD800823F72 /* FlaggedJobsTableViewCell.xib in Resources */,
 				2C69403A2D06456800823F72 /* ReportedJobsTableViewCell.xib in Resources */,
+				2C31A9D52D11872800214FE1 /* AdminFeature.storyboard in Resources */,
 				2C6940302D06326500823F72 /* ViewJobsAdminTableViewCell.xib in Resources */,
 				71BEBCE72CFC502A00DF795E /* Assets.xcassets in Resources */,
 				71BEBCEA2CFC502A00DF795E /* Base in Resources */,
