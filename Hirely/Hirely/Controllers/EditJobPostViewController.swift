@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseFirestore
 
 class EditJobPostViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
     
@@ -25,6 +26,11 @@ class EditJobPostViewController: UIViewController, UITextFieldDelegate, UIPicker
     
     @IBOutlet weak var selectCityButton: UIButton!
     
+    @IBOutlet weak var jobTitleLbl: UITextField!
+    
+    @IBOutlet weak var jobDescLbl: UITextView!
+    
+  
     var pickerContainerView: UIView! // Container for the picker
     var cityPicker: UIPickerView! // Picker view
     
@@ -34,32 +40,19 @@ class EditJobPostViewController: UIViewController, UITextFieldDelegate, UIPicker
         "Hoora", "Adliya", "Juffair", "Salmaniya", "Diyar Al Muharraq"
     ]
     
-    
-    var selectedSkills: [String] = ["Teamwork", "Python"] // Pre-selected skills
+    var jobPosting: JobPosting? // The selected job data passed from previous screen
 
-    @IBOutlet weak var editSkillsButton: UIButton!
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupPickerView()
-        // Safely set slider values and labels
-        if let minSlider = minSalarySlider, let maxSlider = maxSalarySlider,
-           let minLabel = minimumLbl, let maxLabel = maximumLbl {
-            minSlider.value = 300
-            maxSlider.value = 400
-            minLabel.text = "\(Int(minSlider.value)) BHD"
-            maxLabel.text = "\(Int(maxSlider.value)) BHD"
+        if let job = jobPosting {
+            print("Job data received: \(job)")
         } else {
-            print("One or more sliders/labels are nil")
+            print("No job data received.")
         }
+        populateFields()
+        setupPickerView()
     }
-
-    @IBAction func editSkillsTapped(_ sender: Any) {
-        openSkillsSelection()
-    }
-    
-    
+  
     func setupPickerView() {
             // Create the container view
             pickerContainerView = UIView(frame: CGRect(x: 0, y: view.frame.height, width: view.frame.width, height: 250))
@@ -139,48 +132,54 @@ class EditJobPostViewController: UIViewController, UITextFieldDelegate, UIPicker
         selectExperienceBtn.setTitle(title, for: .normal)
     }
     
-    func openSkillsSelection() {
-            let skillsVC = SkillsSelectionViewController()
-            skillsVC.skills =  ["Communication",
-        "Teamwork",
-        "Problem-solving",
-        "Time Management",
-        "Leadership",
-        "Adaptability",
-        "Attention to Detail",
-        "Critical Thinking",
-        "Customer Service",
-        "Planning",
-        "Multitasking",
-        "Basic Computer Skills",
-        "Microsoft Office",
-        "Data Analysis",
-        "Cloud Computing",
-        "Technical Support",
-        "Cybersecurity",
-        "SQL",
-        "Troubleshooting",
-        "Python",
-        "HTML/CSS",
-        "JavaScript",
-        "Networking",
-        "IT Project Management",
-        "System Administration",
-        "Version Control (Git)",
-        "Software Installation",
-        "Technical Writing",
-        "UI/UX Design"]
-            skillsVC.selectedSkills = selectedSkills
-            
-            // Callback to handle selected skills
-            skillsVC.onSkillsSelected = { [weak self] selected in
-                self?.selectedSkills = selected
-                print("Selected Skills: \(selected)")
-            }
-        // Set presentation style to full screen
-        skillsVC.modalPresentationStyle = .fullScreen
-
-            present(skillsVC, animated: true, completion: nil)
-        }
     
+    @IBAction func nextButtonTapped(_ sender: UIButton) {
+        guard var job = jobPosting else { return }
+
+        // Update the `JobPosting` object with current screen changes
+        job.jobTitle = jobTitleLbl.text ?? job.jobTitle
+        job.jobType = selectJobTypeBtn.currentTitle ?? job.jobType
+        job.locationType = selectLocationBtn.currentTitle ?? job.locationType
+        job.city = selectCityButton.currentTitle ?? job.city
+        job.experienceLevel = selectExperienceBtn.currentTitle ?? job.experienceLevel
+        job.minSalary = Int(minSalarySlider.value)
+        job.maxSalary = Int(maxSalarySlider.value)
+        job.jobDescription = jobDescLbl.text ?? job.jobDescription
+        print("Job data before segue: \(job)")
+        // Pass the updated job to the next screen
+        performSegue(withIdentifier: "gotoSaveChanges", sender: job)
+
+    }
+    
+    func populateFields() {
+        guard let job = jobPosting else {
+            print("Job data not found")
+            return }
+
+        jobTitleLbl.text = job.jobTitle
+        selectJobTypeBtn.setTitle(job.jobType, for: .normal)
+        selectLocationBtn.setTitle(job.locationType, for: .normal)
+        selectCityButton.setTitle(job.city, for: .normal)
+        selectExperienceBtn.setTitle(job.experienceLevel, for: .normal)
+        print("Minimum Salary: \(job.minSalary)")
+        print("Maximum Salary: \(job.maxSalary)")
+        minSalarySlider.value = Float(job.minSalary)
+        maxSalarySlider.value = Float(job.maxSalary)
+        // Update labels
+         minimumLbl.text = "\(job.minSalary) BHD"
+         maximumLbl.text = "\(job.maxSalary) BHD"
+        jobDescLbl.text = job.jobDescription
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "gotoSaveChanges",
+           let saveVC = segue.destination as? saveJobChangesViewController,
+           let updatedJob = sender as? JobPosting {
+            saveVC.jobPosting = updatedJob
+            print("Job data before segue: \(updatedJob)")
+
+        }
+    }
+
+  
 }

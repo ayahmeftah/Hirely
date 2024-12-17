@@ -28,17 +28,12 @@ class PostingJobViewController: UIViewController, UITextViewDelegate {
     
     @IBOutlet weak var emailTxt: UITextField!
     
-    var selectedSkills: [String] = [] // To store selected skills
+    var selectedSkills: [String] = [] //save selected skills
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Set the delegate for the text view
         jobReqTxt.delegate = self
-
-        // Set initial placeholder or formatting
-        jobReqTxt.text = "1- " // Start with the first number
-
-        // Do any additional setup after loading the view.
+        jobReqTxt.text = "1- "
     }
     
     
@@ -95,9 +90,9 @@ class PostingJobViewController: UIViewController, UITextViewDelegate {
        }
     
     
-    // Save Job Posting Data to Firestore
+    //saving job post details in firestore
     func saveJobPostingToFirestore() {
-        // Gather all input data
+        //saving all input fields data
         let jobTitle = jobTitle ?? ""
         let jobType = jobType ?? "Not Selected"
         let locationType = jobLocationType ?? "Not Selected"
@@ -109,17 +104,16 @@ class PostingJobViewController: UIViewController, UITextViewDelegate {
         let jobRequirements = jobReqTxt.text ?? ""
         let deadline = daedlineDatePicker.date
         let contactEmail = emailTxt.text ?? ""
-        let datePosted = Timestamp(date: Date())
+        let datePosted = Timestamp(date: Date()) //get current date
         
-        // Convert the deadline date to a Firestore-compatible format
+        //convert deadline date to firestore format
         let deadlineTimestamp = Timestamp(date: deadline)
-        
         
         //database reference
         let db = Firestore.firestore()
         
         let jobCollection = db.collection("jobPostings")
-        // Generate a document reference with an auto-generated ID
+        //generate a document reference with auto generated id
         let newDocRef = jobCollection.document()
         
         // Data to save
@@ -140,7 +134,7 @@ class PostingJobViewController: UIViewController, UITextViewDelegate {
             "postedDate" : datePosted
         ]
         
-        // Use setData to save the document with the docId included
+        //saving the document
         newDocRef.setData(jobData) { error in
             if let error = error {
                 print("Error saving job posting: \(error.localizedDescription)")

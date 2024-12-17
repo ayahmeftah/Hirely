@@ -10,21 +10,20 @@ import FirebaseCore
 
 struct JobPosting {
     let docId: String
-    let jobTitle: String
-    let jobType: String
-    let locationType: String
-    let city: String
-    let experienceLevel: String
-    let skills: [String]
-    let postedDate: String
-    let minSalary: Int
-    let maxSalary: Int
-    let jobDescription: String
-    let jobRequirements: String
-    let contactEmail: String
-    let deadline: String
+    var jobTitle: String
+    var jobType: String
+    var locationType: String
+    var city: String
+    var experienceLevel: String
+    var skills: [String]
+    var postedDate: String
+    var minSalary: Int
+    var maxSalary: Int
+    var jobDescription: String
+    var jobRequirements: String
+    var contactEmail: String
+    var deadline: String
 
-    // Initialize from Firestore data
     init(data: [String: Any]) {
         self.docId = data["docId"] as? String ?? ""
         self.jobTitle = data["jobTitle"] as? String ?? "No Title"

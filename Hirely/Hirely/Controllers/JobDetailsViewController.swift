@@ -35,8 +35,7 @@ class JobDetailsViewController: UIViewController {
     
     @IBOutlet weak var jobRequirementsLabel: UILabel!
     
-    // MARK: - Data Property
-    var jobPosting: JobPosting? // Selected Job Data
+    var jobPosting: JobPosting? //selected job Data
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,11 +74,12 @@ class JobDetailsViewController: UIViewController {
         mainStackView.addArrangedSubview(hStack)
         
     }
-    // MARK: - Setup UI with Job Data
+    
+    
+    //initialize view with job data
         func setupUI() {
             guard let job = jobPosting else { return } // Ensure data is passed
 
-            // Assign values to the UI
             companyNameLabel.text = "Microsoft Corporation"
             jobTitleLabel.text = job.jobTitle
             jobTypeLabel.text = job.jobType

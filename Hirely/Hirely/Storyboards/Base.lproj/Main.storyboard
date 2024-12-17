@@ -1572,7 +1572,7 @@
                                     <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="jnQ-SX-3bL" kind="push" id="fnj-bN-iDM"/>
+                                    <action selector="nextButtonTapped:" destination="bmE-N7-ssH" eventType="touchUpInside" id="tni-Fq-U4z"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Minimum" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cRS-cv-2jm">
@@ -1746,6 +1746,8 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="lfS-x2-fEa"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="jobDescLbl" destination="wv2-vL-q8S" id="1KK-PB-Ei4"/>
+                        <outlet property="jobTitleLbl" destination="5iG-Bj-1cc" id="CeV-l2-Dy4"/>
                         <outlet property="maxSalarySlider" destination="eyj-xK-7he" id="5Xj-wh-aAU"/>
                         <outlet property="maximumLbl" destination="xgI-do-3Cg" id="xkE-kY-eWf"/>
                         <outlet property="minSalarySlider" destination="6qo-ng-fXo" id="wYr-3j-6ba"/>
@@ -1754,16 +1756,17 @@
                         <outlet property="selectExperienceBtn" destination="mjh-kC-riZ" id="OhZ-pf-XUZ"/>
                         <outlet property="selectJobTypeBtn" destination="BJN-BL-nGx" id="c5M-tz-rRO"/>
                         <outlet property="selectLocationBtn" destination="yHF-aY-grF" id="PQg-a4-zeA"/>
+                        <segue destination="jnQ-SX-3bL" kind="show" identifier="gotoSaveChanges" id="7da-TQ-LQN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="trM-Lj-2ak" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6828.2442748091598" y="-661.26760563380287"/>
         </scene>
-        <!--Edit Job Post View Controller-->
+        <!--Save Job Changes View Controller-->
         <scene sceneID="C1M-7Z-2ed">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="jnQ-SX-3bL" customClass="EditJobPostViewController" customModule="Hirely" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="jnQ-SX-3bL" customClass="saveJobChangesViewController" customModule="Hirely" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FSa-pJ-jsY">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1821,6 +1824,9 @@
                                 <buttonConfiguration key="configuration" style="filled" title="Save Changes" cornerStyle="capsule">
                                     <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="saveChangesTapped:" destination="jnQ-SX-3bL" eventType="touchUpInside" id="D4f-fH-C5z"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f73-xD-sRp">
                                 <rect key="frame" x="16" y="342" width="343" height="34"/>
@@ -1833,7 +1839,7 @@
                                     <color key="baseBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="editSkillsTapped:" destination="jnQ-SX-3bL" eventType="touchUpInside" id="POp-5y-eca"/>
+                                    <action selector="selectSkillsTapped:" destination="jnQ-SX-3bL" eventType="touchUpInside" id="zoe-5g-raC"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1844,12 +1850,15 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="ian-3Y-yp1"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="editSkillsButton" destination="f73-xD-sRp" id="wVd-1r-dmZ"/>
+                        <outlet property="contactEmailTextField" destination="bwD-D6-gEX" id="8lH-Zu-a9k"/>
+                        <outlet property="deadlineDatePicker" destination="RO2-aF-n6M" id="ZeD-Sm-Jur"/>
+                        <outlet property="jobRequirementsTextView" destination="udl-QT-eA8" id="6JP-QL-r5g"/>
+                        <outlet property="skillsButton" destination="f73-xD-sRp" id="fs2-uu-4yS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pb0-MY-AwP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7895.419847328244" y="-661.26760563380287"/>
+            <point key="canvasLocation" x="7892" y="-661"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dpA-gl-1b2">
@@ -1930,7 +1939,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="doC-La-Zr3"/>
+        <segue reference="QyJ-yD-NRN"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Background" width="402" height="874"/>
