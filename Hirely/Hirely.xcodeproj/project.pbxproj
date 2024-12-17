@@ -10,6 +10,7 @@
 		2C31A9CA2D10646700214FE1 /* PostingJobViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C31A9C92D10646700214FE1 /* PostingJobViewController.swift */; };
 		2C31A9CD2D10825700214FE1 /* JobPosting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C31A9CC2D10825700214FE1 /* JobPosting.swift */; };
 		2C31A9D12D10B49A00214FE1 /* saveJobChangesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C31A9D02D10B49A00214FE1 /* saveJobChangesViewController.swift */; };
+		2C31A9D32D116D1E00214FE1 /* jobPostingsStory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C31A9D22D116D1E00214FE1 /* jobPostingsStory.storyboard */; };
 		2C4B28DB2D0F04B600A5DE73 /* SkillsSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4B28DA2D0F04B600A5DE73 /* SkillsSelectionViewController.swift */; };
 		2C4B28E52D0F7B6500A5DE73 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 2C4B28E42D0F7B6500A5DE73 /* FirebaseFirestore */; };
 		2C5217D22D046A4200C1040D /* ReviewApplicationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5217D12D046A4200C1040D /* ReviewApplicationsViewController.swift */; };
@@ -63,6 +64,7 @@
 		2C31A9C92D10646700214FE1 /* PostingJobViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostingJobViewController.swift; sourceTree = "<group>"; };
 		2C31A9CC2D10825700214FE1 /* JobPosting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobPosting.swift; sourceTree = "<group>"; };
 		2C31A9D02D10B49A00214FE1 /* saveJobChangesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = saveJobChangesViewController.swift; sourceTree = "<group>"; };
+		2C31A9D22D116D1E00214FE1 /* jobPostingsStory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = jobPostingsStory.storyboard; sourceTree = "<group>"; };
 		2C4B28DA2D0F04B600A5DE73 /* SkillsSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillsSelectionViewController.swift; sourceTree = "<group>"; };
 		2C5217D12D046A4200C1040D /* ReviewApplicationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewApplicationsViewController.swift; sourceTree = "<group>"; };
 		2C5217D32D046C0600C1040D /* ApplicationsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationsTableViewCell.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				71BEBCE32CFC502900DF795E /* Main.storyboard */,
+				2C31A9D22D116D1E00214FE1 /* jobPostingsStory.storyboard */,
 				71BEBCE82CFC502A00DF795E /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
@@ -347,6 +350,7 @@
 				2C5217D52D046C0600C1040D /* ApplicationsTableViewCell.xib in Resources */,
 				71BEBCEA2CFC502A00DF795E /* Base in Resources */,
 				71BEBCE52CFC502900DF795E /* Base in Resources */,
+				2C31A9D32D116D1E00214FE1 /* jobPostingsStory.storyboard in Resources */,
 				2C9302F52CFC9E6500CAD615 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
