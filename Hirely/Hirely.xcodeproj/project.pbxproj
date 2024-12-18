@@ -11,6 +11,7 @@
 		71255F222D0DED66004EFDF7 /* ApplicantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71255F212D0DED66004EFDF7 /* ApplicantViewController.swift */; };
 		71255F252D0DF3B7004EFDF7 /* JobsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71255F232D0DF3B7004EFDF7 /* JobsTableViewCell.swift */; };
 		71255F262D0DF3B7004EFDF7 /* JobsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71255F242D0DF3B7004EFDF7 /* JobsTableViewCell.xib */; };
+		713EDA2B2D12E462000918B2 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 713EDA2A2D12E462000918B2 /* FirebaseFirestore */; };
 		71449E022D0F02B900077460 /* JobsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71449E002D0F02B900077460 /* JobsCollectionViewCell.swift */; };
 		71449E032D0F02B900077460 /* JobsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71449E012D0F02B900077460 /* JobsCollectionViewCell.xib */; };
 		71BEBCDE2CFC502900DF795E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEBCDD2CFC502900DF795E /* AppDelegate.swift */; };
@@ -72,6 +73,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C363937D2D006A4C00E14337 /* FirebaseDatabase in Frameworks */,
+				713EDA2B2D12E462000918B2 /* FirebaseFirestore in Frameworks */,
 				C363937F2D006A5600E14337 /* FirebaseAuth in Frameworks */,
 				C36393812D006A7800E14337 /* Cloudinary in Frameworks */,
 			);
@@ -195,6 +197,7 @@
 				C363937C2D006A4C00E14337 /* FirebaseDatabase */,
 				C363937E2D006A5600E14337 /* FirebaseAuth */,
 				C36393802D006A7800E14337 /* Cloudinary */,
+				713EDA2A2D12E462000918B2 /* FirebaseFirestore */,
 			);
 			productName = Hirely;
 			productReference = 71BEBCDA2CFC502900DF795E /* Hirely.app */;
@@ -687,6 +690,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		713EDA2A2D12E462000918B2 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2C9302F62CFC9EDF00CAD615 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
 		C363937C2D006A4C00E14337 /* FirebaseDatabase */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 2C9302F62CFC9EDF00CAD615 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
