@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tMc-kI-b8g">
-    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <device id="retina6_72" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -14,7 +14,7 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Hirely" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mtE-Ed-MtD" customClass="CLDUIImageView" customModule="Cloudinary">
@@ -44,23 +44,23 @@
             <objects>
                 <viewController id="lMH-fZ-Lnf" customClass="ApplicantViewController" customModule="Hirely" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EOD-jr-M1A">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BackTop" translatesAutoresizingMaskIntoConstraints="NO" id="Nj6-1P-46a">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="197"/>
+                                <rect key="frame" x="0.0" y="0.0" width="430" height="197"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="197" id="JvH-Z1-cai"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Ltm-XE-uXL">
-                                <rect key="frame" x="23" y="207" width="347" height="255"/>
+                                <rect key="frame" x="23" y="207" width="384" height="255"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Fox-RD-wX7">
-                                        <rect key="frame" x="0.0" y="0.0" width="347" height="120"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="384" height="120"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wAN-yw-MKV">
-                                                <rect key="frame" x="0.0" y="0.0" width="166" height="120"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="184.66666666666666" height="120"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="Applications Tracker" cornerStyle="medium">
                                                     <fontDescription key="titleFontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
@@ -68,7 +68,7 @@
                                                 </buttonConfiguration>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YXu-dk-r2r">
-                                                <rect key="frame" x="181" y="0.0" width="166" height="120"/>
+                                                <rect key="frame" x="199.66666666666663" y="0.0" width="184.33333333333337" height="120"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="Scheduled Interviews" cornerStyle="medium">
                                                     <fontDescription key="titleFontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
@@ -81,10 +81,10 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="TZu-DJ-6Al">
-                                        <rect key="frame" x="0.0" y="135" width="347" height="120"/>
+                                        <rect key="frame" x="0.0" y="135" width="384" height="120"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TyY-fB-X2y">
-                                                <rect key="frame" x="0.0" y="0.0" width="166" height="120"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="184.66666666666666" height="120"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="CV Builder" cornerStyle="medium">
                                                     <fontDescription key="titleFontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
@@ -92,7 +92,7 @@
                                                 </buttonConfiguration>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BdN-F9-Zr0">
-                                                <rect key="frame" x="181" y="0.0" width="166" height="120"/>
+                                                <rect key="frame" x="199.66666666666663" y="0.0" width="184.33333333333337" height="120"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="Career Resources Hub" cornerStyle="medium">
                                                     <fontDescription key="titleFontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
@@ -119,31 +119,35 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UjV-R8-mXm">
-                                <rect key="frame" x="258.66666666666669" y="488" width="111.33333333333331" height="38.333333333333371"/>
+                                <rect key="frame" x="295.66666666666669" y="488" width="111.33333333333331" height="38.333333333333371"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="See More &gt;">
                                     <color key="baseForegroundColor" systemColor="systemGrayColor"/>
                                 </buttonConfiguration>
                             </button>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Eey-L5-A4A">
-                                <rect key="frame" x="0.0" y="525" width="393" height="244"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Uub-aq-yUk">
+                                <rect key="frame" x="0.0" y="539" width="430" height="310"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dnn-vf-tXn">
-                                    <size key="itemSize" width="128" height="128"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="oYp-lf-Kpq">
+                                    <size key="itemSize" width="366" height="266"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="T6X-6v-jnO">
-                                        <rect key="frame" x="0.0" y="58" width="128" height="128"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="2Bw-bK-5u1">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="recommendedJob" id="03p-AN-KKL">
+                                        <rect key="frame" x="0.0" y="22" width="366" height="266"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="k8Z-a1-aKT">
+                                            <rect key="frame" x="0.0" y="0.0" width="366" height="266"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </collectionViewCellContentView>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="lMH-fZ-Lnf" id="oGe-mk-BkO"/>
+                                    <outlet property="delegate" destination="lMH-fZ-Lnf" id="UoH-yf-d4V"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="OHB-sN-lEJ"/>
@@ -151,17 +155,17 @@
                         <constraints>
                             <constraint firstItem="LK4-fG-PyS" firstAttribute="top" secondItem="OHB-sN-lEJ" secondAttribute="top" constant="24" id="1zO-G7-oxR"/>
                             <constraint firstItem="Nj6-1P-46a" firstAttribute="leading" secondItem="OHB-sN-lEJ" secondAttribute="leading" id="3tH-IO-unc"/>
+                            <constraint firstItem="Uub-aq-yUk" firstAttribute="trailing" secondItem="OHB-sN-lEJ" secondAttribute="trailing" id="4U8-wW-aen"/>
                             <constraint firstItem="OHB-sN-lEJ" firstAttribute="trailing" secondItem="UjV-R8-mXm" secondAttribute="trailing" constant="23" id="4mS-kL-QhZ"/>
                             <constraint firstItem="LK4-fG-PyS" firstAttribute="leading" secondItem="OHB-sN-lEJ" secondAttribute="leading" constant="38" id="6bQ-Nm-FKn"/>
                             <constraint firstItem="UjV-R8-mXm" firstAttribute="top" secondItem="Ltm-XE-uXL" secondAttribute="bottom" constant="26" id="7LW-1b-s8H"/>
-                            <constraint firstItem="Eey-L5-A4A" firstAttribute="top" secondItem="yud-ms-Eql" secondAttribute="bottom" constant="8.3300000000000001" id="DDW-4B-E08"/>
                             <constraint firstItem="Ltm-XE-uXL" firstAttribute="leading" secondItem="EOD-jr-M1A" secondAttribute="leading" constant="23" id="E0l-ge-ALw"/>
-                            <constraint firstItem="Eey-L5-A4A" firstAttribute="leading" secondItem="OHB-sN-lEJ" secondAttribute="leading" id="HHR-pu-eNo"/>
+                            <constraint firstItem="Uub-aq-yUk" firstAttribute="bottom" secondItem="OHB-sN-lEJ" secondAttribute="bottom" id="EcZ-k9-Sjn"/>
                             <constraint firstItem="Ltm-XE-uXL" firstAttribute="top" secondItem="Nj6-1P-46a" secondAttribute="bottom" constant="10" id="KcP-Wc-VGl"/>
+                            <constraint firstItem="Uub-aq-yUk" firstAttribute="top" secondItem="UjV-R8-mXm" secondAttribute="bottom" constant="12.67" id="PRz-q1-aAW"/>
                             <constraint firstItem="Nj6-1P-46a" firstAttribute="trailing" secondItem="OHB-sN-lEJ" secondAttribute="trailing" id="Qat-t6-NuI"/>
                             <constraint firstAttribute="trailing" secondItem="Ltm-XE-uXL" secondAttribute="trailing" constant="23" id="Sjz-9n-pE1"/>
-                            <constraint firstItem="Eey-L5-A4A" firstAttribute="trailing" secondItem="OHB-sN-lEJ" secondAttribute="trailing" id="aPT-Py-1Kg"/>
-                            <constraint firstItem="Eey-L5-A4A" firstAttribute="bottom" secondItem="OHB-sN-lEJ" secondAttribute="bottom" id="h65-05-Cva"/>
+                            <constraint firstItem="Uub-aq-yUk" firstAttribute="leading" secondItem="OHB-sN-lEJ" secondAttribute="leading" id="VMK-9a-8gZ"/>
                             <constraint firstItem="Ltm-XE-uXL" firstAttribute="centerX" secondItem="EOD-jr-M1A" secondAttribute="centerX" id="iw4-IN-j9d"/>
                             <constraint firstItem="yud-ms-Eql" firstAttribute="top" secondItem="Ltm-XE-uXL" secondAttribute="bottom" constant="27" id="qdy-Ab-mNZ"/>
                             <constraint firstItem="Nj6-1P-46a" firstAttribute="top" secondItem="EOD-jr-M1A" secondAttribute="top" id="sFf-AF-x8X"/>
@@ -169,6 +173,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="zKe-EZ-MIu"/>
+                    <connections>
+                        <outlet property="jobsCollectionView" destination="Uub-aq-yUk" id="jJ6-ca-zgh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SvK-gj-1Ut" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
