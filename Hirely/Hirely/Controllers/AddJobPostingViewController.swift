@@ -20,7 +20,11 @@ class AddJobPostingViewController: UIViewController, UITextFieldDelegate, UIPick
     @IBOutlet weak var chooseCityBtn: UIButton!
     @IBOutlet weak var jobTitleTxt: UITextField!
     @IBOutlet weak var jobDescTxt: UITextView!
-        
+    
+    
+    @IBAction func exitButtonTapped(_ sender: UIBarButtonItem) {
+    }
+    
     var pickerContainerView: UIView! // Container for the picker
     var cityPicker: UIPickerView! // Picker view
     

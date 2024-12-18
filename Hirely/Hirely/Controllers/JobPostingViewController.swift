@@ -14,6 +14,11 @@ class JobPostingViewController: UIViewController, UITableViewDelegate, UITableVi
 
     var jobPostings: [JobPosting] = [] //array to store job postings
     
+    @IBAction func unwindToJobPostings(segue: UIStoryboardSegue) {
+        // This method is intentionally left empty.
+        // It will serve as the target for the unwind segue.
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.backgroundColor = .clear
@@ -90,12 +95,12 @@ extension JobPostingViewController {
     //                applicantsVC.jobPosting = selectedJob
                 }
             }
-            //pass to edit job post screen
+            // Pass to Edit Job Post Screen
             else if segue.identifier == "editJobDetails" {
-                if let navController = segue.destination as? UINavigationController,
-                   let editVC = navController.topViewController as? EditJobPostViewController {
-                    editVC.jobPosting = selectedJob //pass the selected job data
+                if let editVC = segue.destination as? EditJobPostViewController {
+                    editVC.jobPosting = selectedJob // Pass the selected job data
                 }
+            
             }
         }
     }

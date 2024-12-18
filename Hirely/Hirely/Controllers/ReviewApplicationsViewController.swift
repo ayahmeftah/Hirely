@@ -53,7 +53,7 @@ class ReviewApplicationsViewController: UIViewController, UITableViewDelegate, U
         if segue.identifier == "goToApplicantDetails",
            let cell = sender as? ApplicationsTableViewCell,
            let _ = self.applicantsTableView.indexPath(for: cell),
-           let _ = segue.destination as? ApplicantDetailViewController {
+           let _ = segue.destination as? ApplicantInfoTableViewController {
             // Pass data to the destination view controller
         }
     }
