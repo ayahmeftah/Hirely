@@ -537,22 +537,6 @@
             </objects>
             <point key="canvasLocation" x="12555" y="1720"/>
         </scene>
-        <!--Skills Selection View Controller-->
-        <scene sceneID="aDc-UA-Y6O">
-            <objects>
-                <viewController modalPresentationStyle="fullScreen" id="oqY-Ua-AVy" customClass="SkillsSelectionViewController" customModule="Hirely" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="iEO-vD-hI4">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="oNj-fl-dHr"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="LEe-jX-5hT"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Vaa-de-MvT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="12555" y="2575"/>
-        </scene>
         <!--Job Details View Controller-->
         <scene sceneID="Eo6-6m-zSM">
             <objects>
