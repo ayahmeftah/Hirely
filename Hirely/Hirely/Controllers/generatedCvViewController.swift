@@ -126,16 +126,40 @@ class generatedCvViewController: UIViewController {
 
     // MARK: - Actions
     @IBAction func shareCVButtonTapped(_ sender: UIButton) {
-        generatePDF { pdfURL in
-            guard let pdfURL = pdfURL else {
-                self.showAlert(title: "Error", message: "Failed to generate the PDF. Please try again.")
-                return
-            }
+        // Show an alert to confirm the user's choice
+        let alertController = UIAlertController(
+            title: "Export CV",
+            message: "Your CV will be exported and saved to your files. Do you want to continue?",
+            preferredStyle: .alert
+        )
 
-            // Present the share sheet with the generated PDF
-            let activityVC = UIActivityViewController(activityItems: [pdfURL], applicationActivities: nil)
-            self.present(activityVC, animated: true)
+        // Option to export the CV
+        let exportAction = UIAlertAction(title: "Export CV", style: .default) { _ in
+            // Proceed with PDF generation and sharing
+            self.generatePDF { pdfURL in
+                guard let pdfURL = pdfURL else {
+                    self.showAlert(title: "Error", message: "Failed to generate the PDF. Please try again.")
+                    return
+                }
+
+                // Present the share sheet with the generated PDF
+                let activityVC = UIActivityViewController(activityItems: [pdfURL], applicationActivities: nil)
+                self.present(activityVC, animated: true)
+            }
         }
+
+        // Option to exit
+        let exitAction = UIAlertAction(title: "Exit", style: .destructive) { _ in
+            // Exit the current view
+            self.dismiss(animated: true, completion: nil)
+        }
+
+        // Add actions to the alert controller
+        alertController.addAction(exportAction)
+        alertController.addAction(exitAction)
+
+        // Present the alert to the user
+        self.present(alertController, animated: true, completion: nil)
     }
 
     // MARK: - Generate PDF
