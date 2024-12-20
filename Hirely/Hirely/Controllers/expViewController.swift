@@ -37,7 +37,7 @@ class expViewController: UITableViewController, UITextViewDelegate, UITextFieldD
         descTextField.text = "Write a short desciption ..."
         descTextField.textColor = .lightGray
         descTextField.delegate = self
-        
+
         // Set up the date pickers for both text fields
         setupDatePicker(for: fromDateTextField)
         setupDatePicker(for: toDateTextField)
@@ -186,22 +186,22 @@ class expViewController: UITableViewController, UITextViewDelegate, UITextFieldD
         }
     }
     
-    // MARK: - UITextViewDelegate
+    // Remove placeholder text when editing begins
     func textViewDidBeginEditing(_ textView: UITextView) {
-        // Remove placeholder text when editing begins
         if textView == descTextField && textView.text == "Write a short description..." {
             textView.text = ""
             textView.textColor = .black // Set to default text color
         }
     }
 
+    // Restore placeholder text if the user leaves the field empty
     func textViewDidEndEditing(_ textView: UITextView) {
-        // Restore placeholder text if the user leaves the field empty
         if textView == descTextField && textView.text.isEmpty {
             textView.text = "Write a short description..."
             textView.textColor = .lightGray
         }
     }
+
     private func validateInputFields() -> Bool {
         let jobTitle = jobTitleTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
         let company = companyTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
