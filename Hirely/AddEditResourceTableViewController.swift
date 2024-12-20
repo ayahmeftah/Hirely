@@ -7,19 +7,22 @@
 
 import UIKit
 
-class AddEditResourceTableViewController: UITableViewController {
+class AddEditResourceTableViewController: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+
 
     
     var resource: Resource?
-    
+    var categories = ["Technology", "Education", "Health", "Finance", "Entertainment"]
+
     
     @IBOutlet weak var resoureTitleText: UITextField!
     
     @IBOutlet weak var resourceCatlbl: UITextField!
     @IBOutlet weak var resourceLinkLbl: UITextField!
-    
+
     @IBOutlet weak var savebtn: UIBarButtonItem!
-    
+    private let categoryPicker = UIPickerView()
+
     func updateSaveButtonState() {
         let titleText = resoureTitleText.text ?? ""
         let catText = resourceCatlbl.text ?? ""
@@ -51,12 +54,55 @@ class AddEditResourceTableViewController: UITableViewController {
         }
         
         
-        
+        // Set up category picker
+                categoryPicker.delegate = self
+                categoryPicker.dataSource = self
+                resourceCatlbl.inputView = categoryPicker // Assign picker view as input for the text field
+                resourceCatlbl.placeholder = "Select Category"
+
+                // Add a toolbar with a Done button for the picker
+                let toolbar = UIToolbar()
+                toolbar.sizeToFit()
+                let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(donePickingCategory))
+                toolbar.setItems([doneButton], animated: true)
+                toolbar.isUserInteractionEnabled = true
+                resourceCatlbl.inputAccessoryView = toolbar
         updateSaveButtonState()
+        
+           resourceCatlbl.backgroundColor = .clear
+           resourceCatlbl.borderStyle = .none
+           resourceCatlbl.placeholder = "Select Category"
+           resourceCatlbl.textAlignment = .left
+           resourceCatlbl.font = UIFont.systemFont(ofSize: 16)
+           
+           
+           resourceCatlbl.isUserInteractionEnabled = true
+
+
         
         
         
     }
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+            return 1 // One column
+        }
+        
+        func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+            return categories.count
+        }
+        
+        func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+            return categories[row]
+        }
+        
+        func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+            resourceCatlbl.text = categories[row] // Update the text field with the selected category
+        }
+        
+        @objc func donePickingCategory() {
+            resourceCatlbl.resignFirstResponder() // Dismiss the picker view
+        }
+    
     
     
     @IBAction func textEditingChanged(_ sender: UITextField) {
@@ -82,7 +128,17 @@ class AddEditResourceTableViewController: UITableViewController {
         let link = resourceLinkLbl.text ?? ""
         
         resource = Resource(title: title, category: cat, link: link)
+        // Show success alert
+               showSuccessAlert()
     }
+    func showSuccessAlert() {
+           let alert = UIAlertController(title: "Success", message: "Resource added successfully!", preferredStyle: .alert)
+           let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+               self.navigationController?.popViewController(animated: true)
+           }
+           alert.addAction(okAction)
+           present(alert, animated: true, completion: nil)
+       }
     
     // MARK: - Table view data sourc
 

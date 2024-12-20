@@ -20,6 +20,10 @@
 		C363937D2D006A4C00E14337 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = C363937C2D006A4C00E14337 /* FirebaseDatabase */; };
 		C363937F2D006A5600E14337 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = C363937E2D006A5600E14337 /* FirebaseAuth */; };
 		C36393812D006A7800E14337 /* Cloudinary in Frameworks */ = {isa = PBXBuildFile; productRef = C36393802D006A7800E14337 /* Cloudinary */; };
+		CD275ADC2D14AE5C00C1CE1E /* CoursesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD275ADB2D14AE5C00C1CE1E /* CoursesViewController.swift */; };
+		CD275ADE2D14B02000C1CE1E /* CoursesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD275ADD2D14B01F00C1CE1E /* CoursesTableViewCell.swift */; };
+		CDB720432D157C0B0039D80B /* CareerTipsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB720422D157C0B0039D80B /* CareerTipsViewController.swift */; };
+		CDB720452D1592380039D80B /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB720442D1592380039D80B /* ImageViewController.swift */; };
 		D17E38332D083EB800C64293 /* ResourceManagment.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D17E38322D083EB800C64293 /* ResourceManagment.storyboard */; };
 		D17E38352D084BDC00C64293 /* ResourceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17E38342D084BDC00C64293 /* ResourceTableViewCell.swift */; };
 		D17E38372D084D0000C64293 /* ResourceManagmentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17E38362D084D0000C64293 /* ResourceManagmentTableViewController.swift */; };
@@ -62,6 +66,10 @@
 		71BEBCFA2CFC502B00DF795E /* HirelyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HirelyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		71BEBCFE2CFC502B00DF795E /* HirelyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HirelyUITests.swift; sourceTree = "<group>"; };
 		71BEBD002CFC502B00DF795E /* HirelyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HirelyUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		CD275ADB2D14AE5C00C1CE1E /* CoursesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesViewController.swift; sourceTree = "<group>"; };
+		CD275ADD2D14B01F00C1CE1E /* CoursesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesTableViewCell.swift; sourceTree = "<group>"; };
+		CDB720422D157C0B0039D80B /* CareerTipsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareerTipsViewController.swift; sourceTree = "<group>"; };
+		CDB720442D1592380039D80B /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		D17E38322D083EB800C64293 /* ResourceManagment.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ResourceManagment.storyboard; sourceTree = "<group>"; };
 		D17E38342D084BDC00C64293 /* ResourceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceTableViewCell.swift; sourceTree = "<group>"; };
 		D17E38362D084D0000C64293 /* ResourceManagmentTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceManagmentTableViewController.swift; sourceTree = "<group>"; };
@@ -121,8 +129,12 @@
 			children = (
 				71BEBCE12CFC502900DF795E /* ViewController.swift */,
 				D17E38342D084BDC00C64293 /* ResourceTableViewCell.swift */,
+				CDB720422D157C0B0039D80B /* CareerTipsViewController.swift */,
+				CD275ADD2D14B01F00C1CE1E /* CoursesTableViewCell.swift */,
+				CD275ADB2D14AE5C00C1CE1E /* CoursesViewController.swift */,
 				D17E38382D084E5B00C64293 /* Resource.swift */,
 				D17E383E2D09688C00C64293 /* VideosViewController.swift */,
+				CDB720442D1592380039D80B /* ImageViewController.swift */,
 				D17E38402D0971B000C64293 /* VideoTableViewCell.swift */,
 			);
 			path = Controllers;
@@ -326,13 +338,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD275ADE2D14B02000C1CE1E /* CoursesTableViewCell.swift in Sources */,
+				CDB720432D157C0B0039D80B /* CareerTipsViewController.swift in Sources */,
 				D17E383F2D09688C00C64293 /* VideosViewController.swift in Sources */,
 				D17E38372D084D0000C64293 /* ResourceManagmentTableViewController.swift in Sources */,
+				CD275ADC2D14AE5C00C1CE1E /* CoursesViewController.swift in Sources */,
 				D17E383D2D09682700C64293 /* ResourcesPageViewController.swift in Sources */,
 				71BEBCE22CFC502900DF795E /* ViewController.swift in Sources */,
 				D17E383B2D08538B00C64293 /* AddEditResourceTableViewController.swift in Sources */,
 				D17E38352D084BDC00C64293 /* ResourceTableViewCell.swift in Sources */,
 				D17E38392D084E5B00C64293 /* Resource.swift in Sources */,
+				CDB720452D1592380039D80B /* ImageViewController.swift in Sources */,
 				71BEBCDE2CFC502900DF795E /* AppDelegate.swift in Sources */,
 				71BEBCE02CFC502900DF795E /* SceneDelegate.swift in Sources */,
 				D17E38412D0971B000C64293 /* VideoTableViewCell.swift in Sources */,

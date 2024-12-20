@@ -28,6 +28,7 @@ class ResourceTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         containerView.layer.cornerRadius = 20
+       resourceDeleteBtn?.setTitle("", for: .normal)
        // containerView.layer.masksToBounds = true
         // Remove the title from the delete button
         //resourceDeleteBtn.setTitle("");
