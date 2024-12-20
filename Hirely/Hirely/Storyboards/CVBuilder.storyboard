@@ -1528,15 +1528,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tMr-qB-TQf">
-                                <rect key="frame" x="314" y="59" width="52" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Exit"/>
-                                <connections>
-                                    <action selector="shareCVButtonTapped:" destination="BbI-dD-25a" eventType="touchUpInside" id="Z7h-hO-KEE"/>
-                                </connections>
-                            </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="XQK-eT-Qh2">
                                 <rect key="frame" x="28" y="151" width="335" height="612"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1545,6 +1536,15 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="apQ-r8-N9c">
+                                <rect key="frame" x="313" y="102" width="64" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Exit"/>
+                                <connections>
+                                    <action selector="shareCVButtonTapped:" destination="BbI-dD-25a" eventType="touchUpInside" id="UAG-MA-qPT"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6yw-3M-jzJ"/>
                         <color key="backgroundColor" red="0.91001075509999996" green="0.91742658619999995" blue="0.93330389260000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -1552,7 +1552,6 @@
                     <navigationItem key="navigationItem" id="2Kk-Fi-2wP"/>
                     <connections>
                         <outlet property="cvTextView" destination="XQK-eT-Qh2" id="ETG-AZ-bIv"/>
-                        <outlet property="shareCVButton" destination="tMr-qB-TQf" id="4Fg-UM-NmZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Bg-0i-cZr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
