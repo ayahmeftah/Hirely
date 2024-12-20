@@ -17,6 +17,11 @@ class ViewJobsAdminTableViewCell: UITableViewCell {
     
     @IBOutlet weak var jobTypeLbl: UILabel!
     
+    @IBOutlet weak var jobPostedDateLbl: UILabel!
+    
+    @IBOutlet weak var jobDeadlineDateLbl: UILabel!
+    
+    
     weak var parentViewController: UIViewController? //reference the parent view controller
 
     @IBAction func buttonTapped(_ sender:UIButton){
@@ -44,11 +49,13 @@ class ViewJobsAdminTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func postInit(_ company: String, _ jobType: String, _ jobTitle: String, _ image: String){
+    func postInit(_ company: String, _ jobType: String, _ jobTitle: String, _ image: String, _ postedDate: String, _ deadlineDate: String){
         companyImage.image = UIImage(named: image)
         jobTypeLbl.text = jobType
         jobTitleLbl.text = jobTitle
         companyNameLbl.text = company
+        jobPostedDateLbl.text = postedDate
+        jobDeadlineDateLbl.text = deadlineDate
     }
     
 }

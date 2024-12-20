@@ -114,6 +114,8 @@
             <connections>
                 <outlet property="companyImage" destination="Moh-Ed-Yfx" id="bi6-VQ-5SO"/>
                 <outlet property="companyNameLbl" destination="1bz-zH-UZu" id="4F6-P0-ykj"/>
+                <outlet property="jobDeadlineDateLbl" destination="858-my-glR" id="GUU-7i-JKL"/>
+                <outlet property="jobPostedDateLbl" destination="bp3-8q-V7x" id="kOl-EY-TxX"/>
                 <outlet property="jobTitleLbl" destination="FwO-8T-SS4" id="EzW-oZ-eGA"/>
                 <outlet property="jobTypeLbl" destination="CZP-To-bfM" id="dja-dE-ZWk"/>
             </connections>
