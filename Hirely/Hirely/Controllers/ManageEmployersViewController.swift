@@ -66,7 +66,7 @@ extension ManageEmployersViewController{
         if let cell = sender as? ManageEmployersTableViewCell,
            let _ = employersTableView.indexPath(for: cell){
             if segue.identifier == "goToEmployerAccount"{
-                if segue.destination is EmployerAccountDetailsViewController{
+                if segue.destination is ManageEmployerTableViewController{
                     //passing data
                 }
             }

@@ -57,7 +57,7 @@ extension ReportedJobsViewController{
         if let cell = sender as? ReportedJobsTableViewCell,
            let _ = reportedJobs.indexPath(for: cell){
             if segue.identifier == "goToReportDetails"{
-                if segue.destination is ReportedPostDetailsViewController{
+                if segue.destination is ReportedPostDetailTableViewController{
                     //passing data
                 }
             }

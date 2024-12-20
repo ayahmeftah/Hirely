@@ -60,7 +60,7 @@ extension ManageJobSeekersAccViewController{
         if let cell = sender as? ManageJobSeekersAccTableViewCell,
            let _ = jobSeekers.indexPath(for: cell){
             if segue.identifier == "goToApplicantDetails"{
-                if segue.destination is ViewApplicantAccountViewController{
+                if segue.destination is ApplicantAccountInfoTableViewController{
                     //passing data
                 }
             }

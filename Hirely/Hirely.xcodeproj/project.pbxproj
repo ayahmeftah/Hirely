@@ -8,11 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2C31A9D52D11872800214FE1 /* AdminFeature.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C31A9D42D11872800214FE1 /* AdminFeature.storyboard */; };
-		2C4B28DD2D0F24BD00A5DE73 /* ViewApplicantAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4B28DC2D0F24BD00A5DE73 /* ViewApplicantAccountViewController.swift */; };
 		2C4B28DF2D0F250100A5DE73 /* FlagPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4B28DE2D0F250100A5DE73 /* FlagPostViewController.swift */; };
 		2C4B28E12D0F268000A5DE73 /* AdminDashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4B28E02D0F268000A5DE73 /* AdminDashboardViewController.swift */; };
-		2C4B28E32D0F276400A5DE73 /* FlagDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4B28E22D0F276400A5DE73 /* FlagDetailsViewController.swift */; };
-		2C6940222D06158600823F72 /* EmployerAccountDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6940212D06158600823F72 /* EmployerAccountDetailsViewController.swift */; };
 		2C6940242D0620BB00823F72 /* ManageEmployersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6940232D0620BB00823F72 /* ManageEmployersViewController.swift */; };
 		2C6940272D06228500823F72 /* ManageEmployersTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C6940262D06228500823F72 /* ManageEmployersTableViewCell.xib */; };
 		2C6940282D06228500823F72 /* ManageEmployersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6940252D06228500823F72 /* ManageEmployersTableViewCell.swift */; };
@@ -32,7 +29,10 @@
 		2C6940492D0655DB00823F72 /* ManageJobSeekersAccTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6940462D0655DB00823F72 /* ManageJobSeekersAccTableViewCell.swift */; };
 		2C9302F52CFC9E6500CAD615 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C9302F42CFC9E6500CAD615 /* GoogleService-Info.plist */; };
 		2CBC8FE82D05E6E500C6AD02 /* ViewPostDeatilsAdminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBC8FE72D05E6E500C6AD02 /* ViewPostDeatilsAdminViewController.swift */; };
-		2CBC8FEA2D05F2B500C6AD02 /* ReportedPostDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBC8FE92D05F2B500C6AD02 /* ReportedPostDetailsViewController.swift */; };
+		2CD248DA2D15995700602AD7 /* ManageEmployerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD248D92D15995700602AD7 /* ManageEmployerTableViewController.swift */; };
+		2CD248DC2D15A1B300602AD7 /* ReportedPostDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD248DB2D15A1B300602AD7 /* ReportedPostDetailTableViewController.swift */; };
+		2CD248DE2D15A68C00602AD7 /* ApplicantAccountInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD248DD2D15A68C00602AD7 /* ApplicantAccountInfoTableViewController.swift */; };
+		2CD248E02D15ACB000602AD7 /* FlagInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD248DF2D15ACB000602AD7 /* FlagInfoTableViewController.swift */; };
 		71BEBCDE2CFC502900DF795E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEBCDD2CFC502900DF795E /* AppDelegate.swift */; };
 		71BEBCE02CFC502900DF795E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEBCDF2CFC502900DF795E /* SceneDelegate.swift */; };
 		71BEBCE22CFC502900DF795E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEBCE12CFC502900DF795E /* ViewController.swift */; };
@@ -66,11 +66,8 @@
 
 /* Begin PBXFileReference section */
 		2C31A9D42D11872800214FE1 /* AdminFeature.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AdminFeature.storyboard; sourceTree = "<group>"; };
-		2C4B28DC2D0F24BD00A5DE73 /* ViewApplicantAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewApplicantAccountViewController.swift; sourceTree = "<group>"; };
 		2C4B28DE2D0F250100A5DE73 /* FlagPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagPostViewController.swift; sourceTree = "<group>"; };
 		2C4B28E02D0F268000A5DE73 /* AdminDashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminDashboardViewController.swift; sourceTree = "<group>"; };
-		2C4B28E22D0F276400A5DE73 /* FlagDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagDetailsViewController.swift; sourceTree = "<group>"; };
-		2C6940212D06158600823F72 /* EmployerAccountDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployerAccountDetailsViewController.swift; sourceTree = "<group>"; };
 		2C6940232D0620BB00823F72 /* ManageEmployersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageEmployersViewController.swift; sourceTree = "<group>"; };
 		2C6940252D06228500823F72 /* ManageEmployersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageEmployersTableViewCell.swift; sourceTree = "<group>"; };
 		2C6940262D06228500823F72 /* ManageEmployersTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ManageEmployersTableViewCell.xib; sourceTree = "<group>"; };
@@ -90,7 +87,10 @@
 		2C6940472D0655DB00823F72 /* ManageJobSeekersAccTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ManageJobSeekersAccTableViewCell.xib; sourceTree = "<group>"; };
 		2C9302F42CFC9E6500CAD615 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2CBC8FE72D05E6E500C6AD02 /* ViewPostDeatilsAdminViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPostDeatilsAdminViewController.swift; sourceTree = "<group>"; };
-		2CBC8FE92D05F2B500C6AD02 /* ReportedPostDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportedPostDetailsViewController.swift; sourceTree = "<group>"; };
+		2CD248D92D15995700602AD7 /* ManageEmployerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageEmployerTableViewController.swift; sourceTree = "<group>"; };
+		2CD248DB2D15A1B300602AD7 /* ReportedPostDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportedPostDetailTableViewController.swift; sourceTree = "<group>"; };
+		2CD248DD2D15A68C00602AD7 /* ApplicantAccountInfoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicantAccountInfoTableViewController.swift; sourceTree = "<group>"; };
+		2CD248DF2D15ACB000602AD7 /* FlagInfoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagInfoTableViewController.swift; sourceTree = "<group>"; };
 		71BEBCDA2CFC502900DF795E /* Hirely.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hirely.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71BEBCDD2CFC502900DF795E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		71BEBCDF2CFC502900DF795E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -165,8 +165,6 @@
 			children = (
 				71BEBCE12CFC502900DF795E /* ViewController.swift */,
 				2CBC8FE72D05E6E500C6AD02 /* ViewPostDeatilsAdminViewController.swift */,
-				2CBC8FE92D05F2B500C6AD02 /* ReportedPostDetailsViewController.swift */,
-				2C6940212D06158600823F72 /* EmployerAccountDetailsViewController.swift */,
 				2C6940232D0620BB00823F72 /* ManageEmployersViewController.swift */,
 				2C6940252D06228500823F72 /* ManageEmployersTableViewCell.swift */,
 				2C6940262D06228500823F72 /* ManageEmployersTableViewCell.xib */,
@@ -182,10 +180,12 @@
 				2C6940442D0654F500823F72 /* ManageJobSeekersAccViewController.swift */,
 				2C6940462D0655DB00823F72 /* ManageJobSeekersAccTableViewCell.swift */,
 				2C6940472D0655DB00823F72 /* ManageJobSeekersAccTableViewCell.xib */,
-				2C4B28DC2D0F24BD00A5DE73 /* ViewApplicantAccountViewController.swift */,
 				2C4B28DE2D0F250100A5DE73 /* FlagPostViewController.swift */,
 				2C4B28E02D0F268000A5DE73 /* AdminDashboardViewController.swift */,
-				2C4B28E22D0F276400A5DE73 /* FlagDetailsViewController.swift */,
+				2CD248D92D15995700602AD7 /* ManageEmployerTableViewController.swift */,
+				2CD248DB2D15A1B300602AD7 /* ReportedPostDetailTableViewController.swift */,
+				2CD248DD2D15A68C00602AD7 /* ApplicantAccountInfoTableViewController.swift */,
+				2CD248DF2D15ACB000602AD7 /* FlagInfoTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -390,27 +390,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CD248DE2D15A68C00602AD7 /* ApplicantAccountInfoTableViewController.swift in Sources */,
 				2C6940312D06326500823F72 /* ViewJobsAdminTableViewCell.swift in Sources */,
 				71BEBCE22CFC502900DF795E /* ViewController.swift in Sources */,
 				2C6940372D06446400823F72 /* ReportedJobsViewController.swift in Sources */,
 				2C6940452D0654F500823F72 /* ManageJobSeekersAccViewController.swift in Sources */,
+				2CD248E02D15ACB000602AD7 /* FlagInfoTableViewController.swift in Sources */,
 				2C6940352D06415700823F72 /* ViewJobsViewController.swift in Sources */,
 				71BEBCDE2CFC502900DF795E /* AppDelegate.swift in Sources */,
 				2C69402B2D062EF200823F72 /* AccountStatus.swift in Sources */,
 				2C6940242D0620BB00823F72 /* ManageEmployersViewController.swift in Sources */,
 				2CBC8FE82D05E6E500C6AD02 /* ViewPostDeatilsAdminViewController.swift in Sources */,
-				2C4B28DD2D0F24BD00A5DE73 /* ViewApplicantAccountViewController.swift in Sources */,
+				2CD248DC2D15A1B300602AD7 /* ReportedPostDetailTableViewController.swift in Sources */,
 				2C6940412D064CD800823F72 /* FlaggedJobsTableViewCell.swift in Sources */,
 				2C6940432D064F8D00823F72 /* FlagStatus.swift in Sources */,
-				2CBC8FEA2D05F2B500C6AD02 /* ReportedPostDetailsViewController.swift in Sources */,
 				2C69403D2D064C4600823F72 /* FlaggedJobsViewController.swift in Sources */,
 				2C4B28DF2D0F250100A5DE73 /* FlagPostViewController.swift in Sources */,
 				2C4B28E12D0F268000A5DE73 /* AdminDashboardViewController.swift in Sources */,
 				2C6940492D0655DB00823F72 /* ManageJobSeekersAccTableViewCell.swift in Sources */,
 				2C6940282D06228500823F72 /* ManageEmployersTableViewCell.swift in Sources */,
-				2C6940222D06158600823F72 /* EmployerAccountDetailsViewController.swift in Sources */,
-				2C4B28E32D0F276400A5DE73 /* FlagDetailsViewController.swift in Sources */,
 				2C69403B2D06456800823F72 /* ReportedJobsTableViewCell.swift in Sources */,
+				2CD248DA2D15995700602AD7 /* ManageEmployerTableViewController.swift in Sources */,
 				71BEBCE02CFC502900DF795E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

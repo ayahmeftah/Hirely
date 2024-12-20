@@ -67,7 +67,7 @@ extension FlaggedJobsViewController{
         if let cell = sender as? FlaggedJobsTableViewCell,
            let _ = flaggedJob.indexPath(for: cell){
             if segue.identifier == "goToFlagInfo"{
-                if segue.destination is FlagDetailsViewController{
+                if segue.destination is FlagInfoTableViewController{
                     //passing data
                 }
             }
