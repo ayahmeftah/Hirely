@@ -15,7 +15,8 @@ struct CVData {
         var name: String
         var email: String
         var phoneNumber: String
-        var  professionalSummary: String
+        var professionalSummary: String
+        var skills: String // Newline-separated list of skills
     }
     
     struct Skill {
@@ -26,6 +27,7 @@ struct CVData {
         var title: String
         var company: String
         var duration: String
+        var description: String
     }
     
     struct Education {
@@ -58,15 +60,11 @@ struct CVData {
             Name: \(info.name)
             Email: \(info.email)
             Phone: \(info.phoneNumber)
-            professionalSummary: \(info.professionalSummary)
+            Professional Summary: \(info.professionalSummary)
+            Skills:
+            \(info.skills.split(separator: "\n").map { "• \($0)" }.joined(separator: "\n"))
             
             """
-        }
-        
-        // Skills
-        if !skills.isEmpty {
-            result += "Skills:\n"
-            result += skills.map { $0.name }.joined(separator: ", ") + "\n\n"
         }
         
         // Experience
@@ -77,6 +75,7 @@ struct CVData {
                 Title: \(job.title)
                 Company: \(job.company)
                 Duration: \(job.duration)
+                Description: \(job.description)
                 \n
                 """
             }
@@ -109,10 +108,8 @@ struct CVData {
     /// Checks if all required fields are completed
     func isComplete() -> Bool {
         return personalInfo != nil &&
-               !skills.isEmpty &&
                !experience.isEmpty &&
                !education.isEmpty &&
                !certifications.isEmpty
     }
 }
-

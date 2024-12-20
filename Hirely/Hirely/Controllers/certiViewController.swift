@@ -7,10 +7,12 @@
 
 import UIKit
 
-class certiViewController: UITableViewController, UITextViewDelegate {
+class certiViewController: UITableViewController, UITextViewDelegate, UITextFieldDelegate {
 
     // MARK: - Properties
     var cvData: CVData? // Property to hold the data passed from previous screens
+    var activeTextField: UITextField?
+
 
     // MARK: - Outlets for Certification Fields
     @IBOutlet weak var cert1NameTextField: UITextField!
@@ -28,11 +30,37 @@ class certiViewController: UITableViewController, UITextViewDelegate {
 
     // MARK: - Setup Methods
     private func setupUI() {
-        // Ensure text fields are cleared or pre-populated (if needed)
-                [cert1NameTextField, cert1IssuedByTextField,
-                 cert2NameTextField, cert2IssuedByTextField,
-                 cert3NameTextField, cert3IssuedByTextField].forEach { $0?.text = "" }
-    }
+           // Clear or pre-populate fields
+           [cert1NameTextField, cert1IssuedByTextField,
+            cert2NameTextField, cert2IssuedByTextField,
+            cert3NameTextField, cert3IssuedByTextField].forEach { $0?.text = "" }
+           
+           // Set up date pickers for issuedBy fields
+           setupDatePicker(for: cert1IssuedByTextField)
+//           setupDatePicker(for: cert2IssuedByTextField)
+           //setupDatePicker(for: cert3IssuedByTextField)
+       }
+    private func setupDatePicker(for textField: UITextField) {
+            let datePicker = UIDatePicker()
+            datePicker.datePickerMode = .date
+            datePicker.preferredDatePickerStyle = .wheels
+
+            // Add target for value change
+            datePicker.addTarget(self, action: #selector(dateChanged(_:)), for: .valueChanged)
+
+            // Assign date picker as input view
+            textField.inputView = datePicker
+
+            // Add a toolbar with a Done button
+            let toolbar = UIToolbar()
+            toolbar.sizeToFit()
+            let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(donePickingDate))
+            toolbar.setItems([doneButton], animated: true)
+            textField.inputAccessoryView = toolbar
+
+            // Set delegate to track active field
+            textField.delegate = self
+        }
 
     // MARK: - Actions
     @IBAction func generateButtonTapped(_ sender: Any) {
@@ -104,5 +132,30 @@ class certiViewController: UITableViewController, UITextViewDelegate {
         alert.addAction(UIAlertAction(title: "OK", style: .default))
         present(alert, animated: true)
     }
+    // MARK: - Date Picker Handlers
+        @objc func dateChanged(_ sender: UIDatePicker) {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "MM/yyyy" // Month and year format
+
+            // Update the active text field with the formatted date
+            activeTextField?.text = formatter.string(from: sender.date)
+        }
+
+        @objc func donePickingDate() {
+            // Dismiss the picker
+            activeTextField?.resignFirstResponder()
+        }
+
+        // MARK: - UITextFieldDelegate
+        func textFieldDidBeginEditing(_ textField: UITextField) {
+            // Track the active text field
+            activeTextField = textField
+
+            // Update the date picker with the existing value if possible
+            if let text = textField.text, let date = DateFormatter().date(from: text) {
+                let datePicker = textField.inputView as? UIDatePicker
+                datePicker?.date = date
+            }
+        }
 }
 

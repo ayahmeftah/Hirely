@@ -9,79 +9,82 @@ import UIKit
 import PDFKit
 
 class generatedCvViewController: UIViewController {
-
+    
     // MARK: - Properties
     var cvData: CVData? // Holds the collected CV data
-
+    
     // MARK: - Outlets
     @IBOutlet weak var cvTextView: UITextView!
-
+    
     // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Debugging: Log CV data to ensure it's passed correctly
         print("Received CV Data: \(String(describing: cvData))")
+        shareCVButton.addTarget(self, action: #selector(shareCVButtonTapped(_:)), for: .touchUpInside)
 
         // Display the CV content
         displayCV()
-    }
+        shareCVButton.isEnabled = true
 
+    }
+    
     private func displayCV() {
         guard let cvData = cvData else {
             cvTextView.text = "Your CV is empty. Please provide details to generate your CV."
             return
         }
-
+        
         let cvContent = NSMutableAttributedString()
-
+        
         // Add Personal Info
         if let personalInfo = cvData.personalInfo {
             cvContent.append(makeTitle("PERSONAL INFORMATION"))
             let personalInfoLine = """
-            \(personalInfo.name) | \(personalInfo.email) | \(personalInfo.phoneNumber)
-            """
+               \(personalInfo.name) | \(personalInfo.email) | \(personalInfo.phoneNumber)
+               """
             cvContent.append(makeBody("\(personalInfoLine)\n\n"))
-
+            
             if !personalInfo.professionalSummary.isEmpty {
                 cvContent.append(makeSubtitle("Professional Summary"))
                 cvContent.append(makeBody("\(personalInfo.professionalSummary)\n\n"))
             }
+            
+            if !personalInfo.skills.isEmpty {
+                cvContent.append(makeSubtitle("Skills"))
+                let skillPoints = personalInfo.skills.split(separator: "\n").map { "• \($0)" }.joined(separator: "\n")
+                cvContent.append(makeBody("\(skillPoints)\n\n"))
+            }
         }
-
-        // Add Skills
-        if !cvData.skills.isEmpty {
-            cvContent.append(makeTitle("SKILLS"))
-            let skills = cvData.skills.map { $0.name }.joined(separator: ", ")
-            cvContent.append(makeBody("\(skills)\n\n"))
-        }
-
+        
         // Add Experience
         if !cvData.experience.isEmpty {
             cvContent.append(makeTitle("PROFESSIONAL EXPERIENCE"))
             for experience in cvData.experience {
                 cvContent.append(makeSubtitle(experience.title))
                 cvContent.append(makeBody("""
-                Company: \(experience.company)
-                Duration: \(experience.duration)
-
-                """))
+                   Company: \(experience.company)
+                   Duration: \(experience.duration)
+                   Description: \(experience.description)
+                   
+                   """))
             }
         }
-
+        
         // Add Education
         if !cvData.education.isEmpty {
             cvContent.append(makeTitle("EDUCATION"))
             for education in cvData.education {
                 cvContent.append(makeSubtitle(education.degree))
                 cvContent.append(makeBody("""
-                Institution: \(education.institution)
-                Graduation Year: \(education.year)
-
-                """))
+                   Institution: \(education.institution)
+                   Graduation Year: \(education.year)
+                   
+                   """))
             }
         }
-
+        
         // Add Certifications
         if !cvData.certifications.isEmpty {
             cvContent.append(makeTitle("CERTIFICATIONS"))
@@ -90,13 +93,12 @@ class generatedCvViewController: UIViewController {
                 cvContent.append(makeBody("Issued Year: \(certification.year)\n"))
             }
         }
-
+        
         // Update the TextView with styled content
         cvTextView.attributedText = cvContent
         cvTextView.textAlignment = .left
     }
-
-
+    
     private func makeTitle(_ text: String) -> NSAttributedString {
         let attributes: [NSAttributedString.Key: Any] = [
             .font: UIFont.boldSystemFont(ofSize: 18),
@@ -104,7 +106,7 @@ class generatedCvViewController: UIViewController {
         ]
         return NSAttributedString(string: "\(text)\n", attributes: attributes)
     }
-
+    
     private func makeSubtitle(_ text: String) -> NSAttributedString {
         let attributes: [NSAttributedString.Key: Any] = [
             .font: UIFont.boldSystemFont(ofSize: 16),
@@ -112,7 +114,7 @@ class generatedCvViewController: UIViewController {
         ]
         return NSAttributedString(string: "\(text)\n", attributes: attributes)
     }
-
+    
     private func makeBody(_ text: String) -> NSAttributedString {
         let attributes: [NSAttributedString.Key: Any] = [
             .font: UIFont.systemFont(ofSize: 14),
@@ -120,127 +122,114 @@ class generatedCvViewController: UIViewController {
         ]
         return NSAttributedString(string: text, attributes: attributes)
     }
-
-
-
-
+    
+    @IBOutlet weak var shareCVButton: UIButton!
     // MARK: - Actions
     @IBAction func shareCVButtonTapped(_ sender: UIButton) {
-        // Show an alert to confirm the user's choice
+        print("Button tapped!")
         let alertController = UIAlertController(
             title: "Export CV",
             message: "Your CV will be exported and saved to your files. Do you want to continue?",
             preferredStyle: .alert
         )
-
-        // Option to export the CV
+        
         let exportAction = UIAlertAction(title: "Export CV", style: .default) { _ in
-            // Proceed with PDF generation and sharing
             self.generatePDF { pdfURL in
                 guard let pdfURL = pdfURL else {
                     self.showAlert(title: "Error", message: "Failed to generate the PDF. Please try again.")
                     return
                 }
-
-                // Present the share sheet with the generated PDF
+                
                 let activityVC = UIActivityViewController(activityItems: [pdfURL], applicationActivities: nil)
                 self.present(activityVC, animated: true)
             }
         }
-
-        // Option to exit
+        
         let exitAction = UIAlertAction(title: "Exit", style: .destructive) { _ in
-            // Exit the current view
             self.dismiss(animated: true, completion: nil)
         }
-
-        // Add actions to the alert controller
+        
         alertController.addAction(exportAction)
         alertController.addAction(exitAction)
-
-        // Present the alert to the user
+        
         self.present(alertController, animated: true, completion: nil)
     }
-
-    // MARK: - Generate PDF
+    
     private func generatePDF(completion: (URL?) -> Void) {
         guard let cvData = cvData else {
-            print("Error: CV data is nil.")
             completion(nil)
             return
         }
-
-        let pdfRenderer = UIGraphicsPDFRenderer(bounds: CGRect(x: 0, y: 0, width: 612, height: 792)) // A4 size
+        
+        let pdfRenderer = UIGraphicsPDFRenderer(bounds: CGRect(x: 0, y: 0, width: 612, height: 792))
         let pdfData = pdfRenderer.pdfData { context in
             context.beginPage()
             let attributes: [NSAttributedString.Key: Any] = [
                 .font: UIFont.systemFont(ofSize: 14),
                 .foregroundColor: UIColor.black
             ]
-
+            
             var text = ""
-
-            // Personal Info
+            
             if let personalInfo = cvData.personalInfo {
                 text += """
-                Personal Information:
-                Name: \(personalInfo.name)
-                Email: \(personalInfo.email)
-                Phone: \(personalInfo.phoneNumber)
-                Summary: \(personalInfo.professionalSummary)
-                
-                """
+                   Name: \(personalInfo.name)
+                   Email: \(personalInfo.email)
+                   Phone: \(personalInfo.phoneNumber)
+                   Professional Summary: \(personalInfo.professionalSummary)
+                   Skills:
+                   \(personalInfo.skills.split(separator: "\n").map { "• \($0)" }.joined(separator: "\n"))
+                   
+                   """
             }
-
-            // Skills
-            if !cvData.skills.isEmpty {
-                text += "Skills:\n\(cvData.skills.map { $0.name }.joined(separator: ", "))\n\n"
-            }
-
-            // Experience
+            
             if !cvData.experience.isEmpty {
                 text += "Experience:\n"
                 for experience in cvData.experience {
-                    text += "Title: \(experience.title), Company: \(experience.company), Duration: \(experience.duration)\n"
+                    text += """
+                       Title: \(experience.title)
+                       Company: \(experience.company)
+                       Duration: \(experience.duration)
+                       Description: \(experience.description)
+                       
+                       """
                 }
-                text += "\n"
             }
-
-            // Education
+            
             if !cvData.education.isEmpty {
                 text += "Education:\n"
                 for education in cvData.education {
-                    text += "Degree: \(education.degree), Institution: \(education.institution), Graduation Year: \(education.year)\n"
+                    text += """
+                       Degree: \(education.degree)
+                       Institution: \(education.institution)
+                       Graduation Year: \(education.year)
+                       
+                       """
                 }
-                text += "\n"
             }
-
-            // Certifications
+            
             if !cvData.certifications.isEmpty {
                 text += "Certifications:\n"
                 for certification in cvData.certifications {
-                    text += "\(certification.name) - Issued Year: \(certification.year)\n"
+                    text += "\(certification.name) - \(certification.year)\n"
                 }
             }
-
+            
             text.draw(in: CGRect(x: 20, y: 20, width: 572, height: 752), withAttributes: attributes)
         }
-
+        
         let tempURL = FileManager.default.temporaryDirectory.appendingPathComponent("CV.pdf")
         do {
             try pdfData.write(to: tempURL)
             completion(tempURL)
         } catch {
-            print("Error generating PDF: \(error)")
             completion(nil)
         }
     }
-
-    // MARK: - Helper Methods
+    
     private func showAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default))
         present(alert, animated: true)
     }
 }
-

@@ -27,7 +27,31 @@ class educationViewController: UITableViewController, UITextViewDelegate {
     // MARK: - Setup Methods
     private func setupUI() {
         // Any additional UI setup can be added here
+        setupDatePickerForGraduationYear()
+
     }
+    private func setupDatePickerForGraduationYear() {
+            // Create the date picker
+            let datePicker = UIDatePicker()
+            datePicker.datePickerMode = .date
+            datePicker.preferredDatePickerStyle = .wheels
+
+            // Set a maximum date to today's date (Optional)
+            datePicker.maximumDate = Date()
+
+            // Add a target to update the text field when the value changes
+            datePicker.addTarget(self, action: #selector(dateChanged(_:)), for: .valueChanged)
+
+            // Assign the date picker to the graduationYearTextField
+            graduationYearTextField.inputView = datePicker
+
+            // Add a toolbar with a Done button
+            let toolbar = UIToolbar()
+            toolbar.sizeToFit()
+            let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(donePickingDate))
+            toolbar.setItems([doneButton], animated: true)
+            graduationYearTextField.inputAccessoryView = toolbar
+        }
 
     // MARK: - Actions
     @IBAction func nextButtonTapped(_ sender: Any) {
@@ -136,5 +160,19 @@ class educationViewController: UITableViewController, UITextViewDelegate {
         alert.addAction(UIAlertAction(title: "OK", style: .default))
         present(alert, animated: true)
     }
+    
+    // MARK: - Date Picker Handlers
+        @objc func dateChanged(_ sender: UIDatePicker) {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "MM/yyyy" // Show month and year only
+            graduationYearTextField.text = formatter.string(from: sender.date)
+        }
+
+        @objc func donePickingDate() {
+            // Dismiss the date picker
+            graduationYearTextField.resignFirstResponder()
+        }
+
+        
 }
 

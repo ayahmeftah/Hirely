@@ -13,7 +13,7 @@
         <!--Navigation Controller-->
         <scene sceneID="88S-IA-y6H">
             <objects>
-                <navigationController id="3wP-bu-qOO" sceneMemberID="viewController">
+                <navigationController modalPresentationStyle="fullScreen" id="3wP-bu-qOO" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="XT8-de-bJa">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -29,7 +29,7 @@
         <!--Cv Builder View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="Y6W-OH-hqX" customClass="CvBuilderViewController" customModule="Hirely" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController wantsFullScreenLayout="YES" modalPresentationStyle="fullScreen" id="Y6W-OH-hqX" customClass="CvBuilderViewController" customModule="Hirely" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -72,8 +72,9 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ayq-Hw-cbX">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ayq-Hw-cbX">
                                 <rect key="frame" x="28" y="317" width="308" height="174"/>
+                                <color key="backgroundColor" red="0.87415778639999997" green="0.52226001020000001" blue="0.231262207" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="tintColor" red="0.87308639290000001" green="0.52258765699999998" blue="0.23006534579999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title=""/>
@@ -742,7 +743,7 @@
                                                     <rect key="frame" x="20" y="5" width="353" height="34"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                                 </textField>
                                             </subviews>
                                             <color key="backgroundColor" red="0.91008210180000004" green="0.91728574039999999" blue="0.93333584069999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -764,7 +765,7 @@
                                                     <rect key="frame" x="20" y="5" width="353" height="34"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                                 </textField>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -837,6 +838,7 @@
                         <outlet property="nameTextField" destination="4HV-MQ-6UY" id="cw6-u4-mh5"/>
                         <outlet property="phoneNumberTextField" destination="VNy-MK-pXt" id="eYV-m7-62p"/>
                         <outlet property="professionalSummaryTextView" destination="9I0-rS-5bT" id="H5Y-Sg-JaF"/>
+                        <outlet property="skillsTextView" destination="sCP-Bh-o9r" id="a3f-dK-Omj"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w11-YL-aqt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1108,7 +1110,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="companyTextField" destination="Gze-02-YOu" id="rA6-gm-ewS"/>
-                        <outlet property="descriptionTextField" destination="kgI-r3-o90" id="ua4-xx-5z9"/>
+                        <outlet property="descTextField" destination="q5H-J8-A4Y" id="QVk-PD-EZG"/>
+                        <outlet property="descriptionTextField" destination="kgI-r3-o90" id="5I9-gf-xqU"/>
                         <outlet property="fromDateTextField" destination="HHq-03-JZn" id="dId-2D-9JW"/>
                         <outlet property="jobTitleTextField" destination="iER-D1-o90" id="7ov-fN-bL3"/>
                         <outlet property="toDateTextField" destination="cdf-Wc-vRC" id="Nec-WQ-0Au"/>
@@ -1429,13 +1432,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FkG-FK-zdR">
-                                                    <rect key="frame" x="4" y="5" width="88" height="34"/>
+                                                    <rect key="frame" x="4" y="5" width="338" height="34"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="FkG-FK-zdR" secondAttribute="trailing" constant="261" id="26b-Rv-Qrd"/>
+                                                <constraint firstAttribute="trailing" secondItem="FkG-FK-zdR" secondAttribute="trailing" constant="11" id="26b-Rv-Qrd"/>
                                                 <constraint firstAttribute="bottom" secondItem="FkG-FK-zdR" secondAttribute="bottom" constant="4.6699999999999999" id="D4O-EO-czp"/>
                                                 <constraint firstItem="FkG-FK-zdR" firstAttribute="top" secondItem="Jtc-sE-MKO" secondAttribute="top" constant="5" id="gsJ-Xb-j8y"/>
                                                 <constraint firstItem="FkG-FK-zdR" firstAttribute="leading" secondItem="Jtc-sE-MKO" secondAttribute="leading" constant="4" id="riF-sZ-Oia"/>
@@ -1515,7 +1518,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fx7-Le-bGB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="877" y="785"/>
+            <point key="canvasLocation" x="875.57251908396938" y="784.50704225352115"/>
         </scene>
         <!--Generated Cv View Controller-->
         <scene sceneID="I5z-uZ-izy">
@@ -1531,11 +1534,11 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Exit"/>
                                 <connections>
-                                    <action selector="shareCVButtonTapped:" destination="BbI-dD-25a" eventType="touchUpInside" id="EMs-g8-oBT"/>
+                                    <action selector="shareCVButtonTapped:" destination="BbI-dD-25a" eventType="touchUpInside" id="Z7h-hO-KEE"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="XQK-eT-Qh2">
-                                <rect key="frame" x="28" y="103" width="335" height="660"/>
+                                <rect key="frame" x="28" y="151" width="335" height="612"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="textColor" systemColor="labelColor"/>
@@ -1549,11 +1552,12 @@
                     <navigationItem key="navigationItem" id="2Kk-Fi-2wP"/>
                     <connections>
                         <outlet property="cvTextView" destination="XQK-eT-Qh2" id="ETG-AZ-bIv"/>
+                        <outlet property="shareCVButton" destination="tMr-qB-TQf" id="4Fg-UM-NmZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Bg-0i-cZr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1671" y="785"/>
+            <point key="canvasLocation" x="1670.9923664122136" y="784.50704225352115"/>
         </scene>
     </scenes>
     <resources>

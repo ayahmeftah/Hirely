@@ -18,6 +18,7 @@ class personalInfoViewController: UITableViewController, UITextViewDelegate {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var professionalSummaryTextView: UITextView!
     
+    @IBOutlet weak var skillsTextView: UITextView!
     // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +27,10 @@ class personalInfoViewController: UITableViewController, UITextViewDelegate {
         professionalSummaryTextView.text = "Write a short professional summary..."
         professionalSummaryTextView.textColor = .lightGray
         professionalSummaryTextView.delegate = self
+        
+        skillsTextView.text = "List your skills here..."
+        skillsTextView.textColor = .lightGray
+        skillsTextView.delegate = self
     }
     
 //    @IBAction func nextButtonTapped(_ sender: UIBarButtonItem) {
@@ -52,8 +57,11 @@ class personalInfoViewController: UITableViewController, UITextViewDelegate {
                 name: name,
                 email: email,
                 phoneNumber: phoneNumber,
-                professionalSummary: professionalSummaryTextView.text == "Write a short professional summary..." ? "" : professionalSummaryTextView.text
+                professionalSummary: professionalSummaryTextView.text == "Write a short professional summary..." ? "" : professionalSummaryTextView.text,
+                skills: skillsTextView.text == "List your skills here..." ? "" : skillsTextView.text
+
             )
+        
 
             if cvData == nil {
                 cvData = CVData()
@@ -82,7 +90,9 @@ class personalInfoViewController: UITableViewController, UITextViewDelegate {
                            name: nameTextField.text ?? "",
                            email: emailTextField.text ?? "",
                            phoneNumber: phoneNumberTextField.text ?? "",
-                           professionalSummary: professionalSummaryTextView.text == "Write a short professional summary..." ? "" : professionalSummaryTextView.text
+                           professionalSummary: professionalSummaryTextView.text == "Write a short professional summary..." ? "" : professionalSummaryTextView.text,
+                           skills: skillsTextView.text == "List your skills here..." ? "" : skillsTextView.text
+
                        )
                    }
                    destinationVC.cvData = self.cvData
@@ -96,26 +106,34 @@ class personalInfoViewController: UITableViewController, UITextViewDelegate {
 
     
     // MARK: - UITextViewDelegate
-    func textViewDidBeginEditing(_ textView: UITextView) {
-        // Remove placeholder text when editing begins
-        if textView.text == "Write a short professional summary..." {
-            textView.text = ""
-            textView.textColor = .black
-        }
-    }
+       func textViewDidBeginEditing(_ textView: UITextView) {
+           // Remove placeholder text when editing begins
+           if textView == professionalSummaryTextView && textView.text == "Write a short professional summary..." {
+               textView.text = ""
+               textView.textColor = .black
+           } else if textView == skillsTextView && textView.text == "List your skills here..." {
+               textView.text = ""
+               textView.textColor = .black
+           }
+       }
+       
+       func textViewDidEndEditing(_ textView: UITextView) {
+           // Add placeholder text if the user leaves the field empty
+           if textView == professionalSummaryTextView && textView.text.isEmpty {
+               textView.text = "Write a short professional summary..."
+               textView.textColor = .lightGray
+           } else if textView == skillsTextView && textView.text.isEmpty {
+               textView.text = "List your skills here..."
+               textView.textColor = .lightGray
+           }
+       }
+       
+       // MARK: - Helper Methods
+       private func showAlert(title: String, message: String) {
+           let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+           alert.addAction(UIAlertAction(title: "OK", style: .default))
+           present(alert, animated: true)
+       }
+   
     
-    func textViewDidEndEditing(_ textView: UITextView) {
-        // Add placeholder text if the user leaves the field empty
-        if textView.text.isEmpty {
-            textView.text = "Write a short professional summary..."
-            textView.textColor = .lightGray
-        }
-    }
-    
-    // MARK: - Helper Methods
-    private func showAlert(title: String, message: String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default))
-        present(alert, animated: true)
-    }
 }
