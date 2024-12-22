@@ -22,11 +22,11 @@ class generatedCvViewController: UIViewController {
         
         // Debugging: Log CV data to ensure it's passed correctly
         print("Received CV Data: \(String(describing: cvData))")
-        shareCVButton.addTarget(self, action: #selector(shareCVButtonTapped(_:)), for: .touchUpInside)
+        shareCVButton?.addTarget(self, action: #selector(shareCVButtonTapped(_:)), for: .touchUpInside)
 
         // Display the CV content
         displayCV()
-        shareCVButton.isEnabled = true
+        shareCVButton?.isEnabled = true
 
     }
     
