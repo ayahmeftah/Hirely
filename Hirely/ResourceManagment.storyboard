@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XfE-uF-fK7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XfE-uF-fK7">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -127,20 +127,20 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="DBq-Z3-xGI">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                                <color key="backgroundColor" red="0.83189100029999996" green="0.84240704769999997" blue="0.87451463939999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="rpy-xn-Msv">
                                 <rect key="frame" x="0.0" y="253.33333333333331" width="393" height="598.66666666666674"/>
-                                <color key="backgroundColor" red="0.76155287029999996" green="0.77535969019999995" blue="0.82353645559999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <color key="separatorColor" red="0.76155287029999996" green="0.77535969019999995" blue="0.82353645559999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <color key="sectionIndexBackgroundColor" red="0.76155287029999996" green="0.77535969019999995" blue="0.82353645559999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.90978568790000003" green="0.91735887530000004" blue="0.93335336449999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="separatorColor" red="0.90978568790000003" green="0.91735887530000004" blue="0.93335336449999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="sectionIndexBackgroundColor" red="0.90978568790000003" green="0.91735887530000004" blue="0.93335336449999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="sectionIndexTrackingBackgroundColor" red="0.76155287029999996" green="0.77535969019999995" blue="0.82353645559999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ResourceCell" id="WhR-kM-uZB" customClass="ResourceTableViewCell" customModule="Hirely" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="393" height="102.33333587646484"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ResourceCell" rowHeight="115" id="WhR-kM-uZB" customClass="ResourceTableViewCell" customModule="Hirely" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="115"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WhR-kM-uZB" id="F84-ni-qQ4">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="102.33333587646484"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="115"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleAspectFit" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vbn-7n-eN2">
@@ -149,10 +149,10 @@
                                                     <color key="backgroundColor" red="0.25257447360000002" green="0.56232458350000003" blue="0.83164590599999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </view>
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="220" translatesAutoresizingMaskIntoConstraints="NO" id="Uhb-83-eiO">
-                                                    <rect key="frame" x="30" y="21.000000000000004" width="333" height="60.333333333333343"/>
+                                                    <rect key="frame" x="30" y="21" width="333" height="73"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="vO8-aS-VK1">
-                                                            <rect key="frame" x="0.0" y="0.33333333333333215" width="63.666666666666664" height="60"/>
+                                                            <rect key="frame" x="0.0" y="6.6666666666666714" width="63.666666666666664" height="60"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="brM-Iu-9bn">
                                                                     <rect key="frame" x="0.0" y="0.0" width="63.666666666666664" height="30"/>
@@ -175,7 +175,7 @@
                                                             </subviews>
                                                         </stackView>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WiW-NH-aqT">
-                                                            <rect key="frame" x="283.66666666666669" y="13" width="49.333333333333314" height="34.333333333333336"/>
+                                                            <rect key="frame" x="283.66666666666669" y="19.333333333333332" width="49.333333333333314" height="34.333333333333343"/>
                                                             <color key="tintColor" red="0.94200551509999997" green="0.90508061650000005" blue="0.97257465119999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <state key="normal" title="Button"/>
                                                             <buttonConfiguration key="configuration" style="plain">
@@ -188,7 +188,7 @@
                                                     </subviews>
                                                 </stackView>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.76155287029999996" green="0.77535969019999995" blue="0.82353645559999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <color key="backgroundColor" red="0.90978568790000003" green="0.91735887530000004" blue="0.93335336449999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <color key="tintColor" red="0.76155287029999996" green="0.77535969019999995" blue="0.82353645559999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <constraints>
                                                 <constraint firstAttribute="bottomMargin" secondItem="Uhb-83-eiO" secondAttribute="bottom" constant="10" id="Bo9-Hd-afZ"/>
@@ -217,14 +217,23 @@
                                 <color key="backgroundColor" red="0.87415778639999997" green="0.52226001020000001" blue="0.231262207" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="tintColor" red="0.87141853570000005" green="0.52382600310000005" blue="0.23104456070000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Add Rescource"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Add Rescource">
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" red="0.8731105924" green="0.52513092760000002" blue="0.23060655590000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </backgroundConfiguration>
+                                </buttonConfiguration>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <segue destination="A4J-hD-9Bu" kind="show" id="0T2-np-EaQ"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="cxe-qs-XHa"/>
-                        <color key="backgroundColor" red="0.76155287029999996" green="0.77535969019999995" blue="0.82353645559999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.90978568790000003" green="0.91735887530000004" blue="0.93335336449999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="DBq-Z3-xGI" firstAttribute="leading" secondItem="2Z0-hO-Nl2" secondAttribute="leading" id="4j7-rZ-OFU"/>
                             <constraint firstItem="DBq-Z3-xGI" firstAttribute="top" secondItem="2Z0-hO-Nl2" secondAttribute="top" id="Ah1-0L-Sy6"/>
@@ -415,8 +424,10 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="eIS-te-1hg">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="eIS-te-1hg">
                                 <rect key="frame" x="26" y="308" width="336" height="495"/>
+                                <color key="backgroundColor" red="0.90980392156862744" green="0.91735887530000004" blue="0.93335336449999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="sectionIndexBackgroundColor" red="0.90978568790000003" green="0.91735887530000004" blue="0.93335336449999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="VidoeCell" rowHeight="99" id="LcL-5s-DDm" customClass="VideoTableViewCell" customModule="Hirely" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="336" height="99"/>
@@ -479,8 +490,13 @@
                                                 <constraint firstItem="2Un-FS-0GO" firstAttribute="top" secondItem="KSA-hh-CWd" secondAttribute="top" constant="20" id="Z9P-pZ-IvV"/>
                                                 <constraint firstItem="2Un-FS-0GO" firstAttribute="leading" secondItem="KSA-hh-CWd" secondAttribute="leading" constant="10" id="yMR-2V-5vj"/>
                                             </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath=" layer.cornerRadius">
+                                                    <integer key="value" value="10"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.25356775520000002" green="0.56476742030000004" blue="0.83140671249999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" red="0.90978568790000003" green="0.91735887530000004" blue="0.93335336449999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
                                             <outlet property="bookmarkBtn" destination="pFx-Ta-hzc" id="Qqe-hI-cO8"/>
                                             <outlet property="videoTitle" destination="WS8-sT-NIJ" id="OVC-1j-uf8"/>
@@ -546,7 +562,7 @@
             <objects>
                 <tableViewController id="Des-TW-GsW" customClass="AddEditResourceTableViewController" customModule="Hirely" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" sectionIndexMinimumDisplayRowCount="-1" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="8iK-I2-QiU">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <sections>
@@ -683,9 +699,11 @@
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="160" estimatedRowHeight="160" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Z20-6h-gTr">
                                 <rect key="frame" x="26" y="307" width="336" height="496"/>
+                                <color key="backgroundColor" red="0.90978568790000003" green="0.91735887530000004" blue="0.93335336449999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="496" id="5XN-Wg-1B3"/>
                                 </constraints>
+                                <color key="sectionIndexBackgroundColor" red="0.90978568790000003" green="0.91735887530000004" blue="0.93335336449999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CourseCell" rowHeight="99" id="hJ1-Ds-NKS" customClass="VideoTableViewCell" customModule="Hirely" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="336" height="99"/>
@@ -735,9 +753,9 @@
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number">
-                                                            <string key="keyPath">layer.cornerRadius
+                                                            <string key="keyPath">cell.cornerRadius
 </string>
-                                                            <integer key="value" value="6"/>
+                                                            <integer key="value" value="10"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
@@ -750,7 +768,7 @@
                                                 <constraint firstItem="bIy-oM-UED" firstAttribute="leading" secondItem="mEG-91-QEm" secondAttribute="leading" constant="10" id="qCA-D9-Di0"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.25356775520000002" green="0.56476742030000004" blue="0.83140671249999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" red="0.90978568790000003" green="0.91735887530000004" blue="0.93335336449999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
                                             <outlet property="bookmarkBtn" destination="5lb-99-re6" id="ehn-kA-EgQ"/>
                                             <outlet property="videoTitle" destination="xUc-2C-Bxi" id="fQg-4e-aBo"/>
@@ -822,22 +840,23 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="fze-Ji-eRP">
                                 <rect key="frame" x="26" y="168" width="308.33333333333331" height="23"/>
                             </stackView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="117" estimatedRowHeight="117" sectionHeaderHeight="117" estimatedSectionHeaderHeight="117" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Cz2-Yd-6Rw">
-                                <rect key="frame" x="26" y="310" width="336" height="493"/>
-                                <color key="backgroundColor" red="0.91008210180000004" green="0.91728574039999999" blue="0.93333584069999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="117" estimatedRowHeight="117" sectionHeaderHeight="117" estimatedSectionHeaderHeight="117" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Cz2-Yd-6Rw">
+                                <rect key="frame" x="26" y="310" width="336" height="527"/>
+                                <color key="backgroundColor" red="0.90978568790000003" green="0.91735887530000004" blue="0.93335336449999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="sectionIndexBackgroundColor" red="0.90978568790000003" green="0.91735887530000004" blue="0.93335336449999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ArticleCell" rowHeight="99" id="Onb-Up-Rik" customClass="VideoTableViewCell" customModule="Hirely" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="336" height="99"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ArticleCell" rowHeight="100" id="Onb-Up-Rik" customClass="VideoTableViewCell" customModule="Hirely" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="336" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Onb-Up-Rik" id="5nU-JU-PyT" customClass="VideoTableViewCell" customModule="Hirely" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="336" height="99"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="336" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cT2-GY-S46">
-                                                    <rect key="frame" x="10" y="20" width="316" height="59"/>
+                                                    <rect key="frame" x="10" y="20" width="316" height="60"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rEY-lD-7vM">
-                                                            <rect key="frame" x="274" y="5" width="42" height="49"/>
+                                                            <rect key="frame" x="274" y="5" width="42" height="50"/>
                                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <state key="normal" title="Button"/>
                                                             <buttonConfiguration key="configuration" style="plain" image="bookmark" catalog="system"/>
@@ -847,7 +866,7 @@
                                                             </connections>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wtw-dD-iKJ">
-                                                            <rect key="frame" x="12" y="20" width="250" height="19"/>
+                                                            <rect key="frame" x="12" y="20" width="250" height="20"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="57" id="2bx-pm-qgA"/>
                                                                 <constraint firstAttribute="width" constant="250" id="SKZ-9Q-lay"/>
@@ -876,20 +895,26 @@
                                                         <userDefinedRuntimeAttribute type="number">
                                                             <string key="keyPath">layer.cornerRadius
 </string>
-                                                            <integer key="value" value="6"/>
+                                                            <integer key="value" value="10"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                             </subviews>
                                             <color key="backgroundColor" red="0.25356775520000002" green="0.56476742030000004" blue="0.83140671249999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <color key="tintColor" red="0.90978568790000003" green="0.91735887530000004" blue="0.93335336449999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="cT2-GY-S46" secondAttribute="bottom" constant="20" symbolic="YES" id="UOh-KK-aYl"/>
                                                 <constraint firstItem="cT2-GY-S46" firstAttribute="top" secondItem="5nU-JU-PyT" secondAttribute="top" constant="20" id="YzP-Pu-JSh"/>
                                                 <constraint firstItem="cT2-GY-S46" firstAttribute="leading" secondItem="5nU-JU-PyT" secondAttribute="leading" constant="10" id="gVg-jU-Rf1"/>
                                                 <constraint firstAttribute="trailing" secondItem="cT2-GY-S46" secondAttribute="trailing" constant="10" id="qHH-C4-wUb"/>
                                             </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="10"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.25356775520000002" green="0.56476742030000004" blue="0.83140671249999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" red="0.90978568790000003" green="0.91735887530000004" blue="0.93335336449999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
                                             <outlet property="bookmarkBtn" destination="rEY-lD-7vM" id="3uV-Fo-aWa"/>
                                             <outlet property="videoTitle" destination="wtw-dD-iKJ" id="Qer-Xr-jja"/>
@@ -947,7 +972,6 @@
                             <constraint firstItem="fze-Ji-eRP" firstAttribute="centerX" secondItem="gG2-uF-sK1" secondAttribute="centerX" id="xIF-ap-gIt"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="kqo-Fe-JxG"/>
                     <connections>
                         <outlet property="tableView" destination="Cz2-Yd-6Rw" id="KwN-u4-arQ"/>
                     </connections>
@@ -962,7 +986,7 @@
         <image name="bookmark" catalog="system" width="110" height="128"/>
         <image name="courses" width="186" height="165"/>
         <image name="coverLetter" width="187" height="249"/>
-        <image name="trash.fill" catalog="system" width="32" height="32"/>
+        <image name="trash.fill" catalog="system" width="117" height="128"/>
         <image name="videos" width="187" height="249"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

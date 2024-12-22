@@ -33,7 +33,10 @@ class VideoTableViewCell: UITableViewCell {
         bookmarkBtn?.setTitle("", for: .highlighted)
         bookmarkBtn?.setTitle("", for: .selected)
         bookmarkBtn?.setTitle("", for: .disabled)
-
+        // Make the view rounded
+      
+        
+        
 //        if containerView == nil {
 //               print("containerView is nil! Check the storyboard connection.")
 //           }

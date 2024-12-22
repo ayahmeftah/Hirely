@@ -20,6 +20,7 @@
 		C363937D2D006A4C00E14337 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = C363937C2D006A4C00E14337 /* FirebaseDatabase */; };
 		C363937F2D006A5600E14337 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = C363937E2D006A5600E14337 /* FirebaseAuth */; };
 		C36393812D006A7800E14337 /* Cloudinary in Frameworks */ = {isa = PBXBuildFile; productRef = C36393802D006A7800E14337 /* Cloudinary */; };
+		C3D37E212D183AAD00F3966B /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = C3D37E202D183AAD00F3966B /* FirebaseFirestore */; };
 		CD275ADC2D14AE5C00C1CE1E /* CoursesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD275ADB2D14AE5C00C1CE1E /* CoursesViewController.swift */; };
 		CD275ADE2D14B02000C1CE1E /* CoursesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD275ADD2D14B01F00C1CE1E /* CoursesTableViewCell.swift */; };
 		CDB720432D157C0B0039D80B /* CareerTipsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB720422D157C0B0039D80B /* CareerTipsViewController.swift */; };
@@ -86,6 +87,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C363937D2D006A4C00E14337 /* FirebaseDatabase in Frameworks */,
+				C3D37E212D183AAD00F3966B /* FirebaseFirestore in Frameworks */,
 				C363937F2D006A5600E14337 /* FirebaseAuth in Frameworks */,
 				C36393812D006A7800E14337 /* Cloudinary in Frameworks */,
 			);
@@ -216,6 +218,7 @@
 				C363937C2D006A4C00E14337 /* FirebaseDatabase */,
 				C363937E2D006A5600E14337 /* FirebaseAuth */,
 				C36393802D006A7800E14337 /* Cloudinary */,
+				C3D37E202D183AAD00F3966B /* FirebaseFirestore */,
 			);
 			productName = Hirely;
 			productReference = 71BEBCDA2CFC502900DF795E /* Hirely.app */;
@@ -729,6 +732,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2C9302FB2CFCBD4300CAD615 /* XCRemoteSwiftPackageReference "cloudinary_ios" */;
 			productName = Cloudinary;
+		};
+		C3D37E202D183AAD00F3966B /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2C9302F62CFC9EDF00CAD615 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

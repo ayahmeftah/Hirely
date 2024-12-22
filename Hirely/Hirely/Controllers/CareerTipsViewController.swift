@@ -7,7 +7,7 @@
 
 import UIKit
 import SafariServices
-
+import FirebaseFirestore
 class CareerTipsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
     // Array to store articles

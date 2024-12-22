@@ -6,13 +6,14 @@
 //
 
 import UIKit
+import FirebaseFirestore
 
 class AddEditResourceTableViewController: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
 
     
     var resource: Resource?
-    var categories = ["Technology", "Education", "Health", "Finance", "Entertainment"]
+    var categories = ["Videos", "Articles", "Cover letter", "Courses"]
 
     
     @IBOutlet weak var resoureTitleText: UITextField!
@@ -128,6 +129,35 @@ class AddEditResourceTableViewController: UITableViewController, UIPickerViewDel
         let link = resourceLinkLbl.text ?? ""
         
         resource = Resource(title: title, category: cat, link: link)
+        
+        //database refrence
+        let db = Firestore.firestore()
+        
+        let ResourcesCollection = db.collection("Resources")
+        
+        let newDofRef = ResourcesCollection.document()
+        
+        //Data to save
+        let ResourcesData: [String: Any] = [
+            "docId": newDofRef.documentID,
+            "resourceTitle": title,
+            "resourceCategory": cat,
+            "resourceLink": link
+        
+        ]
+        //saving the document
+        newDofRef.setData(ResourcesData){ error in
+            if let error = error {
+                print("Error saving resources: \(error.localizedDescription)")
+                
+            }
+            else{print("Resources saved successfully with docId:)\(newDofRef.documentID)")
+                self.showSuccessAlert()}
+            
+        }
+        
+        
+        
         // Show success alert
                showSuccessAlert()
     }
@@ -139,6 +169,12 @@ class AddEditResourceTableViewController: UITableViewController, UIPickerViewDel
            alert.addAction(okAction)
            present(alert, animated: true, completion: nil)
        }
+    
+    
+    func saveResourcesToFireStore(){
+   
+        
+    }
     
     // MARK: - Table view data sourc
 
