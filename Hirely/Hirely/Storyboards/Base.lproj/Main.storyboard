@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4Ed-m8-ugN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="I8q-9S-8Gy">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
@@ -8,53 +8,54 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Hirely" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mtE-Ed-MtD" customClass="CLDUIImageView" customModule="Cloudinary">
-                                <rect key="frame" x="76" y="153" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5KF-ud-V6K" customClass="CLDUIImageView" customModule="Cloudinary">
-                                <rect key="frame" x="76" y="380" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="Vra-pT-FWq"/>
-                    <connections>
-                        <outlet property="ivGenerateUrl" destination="5KF-ud-V6K" id="ylE-Oh-ARI"/>
-                        <outlet property="ivUploadedImage" destination="mtE-Ed-MtD" id="cAN-m3-mWU"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="853" y="-35"/>
-        </scene>
-        <!--View Controller-->
+        <!--First Search View Controller-->
         <scene sceneID="X4G-I3-fYu">
             <objects>
-                <viewController id="4Ed-m8-ugN" sceneMemberID="viewController">
+                <viewController id="4Ed-m8-ugN" customClass="FirstSearchViewController" customModule="Hirely" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="i6q-78-Sqi">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="extraShortBakground" translatesAutoresizingMaskIntoConstraints="NO" id="rLA-HE-HVf">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="RhE-Ek-Uue"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="rLA-HE-HVf" firstAttribute="trailing" secondItem="RhE-Ek-Uue" secondAttribute="trailing" id="4Dy-WA-JhN"/>
+                            <constraint firstItem="rLA-HE-HVf" firstAttribute="top" secondItem="i6q-78-Sqi" secondAttribute="top" id="KyJ-mt-F5N"/>
+                            <constraint firstItem="rLA-HE-HVf" firstAttribute="leading" secondItem="RhE-Ek-Uue" secondAttribute="leading" id="Wwm-Sv-dWu"/>
+                            <constraint firstAttribute="bottom" secondItem="rLA-HE-HVf" secondAttribute="bottom" id="oq8-mP-p1t"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="R4f-Me-0Ws"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FXb-h1-PNv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1805" y="359"/>
+            <point key="canvasLocation" x="2730.5343511450383" y="358.45070422535213"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ePq-34-HUB">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="I8q-9S-8Gy" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eQV-qR-dAM">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="4Ed-m8-ugN" kind="relationship" relationship="rootViewController" id="rfb-oV-utU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WHV-Hv-vMr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1803.8167938931297" y="358.45070422535213"/>
         </scene>
     </scenes>
     <resources>
+        <image name="extraShortBakground" width="402" height="874"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
