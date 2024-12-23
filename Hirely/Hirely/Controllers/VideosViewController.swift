@@ -72,15 +72,27 @@ class VideosViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     
     @IBAction func bookmarkTouched(_ sender: Any) {
-        // Toggle the bookmark state
-                isBookmarked.toggle()
-                
-                // Update the button image based on the state
-                if isBookmarked {
-                    (sender as AnyObject).setImage(UIImage(systemName: "bookmark.fill"), for: .normal) // Filled bookmark
-                } else {
-                    (sender as AnyObject).setImage(UIImage(systemName: "bookmark"), for: .normal) // Unfilled bookmark
-                }
+        // Get the index path of the button in the table view
+        let buttonPosition = (sender as AnyObject).convert(CGPoint.zero, to: tableView)
+               guard let indexPath = tableView.indexPathForRow(at: buttonPosition) else {
+                   print("Error: Could not determine the index path.")
+                   return
+               }
+
+               // Retrieve the video associated with the bookmark button
+               let video = videos[indexPath.row]
+
+               // Toggle the bookmark state
+               isBookmarked.toggle()
+
+               // Update the button image based on the bookmark state
+               if isBookmarked {
+                   (sender as AnyObject).setImage(UIImage(systemName: "bookmark.fill"), for: .normal) // Filled bookmark
+                   saveBookmarkToFirestore(video: video) // Save the video as a bookmark
+               } else {
+                   (sender as AnyObject).setImage(UIImage(systemName: "bookmark"), for: .normal) // Unfilled bookmark
+                   removeBookmarkFromFirestore(video: video) // Remove the video from bookmarks
+               }
             }
     
 
@@ -178,7 +190,53 @@ class VideosViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return 160 // Replace with the desired height
     }
 
-    
+    // MARK: - Save Bookmark to Firestore
+        private func saveBookmarkToFirestore(video: Video) {
+            let db = Firestore.firestore()
+            let bookmarksRef = db.collection("bookmarks").document("globalBookmarks").collection("savedResources")
+
+            let videoData: [String: Any] = [
+                "resourceTitle": video.title,
+                "resourceLink": video.link.absoluteString,
+                "resourceCategory": "Videos" // Explicitly define the category
+            ]
+
+            bookmarksRef.addDocument(data: videoData) { error in
+                if let error = error {
+                    print("Error saving bookmark: \(error.localizedDescription)")
+                } else {
+                    print("Video bookmarked successfully.")
+                }
+            }
+        }
+
+        // MARK: - Remove Bookmark from Firestore
+        private func removeBookmarkFromFirestore(video: Video) {
+            let db = Firestore.firestore()
+            let bookmarksRef = db.collection("bookmarks").document("globalBookmarks").collection("savedResources")
+
+            // Query the Firestore database for the video
+            bookmarksRef
+                .whereField("resourceTitle", isEqualTo: video.title)
+                .whereField("resourceLink", isEqualTo: video.link.absoluteString)
+                .getDocuments { snapshot, error in
+                    if let error = error {
+                        print("Error finding bookmark to delete: \(error.localizedDescription)")
+                    } else if let snapshot = snapshot {
+                        // Delete the matching documents
+                        for document in snapshot.documents {
+                            document.reference.delete { error in
+                                if let error = error {
+                                    print("Error deleting bookmark: \(error.localizedDescription)")
+                                } else {
+                                    print("Video unbookmarked successfully.")
+                                }
+                            }
+                        }
+                    }
+                }
+        }
+
     struct Video{
         
         

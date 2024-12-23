@@ -87,16 +87,86 @@ class CoursesViewController: UIViewController, UITableViewDataSource, UITableVie
     @IBOutlet weak var tableView: UITableView!
     
     @IBAction func bookmarkTouched(_ sender: Any) {
-        // Toggle the bookmark state
-                isBookmarked.toggle()
-                
-                // Update the button image based on the state
-                if isBookmarked {
-                    (sender as AnyObject).setImage(UIImage(systemName: "bookmark.fill"), for: .normal) // Filled bookmark
-                } else {
-                    (sender as AnyObject).setImage(UIImage(systemName: "bookmark"), for: .normal) // Unfilled bookmark
-                }
-            }
+        // Determine the button's position within the table view
+           let buttonPosition = (sender as AnyObject).convert(CGPoint.zero, to: tableView)
+           guard let indexPath = tableView.indexPathForRow(at: buttonPosition) else {
+               print("Error: Unable to determine index path for the button.")
+               return
+           }
+
+           // Get the corresponding course (treated as a resource)
+           let resource = courses[indexPath.row]
+
+           // Toggle the bookmark state
+           isBookmarked.toggle()
+
+           // Update the button image based on the state
+           let bookmarkButton = sender as? UIButton
+           if isBookmarked {
+               bookmarkButton?.setImage(UIImage(systemName: "bookmark.fill"), for: .normal) // Filled bookmark
+
+               // Save the resource to Firestore
+               saveResourceToBookmarks(resource: resource, category: "Courses")
+           } else {
+               bookmarkButton?.setImage(UIImage(systemName: "bookmark"), for: .normal) // Unfilled bookmark
+
+               // Remove the resource from Firestore
+               removeResourceFromBookmarks(resource: resource)
+           }
+       }
+
+       // MARK: - Save Resource to Firestore
+       private func saveResourceToBookmarks(resource: Course, category: String) {
+           let db = Firestore.firestore()
+           let bookmarksRef = db.collection("bookmarks").document("globalBookmarks").collection("savedResources")
+
+           let resourceData: [String: Any] = [
+               "resourceTitle": resource.title,
+               "resourceLink": resource.link.absoluteString,
+               "resourceCategory": category // Store the category to differentiate resource types
+           ]
+
+           bookmarksRef.addDocument(data: resourceData) { error in
+               if let error = error {
+                   print("Error saving resource to bookmarks: \(error.localizedDescription)")
+               } else {
+                   print("Resource saved successfully to bookmarks.")
+               }
+           }
+       }
+
+       // MARK: - Remove Resource from Firestore
+       private func removeResourceFromBookmarks(resource: Course) {
+           let db = Firestore.firestore()
+           let bookmarksRef = db.collection("bookmarks").document("globalBookmarks").collection("savedResources")
+
+           // Query for the resource to delete
+           bookmarksRef
+               .whereField("resourceTitle", isEqualTo: resource.title)
+               .whereField("resourceLink", isEqualTo: resource.link.absoluteString)
+               .getDocuments { snapshot, error in
+                   if let error = error {
+                       print("Error finding resource to remove: \(error.localizedDescription)")
+                       return
+                   }
+
+                   guard let documents = snapshot?.documents, !documents.isEmpty else {
+                       print("No matching resource found to delete.")
+                       return
+                   }
+
+                   // Delete the matching documents
+                   for document in documents {
+                       document.reference.delete { error in
+                           if let error = error {
+                               print("Error deleting resource from bookmarks: \(error.localizedDescription)")
+                           } else {
+                               print("Resource removed successfully from bookmarks.")
+                           }
+                       }
+                   }
+               }
+       }
     
     
     // MARK: - UITableView Data Source

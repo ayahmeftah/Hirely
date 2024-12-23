@@ -6,11 +6,11 @@
 //
 
 import UIKit
-
+import FirebaseFirestore
 class ResourceManagmentTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource,UISearchBarDelegate {
     var resources: [Resource] = []
     var filteredResources: [Resource] = [] // For search results
-    
+    var documentIDs: [String] = []
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -25,41 +25,94 @@ class ResourceManagmentTableViewController: UIViewController, UITableViewDelegat
    @IBOutlet weak var titleText: UILabel!
     
     
-    
+    private func fetchResourcesFromFirestore() {
+        let db = Firestore.firestore()
+        db.collection("Resources").getDocuments { snapshot, error in
+            if let error = error {
+                print("Error fetching resources: \(error.localizedDescription)")
+                self.showAlert(title: "Error", message: "Failed to fetch resources. Please try again.")
+            } else if let snapshot = snapshot {
+                self.resources.removeAll() // Clear the current array
+                self.documentIDs.removeAll() // Clear the document IDs
+
+                // Iterate over the documents
+                for document in snapshot.documents {
+                    let data = document.data()
+                    
+                    // Extract fields and validate
+                    if let title = data["resourceTitle"] as? String,
+                       let category = data["resourceCategory"] as? String,
+                       let link = data["resourceLink"] as? String {
+                        
+                        // Create a Resource object
+                        let resource = Resource(title: title, category: category, link: link)
+                        self.resources.append(resource)
+                        self.documentIDs.append(document.documentID)
+                    } else {
+                        print("Error: Missing or invalid fields in document: \(document.documentID)")
+                    }
+                }
+
+                // Update filtered resources for search functionality
+                self.filteredResources = self.resources
+
+                // Reload the table view
+                self.tableView.reloadData()
+            }
+        }
+    }
+
     @IBAction func deleteButtonTapped(_ sender: Any) {
         // Determine the button's position within the table view
-        let buttonPosition = (sender as AnyObject).convert(CGPoint.zero, to: tableView)
-            guard let indexPath = tableView.indexPathForRow(at: buttonPosition) else {
-                showAlert(title: "Error", message: "Unable to find the cell to delete.")
-                return
-            }
+           let buttonPosition = (sender as AnyObject).convert(CGPoint.zero, to: tableView)
+           guard let indexPath = tableView.indexPathForRow(at: buttonPosition) else {
+               showAlert(title: "Error", message: "Unable to find the cell to delete.")
+               return
+           }
 
-            // Confirm Deletion Alert
-            let alert = UIAlertController(
-                title: "Confirm Deletion",
-                message: "Are you sure you want to delete this resource?",
-                preferredStyle: .alert
-            )
+           // Confirm Deletion Alert
+           let alert = UIAlertController(
+               title: "Confirm Deletion",
+               message: "Are you sure you want to delete this resource?",
+               preferredStyle: .alert
+           )
 
-            // Add "Delete" action
-            alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { _ in
-                // Perform the deletion
-                self.resources.remove(at: indexPath.row)
-                self.filteredResources = self.resources // Sync filtered resources
-                self.tableView.deleteRows(at: [indexPath], with: .fade)
+           // Add "Delete" action
+           alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { _ in
+               // Perform the deletion from Firestore
+               let documentIDToDelete = self.documentIDs[indexPath.row] // Use corresponding documentID
+               
+               let db = Firestore.firestore()
+               db.collection("Resources").document(documentIDToDelete).delete { error in
+                   if let error = error {
+                       print("Error deleting resource: \(error.localizedDescription)")
+                       self.showAlert(title: "Error", message: "Failed to delete resource. Please try again.")
+                   } else {
+                       print("Resource deleted successfully from Firestore.")
+                       
+                       // Perform local deletion and update the UI
+                       self.resources.remove(at: indexPath.row)
+                       self.filteredResources = self.resources // Sync filtered resources
+                       self.documentIDs.remove(at: indexPath.row) // Sync documentIDs array
 
-                // Save updated resources
-                Resource.saveResources(self.resources)
+                       // Update the table view with animations
+                       self.tableView.performBatchUpdates({
+                           self.tableView.deleteRows(at: [indexPath], with: .fade)
+                       }) { _ in
+                           self.tableView.reloadData() // Ensure data consistency
+                       }
 
-                // Success feedback
-                self.showAlert(title: "Deleted", message: "Resource deleted successfully.")
-            }))
+                       // Success feedback
+                       self.showAlert(title: "Deleted", message: "Resource deleted successfully.")
+                   }
+               }
+           }))
 
-            // Add "Cancel" action
-            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+           // Add "Cancel" action
+           alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
 
-            // Present the alert
-            present(alert, animated: true, completion: nil)
+           // Present the alert
+           present(alert, animated: true, completion: nil)
     }
     
     private func showAlert(title: String, message: String) {
@@ -80,7 +133,7 @@ class ResourceManagmentTableViewController: UIViewController, UITableViewDelegat
                   
                   // Setup Search Bar
                   setupSearchBar()
-
+        fetchResourcesFromFirestore()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 

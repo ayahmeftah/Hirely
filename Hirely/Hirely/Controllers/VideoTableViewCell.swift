@@ -35,7 +35,8 @@ class VideoTableViewCell: UITableViewCell {
         bookmarkBtn?.setTitle("", for: .disabled)
         // Make the view rounded
       
-        
+        //containerView.layer.cornerRadius = 20
+      
         
 //        if containerView == nil {
 //               print("containerView is nil! Check the storyboard connection.")
