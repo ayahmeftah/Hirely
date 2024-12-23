@@ -31,6 +31,10 @@ class CareerTipsViewController: UIViewController, UITableViewDelegate, UITableVi
         // Fetch articles from Firestore
                 fetchArticlesFromFirestore()
         // Do any additional setup after loading the view.
+        
+        
+        
+        
     }
     var isBookmarked = false
     
