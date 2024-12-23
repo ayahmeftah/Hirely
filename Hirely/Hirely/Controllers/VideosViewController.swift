@@ -7,6 +7,7 @@
 
 import UIKit
 import SafariServices
+import FirebaseFirestore
 
 class VideosViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -16,16 +17,16 @@ class VideosViewController: UIViewController, UITableViewDelegate, UITableViewDa
        var isBookmarked = false
     
     // Array to hold video data
-    var arrVideos = [
-        Video(title: "Introduction to Swift", link: URL(string: "https://www.youtube.com/watch?v=FcsY1YPBwzQ")!),
-        Video(title: "iOS Development Basics", link: URL(string: "https://www.youtube.com/watch?v=B3P3OtadHRk")!)
-    ]
+    var videos: [Video] = []
 
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.rowHeight = UITableView.automaticDimension
 
+        // Fetch videos from Firestore
+                fetchVideosFromFirestore()
+        
         
 //        arrVideos.append(Video.init(title: "Video", link: //<#T##URL#>))
         
@@ -33,6 +34,43 @@ class VideosViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         // Do any additional setup after loading the view.
     }
+    
+    
+    
+    // MARK: - Fetch Videos from Firestore
+        private func fetchVideosFromFirestore() {
+            let db = Firestore.firestore()
+            db.collection("Resources").whereField("resourceCategory", isEqualTo: "Videos").getDocuments { (snapshot, error) in
+                if let error = error {
+                    print("Error fetching videos: \(error.localizedDescription)")
+                } else if let snapshot = snapshot {
+                    // Map Firestore documents to Video objects
+                    self.videos = snapshot.documents.compactMap { doc in
+                        guard let title = doc.data()["resourceTitle"] as? String,
+                              let linkString = doc.data()["resourceLink"] as? String,
+                              let url = URL(string: linkString) else {
+                            return nil
+                        }
+                        return Video(title: title, link: url)
+                    }
+
+                    // Reload table view to display fetched data
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
+                }
+            }
+        }
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
     @IBAction func bookmarkTouched(_ sender: Any) {
         // Toggle the bookmark state
                 isBookmarked.toggle()
@@ -49,12 +87,12 @@ class VideosViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBAction func openVideo(_ sender: Any) {
         // Ensure the button's tag corresponds to the index of the video
         // Use guard to safely unwrap the tag property
-        guard let videoIndex = (sender as AnyObject).tag as Int?, videoIndex < arrVideos.count else {
+        guard let videoIndex = (sender as AnyObject).tag as Int?, videoIndex < videos.count else {
             return // Exit if tag is invalid or out of bounds
         }
 
         // Retrieve the video using the index
-        let video = arrVideos[videoIndex]
+        let video = videos[videoIndex]
         
         // Open the video URL
         if UIApplication.shared.canOpenURL(video.link) {
@@ -78,7 +116,7 @@ class VideosViewController: UIViewController, UITableViewDelegate, UITableViewDa
     */
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arrVideos.count
+        return videos.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -88,7 +126,7 @@ class VideosViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 }
                 
                 // Configure cell with video data
-                let video = arrVideos[indexPath.row]
+                let video = videos[indexPath.row]
                 cell.videoTitle.text = video.title
                 
                 return cell
@@ -97,7 +135,7 @@ class VideosViewController: UIViewController, UITableViewDelegate, UITableViewDa
     // MARK: - UITableView Delegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // Get the selected video
-        let video = arrVideos[indexPath.row]
+        let video = videos[indexPath.row]
         
         // Show confirmation alert before opening the video
         showAlertBeforeOpening(url: video.link)

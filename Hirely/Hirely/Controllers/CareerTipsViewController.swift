@@ -12,9 +12,7 @@ class CareerTipsViewController: UIViewController, UITableViewDelegate, UITableVi
     
     // Array to store articles
         var articles: [Article] = [
-            Article(title: "5 Tips for a Successful Job Interview", url: URL(string: "https://ung.edu/career-services/online-career-resources/interview-well/tips-for-a-successful-interview.php")!),
-            Article(title: "How to Build a Strong Resume", url: URL(string: "https://www.jobbank.gc.ca/findajob/resources/write-good-resume")!),
-            Article(title: "Mastering Networking for Career Growth", url: URL(string: "https://www.linkedin.com/pulse/mastering-networking-career-business-growth-strategies-siivc")!)
+
         ]
     
     // TableView setup
@@ -23,16 +21,44 @@ class CareerTipsViewController: UIViewController, UITableViewDelegate, UITableVi
     @IBOutlet weak var tableView: UITableView!
     
     
+    @IBOutlet weak var backBtn: UIButton!
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-
+        // Fetch articles from Firestore
+                fetchArticlesFromFirestore()
         // Do any additional setup after loading the view.
     }
     var isBookmarked = false
+    
+    // Fetch resources with category "Articles" from Firestore
+       private func fetchArticlesFromFirestore() {
+           let db = Firestore.firestore()
+           db.collection("Resources").whereField("resourceCategory", isEqualTo: "Articles").getDocuments { (snapshot, error) in
+               if let error = error {
+                   print("Error fetching articles: \(error.localizedDescription)")
+               } else if let snapshot = snapshot {
+                   // Map the Firestore documents to `Article` objects
+                   self.articles = snapshot.documents.compactMap { doc in
+                       guard let title = doc.data()["resourceTitle"] as? String,
+                             let link = doc.data()["resourceLink"] as? String,
+                             let url = URL(string: link) else {
+                           return nil
+                       }
+                       return Article(title: title, url: url)
+                   }
+
+                   // Reload the table view to display the fetched data
+                   DispatchQueue.main.async {
+                       self.tableView.reloadData()
+                   }
+               }
+           }
+       }
+    
     
     
     @IBAction func bookmarkTouched(_ sender: Any) {
@@ -42,6 +68,9 @@ class CareerTipsViewController: UIViewController, UITableViewDelegate, UITableVi
                 // Update the button image based on the state
                 if isBookmarked {
                     (sender as AnyObject).setImage(UIImage(systemName: "bookmark.fill"), for: .normal) // Filled bookmark
+                    
+                    
+                    
                 } else {
                     (sender as AnyObject).setImage(UIImage(systemName: "bookmark"), for: .normal) // Unfilled bookmark
                 }

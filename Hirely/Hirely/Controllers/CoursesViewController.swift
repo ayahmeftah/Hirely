@@ -7,7 +7,7 @@
 
 import UIKit
 import SafariServices
-
+import FirebaseFirestore
 
 class CoursesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -17,14 +17,11 @@ class CoursesViewController: UIViewController, UITableViewDataSource, UITableVie
     }
 
     
-    var courses = [
-            Course(title: "Accelerated Development Programme", link: URL(string: "https://www.london.edu/executive-education/general-management/accelerated-development-programme?utm_source=google&utm_medium=ppc&utm_campaign=MC_EEADP_ppc_google&utm_content=ppc&&ppc_keyword=management%20development%20course&gad_source=1&gclid=CjwKCAiAyJS7BhBiEiwAyS9uNWeerlmi_vjJharkzeR0gwRAjLEVMw0T2F0sKd4urCPzjEMSAifPgBoCTeUQAvD_BwE&gclsrc=aw.ds")!)
-           
-        ]
+    var courses : [Course] = []
     // A flag to track the bookmark state
        var isBookmarked = false
     
-    @IBOutlet weak var registerBtn: UIButton!
+    
    // var course: Course? // Store the course for this cell
 
 
@@ -37,9 +34,41 @@ class CoursesViewController: UIViewController, UITableViewDataSource, UITableVie
         tableView.dataSource = self
         tableView.delegate = self
         
-        
+        // Fetch courses from Firestore
+                fetchCoursesFromFirestore()
 
     }
+    
+    // Fetch courses with category "Courses" from Firestore
+        private func fetchCoursesFromFirestore() {
+            let db = Firestore.firestore()
+            db.collection("Resources").whereField("resourceCategory", isEqualTo: "Courses").getDocuments { (snapshot, error) in
+                if let error = error {
+                    print("Error fetching courses: \(error.localizedDescription)")
+                } else if let snapshot = snapshot {
+                    // Map the Firestore documents to `Course` objects
+                    self.courses = snapshot.documents.compactMap { doc in
+                        guard let title = doc.data()["resourceTitle"] as? String,
+                              let link = doc.data()["resourceLink"] as? String,
+                              let url = URL(string: link) else {
+                            return nil
+                        }
+                        return Course(title: title, link: url)
+                    }
+
+                    // Reload the table view to display the fetched data
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
+                }
+            }
+        }
+    
+    
+    
+    
+    
+    
     // Call this after the tableView is loaded
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
