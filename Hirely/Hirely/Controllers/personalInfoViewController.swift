@@ -42,14 +42,19 @@ class personalInfoViewController: UITableViewController, UITextViewDelegate {
    
     //MARK: - Actions
     @IBAction func nextButtonTapped2(_ sender: Any) {
-        // Validate input fields
+        
+
+        // Validate fields
+          if !validateFields() {
+              return // Stop if validation fails
+          }
             guard let name = nameTextField.text, !name.isEmpty,
                   let phoneNumber = phoneNumberTextField.text, !phoneNumber.isEmpty,
                   let email = emailTextField.text, !email.isEmpty else {
                 showAlert(title: "Missing Information", message: "Please fill out all fields before proceeding.")
                 return
             }
-
+       
             print("Next button tapped") // Debug log
 
             // Explicitly initialize cvData
@@ -135,5 +140,121 @@ class personalInfoViewController: UITableViewController, UITextViewDelegate {
            present(alert, animated: true)
        }
    
+  
+    private func validateFields() -> Bool {
+        var isValid = true
+
+        // Validate Name
+        if nameTextField.text?.isEmpty == true {
+            showValidationError(for: nameTextField, message: "Name is required.")
+            isValid = false
+        } else {
+            removeValidationError(from: nameTextField)
+        }
+
+        // Validate Phone Number
+        if phoneNumberTextField.text?.isEmpty == true {
+            showValidationError(for: phoneNumberTextField, message: "Phone number is required.")
+            isValid = false
+        } else {
+            removeValidationError(from: phoneNumberTextField)
+        }
+
+        // Validate Email
+        if emailTextField.text?.isEmpty == true {
+            showValidationError(for: emailTextField, message: "Email is required.")
+            isValid = false
+        } else {
+            removeValidationError(from: emailTextField)
+        }
+
+        // Validate Professional Summary
+        if professionalSummaryTextView.text.isEmpty || professionalSummaryTextView.text == "Write a short professional summary..." {
+            showValidationError(for: professionalSummaryTextView, message: "Professional summary is required.")
+            isValid = false
+        } else {
+            removeValidationError(from: professionalSummaryTextView)
+        }
+
+        // Validate Skills
+        if skillsTextView.text.isEmpty || skillsTextView.text == "List your skills here..." {
+            showValidationError(for: skillsTextView, message: "Skills are required.")
+            isValid = false
+        } else {
+            removeValidationError(from: skillsTextView)
+        }
+
+        return isValid
+    }
+
     
-}
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    private func showValidationError(for view: UIView, message: String) {
+        // Add red border
+        if let textField = view as? UITextField {
+            textField.layer.borderColor = UIColor.red.cgColor
+            textField.layer.borderWidth = 1.0
+            textField.layer.cornerRadius = 5.0
+        } else if let textView = view as? UITextView {
+            textView.layer.borderColor = UIColor.red.cgColor
+            textView.layer.borderWidth = 1.0
+            textView.layer.cornerRadius = 5.0
+        }
+
+        // Add error label if it doesn't already exist
+        if let superview = view.superview, superview.viewWithTag(view.hash) == nil {
+            let errorLabel = UILabel()
+            errorLabel.text = message
+            errorLabel.textColor = .red
+            errorLabel.font = UIFont.systemFont(ofSize: 12)
+            errorLabel.tag = view.hash
+            errorLabel.translatesAutoresizingMaskIntoConstraints = false
+
+            superview.addSubview(errorLabel)
+
+            // Position the error label below the view
+            NSLayoutConstraint.activate([
+                errorLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+                errorLabel.topAnchor.constraint(equalTo: view.bottomAnchor, constant: 4),
+                errorLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+            ])
+        }
+    }
+
+    
+    
+    private func removeValidationError(from view: UIView) {
+        // Remove red border
+        if let textField = view as? UITextField {
+            textField.layer.borderColor = UIColor.clear.cgColor
+            textField.layer.borderWidth = 0.0
+        } else if let textView = view as? UITextView {
+            textView.layer.borderColor = UIColor.clear.cgColor
+            textView.layer.borderWidth = 0.0
+        }
+
+        // Remove error label if it exists
+        if let superview = view.superview, let errorLabel = superview.viewWithTag(view.hash) {
+            errorLabel.removeFromSuperview()
+        }
+    }
+
+    
+    
+    
+
+    }
+
+    
+    
+    
+    
+

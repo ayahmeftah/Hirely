@@ -7,7 +7,7 @@
 
 import Foundation
 import Cloudinary
-struct CloudinarySetup {
+struct CloudinarySetupCv {
     
     static var cloudinary : CLDCloudinary!
     
@@ -17,7 +17,7 @@ struct CloudinarySetup {
     
     static func cloudinarySetup() -> CLDCloudinary {
         
-        let config = CLDConfiguration(cloudName: CloudinarySetup.cloudName, secure: true)
+        let config = CLDConfiguration(cloudName: CloudinarySetupCv.cloudName, secure: true)
         
         cloudinary = CLDCloudinary(configuration: config)
         

@@ -18,6 +18,8 @@ class generatedCvViewController: UIViewController {
     // MARK: - Outlets
     @IBOutlet weak var cvTextView: UITextView!
     
+    @IBOutlet weak var shareCVButton: UIButton!
+    
     // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,8 +31,9 @@ class generatedCvViewController: UIViewController {
         // Display the CV content
         displayCV()
         shareCVButton?.isEnabled = true
-        CloudinarySetup.cloudinary = CloudinarySetup.cloudinarySetup()
-
+        
+        // Configure Cloudinary
+        CloudinarySetupCv.cloudinary = CloudinarySetupCv.cloudinarySetup()
     }
     
     private func displayCV() {
@@ -126,173 +129,171 @@ class generatedCvViewController: UIViewController {
         return NSAttributedString(string: text, attributes: attributes)
     }
     
-    @IBOutlet weak var shareCVButton: UIButton!
     // MARK: - Actions
     @IBAction func shareCVButtonTapped(_ sender: UIButton) {
         print("Button tapped!")
-           let alertController = UIAlertController(
-               title: "Export CV",
-               message: "Your CV will be exported, saved to your files, and uploaded to the cloud. Do you want to continue?",
-               preferredStyle: .alert
-           )
-           
-           let exportAction = UIAlertAction(title: "Export & Upload CV", style: .default) { _ in
-               self.generatePDF { pdfURL in
-                   guard let pdfURL = pdfURL else {
-                       self.showAlert(title: "Error", message: "Failed to generate the PDF. Please try again.")
-                       return
-                   }
-                   
-                   // Start Cloudinary upload
-                   self.uploadCvToCloudinary(fileURL: pdfURL)
-               }
-           }
-           
-           let exitAction = UIAlertAction(title: "Exit", style: .destructive) { _ in
-               self.dismiss(animated: true, completion: nil)
-           }
-           
-           alertController.addAction(exportAction)
-           alertController.addAction(exitAction)
-           
-           self.present(alertController, animated: true, completion: nil)
-       }
-
-       private func uploadCvToCloudinary(fileURL: URL) {
-           guard let cloudinary = CloudinarySetup.cloudinary else {
-               self.showAlert(title: "Error", message: "Cloudinary is not configured properly.")
-               return
-           }
-
-           let activityIndicator = UIActivityIndicatorView(style: .large)
-           activityIndicator.center = self.view.center
-           self.view.addSubview(activityIndicator)
-           activityIndicator.startAnimating()
-           
-           cloudinary.createUploader().upload(
-               url: fileURL,
-               uploadPreset: CloudinarySetup.uploadPreset,
-               progress: { progress in
-                   print("Upload progress: \(progress.fractionCompleted * 100)%")
-               }
-           ) { result, error in
-               activityIndicator.stopAnimating()
-               activityIndicator.removeFromSuperview()
-               
-               if let error = error {
-                   print("Error uploading CV: \(error.localizedDescription)")
-                   self.showAlert(title: "Error", message: "Failed to upload the CV. Please try again.")
-               } else if let result = result, let secureUrl = result.secureUrl {
-                   print("CV uploaded successfully.")
-                   self.showAlert(title: "Success", message: "Your CV has been uploaded successfully.\nURL: \(secureUrl)")
-                   self.saveCvUrlToFirestore(url: secureUrl)
-               }
-           }
-       }
-
-       private func saveCvUrlToFirestore(url: String) {
-           let db = Firestore.firestore()
-           let data: [String: Any] = [
-               "cvUrl": url,
-               "uploadedAt": Date()
-           ]
-
-           db.collection("CVs").addDocument(data: data) { error in
-               if let error = error {
-                   print("Error saving CV URL to Firestore: \(error.localizedDescription)")
-                   self.showAlert(title: "Error", message: "Failed to save the CV URL to Firestore.")
-               } else {
-                   print("CV URL saved to Firestore successfully.")
-               }
-           }
+        let alertController = UIAlertController(
+            title: "Export CV",
+            message: "our CV will be exported and saved to your files. Do you want to continue?",
+            preferredStyle: .alert
+        )
+        
+        let exportAction = UIAlertAction(title: "Export & Upload CV", style: .default) { _ in
+            self.generatePDF { pdfURL in
+                guard let pdfURL = pdfURL else {
+                    self.showAlert(title: "Error", message: "Failed to generate the PDF. Please try again.")
+                    return
+                }
+                let activityVC = UIActivityViewController(activityItems: [pdfURL], applicationActivities: nil)
+                                self.present(activityVC, animated: true)
+                
+                
+                
+                // Upload to Cloudinary
+                self.uploadCvToCloudinary(fileURL: pdfURL)
+            }
+        }
+        
+        let exitAction = UIAlertAction(title: "Exit", style: .destructive) { _ in
+            self.dismiss(animated: true, completion: nil)
+        }
+        
+        alertController.addAction(exportAction)
+        alertController.addAction(exitAction)
+        
+        self.present(alertController, animated: true, completion: nil)
     }
     
+   
     private func generatePDF(completion: (URL?) -> Void) {
-        guard let cvData = cvData else {
-            completion(nil)
+            guard let cvData = cvData else {
+                completion(nil)
+                return
+            }
+            
+            let pdfRenderer = UIGraphicsPDFRenderer(bounds: CGRect(x: 0, y: 0, width: 612, height: 792))
+            let pdfData = pdfRenderer.pdfData { context in
+                context.beginPage()
+                let attributes: [NSAttributedString.Key: Any] = [
+                    .font: UIFont.systemFont(ofSize: 14),
+                    .foregroundColor: UIColor.black
+                ]
+                
+                var text = ""
+                
+                if let personalInfo = cvData.personalInfo {
+                    text += """
+                       Name: \(personalInfo.name)
+                       Email: \(personalInfo.email)
+                       Phone: \(personalInfo.phoneNumber)
+                       Professional Summary: \(personalInfo.professionalSummary)
+                       Skills:
+                       \(personalInfo.skills.split(separator: "\n").map { "• \($0)" }.joined(separator: "\n"))
+                       
+                       """
+                }
+                
+                if !cvData.experience.isEmpty {
+                    text += "Experience:\n"
+                    for experience in cvData.experience {
+                        text += """
+                           Title: \(experience.title)
+                           Company: \(experience.company)
+                           Duration: \(experience.duration)
+                           Description: \(experience.description)
+                           
+                           """
+                    }
+                }
+                
+                if !cvData.education.isEmpty {
+                    text += "Education:\n"
+                    for education in cvData.education {
+                        text += """
+                           Degree: \(education.degree)
+                           Institution: \(education.institution)
+                           Graduation Year: \(education.year)
+                           
+                           """
+                    }
+                }
+                
+                if !cvData.certifications.isEmpty {
+                    text += "Certifications:\n"
+                    for certification in cvData.certifications {
+                        text += "\(certification.name) - \(certification.year)\n"
+                    }
+                }
+                
+                text.draw(in: CGRect(x: 20, y: 20, width: 572, height: 752), withAttributes: attributes)
+            }
+            
+            let tempURL = FileManager.default.temporaryDirectory.appendingPathComponent("CV.pdf")
+            do {
+                try pdfData.write(to: tempURL)
+                completion(tempURL)
+            } catch {
+                completion(nil)
+            }
+        }
+        
+        private func showAlert(title: String, message: String) {
+            let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
+            present(alert, animated: true)
+        }
+    
+    private func uploadCvToCloudinary(fileURL: URL) {
+        guard let cloudinary = CloudinarySetupCv.cloudinary else {
+            self.showAlert(title: "Error", message: "Cloudinary is not configured properly.")
             return
         }
-        
-        let pdfRenderer = UIGraphicsPDFRenderer(bounds: CGRect(x: 0, y: 0, width: 612, height: 792))
-        let pdfData = pdfRenderer.pdfData { context in
-            context.beginPage()
-            let attributes: [NSAttributedString.Key: Any] = [
-                .font: UIFont.systemFont(ofSize: 14),
-                .foregroundColor: UIColor.black
-            ]
-            
-            var text = ""
-            
-            if let personalInfo = cvData.personalInfo {
-                text += """
-                   Name: \(personalInfo.name)
-                   Email: \(personalInfo.email)
-                   Phone: \(personalInfo.phoneNumber)
-                   Professional Summary: \(personalInfo.professionalSummary)
-                   Skills:
-                   \(personalInfo.skills.split(separator: "\n").map { "• \($0)" }.joined(separator: "\n"))
-                   
-                   """
-            }
-            
-            if !cvData.experience.isEmpty {
-                text += "Experience:\n"
-                for experience in cvData.experience {
-                    text += """
-                       Title: \(experience.title)
-                       Company: \(experience.company)
-                       Duration: \(experience.duration)
-                       Description: \(experience.description)
-                       
-                       """
-                }
-            }
-            
-            if !cvData.education.isEmpty {
-                text += "Education:\n"
-                for education in cvData.education {
-                    text += """
-                       Degree: \(education.degree)
-                       Institution: \(education.institution)
-                       Graduation Year: \(education.year)
-                       
-                       """
-                }
-            }
-            
-            if !cvData.certifications.isEmpty {
-                text += "Certifications:\n"
-                for certification in cvData.certifications {
-                    text += "\(certification.name) - \(certification.year)\n"
-                }
-            }
-            
-            text.draw(in: CGRect(x: 20, y: 20, width: 572, height: 752), withAttributes: attributes)
-        }
-        
-        let tempURL = FileManager.default.temporaryDirectory.appendingPathComponent("CV.pdf")
-        do {
-            try pdfData.write(to: tempURL)
-            completion(tempURL)
-        } catch {
-            completion(nil)
-        }
-    }
-    
-    private func showAlert(title: String, message: String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default))
-        present(alert, animated: true)
-    }
-    
-    
-    
-    
-    
-    //cloud
-    
-    
 
+        let activityIndicator = UIActivityIndicatorView(style: .large)
+        activityIndicator.center = self.view.center
+        self.view.addSubview(activityIndicator)
+        activityIndicator.startAnimating()
+        
+        cloudinary.createUploader().upload(
+            url: fileURL,
+            uploadPreset: CloudinarySetupCv.uploadPreset,
+            progress: { progress in
+                print("Upload progress: \(progress.fractionCompleted * 100)%")
+            }
+        ) { result, error in
+            activityIndicator.stopAnimating()
+            activityIndicator.removeFromSuperview()
+            
+            if let error = error {
+                print("Error uploading CV: \(error.localizedDescription)")
+                self.showAlert(title: "Error", message: "Failed to upload the CV. Please try again.")
+            } else if let result = result, let secureUrl = result.secureUrl {
+                print("CV uploaded successfully.")
+                self.showAlert(title: "Success", message: "Your CV has been uploaded successfully.\nURL: \(secureUrl)")
+                self.saveCvUrlToFirestore(url: secureUrl)
+            }
+        }
+    }
     
+    private func saveCvUrlToFirestore(url: String) {
+        let db = Firestore.firestore()
+        let data: [String: Any] = [
+            "cvUrl": url,
+            "uploadedAt": Date()
+        ]
+
+        db.collection("CVs").addDocument(data: data) { error in
+            if let error = error {
+                print("Error saving CV URL to Firestore: \(error.localizedDescription)")
+                self.showAlert(title: "Error", message: "Failed to save the CV URL to Firestore.")
+            } else {
+                print("CV URL saved to Firestore successfully.")
+            }
+        }
+    }
     
+   
+    
+   
 }
+
