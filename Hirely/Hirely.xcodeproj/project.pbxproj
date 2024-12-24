@@ -33,6 +33,8 @@
 		2CBADAD42D031E750078B78A /* JobPostingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBADAD32D031E750078B78A /* JobPostingViewController.swift */; };
 		2CBADAD72D03205D0078B78A /* CustomJobPostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CBADAD62D03205D0078B78A /* CustomJobPostTableViewCell.xib */; };
 		2CBADAD82D03205D0078B78A /* CustomJobPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBADAD52D03205D0078B78A /* CustomJobPostTableViewCell.swift */; };
+		2CCA59492D1AE7A1002A2703 /* ViewApplicantCVViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCA59482D1AE7A1002A2703 /* ViewApplicantCVViewController.swift */; };
+		2CCA594C2D1B205F002A2703 /* BadgeState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCA594B2D1B205F002A2703 /* BadgeState.swift */; };
 		71BEBCDE2CFC502900DF795E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEBCDD2CFC502900DF795E /* AppDelegate.swift */; };
 		71BEBCE02CFC502900DF795E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEBCDF2CFC502900DF795E /* SceneDelegate.swift */; };
 		71BEBCE22CFC502900DF795E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEBCE12CFC502900DF795E /* ViewController.swift */; };
@@ -84,6 +86,8 @@
 		2CBADAD32D031E750078B78A /* JobPostingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobPostingViewController.swift; sourceTree = "<group>"; };
 		2CBADAD52D03205D0078B78A /* CustomJobPostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomJobPostTableViewCell.swift; sourceTree = "<group>"; };
 		2CBADAD62D03205D0078B78A /* CustomJobPostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomJobPostTableViewCell.xib; sourceTree = "<group>"; };
+		2CCA59482D1AE7A1002A2703 /* ViewApplicantCVViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewApplicantCVViewController.swift; sourceTree = "<group>"; };
+		2CCA594B2D1B205F002A2703 /* BadgeState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeState.swift; sourceTree = "<group>"; };
 		71BEBCDA2CFC502900DF795E /* Hirely.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hirely.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71BEBCDD2CFC502900DF795E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		71BEBCDF2CFC502900DF795E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -143,6 +147,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		2CCA594A2D1B1FFE002A2703 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				2CCA594B2D1B205F002A2703 /* BadgeState.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
 		711B4EBE2CFC57E200910FB6 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
@@ -176,6 +188,7 @@
 				2C31A9D02D10B49A00214FE1 /* saveJobChangesViewController.swift */,
 				2C0BBC652D11E879005110D8 /* InterviewInfoTableViewController.swift */,
 				2C7D2C1C2D132EE3002E347D /* ApplicantInfoTableViewController.swift */,
+				2CCA59482D1AE7A1002A2703 /* ViewApplicantCVViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -204,6 +217,7 @@
 		71BEBCDC2CFC502900DF795E /* Hirely */ = {
 			isa = PBXGroup;
 			children = (
+				2CCA594A2D1B1FFE002A2703 /* Enums */,
 				2C31A9CB2D10824300214FE1 /* Models */,
 				711B4EBF2CFC57F300910FB6 /* Controllers */,
 				711B4EBE2CFC57E200910FB6 /* Storyboards */,
@@ -396,8 +410,10 @@
 				71BEBCDE2CFC502900DF795E /* AppDelegate.swift in Sources */,
 				2C6199862D0C6C3E001DBF1F /* EditInterviewViewController.swift in Sources */,
 				2C4B28DB2D0F04B600A5DE73 /* SkillsSelectionViewController.swift in Sources */,
+				2CCA594C2D1B205F002A2703 /* BadgeState.swift in Sources */,
 				71BEBCE02CFC502900DF795E /* SceneDelegate.swift in Sources */,
 				2C61998A2D0CA7EA001DBF1F /* InterviewDetailsViewController.swift in Sources */,
+				2CCA59492D1AE7A1002A2703 /* ViewApplicantCVViewController.swift in Sources */,
 				2C31A9CA2D10646700214FE1 /* PostingJobViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

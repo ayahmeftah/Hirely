@@ -42,29 +42,65 @@ class JobDetailsViewController: UIViewController {
         setupUI()
     }
     
+//    func addSkill(_ skill: String) {
+//        // Create horizontal stack view
+//        let hStack = UIStackView()
+//        hStack.axis = .horizontal
+//        hStack.spacing = 4 // Space between tick and label
+//        hStack.alignment = .center // Aligns tick and label vertically
+//        hStack.distribution = .fill
+//
+//        // Create tick icon
+//        let tickImageView = UIImageView(image: UIImage(systemName: "checkmark.square.fill"))
+//        tickImageView.tintColor = .systemGreen
+//        tickImageView.translatesAutoresizingMaskIntoConstraints = false
+//        tickImageView.widthAnchor.constraint(equalToConstant: 18).isActive = true
+//        tickImageView.heightAnchor.constraint(equalToConstant: 18).isActive = true
+//        tickImageView.contentMode = .scaleAspectFit // Proper image scaling
+//
+//        // Create skill label
+//        let skillLabel = UILabel()
+//        skillLabel.text = skill
+//        skillLabel.font = UIFont.systemFont(ofSize: 16)
+//        skillLabel.numberOfLines = 0
+//        skillLabel.lineBreakMode = .byTruncatingTail
+//        skillLabel.translatesAutoresizingMaskIntoConstraints = false
+//
+//        // Add views to horizontal stack
+//        hStack.addArrangedSubview(tickImageView)
+//        hStack.addArrangedSubview(skillLabel)
+//
+//        // Add horizontal stack to main vertical stack
+//        mainStackView.addArrangedSubview(hStack)
+//        
+//    }
+    
     func addSkill(_ skill: String) {
         // Create horizontal stack view
         let hStack = UIStackView()
         hStack.axis = .horizontal
         hStack.spacing = 4 // Space between tick and label
-        hStack.alignment = .center // Aligns tick and label vertically
-        hStack.distribution = .fillProportionally
+        hStack.alignment = .fill // Aligns tick and label vertically
+        hStack.distribution = .fill
 
         // Create tick icon
         let tickImageView = UIImageView(image: UIImage(systemName: "checkmark.square.fill"))
         tickImageView.tintColor = .systemGreen
         tickImageView.translatesAutoresizingMaskIntoConstraints = false
-        tickImageView.widthAnchor.constraint(equalToConstant: 18).isActive = true // Fixed size
-        tickImageView.heightAnchor.constraint(equalToConstant: 18).isActive = true // Fixed size
+        tickImageView.widthAnchor.constraint(equalToConstant: 18).isActive = true
+        tickImageView.heightAnchor.constraint(equalToConstant: 18).isActive = true
         tickImageView.contentMode = .scaleAspectFit // Proper image scaling
 
         // Create skill label
         let skillLabel = UILabel()
-        skillLabel.text = skill
-        skillLabel.font = UIFont.systemFont(ofSize: 16) // Adjust font size
-        skillLabel.numberOfLines = 1 // Single line
-        skillLabel.lineBreakMode = .byTruncatingTail // Handles long text
+        skillLabel.text = skill.isEmpty ? "No skill provided" : skill // Fallback text for empty skills
+        skillLabel.font = UIFont.systemFont(ofSize: 16)
+        skillLabel.numberOfLines = 0
+        skillLabel.lineBreakMode = .byTruncatingTail
         skillLabel.translatesAutoresizingMaskIntoConstraints = false
+        skillLabel.setContentHuggingPriority(.defaultLow, for: .horizontal) // Prevent expansion
+        skillLabel.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal) // Avoid shrinking
+    
 
         // Add views to horizontal stack
         hStack.addArrangedSubview(tickImageView)
@@ -72,9 +108,11 @@ class JobDetailsViewController: UIViewController {
 
         // Add horizontal stack to main vertical stack
         mainStackView.addArrangedSubview(hStack)
-        
-    }
     
+        mainStackView.isLayoutMarginsRelativeArrangement = false // Disable layout margins
+        mainStackView.spacing = 4 // Set spacing between stack views
+    }
+
     
     //initialize view with job data
         func setupUI() {

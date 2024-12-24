@@ -10,8 +10,12 @@ import UIKit
 
 class CustomJobPostTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var hideButton: UIButton!
+    
     weak var parentViewController: UIViewController? // Reference to the parent VC
-
+    var parentController: JobPostingViewController?
+    var jobPosting: JobPosting?
+    
     @IBAction func buttonTapped(_ sender: UIButton) {
         switch sender.tag {
         case 1:
@@ -24,6 +28,19 @@ class CustomJobPostTableViewCell: UITableViewCell {
         case 3:
             // Perform a segue for the third button
             parentViewController?.performSegue(withIdentifier: "editJobDetails", sender: self)
+            
+        case 4:
+                    //delete button
+                    guard let jobPosting = jobPosting, let parentVC = parentController else { return }
+                    parentVC.deleteJobPosting(jobPosting: jobPosting) //call delete method in the parent VC
+            
+        case 5:
+            // Hide/Unhide button tapped
+                   guard let jobPosting = jobPosting, let parentVC = parentController else { return }
+                   let newIsHidden = !jobPosting.isHidden
+                   parentVC.toggleJobVisibility(jobPosting: jobPosting, newIsHidden: newIsHidden)
+                   let newIcon = newIsHidden ? "eye.slash.fill" : "eye.fill"
+                   hideButton.setImage(UIImage(systemName: newIcon), for: .normal)
         default:
             print("Unhandled button tapped")
         }
@@ -44,6 +61,8 @@ class CustomJobPostTableViewCell: UITableViewCell {
     
     @IBOutlet weak var deadlineLbl: UILabel!
     
+    @IBOutlet weak var deleteButton: UIButton!
+    
 
     @IBAction func ViewApplicantsBtnTapped(_ sender: UIButton) {
     }
@@ -51,7 +70,6 @@ class CustomJobPostTableViewCell: UITableViewCell {
     
     @IBAction func EditPostBtnTapped(_ sender: UIButton) {
     }
-    
     
     override func awakeFromNib() {
         super.awakeFromNib()

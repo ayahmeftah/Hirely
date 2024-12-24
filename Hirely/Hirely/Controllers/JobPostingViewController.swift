@@ -48,6 +48,77 @@ class JobPostingViewController: UIViewController, UITableViewDelegate, UITableVi
             }
         }
     }
+    
+    
+    func toggleJobVisibility(jobPosting: JobPosting, newIsHidden: Bool) {
+        let db = Firestore.firestore()
+
+        // Update Firestore with the new visibility state
+        db.collection("jobPostings").document(jobPosting.docId).updateData(["isHidden": newIsHidden]) { error in
+            if let error = error {
+                print("Error updating job visibility: \(error.localizedDescription)")
+            } else {
+                print("Job visibility updated successfully.")
+
+                // Update the local jobPosting object
+                if let index = self.jobPostings.firstIndex(where: { $0.docId == jobPosting.docId }) {
+                    self.jobPostings[index].isHidden = newIsHidden
+
+                    DispatchQueue.main.async {
+                        self.tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
+                    }
+                    // Show confirmation message
+                    let message = newIsHidden
+                        ? "This post is now hidden from applicants."
+                        : "This post is now visible to applicants."
+                    self.showAlert(message: message) // Show the alert
+                }
+            }
+        }
+    }
+
+    //display an alert message
+    func showAlert(message: String) {
+        let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
+    
+    
+    func deleteJobPosting(jobPosting: JobPosting) {
+        let db = Firestore.firestore()
+        
+        //display confirmation alert before deleting post
+        let alert = UIAlertController(
+            title: "Delete Job Post",
+            message: "Are you sure you want to delete this job posting?",
+            preferredStyle: .alert
+        )
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { _ in
+            
+            //delete the document from Firestore
+            db.collection("jobPostings").document(jobPosting.docId).delete { error in
+                if let error = error {
+                    print("Error deleting job posting: \(error.localizedDescription)")
+                } else {
+                    print("Job posting deleted successfully.")
+                    
+                    // Remove the job posting from the local array and update the table view
+                    if let index = self.jobPostings.firstIndex(where: { $0.docId == jobPosting.docId }) {
+                        self.jobPostings.remove(at: index)
+                        DispatchQueue.main.async {
+                            self.tableView.deleteRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
+                        }
+                    }
+                }
+            }
+        }))
+        
+        present(alert, animated: true, completion: nil)
+    }
+
+    
     }
 
 extension JobPostingViewController {
@@ -74,7 +145,14 @@ extension JobPostingViewController {
         )
         cell.backgroundColor = .clear
         cell.contentView.backgroundColor = .clear
+        
+        // Set the icon based on visibility status
+            let buttonIcon = job.isHidden ? "eye.slash.fill" : "eye.fill"
+            cell.hideButton.setImage(UIImage(systemName: buttonIcon), for: .normal)
+        
+        cell.jobPosting = job
         cell.parentViewController = self //pass view controller to the cell
+        cell.parentController = self
         return cell
     }
     

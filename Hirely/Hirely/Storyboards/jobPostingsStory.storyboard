@@ -1028,6 +1028,9 @@
                                                     <buttonConfiguration key="configuration" style="filled" title="View" cornerStyle="capsule">
                                                         <fontDescription key="titleFontDescription" type="boldSystem" pointSize="16"/>
                                                     </buttonConfiguration>
+                                                    <connections>
+                                                        <segue destination="d2e-qt-tFL" kind="show" id="rAc-sJ-tpy"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -1198,6 +1201,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RCB-3o-8c2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="16343" y="825"/>
+        </scene>
+        <!--View ApplicantCV View Controller-->
+        <scene sceneID="czJ-UI-GXu">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="d2e-qt-tFL" customClass="ViewApplicantCVViewController" customModule="Hirely" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="09t-my-tqi">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="IUL-kt-gR3"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="OvP-Bw-ttt"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3pE-Ng-S9d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="17227" y="825"/>
         </scene>
         <!--Schedule Interview-->
         <scene sceneID="WSf-JL-RRx">
@@ -1876,7 +1895,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="byP-ja-mHq"/>
+        <segue reference="xKX-Um-QcP"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Blue-BG" width="402" height="193"/>

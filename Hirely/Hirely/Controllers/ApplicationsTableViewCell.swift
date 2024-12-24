@@ -35,56 +35,8 @@ class ApplicationsTableViewCell: UITableViewCell {
         applicantImage.clipsToBounds = true
     }
     
-    // Enum for badge states
-    enum BadgeState {
-        case reviewed
-        case new
-        case rejected
-        case hired
-        case scheduledInterview
-
-        var backgroundColor: UIColor {
-            switch self {
-            case .reviewed: return UIColor(red: 212/255, green: 170/255, blue: 255/255, alpha: 1)
-            case .new: return UIColor(red: 255/255, green: 196/255, blue: 98/255, alpha: 1)
-            case .hired: return UIColor(red: 125/255, green: 222/255, blue: 134/255, alpha: 1)
-            case .scheduledInterview: return UIColor(red: 196/255, green: 222/255, blue: 255/255, alpha: 1)
-            case .rejected: return UIColor(red: 255/255, green: 152/255, blue: 152/255, alpha: 1)
-            }
-        }
-
-        var text: String {
-            switch self {
-            case .reviewed: return "Reviewed"
-            case .new: return "New"
-            case .hired: return "Hired"
-            case .scheduledInterview: return "Scheduled Interview"
-            case .rejected: return "Rejected"
-            }
-        }
-        
-        var textColor: UIColor {
-            switch self {
-            case .reviewed: return UIColor.purple
-            case .new: return UIColor.brown
-            case .hired: return UIColor(red: 0/255, green: 128/255, blue: 0/255, alpha: 1.0)
-            case .scheduledInterview: return UIColor.blue
-            case .rejected: return UIColor.red
-            }
-        }
-
-        var icon: UIImage? {
-            switch self {
-            case .reviewed: return UIImage(systemName: "doc.text.magnifyingglass")
-            case .new: return UIImage(systemName: "checklist")
-            case .hired: return UIImage(systemName: "checkmark.circle.fill")
-            case .scheduledInterview: return UIImage(systemName: "person.2.fill")
-            case .rejected: return UIImage(systemName: "xmark.circle.fill")
-            }
-        }
-    }
     
-    // Configure badge with badge state
+    //Configure badge with badge state
     func configureBadge(for state: BadgeState) {
         badgeContainerView.backgroundColor = state.backgroundColor
         badgeContainerView.layer.cornerRadius = 12
@@ -94,7 +46,7 @@ class ApplicationsTableViewCell: UITableViewCell {
         badgeIconImageView.image = state.icon
         badgeIconImageView.tintColor = state.textColor
         
-        // Calculate the width dynamically based on the text
+        //Calculate the width dynamically based on the text
             let badgePadding: CGFloat = 16 // Padding around text
             let textWidth = (badgeTextLabel.text! as NSString).size(withAttributes: [
                 .font: badgeTextLabel.font ?? UIFont.systemFont(ofSize: 17)
@@ -103,11 +55,11 @@ class ApplicationsTableViewCell: UITableViewCell {
             let iconWidth: CGFloat = badgeIconImageView.image == nil ? 0 : 20 // Adjust for icon size
             let totalWidth = textWidth + iconWidth + badgePadding * 2
 
-            // Adjust the badge frame directly
+            //Adjust the badge frame directly
             if state == .scheduledInterview {
-                badgeContainerView.frame.size.width = max(totalWidth, 150) // Wider for Scheduled Interview
+                badgeContainerView.frame.size.width = max(totalWidth, 150)
             } else {
-                badgeContainerView.frame.size.width = max(totalWidth, 100) // Default for other states
+                badgeContainerView.frame.size.width = max(totalWidth, 100)
             }
     }
 
@@ -122,7 +74,7 @@ class ApplicationsTableViewCell: UITableViewCell {
         case "hired": badgeState = .hired
         case "scheduled interview": badgeState = .scheduledInterview
         case "rejected": badgeState = .rejected
-        default: badgeState = .new // Default state
+        default: badgeState = .new //default state
         }
         
         configureBadge(for: badgeState)
