@@ -16,17 +16,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="extraShortBakground" translatesAutoresizingMaskIntoConstraints="NO" id="rLA-HE-HVf">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="extraShortTop" translatesAutoresizingMaskIntoConstraints="NO" id="rLA-HE-HVf">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="143"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jobs For You" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nLl-Xr-sjF">
+                                <rect key="frame" x="16" y="151" width="144" height="29"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="RhE-Ek-Uue"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.90980386729999996" green="0.91372549530000002" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="rLA-HE-HVf" firstAttribute="trailing" secondItem="RhE-Ek-Uue" secondAttribute="trailing" id="4Dy-WA-JhN"/>
-                            <constraint firstItem="rLA-HE-HVf" firstAttribute="top" secondItem="i6q-78-Sqi" secondAttribute="top" id="KyJ-mt-F5N"/>
-                            <constraint firstItem="rLA-HE-HVf" firstAttribute="leading" secondItem="RhE-Ek-Uue" secondAttribute="leading" id="Wwm-Sv-dWu"/>
-                            <constraint firstAttribute="bottom" secondItem="rLA-HE-HVf" secondAttribute="bottom" id="oq8-mP-p1t"/>
+                            <constraint firstItem="nLl-Xr-sjF" firstAttribute="leading" secondItem="RhE-Ek-Uue" secondAttribute="leading" constant="16" id="AQD-LO-lPk"/>
+                            <constraint firstItem="nLl-Xr-sjF" firstAttribute="top" secondItem="rLA-HE-HVf" secondAttribute="bottom" constant="8" id="ISs-0A-fqQ"/>
+                            <constraint firstItem="RhE-Ek-Uue" firstAttribute="trailing" secondItem="nLl-Xr-sjF" secondAttribute="trailing" constant="233" id="MaU-WF-AKw"/>
+                            <constraint firstItem="rLA-HE-HVf" firstAttribute="trailing" secondItem="RhE-Ek-Uue" secondAttribute="trailing" id="PcU-aa-FoV"/>
+                            <constraint firstItem="rLA-HE-HVf" firstAttribute="leading" secondItem="RhE-Ek-Uue" secondAttribute="leading" id="lZF-eK-wHQ"/>
+                            <constraint firstItem="rLA-HE-HVf" firstAttribute="top" secondItem="i6q-78-Sqi" secondAttribute="top" id="nP2-lZ-iB1"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="R4f-Me-0Ws"/>
@@ -34,6 +42,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FXb-h1-PNv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2730.5343511450383" y="358.45070422535213"/>
+        </scene>
+        <!--Results Page View Controller-->
+        <scene sceneID="gwb-ws-mpO">
+            <objects>
+                <viewController id="68i-Du-0gL" customClass="ResultsPageViewController" customModule="Hirely" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9RY-dI-1cj">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="2Lg-qZ-Nau"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="upw-sl-ysg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3650" y="361"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ePq-34-HUB">
@@ -55,7 +78,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="extraShortBakground" width="402" height="874"/>
+        <image name="extraShortTop" width="402" height="143"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
