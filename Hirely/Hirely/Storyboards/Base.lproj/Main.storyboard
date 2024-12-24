@@ -56,13 +56,31 @@
         <!--Results Page View Controller-->
         <scene sceneID="gwb-ws-mpO">
             <objects>
-                <viewController id="68i-Du-0gL" customClass="ResultsPageViewController" customModule="Hirely" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ResultsPageViewController" id="68i-Du-0gL" customClass="ResultsPageViewController" customModule="Hirely" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9RY-dI-1cj">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ran-ED-xsu">
+                                <rect key="frame" x="30" y="104" width="49" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" image="filter-icon" cornerStyle="capsule">
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseBackgroundColor" red="0.0" green="0.88908375850340138" blue="1" alpha="0.72570881622516559" colorSpace="custom" customColorSpace="sRGB"/>
+                                </buttonConfiguration>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="7QG-Rh-6LM">
+                                <rect key="frame" x="0.0" y="232" width="393" height="519"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="68i-Du-0gL" id="vB1-Pr-q1r"/>
+                                    <outlet property="delegate" destination="68i-Du-0gL" id="a7I-Li-8W1"/>
+                                </connections>
+                            </tableView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="P4u-pr-oFy">
-                                <rect key="frame" x="0.0" y="149" width="393" height="55"/>
+                                <rect key="frame" x="0.0" y="169" width="393" height="55"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="pqD-qt-Lbq"/>
@@ -94,12 +112,13 @@
                         <constraints>
                             <constraint firstItem="P4u-pr-oFy" firstAttribute="leading" secondItem="2Lg-qZ-Nau" secondAttribute="leading" id="EgQ-Ez-PEL"/>
                             <constraint firstItem="P4u-pr-oFy" firstAttribute="trailing" secondItem="2Lg-qZ-Nau" secondAttribute="trailing" id="Njl-es-ApQ"/>
-                            <constraint firstItem="P4u-pr-oFy" firstAttribute="top" secondItem="2Lg-qZ-Nau" secondAttribute="top" constant="46" id="huF-83-LVh"/>
+                            <constraint firstItem="P4u-pr-oFy" firstAttribute="top" secondItem="2Lg-qZ-Nau" secondAttribute="top" constant="66" id="huF-83-LVh"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="mr0-SY-dXk"/>
                     <connections>
                         <outlet property="filtersCollectionView" destination="P4u-pr-oFy" id="Ptg-ez-Sa0"/>
+                        <outlet property="jobResultsTableView" destination="7QG-Rh-6LM" id="zQw-BK-UCd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="upw-sl-ysg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -127,6 +146,7 @@
     </scenes>
     <resources>
         <image name="extraShortTop" width="402" height="143"/>
+        <image name="filter-icon" width="25" height="25"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
