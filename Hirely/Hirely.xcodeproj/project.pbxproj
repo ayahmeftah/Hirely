@@ -21,6 +21,8 @@
 		C363937F2D006A5600E14337 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = C363937E2D006A5600E14337 /* FirebaseAuth */; };
 		C36393812D006A7800E14337 /* Cloudinary in Frameworks */ = {isa = PBXBuildFile; productRef = C36393802D006A7800E14337 /* Cloudinary */; };
 		C365BB8C2D1AF55800D62A4F /* ApplyJobViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C365BB8B2D1AF55800D62A4F /* ApplyJobViewController.swift */; };
+		C365BB8E2D1AF96200D62A4F /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = C365BB8D2D1AF96200D62A4F /* FirebaseFirestore */; };
+		C365BB912D1B00A200D62A4F /* getCV.swift in Sources */ = {isa = PBXBuildFile; fileRef = C365BB902D1B00A200D62A4F /* getCV.swift */; };
 		C3EBE7162D0075C4002066F3 /* JobApplication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3EBE7152D0075C4002066F3 /* JobApplication.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +59,7 @@
 		71BEBCFE2CFC502B00DF795E /* HirelyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HirelyUITests.swift; sourceTree = "<group>"; };
 		71BEBD002CFC502B00DF795E /* HirelyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HirelyUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		C365BB8B2D1AF55800D62A4F /* ApplyJobViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyJobViewController.swift; sourceTree = "<group>"; };
+		C365BB902D1B00A200D62A4F /* getCV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getCV.swift; sourceTree = "<group>"; };
 		C3EBE7152D0075C4002066F3 /* JobApplication.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = JobApplication.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -66,6 +69,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C363937D2D006A4C00E14337 /* FirebaseDatabase in Frameworks */,
+				C365BB8E2D1AF96200D62A4F /* FirebaseFirestore in Frameworks */,
 				C363937F2D006A5600E14337 /* FirebaseAuth in Frameworks */,
 				C36393812D006A7800E14337 /* Cloudinary in Frameworks */,
 			);
@@ -138,6 +142,7 @@
 		71BEBCDC2CFC502900DF795E /* Hirely */ = {
 			isa = PBXGroup;
 			children = (
+				C365BB8F2D1B006300D62A4F /* structs */,
 				711B4EBF2CFC57F300910FB6 /* Controllers */,
 				711B4EBE2CFC57E200910FB6 /* Storyboards */,
 				71BEBCDD2CFC502900DF795E /* AppDelegate.swift */,
@@ -166,6 +171,14 @@
 			path = HirelyUITests;
 			sourceTree = "<group>";
 		};
+		C365BB8F2D1B006300D62A4F /* structs */ = {
+			isa = PBXGroup;
+			children = (
+				C365BB902D1B00A200D62A4F /* getCV.swift */,
+			);
+			path = structs;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -186,6 +199,7 @@
 				C363937C2D006A4C00E14337 /* FirebaseDatabase */,
 				C363937E2D006A5600E14337 /* FirebaseAuth */,
 				C36393802D006A7800E14337 /* Cloudinary */,
+				C365BB8D2D1AF96200D62A4F /* FirebaseFirestore */,
 			);
 			productName = Hirely;
 			productReference = 71BEBCDA2CFC502900DF795E /* Hirely.app */;
@@ -312,6 +326,7 @@
 				71BEBCDE2CFC502900DF795E /* AppDelegate.swift in Sources */,
 				71BEBCE02CFC502900DF795E /* SceneDelegate.swift in Sources */,
 				C365BB8C2D1AF55800D62A4F /* ApplyJobViewController.swift in Sources */,
+				C365BB912D1B00A200D62A4F /* getCV.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -689,6 +704,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2C9302FB2CFCBD4300CAD615 /* XCRemoteSwiftPackageReference "cloudinary_ios" */;
 			productName = Cloudinary;
+		};
+		C365BB8D2D1AF96200D62A4F /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2C9302F62CFC9EDF00CAD615 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
