@@ -25,6 +25,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tUa-yq-Buc">
+                                <rect key="frame" x="135" y="464" width="75" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <segue destination="68i-Du-0gL" kind="show" id="Bfn-s2-rzT"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="RhE-Ek-Uue"/>
                         <color key="backgroundColor" red="0.90980386729999996" green="0.91372549530000002" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -53,10 +62,11 @@
                         <viewLayoutGuide key="safeArea" id="2Lg-qZ-Nau"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="mr0-SY-dXk"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="upw-sl-ysg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3650" y="361"/>
+            <point key="canvasLocation" x="3649.6183206106871" y="360.56338028169017"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ePq-34-HUB">

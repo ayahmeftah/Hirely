@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseFirestore
 
 // ResultsVC: Displays search suggestions in a table view
 class ResultsVC: UIViewController {
@@ -16,19 +17,20 @@ class ResultsVC: UIViewController {
         }
     }
     
+    var didSelectSuggestion: ((String) -> Void)? // Callback for selection
+    
     private let tableView = UITableView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         
-        // Set up the table view programmatically
+        // Set up the table view
         tableView.dataSource = self
         tableView.delegate = self
         tableView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(tableView)
         
-        // Add Auto Layout constraints
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: view.topAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
@@ -50,9 +52,11 @@ extension ResultsVC: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("Selected: \(results[indexPath.row])")
+        let selectedSuggestion = results[indexPath.row]
+        didSelectSuggestion?(selectedSuggestion) // Trigger the callback
     }
 }
+
 
 // FirstSearchViewController: Main screen with search functionality
 class FirstSearchViewController: UIViewController, UISearchResultsUpdating {
