@@ -30,7 +30,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                 <connections>
-                                    <segue destination="RY8-6I-44B" kind="replace" splitViewControllerTargetIndex="1" id="kNm-Ph-R61"/>
+                                    <segue destination="RY8-6I-44B" kind="show" id="PNN-2y-y1R"/>
                                 </connections>
                             </button>
                         </subviews>
