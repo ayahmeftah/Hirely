@@ -20,7 +20,7 @@ class CareerTipsViewController: UIViewController, UITableViewDelegate, UITableVi
     
     @IBOutlet weak var tableView: UITableView!
     
-    
+    let db = Firestore.firestore() // Firestore reference
     @IBOutlet weak var backBtn: UIButton!
     
 
@@ -66,20 +66,87 @@ class CareerTipsViewController: UIViewController, UITableViewDelegate, UITableVi
     
     
     @IBAction func bookmarkTouched(_ sender: Any) {
-        // Toggle the bookmark state
-                isBookmarked.toggle()
-                
-                // Update the button image based on the state
-                if isBookmarked {
-                    (sender as AnyObject).setImage(UIImage(systemName: "bookmark.fill"), for: .normal) // Filled bookmark
-                    
-                    
-                    
-                } else {
-                    (sender as AnyObject).setImage(UIImage(systemName: "bookmark"), for: .normal) // Unfilled bookmark
-                }
+        let buttonPosition = (sender as AnyObject).convert(CGPoint.zero, to: tableView)
+           guard let indexPath = tableView.indexPathForRow(at: buttonPosition) else {
+               print("Error: Could not determine index path for bookmark.")
+               return
+           }
+
+           // Retrieve the article associated with the bookmark button
+           let article = articles[indexPath.row]
+
+           // Toggle the bookmark state
+           isBookmarked.toggle()
+
+           // Update the button image and save/remove bookmark from Firestore
+           if isBookmarked {
+               (sender as AnyObject).setImage(UIImage(systemName: "bookmark.fill"), for: .normal) // Filled bookmark
+               saveBookmarkToFirestore(article: article) // Save the article as a bookmark
+           } else {
+               (sender as AnyObject).setImage(UIImage(systemName: "bookmark"), for: .normal) // Unfilled bookmark
+               removeBookmarkFromFirestore(article: article) // Remove the article from bookmarks
+           }
             }
 
+    
+    
+    // MARK: - Save Bookmark to Firestore
+        private func saveBookmarkToFirestore(article: Article) {
+            let bookmarksRef = db.collection("bookmarks").document("globalBookmarks").collection("savedResources")
+            let articleData: [String: Any] = [
+                "resourceTitle": article.title,
+                "resourceLink": article.url.absoluteString,
+                "resourceCategory": "Articles"
+            ]
+
+            bookmarksRef.addDocument(data: articleData) { error in
+                if let error = error {
+                    print("Error saving bookmark: \(error.localizedDescription)")
+                } else {
+                    print("Article bookmarked successfully.")
+                }
+            }
+        }
+
+        // MARK: - Remove Bookmark from Firestore
+        private func removeBookmarkFromFirestore(article: Article) {
+            let bookmarksRef = db.collection("bookmarks").document("globalBookmarks").collection("savedResources")
+
+            bookmarksRef
+                .whereField("resourceTitle", isEqualTo: article.title)
+                .whereField("resourceLink", isEqualTo: article.url.absoluteString)
+                .getDocuments { (snapshot, error) in
+                    if let error = error {
+                        print("Error finding bookmark to delete: \(error.localizedDescription)")
+                    } else if let snapshot = snapshot {
+                        for document in snapshot.documents {
+                            document.reference.delete { error in
+                                if let error = error {
+                                    print("Error deleting bookmark: \(error.localizedDescription)")
+                                } else {
+                                    print("Article unbookmarked successfully.")
+                                }
+                            }
+                        }
+                    }
+                }
+        }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
             return articles.count
         }

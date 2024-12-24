@@ -63,56 +63,12 @@ class ResourceManagmentTableViewController: UIViewController, UITableViewDelegat
     }
 
     @IBAction func deleteButtonTapped(_ sender: Any) {
-        // Determine the button's position within the table view
-           let buttonPosition = (sender as AnyObject).convert(CGPoint.zero, to: tableView)
-           guard let indexPath = tableView.indexPathForRow(at: buttonPosition) else {
-               showAlert(title: "Error", message: "Unable to find the cell to delete.")
-               return
-           }
-
-           // Confirm Deletion Alert
-           let alert = UIAlertController(
-               title: "Confirm Deletion",
-               message: "Are you sure you want to delete this resource?",
-               preferredStyle: .alert
-           )
-
-           // Add "Delete" action
-           alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { _ in
-               // Perform the deletion from Firestore
-               let documentIDToDelete = self.documentIDs[indexPath.row] // Use corresponding documentID
-               
-               let db = Firestore.firestore()
-               db.collection("Resources").document(documentIDToDelete).delete { error in
-                   if let error = error {
-                       print("Error deleting resource: \(error.localizedDescription)")
-                       self.showAlert(title: "Error", message: "Failed to delete resource. Please try again.")
-                   } else {
-                       print("Resource deleted successfully from Firestore.")
-                       
-                       // Perform local deletion and update the UI
-                       self.resources.remove(at: indexPath.row)
-                       self.filteredResources = self.resources // Sync filtered resources
-                       self.documentIDs.remove(at: indexPath.row) // Sync documentIDs array
-
-                       // Update the table view with animations
-                       self.tableView.performBatchUpdates({
-                           self.tableView.deleteRows(at: [indexPath], with: .fade)
-                       }) { _ in
-                           self.tableView.reloadData() // Ensure data consistency
-                       }
-
-                       // Success feedback
-                       self.showAlert(title: "Deleted", message: "Resource deleted successfully.")
-                   }
-               }
-           }))
-
-           // Add "Cancel" action
-           alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-
-           // Present the alert
-           present(alert, animated: true, completion: nil)
+        let buttonPosition = (sender as AnyObject).convert(CGPoint.zero, to: tableView)
+          guard let indexPath = tableView.indexPathForRow(at: buttonPosition) else {
+              showAlert(title: "Error", message: "Unable to find the cell to delete.")
+              return
+          }
+          deleteResource(at: indexPath) // Call the new method
     }
     
     private func showAlert(title: String, message: String) {
@@ -259,41 +215,8 @@ class ResourceManagmentTableViewController: UIViewController, UITableViewDelegat
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // Show confirmation alert
-            let alert = UIAlertController(
-                title: "Confirm Deletion",
-                message: "Are you sure you want to delete this resource?",
-                preferredStyle: .alert
-            )
-            
-            // Add "Delete" action
-            alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { _ in
-                // Perform the deletion in the data source
-                self.resources.remove(at: indexPath.row)
-                self.filteredResources = self.resources // Sync filtered resources
-                
-                // Update the table view
-                tableView.deleteRows(at: [indexPath], with: .fade)
-                
-                // Save updated resources
-                Resource.saveResources(self.resources)
-                
-                // Show success alert
-                let successAlert = UIAlertController(
-                    title: "Deleted",
-                    message: "Resource deleted successfully.",
-                    preferredStyle: .alert
-                )
-                successAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-                self.present(successAlert, animated: true, completion: nil)
-            }))
-            
-            // Add "Cancel" action
-            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-            
-            // Present the alert
-            self.present(alert, animated: true, completion: nil)
-        }
+               deleteResource(at: indexPath) // Reuse the same method
+           }
     }
 
     
@@ -320,7 +243,49 @@ class ResourceManagmentTableViewController: UIViewController, UITableViewDelegat
         
         
         
-        
+    func deleteResource(at indexPath: IndexPath) {
+        // Confirm Deletion Alert
+        let alert = UIAlertController(
+            title: "Confirm Deletion",
+            message: "Are you sure you want to delete this resource?",
+            preferredStyle: .alert
+        )
+
+        // Add "Delete" action
+        alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { _ in
+            let documentIDToDelete = self.documentIDs[indexPath.row] // Fetch document ID
+            
+            // Delete from Firestore
+            let db = Firestore.firestore()
+            db.collection("Resources").document(documentIDToDelete).delete { error in
+                if let error = error {
+                    print("Error deleting resource: \(error.localizedDescription)")
+                    self.showAlert(title: "Error", message: "Failed to delete resource. Please try again.")
+                } else {
+                    print("Resource deleted successfully from Firestore.")
+                    
+                    // Update local data
+                    self.resources.remove(at: indexPath.row)
+                    self.filteredResources = self.resources
+                    self.documentIDs.remove(at: indexPath.row)
+
+                    // Update table view
+                    DispatchQueue.main.async {
+                        self.tableView.deleteRows(at: [indexPath], with: .fade)
+                    }
+
+                    self.showAlert(title: "Deleted", message: "Resource deleted successfully.")
+                }
+            }
+        }))
+
+        // Add "Cancel" action
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+
+        // Present the alert
+        present(alert, animated: true, completion: nil)
+    }
+
         
         
         
