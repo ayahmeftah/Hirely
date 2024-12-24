@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -59,10 +60,47 @@
                     <view key="view" contentMode="scaleToFill" id="9RY-dI-1cj">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="P4u-pr-oFy">
+                                <rect key="frame" x="0.0" y="149" width="393" height="55"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="pqD-qt-Lbq"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="kEa-iz-4Cy">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FilterCell" id="skU-6I-ekO">
+                                        <rect key="frame" x="0.0" y="-36.666666666666664" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="4SK-L6-I8y">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="68i-Du-0gL" id="LQE-us-L0v"/>
+                                    <outlet property="delegate" destination="68i-Du-0gL" id="cyZ-Tn-hRM"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="2Lg-qZ-Nau"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="P4u-pr-oFy" firstAttribute="leading" secondItem="2Lg-qZ-Nau" secondAttribute="leading" id="EgQ-Ez-PEL"/>
+                            <constraint firstItem="P4u-pr-oFy" firstAttribute="trailing" secondItem="2Lg-qZ-Nau" secondAttribute="trailing" id="Njl-es-ApQ"/>
+                            <constraint firstItem="P4u-pr-oFy" firstAttribute="top" secondItem="2Lg-qZ-Nau" secondAttribute="top" constant="46" id="huF-83-LVh"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="mr0-SY-dXk"/>
+                    <connections>
+                        <outlet property="filtersCollectionView" destination="P4u-pr-oFy" id="Ptg-ez-Sa0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="upw-sl-ysg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
