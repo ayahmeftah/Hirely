@@ -29,6 +29,8 @@
 		C36393812D006A7800E14337 /* Cloudinary in Frameworks */ = {isa = PBXBuildFile; productRef = C36393802D006A7800E14337 /* Cloudinary */; };
 		C36393832D006C0300E14337 /* CVBuilder.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C36393822D006C0300E14337 /* CVBuilder.storyboard */; };
 		C36393852D006E6600E14337 /* CvBuilderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36393842D006E6600E14337 /* CvBuilderViewController.swift */; };
+		C3D37E232D1A9F5100F3966B /* CloudinarySetUpCv.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D37E222D1A9F5100F3966B /* CloudinarySetUpCv.swift */; };
+		C3D37E252D1AA3C700F3966B /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = C3D37E242D1AA3C700F3966B /* FirebaseFirestore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +74,7 @@
 		C33E86ED2D055F0200EF1062 /* CVData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVData.swift; sourceTree = "<group>"; };
 		C36393822D006C0300E14337 /* CVBuilder.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CVBuilder.storyboard; sourceTree = "<group>"; };
 		C36393842D006E6600E14337 /* CvBuilderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CvBuilderViewController.swift; sourceTree = "<group>"; };
+		C3D37E222D1A9F5100F3966B /* CloudinarySetUpCv.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudinarySetUpCv.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +83,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C363937D2D006A4C00E14337 /* FirebaseDatabase in Frameworks */,
+				C3D37E252D1AA3C700F3966B /* FirebaseFirestore in Frameworks */,
 				C363937F2D006A5600E14337 /* FirebaseAuth in Frameworks */,
 				C36393812D006A7800E14337 /* Cloudinary in Frameworks */,
 			);
@@ -131,6 +135,7 @@
 				C33E86E72D055DED00EF1062 /* educationViewController.swift */,
 				C33E86E92D055E0100EF1062 /* certiViewController.swift */,
 				C33E86EB2D055E1900EF1062 /* generatedCvViewController.swift */,
+				C3D37E222D1A9F5100F3966B /* CloudinarySetUpCv.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -207,6 +212,7 @@
 				C363937C2D006A4C00E14337 /* FirebaseDatabase */,
 				C363937E2D006A5600E14337 /* FirebaseAuth */,
 				C36393802D006A7800E14337 /* Cloudinary */,
+				C3D37E242D1AA3C700F3966B /* FirebaseFirestore */,
 			);
 			productName = Hirely;
 			productReference = 71BEBCDA2CFC502900DF795E /* Hirely.app */;
@@ -335,6 +341,7 @@
 				C33E86E42D055DB600EF1062 /* skillsViewController.swift in Sources */,
 				71BEBCE02CFC502900DF795E /* SceneDelegate.swift in Sources */,
 				C33E86E22D055D9B00EF1062 /* personalInfoViewController.swift in Sources */,
+				C3D37E232D1A9F5100F3966B /* CloudinarySetUpCv.swift in Sources */,
 				C33E86EA2D055E0100EF1062 /* certiViewController.swift in Sources */,
 				C33E86E82D055DED00EF1062 /* educationViewController.swift in Sources */,
 				C33E86EE2D055F0200EF1062 /* CVData.swift in Sources */,
@@ -717,6 +724,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2C9302FB2CFCBD4300CAD615 /* XCRemoteSwiftPackageReference "cloudinary_ios" */;
 			productName = Cloudinary;
+		};
+		C3D37E242D1AA3C700F3966B /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2C9302F62CFC9EDF00CAD615 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

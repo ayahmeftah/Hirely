@@ -7,6 +7,8 @@
 
 import UIKit
 import PDFKit
+import Cloudinary
+import FirebaseFirestore
 
 class generatedCvViewController: UIViewController {
     
@@ -23,10 +25,11 @@ class generatedCvViewController: UIViewController {
         // Debugging: Log CV data to ensure it's passed correctly
         print("Received CV Data: \(String(describing: cvData))")
         shareCVButton?.addTarget(self, action: #selector(shareCVButtonTapped(_:)), for: .touchUpInside)
-
+        
         // Display the CV content
         displayCV()
         shareCVButton?.isEnabled = true
+        CloudinarySetup.cloudinary = CloudinarySetup.cloudinarySetup()
 
     }
     
@@ -127,32 +130,81 @@ class generatedCvViewController: UIViewController {
     // MARK: - Actions
     @IBAction func shareCVButtonTapped(_ sender: UIButton) {
         print("Button tapped!")
-        let alertController = UIAlertController(
-            title: "Export CV",
-            message: "Your CV will be exported and saved to your files. Do you want to continue?",
-            preferredStyle: .alert
-        )
-        
-        let exportAction = UIAlertAction(title: "Export CV", style: .default) { _ in
-            self.generatePDF { pdfURL in
-                guard let pdfURL = pdfURL else {
-                    self.showAlert(title: "Error", message: "Failed to generate the PDF. Please try again.")
-                    return
-                }
-                
-                let activityVC = UIActivityViewController(activityItems: [pdfURL], applicationActivities: nil)
-                self.present(activityVC, animated: true)
-            }
-        }
-        
-        let exitAction = UIAlertAction(title: "Exit", style: .destructive) { _ in
-            self.dismiss(animated: true, completion: nil)
-        }
-        
-        alertController.addAction(exportAction)
-        alertController.addAction(exitAction)
-        
-        self.present(alertController, animated: true, completion: nil)
+           let alertController = UIAlertController(
+               title: "Export CV",
+               message: "Your CV will be exported, saved to your files, and uploaded to the cloud. Do you want to continue?",
+               preferredStyle: .alert
+           )
+           
+           let exportAction = UIAlertAction(title: "Export & Upload CV", style: .default) { _ in
+               self.generatePDF { pdfURL in
+                   guard let pdfURL = pdfURL else {
+                       self.showAlert(title: "Error", message: "Failed to generate the PDF. Please try again.")
+                       return
+                   }
+                   
+                   // Start Cloudinary upload
+                   self.uploadCvToCloudinary(fileURL: pdfURL)
+               }
+           }
+           
+           let exitAction = UIAlertAction(title: "Exit", style: .destructive) { _ in
+               self.dismiss(animated: true, completion: nil)
+           }
+           
+           alertController.addAction(exportAction)
+           alertController.addAction(exitAction)
+           
+           self.present(alertController, animated: true, completion: nil)
+       }
+
+       private func uploadCvToCloudinary(fileURL: URL) {
+           guard let cloudinary = CloudinarySetup.cloudinary else {
+               self.showAlert(title: "Error", message: "Cloudinary is not configured properly.")
+               return
+           }
+
+           let activityIndicator = UIActivityIndicatorView(style: .large)
+           activityIndicator.center = self.view.center
+           self.view.addSubview(activityIndicator)
+           activityIndicator.startAnimating()
+           
+           cloudinary.createUploader().upload(
+               url: fileURL,
+               uploadPreset: CloudinarySetup.uploadPreset,
+               progress: { progress in
+                   print("Upload progress: \(progress.fractionCompleted * 100)%")
+               }
+           ) { result, error in
+               activityIndicator.stopAnimating()
+               activityIndicator.removeFromSuperview()
+               
+               if let error = error {
+                   print("Error uploading CV: \(error.localizedDescription)")
+                   self.showAlert(title: "Error", message: "Failed to upload the CV. Please try again.")
+               } else if let result = result, let secureUrl = result.secureUrl {
+                   print("CV uploaded successfully.")
+                   self.showAlert(title: "Success", message: "Your CV has been uploaded successfully.\nURL: \(secureUrl)")
+                   self.saveCvUrlToFirestore(url: secureUrl)
+               }
+           }
+       }
+
+       private func saveCvUrlToFirestore(url: String) {
+           let db = Firestore.firestore()
+           let data: [String: Any] = [
+               "cvUrl": url,
+               "uploadedAt": Date()
+           ]
+
+           db.collection("CVs").addDocument(data: data) { error in
+               if let error = error {
+                   print("Error saving CV URL to Firestore: \(error.localizedDescription)")
+                   self.showAlert(title: "Error", message: "Failed to save the CV URL to Firestore.")
+               } else {
+                   print("CV URL saved to Firestore successfully.")
+               }
+           }
     }
     
     private func generatePDF(completion: (URL?) -> Void) {
@@ -232,4 +284,15 @@ class generatedCvViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "OK", style: .default))
         present(alert, animated: true)
     }
+    
+    
+    
+    
+    
+    //cloud
+    
+    
+
+    
+    
 }
