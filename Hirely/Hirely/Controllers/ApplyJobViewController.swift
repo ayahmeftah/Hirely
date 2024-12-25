@@ -16,22 +16,19 @@ class ApplyJobViewController: UIViewController, UIDocumentPickerDelegate {
     @IBOutlet weak var phoneNumbertxt: UITextField!
     @IBOutlet weak var emailtxt: UITextField!
     @IBOutlet weak var uploadCVbtn: UIButton!
-    @IBOutlet weak var uploadCoverLetterbtn: UIButton!
     @IBOutlet weak var applybtn: UIButton!
 
     var fetchedCVURL: String? // Stores the fetched CV URL from Hirely
     var selectedCVURL: String? // Stores the selected CV file URL
-    var selectedCoverLetterURL: String? // Stores the selected Cover Letter file URL
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Add actions to buttons
         uploadCVbtn.addTarget(self, action: #selector(uploadCVTapped), for: .touchUpInside)
-        uploadCoverLetterbtn.addTarget(self, action: #selector(uploadCoverLetterTapped), for: .touchUpInside)
         applybtn.addTarget(self, action: #selector(applyButtonTapped), for: .touchUpInside)
 
-        // Add input validation targets
+        // Add input validation for phone number
         phoneNumbertxt.addTarget(self, action: #selector(validatePhoneNumber), for: .editingChanged)
         print("View did load: Button actions and field validations added.") // Debug log
     }
@@ -55,11 +52,6 @@ class ApplyJobViewController: UIViewController, UIDocumentPickerDelegate {
         
         // Present the action sheet
         present(alert, animated: true, completion: nil)
-    }
-
-    @objc func uploadCoverLetterTapped() {
-        // Open document picker for Cover Letter
-        presentDocumentPicker(for: uploadCoverLetterbtn)
     }
 
     @objc func applyButtonTapped() {
@@ -98,7 +90,6 @@ class ApplyJobViewController: UIViewController, UIDocumentPickerDelegate {
             "phoneNumber": phoneNumber,
             "email": email,
             "cvLink": validCVLink, // Save the CV link
-            "coverLetterLink": selectedCoverLetterURL ?? "", // Save the Cover Letter link or an empty string
             "applicationDate": Timestamp(date: Date()) // Add the current date and time
         ]
         
@@ -143,7 +134,7 @@ class ApplyJobViewController: UIViewController, UIDocumentPickerDelegate {
         let documentPicker = UIDocumentPickerViewController(forOpeningContentTypes: [UTType.pdf])
         documentPicker.delegate = self
         documentPicker.modalPresentationStyle = .formSheet
-        documentPicker.accessibilityHint = button == uploadCVbtn ? "CV" : "Cover Letter"
+        documentPicker.accessibilityHint = "CV"
         present(documentPicker, animated: true, completion: nil)
     }
 
@@ -157,9 +148,6 @@ class ApplyJobViewController: UIViewController, UIDocumentPickerDelegate {
             if fileTypeHint == "CV" {
                 self.selectedCVURL = selectedFilePath
                 self.uploadCVbtn.setTitle("Selected: \(selectedFileURL.lastPathComponent)", for: .normal)
-            } else if fileTypeHint == "Cover Letter" {
-                self.selectedCoverLetterURL = selectedFilePath
-                self.uploadCoverLetterbtn.setTitle("Selected: \(selectedFileURL.lastPathComponent)", for: .normal)
             }
         }
     }
@@ -209,9 +197,7 @@ class ApplyJobViewController: UIViewController, UIDocumentPickerDelegate {
         phoneNumbertxt.text = ""
         emailtxt.text = ""
         uploadCVbtn.setTitle("Upload CV", for: .normal)
-        uploadCoverLetterbtn.setTitle("Upload Cover Letter", for: .normal)
         fetchedCVURL = nil
         selectedCVURL = nil
-        selectedCoverLetterURL = nil
     }
 }
