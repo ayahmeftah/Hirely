@@ -153,7 +153,7 @@
             </objects>
             <point key="canvasLocation" x="12063.358778625954" y="-226.05633802816902"/>
         </scene>
-        <!--Title-->
+        <!--Add a job Posting-->
         <scene sceneID="WXb-tI-q2y">
             <objects>
                 <viewController modalPresentationStyle="fullScreen" hidesBottomBarWhenPushed="YES" id="k9L-HK-MSl" customClass="AddJobPostingViewController" customModule="Hirely" customModuleProvider="target" sceneMemberID="viewController">
@@ -418,7 +418,7 @@
                         <viewLayoutGuide key="safeArea" id="SmE-TL-Wgp"/>
                         <color key="backgroundColor" red="0.90980392160000001" green="0.91764705879999997" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="eSa-7s-vwy">
+                    <navigationItem key="navigationItem" title="Add a job Posting" id="eSa-7s-vwy">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="xmark" catalog="system" id="JTP-2F-vol">
                             <connections>
                                 <action selector="exitButtonTapped:" destination="k9L-HK-MSl" id="nKp-3n-t3P"/>
