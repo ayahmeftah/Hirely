@@ -18,9 +18,7 @@ class ApplicantInfoTableViewController: UITableViewController {
     @IBOutlet weak var applicantEmail: UILabel!
     
     @IBOutlet weak var viewCvBtn: UIButton!
-    
-    @IBOutlet weak var viewLetterBtn: UIButton!
-    
+        
     @IBOutlet weak var checkBoxBtn: UIButton!
     
     @IBOutlet weak var actionsMenuBtn: UIButton!

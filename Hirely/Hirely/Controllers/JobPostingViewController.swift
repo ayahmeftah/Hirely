@@ -53,21 +53,21 @@ class JobPostingViewController: UIViewController, UITableViewDelegate, UITableVi
     func toggleJobVisibility(jobPosting: JobPosting, newIsHidden: Bool) {
         let db = Firestore.firestore()
 
-        // Update Firestore with the new visibility state
+        //update database with the new visibility state
         db.collection("jobPostings").document(jobPosting.docId).updateData(["isHidden": newIsHidden]) { error in
             if let error = error {
                 print("Error updating job visibility: \(error.localizedDescription)")
             } else {
                 print("Job visibility updated successfully.")
 
-                // Update the local jobPosting object
+                //update the local jobPosting object
                 if let index = self.jobPostings.firstIndex(where: { $0.docId == jobPosting.docId }) {
                     self.jobPostings[index].isHidden = newIsHidden
 
                     DispatchQueue.main.async {
                         self.tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
                     }
-                    // Show confirmation message
+                    //show confirmation message
                     let message = newIsHidden
                         ? "This post is now hidden from applicants."
                         : "This post is now visible to applicants."
@@ -104,7 +104,7 @@ class JobPostingViewController: UIViewController, UITableViewDelegate, UITableVi
                 } else {
                     print("Job posting deleted successfully.")
                     
-                    // Remove the job posting from the local array and update the table view
+                    //remove the job posting from the array and update the table view
                     if let index = self.jobPostings.firstIndex(where: { $0.docId == jobPosting.docId }) {
                         self.jobPostings.remove(at: index)
                         DispatchQueue.main.async {
