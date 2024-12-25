@@ -25,6 +25,8 @@
 		C365BB912D1B00A200D62A4F /* getCV.swift in Sources */ = {isa = PBXBuildFile; fileRef = C365BB902D1B00A200D62A4F /* getCV.swift */; };
 		C3EBE7162D0075C4002066F3 /* JobApplication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3EBE7152D0075C4002066F3 /* JobApplication.storyboard */; };
 		F29BAB812D1C139A001C8297 /* CompanyDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29BAB802D1C139A001C8297 /* CompanyDetails.swift */; };
+		F2CAD7432D1C60C2000F955A /* CompanyDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CAD7422D1C60C2000F955A /* CompanyDetailsViewController.swift */; };
+		F2CAD7452D1C6FF6000F955A /* JobPosting.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CAD7442D1C6FF6000F955A /* JobPosting.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,8 @@
 		C365BB902D1B00A200D62A4F /* getCV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getCV.swift; sourceTree = "<group>"; };
 		C3EBE7152D0075C4002066F3 /* JobApplication.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = JobApplication.storyboard; sourceTree = "<group>"; };
 		F29BAB802D1C139A001C8297 /* CompanyDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyDetails.swift; sourceTree = "<group>"; };
+		F2CAD7422D1C60C2000F955A /* CompanyDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyDetailsViewController.swift; sourceTree = "<group>"; };
+		F2CAD7442D1C6FF6000F955A /* JobPosting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobPosting.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +120,7 @@
 			children = (
 				71BEBCE12CFC502900DF795E /* ViewController.swift */,
 				C365BB8B2D1AF55800D62A4F /* ApplyJobViewController.swift */,
+				F2CAD7422D1C60C2000F955A /* CompanyDetailsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -178,6 +183,7 @@
 			children = (
 				C365BB902D1B00A200D62A4F /* getCV.swift */,
 				F29BAB802D1C139A001C8297 /* CompanyDetails.swift */,
+				F2CAD7442D1C6FF6000F955A /* JobPosting.swift */,
 			);
 			path = structs;
 			sourceTree = "<group>";
@@ -327,6 +333,8 @@
 			files = (
 				F29BAB812D1C139A001C8297 /* CompanyDetails.swift in Sources */,
 				71BEBCE22CFC502900DF795E /* ViewController.swift in Sources */,
+				F2CAD7452D1C6FF6000F955A /* JobPosting.swift in Sources */,
+				F2CAD7432D1C60C2000F955A /* CompanyDetailsViewController.swift in Sources */,
 				71BEBCDE2CFC502900DF795E /* AppDelegate.swift in Sources */,
 				71BEBCE02CFC502900DF795E /* SceneDelegate.swift in Sources */,
 				C365BB8C2D1AF55800D62A4F /* ApplyJobViewController.swift in Sources */,

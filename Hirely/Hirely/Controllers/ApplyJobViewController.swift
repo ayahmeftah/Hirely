@@ -11,6 +11,10 @@ import FirebaseFirestore
 
 class ApplyJobViewController: UIViewController, UIDocumentPickerDelegate {
 
+    @IBOutlet weak var companyLogoimg: UIImageView!
+    @IBOutlet weak var positionlbl: UILabel!
+    @IBOutlet weak var companyNamelbl: UILabel!
+
     @IBOutlet weak var fullNametxt: UITextField!
     @IBOutlet weak var agetxt: UITextField!
     @IBOutlet weak var phoneNumbertxt: UITextField!
@@ -20,17 +24,79 @@ class ApplyJobViewController: UIViewController, UIDocumentPickerDelegate {
 
     var fetchedCVURL: String? // Stores the fetched CV URL from Hirely
     var selectedCVURL: String? // Stores the selected CV file URL
+    var jobPosting: JobPosting? // Holds the fetched job posting data
+    var companyDetails: CompanyDetails? // Holds the fetched company details
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         // Add actions to buttons
         uploadCVbtn.addTarget(self, action: #selector(uploadCVTapped), for: .touchUpInside)
         applybtn.addTarget(self, action: #selector(applyButtonTapped), for: .touchUpInside)
 
         // Add input validation for phone number
         phoneNumbertxt.addTarget(self, action: #selector(validatePhoneNumber), for: .editingChanged)
-        print("View did load: Button actions and field validations added.") // Debug log
+
+        // Fetch job posting and company details data
+        fetchJobPostingData()
+        fetchCompanyDetails(companyId: "RYINaYeqoq6WXBkdCOoK")
+    }
+
+    // Fetch job posting data from Firestore
+    func fetchJobPostingData() {
+        let db = Firestore.firestore()
+        let jobId = "6zdg3JhufgPeqIoQgiPH" // Replace with the actual job document ID
+
+        db.collection("jobPostings").document(jobId).getDocument { snapshot, error in
+            if let error = error {
+                print("Error fetching job posting: \(error.localizedDescription)")
+                return
+            }
+
+            if let data = snapshot?.data() {
+                self.jobPosting = JobPosting(data: data)
+                print("Fetched Job Posting: \(self.jobPosting!)") // Debug log
+
+                self.updateUIWithJobPosting()
+            }
+        }
+    }
+
+    // Fetch company details from Firestore using the fixed company ID
+    func fetchCompanyDetails(companyId: String) {
+        let db = Firestore.firestore()
+        db.collection("companies").document(companyId).getDocument { snapshot, error in
+            if let error = error {
+                print("Error fetching company details: \(error.localizedDescription)")
+                return
+            }
+
+            if let data = snapshot?.data() {
+                self.companyDetails = CompanyDetails(data: data)
+                print("Fetched Company Details: \(self.companyDetails!)") // Debug log
+                self.updateUIWithCompanyDetails()
+            } else {
+                print("No company data found for ID: \(companyId)")
+            }
+        }
+    }
+
+    // Update the UI with the fetched job posting data
+    func updateUIWithJobPosting() {
+        guard let jobPosting = self.jobPosting else { return }
+
+        DispatchQueue.main.async {
+            self.positionlbl.text = jobPosting.jobTitle
+        }
+    }
+
+    // Update the UI with the fetched company details
+    func updateUIWithCompanyDetails() {
+        guard let companyDetails = self.companyDetails else { return }
+
+        DispatchQueue.main.async {
+            self.companyNamelbl.text = companyDetails.name
+        }
     }
 
     @objc func uploadCVTapped() {
@@ -109,6 +175,8 @@ class ApplyJobViewController: UIViewController, UIDocumentPickerDelegate {
             }
         }
     }
+
+    
 
     @objc func validatePhoneNumber() {
         guard let phoneNumber = phoneNumbertxt.text else { return }
