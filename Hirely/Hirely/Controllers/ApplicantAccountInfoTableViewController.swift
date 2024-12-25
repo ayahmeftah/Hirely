@@ -21,11 +21,7 @@ class ApplicantAccountInfoTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-    
-    @IBAction func selectAction(_ sender: UIAction){
-        print(sender.title)
-        self.actionBtn.setTitle(sender.title, for: .normal)
-    }
+
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 0
     }

@@ -8,7 +8,17 @@
 import UIKit
 
 class AdminDashboardViewController: UIViewController {
+    
 
+    @IBOutlet weak var totalEmployersLbl: UILabel!
+    
+    @IBOutlet weak var totalApplicantsLbl: UILabel!
+    
+    @IBOutlet weak var totalPostedJobsLbl: UILabel!
+    
+    @IBOutlet weak var totalFlaggedPostsLbl: UILabel!
+    
+    @IBOutlet weak var totalReportedPostsLbl: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 

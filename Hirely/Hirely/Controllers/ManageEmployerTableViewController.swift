@@ -94,10 +94,6 @@ class ManageEmployerTableViewController: UITableViewController {
         
     }
 
-    @IBAction func actionSelection(_ sender: UIAction){
-        print(sender.title)
-        self.selectActionBtn.setTitle(sender.title, for: .normal)
-    }
     
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 0

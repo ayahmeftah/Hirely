@@ -14,7 +14,7 @@ class ManageJobSeekersAccViewController: UIViewController, UITableViewDelegate, 
     let seekerNames = ["Khalid Ali", "Layla Nasser"]
     let pic = "man"
     
-    let accountStatuses: [AccountStatus] = [.active, .suspended]
+    let accountStatuses: [AccountStatus] = [.active, .deleted]
 
     override func viewDidLoad() {
         super.viewDidLoad()
