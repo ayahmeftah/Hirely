@@ -8,7 +8,7 @@
 import UIKit
 import FirebaseFirestore
 
-class ResultsPageViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UITableViewDelegate, UITableViewDataSource {
+class ResultsPageViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating, UISearchBarDelegate {
     
     @IBOutlet weak var filtersCollectionView: UICollectionView!
     
@@ -17,32 +17,43 @@ class ResultsPageViewController: UIViewController, UICollectionViewDataSource, U
     
     let filters = ["Job Type", "Experience Level", "Location Type", "Salary Range"]
     
-    var jobs: [JobPosting] = [] // Array to hold job postings
-    var searchQuery: String = "" // Query passed from the previous screen
+    
+    var searchController: UISearchController? // To hold the passed search controller
+    var jobs: [JobPosting] = []
+    var filteredJobs: [JobPosting] = []
+    var searchQuery: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        filtersCollectionSetup()
+        jobsTableSetup()
+        setupSearchController()
+        fetchJobPostings()
+        
+    }
+    
+    func filtersCollectionSetup(){
         let nib = UINib(nibName: "FiltersCollectionViewCell", bundle: nil)
         filtersCollectionView.register(nib, forCellWithReuseIdentifier: "FilterCell")
-        
-        // Set delegate and data source for collection view
         filtersCollectionView.delegate = self
         filtersCollectionView.dataSource = self
-        
-        // Enable automatic dimension
+    }
+    
+    func jobsTableSetup(){
+        let nib2 = UINib.init(nibName: "JobsResultTableViewCell", bundle: nil)
         jobResultsTableView.rowHeight = UITableView.automaticDimension
         jobResultsTableView.estimatedRowHeight = 100 // Set an estimated height
-        // TableView setup
         jobResultsTableView.backgroundColor = .clear
-        let nib2 = UINib.init(nibName: "JobsResultTableViewCell", bundle: nil)
         jobResultsTableView.register(nib2, forCellReuseIdentifier: "jobResultCell")
         jobResultsTableView.delegate = self
         jobResultsTableView.dataSource = self
-        
-        // Fetch job postings from Firestore
-        fetchJobPostings()
-        
+    }
+    
+    func setupSearchController() {
+        guard let searchController = searchController else { return }
+        searchController.searchResultsUpdater = self
+        navigationItem.searchController = searchController
     }
     
     func fetchJobPostings() {
@@ -62,13 +73,15 @@ class ResultsPageViewController: UIViewController, UICollectionViewDataSource, U
                     JobPosting(data: document.data()) // Map Firestore document to JobPosting model
                 } ?? []
                 
+                self.filteredJobs = self.jobs // Initially display all jobs
+                
                 // Reload the table view on the main thread
                 DispatchQueue.main.async {
                     self.jobResultsTableView.reloadData()
                 }
             }
     }
-
+    
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return filters.count
@@ -79,10 +92,10 @@ class ResultsPageViewController: UIViewController, UICollectionViewDataSource, U
         cell.postInit(filters[indexPath.item]) // Set label text
         cell.contentView.layer.cornerRadius = 10
         cell.contentView.layer.masksToBounds = true
-       /* cell.contentView.backgroundColor = .gray*/ // Update background color
+        /* cell.contentView.backgroundColor = .gray*/ // Update background color
         return cell
     }
-
+    
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         // Dynamically calculate the label's width based on its content
@@ -90,7 +103,7 @@ class ResultsPageViewController: UIViewController, UICollectionViewDataSource, U
         let cellHeight: CGFloat = 40 // Fixed height for the cell
         return CGSize(width: labelWidth + 40, height: cellHeight) // Add padding to the width
     }
-
+    
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 0, left: 13, bottom: 0, right: 13)
@@ -103,7 +116,7 @@ class ResultsPageViewController: UIViewController, UICollectionViewDataSource, U
     
     // TableView DataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return jobs.count
+        return filteredJobs.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -111,7 +124,7 @@ class ResultsPageViewController: UIViewController, UICollectionViewDataSource, U
             return UITableViewCell()
         }
         
-        let job = jobs[indexPath.row]
+        let job = filteredJobs[indexPath.row]
         /*cell.resultiInit(job.companyName, job.jobTitle, "placeholder_image", job.jobType)*/ // Replace "placeholder_image" with real image loading logic
         // Use commonInit to configure the cell
         cell.resultiInit(
@@ -126,9 +139,66 @@ class ResultsPageViewController: UIViewController, UICollectionViewDataSource, U
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let job = jobs[indexPath.row]
+        let job = filteredJobs[indexPath.row]
         print("Selected Job: \(job.jobTitle)")
         // Navigate to a detailed job posting view if needed
+    }
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let searchText = searchController.searchBar.text?.lowercased(), !searchText.isEmpty else {
+            if let vc = searchController.searchResultsController as? SuggestionsViewController {
+                vc.results = [] // Clear results when no text is entered
+            }
+            return
+        }
+        
+        let db = Firestore.firestore()
+        
+        // Fetch all job titles once (or limit the query if dataset is large)
+        db.collection("jobPostings")
+            .getDocuments { (snapshot, error) in
+                guard let documents = snapshot?.documents, error == nil else {
+                    print("Error fetching job titles: \(error?.localizedDescription ?? "Unknown error")")
+                    return
+                }
+                
+                // Extract job titles from Firestore documents
+                let allJobTitles = documents.compactMap { $0.data()["jobTitle"] as? String }
+                
+                // Filter job titles to include substring matches
+                let filteredTitles = allJobTitles.filter { $0.lowercased().contains(searchText) }
+                
+                // Update ResultsVC with filtered titles
+                if let vc = searchController.searchResultsController as? SuggestionsViewController {
+                    vc.results = filteredTitles
+                    vc.didSelectSuggestion = { [weak self] selectedSuggestion in
+                        self?.navigateToResultsPage(with: selectedSuggestion)
+                    }
+                }
+            }
+    }
+    
+    //    func navigateToResultsPage(with query: String) {
+    //        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+    //        if let resultsVC = storyboard.instantiateViewController(withIdentifier: "ResultsPageViewController") as? ResultsPageViewController {
+    //            resultsVC.searchQuery = query // Pass the search query
+    //            navigationController?.pushViewController(resultsVC, animated: true)
+    //        }
+    //    }
+    func navigateToResultsPage(with query: String) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let resultsVC = storyboard.instantiateViewController(withIdentifier: "ResultsPageViewController") as? ResultsPageViewController {
+            resultsVC.searchQuery = query
+            resultsVC.searchController = searchController // Pass the search controller
+            navigationController?.pushViewController(resultsVC, animated: true)
+        }
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        if let searchText = searchBar.text {
+            navigateToResultsPage(with: searchText) // Navigate to results page with search text
+            searchBar.resignFirstResponder() // Dismiss the keyboard
+        }
     }
     
     
