@@ -24,6 +24,7 @@
 		C365BB8E2D1AF96200D62A4F /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = C365BB8D2D1AF96200D62A4F /* FirebaseFirestore */; };
 		C365BB912D1B00A200D62A4F /* getCV.swift in Sources */ = {isa = PBXBuildFile; fileRef = C365BB902D1B00A200D62A4F /* getCV.swift */; };
 		C3EBE7162D0075C4002066F3 /* JobApplication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3EBE7152D0075C4002066F3 /* JobApplication.storyboard */; };
+		F29BAB812D1C139A001C8297 /* CompanyDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29BAB802D1C139A001C8297 /* CompanyDetails.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		C365BB8B2D1AF55800D62A4F /* ApplyJobViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyJobViewController.swift; sourceTree = "<group>"; };
 		C365BB902D1B00A200D62A4F /* getCV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getCV.swift; sourceTree = "<group>"; };
 		C3EBE7152D0075C4002066F3 /* JobApplication.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = JobApplication.storyboard; sourceTree = "<group>"; };
+		F29BAB802D1C139A001C8297 /* CompanyDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyDetails.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				C365BB902D1B00A200D62A4F /* getCV.swift */,
+				F29BAB802D1C139A001C8297 /* CompanyDetails.swift */,
 			);
 			path = structs;
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F29BAB812D1C139A001C8297 /* CompanyDetails.swift in Sources */,
 				71BEBCE22CFC502900DF795E /* ViewController.swift in Sources */,
 				71BEBCDE2CFC502900DF795E /* AppDelegate.swift in Sources */,
 				71BEBCE02CFC502900DF795E /* SceneDelegate.swift in Sources */,
