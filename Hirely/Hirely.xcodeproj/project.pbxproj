@@ -12,6 +12,7 @@
 		71255F252D0DF3B7004EFDF7 /* JobsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71255F232D0DF3B7004EFDF7 /* JobsTableViewCell.swift */; };
 		71255F262D0DF3B7004EFDF7 /* JobsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71255F242D0DF3B7004EFDF7 /* JobsTableViewCell.xib */; };
 		713EDA2B2D12E462000918B2 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 713EDA2A2D12E462000918B2 /* FirebaseFirestore */; };
+		713EDA562D1E1431000918B2 /* JobPosting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713EDA552D1E1431000918B2 /* JobPosting.swift */; };
 		71449E022D0F02B900077460 /* JobsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71449E002D0F02B900077460 /* JobsCollectionViewCell.swift */; };
 		71449E032D0F02B900077460 /* JobsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71449E012D0F02B900077460 /* JobsCollectionViewCell.xib */; };
 		71BEBCDE2CFC502900DF795E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEBCDD2CFC502900DF795E /* AppDelegate.swift */; };
@@ -50,6 +51,7 @@
 		71255F212D0DED66004EFDF7 /* ApplicantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicantViewController.swift; sourceTree = "<group>"; };
 		71255F232D0DF3B7004EFDF7 /* JobsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsTableViewCell.swift; sourceTree = "<group>"; };
 		71255F242D0DF3B7004EFDF7 /* JobsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JobsTableViewCell.xib; sourceTree = "<group>"; };
+		713EDA552D1E1431000918B2 /* JobPosting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobPosting.swift; sourceTree = "<group>"; };
 		71449E002D0F02B900077460 /* JobsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsCollectionViewCell.swift; sourceTree = "<group>"; };
 		71449E012D0F02B900077460 /* JobsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JobsCollectionViewCell.xib; sourceTree = "<group>"; };
 		71BEBCDA2CFC502900DF795E /* Hirely.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hirely.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -125,6 +127,14 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		713EDA542D1E1420000918B2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				713EDA552D1E1431000918B2 /* JobPosting.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		71BEBCD12CFC502900DF795E = {
 			isa = PBXGroup;
 			children = (
@@ -149,6 +159,7 @@
 		71BEBCDC2CFC502900DF795E /* Hirely */ = {
 			isa = PBXGroup;
 			children = (
+				713EDA542D1E1420000918B2 /* Models */,
 				711B4EBF2CFC57F300910FB6 /* Controllers */,
 				711B4EBE2CFC57E200910FB6 /* Storyboards */,
 				71BEBCDD2CFC502900DF795E /* AppDelegate.swift */,
@@ -326,6 +337,7 @@
 				71255F252D0DF3B7004EFDF7 /* JobsTableViewCell.swift in Sources */,
 				71BEBCE02CFC502900DF795E /* SceneDelegate.swift in Sources */,
 				71449E022D0F02B900077460 /* JobsCollectionViewCell.swift in Sources */,
+				713EDA562D1E1431000918B2 /* JobPosting.swift in Sources */,
 				71255F222D0DED66004EFDF7 /* ApplicantViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
