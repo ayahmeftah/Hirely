@@ -27,6 +27,7 @@
 		2C6940452D0654F500823F72 /* ManageJobSeekersAccViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6940442D0654F500823F72 /* ManageJobSeekersAccViewController.swift */; };
 		2C6940482D0655DB00823F72 /* ManageJobSeekersAccTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C6940472D0655DB00823F72 /* ManageJobSeekersAccTableViewCell.xib */; };
 		2C6940492D0655DB00823F72 /* ManageJobSeekersAccTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6940462D0655DB00823F72 /* ManageJobSeekersAccTableViewCell.swift */; };
+		2C7A0E722D1D9DC800900E11 /* FlaggedJob.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7A0E712D1D9DC800900E11 /* FlaggedJob.swift */; };
 		2C9302F52CFC9E6500CAD615 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C9302F42CFC9E6500CAD615 /* GoogleService-Info.plist */; };
 		2CD248DA2D15995700602AD7 /* ManageEmployerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD248D92D15995700602AD7 /* ManageEmployerTableViewController.swift */; };
 		2CD248DC2D15A1B300602AD7 /* ReportedPostDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD248DB2D15A1B300602AD7 /* ReportedPostDetailTableViewController.swift */; };
@@ -87,6 +88,7 @@
 		2C6940442D0654F500823F72 /* ManageJobSeekersAccViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageJobSeekersAccViewController.swift; sourceTree = "<group>"; };
 		2C6940462D0655DB00823F72 /* ManageJobSeekersAccTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageJobSeekersAccTableViewCell.swift; sourceTree = "<group>"; };
 		2C6940472D0655DB00823F72 /* ManageJobSeekersAccTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ManageJobSeekersAccTableViewCell.xib; sourceTree = "<group>"; };
+		2C7A0E712D1D9DC800900E11 /* FlaggedJob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlaggedJob.swift; sourceTree = "<group>"; };
 		2C9302F42CFC9E6500CAD615 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2CD248D92D15995700602AD7 /* ManageEmployerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageEmployerTableViewController.swift; sourceTree = "<group>"; };
 		2CD248DB2D15A1B300602AD7 /* ReportedPostDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportedPostDetailTableViewController.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				2CD248E22D15BD9400602AD7 /* JobPosting.swift */,
+				2C7A0E712D1D9DC800900E11 /* FlaggedJob.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -404,6 +407,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C7A0E722D1D9DC800900E11 /* FlaggedJob.swift in Sources */,
 				2CD248DE2D15A68C00602AD7 /* ApplicantAccountInfoTableViewController.swift in Sources */,
 				2C6940312D06326500823F72 /* ViewJobsAdminTableViewCell.swift in Sources */,
 				71BEBCE22CFC502900DF795E /* ViewController.swift in Sources */,

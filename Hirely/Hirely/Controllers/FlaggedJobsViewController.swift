@@ -6,71 +6,118 @@
 //
 
 import UIKit
+import FirebaseFirestore
 
 class FlaggedJobsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
-    
     
     @IBOutlet weak var flaggedJob: UITableView!
     
-    var companies = ["Microsoft Corporation", "Google LLC","Amazon"]
-    var jobs = ["Software Engineer", "Data Analyst","Cloud Architect"]
-    var image = "google"
+    var flaggedJobs: [FlaggedJob] = [] // Store flagged job details
     
-    let flagStatuses: [FlagState] = [.deleted, .flagged, .edited]
-
-
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupTableView()
+        fetchFlaggedJobs()
+    }
+    
+    private func setupTableView() {
         flaggedJob.backgroundColor = .clear
-
         let nib = UINib(nibName: "FlaggedJobsTableViewCell", bundle: nil)
         flaggedJob.register(nib, forCellReuseIdentifier: "customFlagged")
-
-        // Do any additional setup after loading the view.
+        flaggedJob.delegate = self
+        flaggedJob.dataSource = self
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-}
-
-extension FlaggedJobsViewController{
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return companies.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "customFlagged", for: indexPath) as? FlaggedJobsTableViewCell
+    private func fetchFlaggedJobs() {
+        let db = Firestore.firestore()
         
-        cell?.flaggedInit(companies[indexPath.row], image, jobs[indexPath.row])
-        cell?.backgroundColor = .clear
-        
-        let status = flagStatuses[indexPath.row]
-
-        cell?.configureBadge(for: status)
-        
-        cell?.parentViewController = self //pass view controller to cell
-
-        return cell!
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let cell = sender as? FlaggedJobsTableViewCell,
-           let _ = flaggedJob.indexPath(for: cell){
-            if segue.identifier == "goToFlagInfo"{
-                if segue.destination is FlagInfoTableViewController{
-                    //passing data
-                }
+        db.collection("flagDetails").getDocuments { snapshot, error in
+            if let error = error {
+                print("Error fetching flagged jobs: \(error.localizedDescription)")
+                return
+            }
+            
+            guard let documents = snapshot?.documents else {
+                print("No flagged jobs found.")
+                return
+            }
+            
+            // Use the initializer to create FlaggedJob instances
+            self.flaggedJobs = documents.compactMap { document in
+                return FlaggedJob(docId: document.documentID, data: document.data())
+            }
+            
+            DispatchQueue.main.async {
+                self.flaggedJob.reloadData()
             }
         }
     }
+
+    
+    private func fetchJobTitle(for jobId: String, completion: @escaping (String) -> Void) {
+        let db = Firestore.firestore()
+        
+        db.collection("jobPostings").document(jobId).getDocument { document, error in
+            if let error = error {
+                print("Error fetching job title: \(error.localizedDescription)")
+                completion("Unknown Title")
+                return
+            }
+            
+            if let document = document, document.exists,
+               let jobTitle = document.data()?["jobTitle"] as? String {
+                completion(jobTitle)
+            } else {
+                completion("Unknown Title")
+            }
+        }
+    }
+}
+
+extension FlaggedJobsViewController {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return flaggedJobs.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "customFlagged", for: indexPath) as? FlaggedJobsTableViewCell else {
+            return UITableViewCell()
+        }
+        
+        let flaggedJob = flaggedJobs[indexPath.row]
+        
+        // Fetch the job title from the jobPostings collection
+        fetchJobTitle(for: flaggedJob.jobId) { jobTitle in
+            DispatchQueue.main.async {
+                let companyName = "Google Inc"
+                let companyImage = "google"
+                cell.flaggedInit(companyName, companyImage, jobTitle, flaggedJob.status)
+                cell.parentViewController = self
+            }
+        }
+        return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let flaggedJob = flaggedJobs[indexPath.row]
+        performSegue(withIdentifier: "goToFlagInfo", sender: flaggedJob)
+    }
+
+
+    
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let flaggedJob = flaggedJobs[indexPath.row]
+//        performSegue(withIdentifier: "goToFlagInfo", sender: flaggedJob)
+//    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToFlagInfo",
+           let detailsVC = segue.destination as? FlagInfoTableViewController,
+           let cell = sender as? FlaggedJobsTableViewCell,
+           let indexPath = flaggedJob.indexPath(for: cell) {
+            detailsVC.flagDetails = flaggedJobs[indexPath.row]
+        }
+    }
+
+
+
 }

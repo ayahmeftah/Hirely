@@ -9,6 +9,13 @@ import UIKit
 
 class ReportedPostDetailTableViewController: UITableViewController {
 
+    @IBOutlet weak var jobTitleLbl: UILabel!
+    
+    @IBOutlet weak var companyNameLbl: UILabel!
+    
+    @IBOutlet weak var employerNameLbl: UILabel!
+    
+    @IBOutlet weak var employerEmailLbl: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -17,6 +24,12 @@ class ReportedPostDetailTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+    
+    @IBAction func viewReportedPostTapped(_ sender: UIButton) {
+    }
+    
+    @IBAction func flagPostTapped(_ sender: Any) {
     }
     
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {

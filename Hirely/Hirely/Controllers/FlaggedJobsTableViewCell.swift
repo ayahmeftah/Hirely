@@ -40,18 +40,28 @@ class FlaggedJobsTableViewCell: UITableViewCell {
     func configureBadge(for status: FlagState) {
         postStatus.backgroundColor = status.backgroundColor
         postStatus.textColor = status.textColor
-        postStatus.text = status.text
+//        postStatus.text = status.text
+        postStatus.text = status.rawValue // Display the status text
+
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
-    func flaggedInit(_ company: String, _ image: String, _ job: String){
-        companyName.text = company
-        jobTitle.text = job
-        companyPhoto.image = UIImage(named: image)
+    // Update cell UI based on flagged job data
+    func flaggedInit(_ company: String, _ image: String, _ job: String, _ status: FlagState) {
+        companyName.text = company // Placeholder company name
+        jobTitle.text = job // Dynamically fetched job title
+        companyPhoto.image = UIImage(named: image) // Placeholder image
+        configureBadge(for: status) // Set the badge based on the status
     }
+
+        
+//        // Configure badge UI for the flag status
+//        private func configureBadge(for status: FlagState) {
+//            postStatus.backgroundColor = status.backgroundColor
+//            postStatus.textColor = status.textColor
+//            postStatus.text = status.rawValue // Display the status text
+//        }
 }

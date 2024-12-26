@@ -9,8 +9,19 @@ import UIKit
 
 class ApplicantAccountInfoTableViewController: UITableViewController {
     
+    @IBOutlet weak var applicantNameLbl: UILabel!
     
-    @IBOutlet weak var actionBtn: UIButton!
+    @IBOutlet weak var applicantPhoneLbl: UILabel!
+    
+    @IBOutlet weak var applicantEmailLbl: UILabel!
+    
+    @IBOutlet weak var applicantAgeLbl: UILabel!
+    
+    @IBOutlet weak var applicantGenderLbl: UILabel!
+    
+    @IBOutlet weak var appliantCityLbl: UILabel!
+    
+    @IBOutlet weak var applicantStatusLbl: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +32,11 @@ class ApplicantAccountInfoTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-
+    
+    
+    @IBAction func applicantDeleteAccountTapped(_ sender: UIButton) {
+    }
+    
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 0
     }
