@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XfE-uF-fK7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5Cz-XH-JXE">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -394,6 +394,7 @@
                                         <color key="backgroundColor" red="0.90978568790000003" green="0.91735887530000004" blue="0.93335336449999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
                                             <outlet property="bookmarkBtn" destination="pFx-Ta-hzc" id="Qqe-hI-cO8"/>
+                                            <outlet property="videoContainer" destination="2Un-FS-0GO" id="J3q-iJ-ExX"/>
                                             <outlet property="videoTitle" destination="WS8-sT-NIJ" id="OVC-1j-uf8"/>
                                         </connections>
                                     </tableViewCell>
@@ -461,7 +462,7 @@
             <objects>
                 <tableViewController id="Des-TW-GsW" customClass="AddEditResourceTableViewController" customModule="Hirely" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" sectionIndexMinimumDisplayRowCount="-1" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="8iK-I2-QiU">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <sections>
@@ -669,6 +670,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.90978568790000003" green="0.91735887530000004" blue="0.93335336449999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
+                                            <outlet property="CoursesContainer" destination="bIy-oM-UED" id="ejf-zP-Hgb"/>
                                             <outlet property="bookmarkBtn" destination="5lb-99-re6" id="ehn-kA-EgQ"/>
                                             <outlet property="videoTitle" destination="xUc-2C-Bxi" id="fQg-4e-aBo"/>
                                         </connections>
@@ -817,6 +819,7 @@
                                         <connections>
                                             <outlet property="bookmarkBtn" destination="rEY-lD-7vM" id="3uV-Fo-aWa"/>
                                             <outlet property="containerView" destination="cT2-GY-S46" id="CIb-cE-MwR"/>
+                                            <outlet property="containerrounded" destination="cT2-GY-S46" id="iDF-Xe-TLu"/>
                                             <outlet property="videoTitle" destination="wtw-dD-iKJ" id="Qer-Xr-jja"/>
                                         </connections>
                                     </tableViewCell>
@@ -892,7 +895,7 @@
         <image name="bookmark" catalog="system" width="110" height="128"/>
         <image name="courses" width="186" height="165"/>
         <image name="coverLetter" width="187" height="249"/>
-        <image name="trash.fill" catalog="system" width="117" height="128"/>
+        <image name="trash.fill" catalog="system" width="32" height="32"/>
         <image name="videos" width="187" height="249"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

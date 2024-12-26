@@ -14,12 +14,15 @@ class VideoTableViewCell: UITableViewCell {
     @IBOutlet weak var videoTitle: UILabel!
     
     
+    @IBOutlet weak var containerrounded: UIView!
     @IBOutlet weak var button: UIButton!
     
+    @IBOutlet weak var videoContainer: UIView!
     
     @IBOutlet weak var containeView: VideoTableViewCell!
     @IBOutlet weak var bookmarkBtn: UIButton!
     
+    @IBOutlet weak var CoursesContainer: UIView!
     @IBOutlet weak var containerView: UIView!
     func setup(title: String, link: URL){
         
@@ -33,6 +36,10 @@ class VideoTableViewCell: UITableViewCell {
         bookmarkBtn?.setTitle("", for: .highlighted)
         bookmarkBtn?.setTitle("", for: .selected)
         bookmarkBtn?.setTitle("", for: .disabled)
+        
+        containerrounded?.layer.cornerRadius = 20
+        CoursesContainer?.layer.cornerRadius = 20
+        videoContainer?.layer.cornerRadius = 20
         // Make the view rounded
       
         
