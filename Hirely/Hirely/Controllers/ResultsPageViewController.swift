@@ -24,8 +24,10 @@ class ResultsPageViewController: UIViewController, UICollectionViewDataSource, U
         filterAlertVC.modalPresentationStyle = .overCurrentContext
         filterAlertVC.modalTransitionStyle = .crossDissolve
         self.present(filterAlertVC, animated: true, completion: nil)
+      
     }
 
+    
     
     @IBOutlet weak var CityBtnLbl: UIButton!
     
@@ -90,6 +92,14 @@ class ResultsPageViewController: UIViewController, UICollectionViewDataSource, U
         navigationItem.searchController = searchController
     }
     
+    // Dictionary to store active filters
+    private var activeFilters: [String: Set<String>] = [
+        "City": [],
+        "Job Type": [],
+        "Experience Level": [],
+        "Location Type": []
+    ]
+    
     func fetchJobPostings() {
         let db = Firestore.firestore()
         
@@ -115,6 +125,7 @@ class ResultsPageViewController: UIViewController, UICollectionViewDataSource, U
                 }
             }
     }
+
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -161,6 +172,8 @@ class ResultsPageViewController: UIViewController, UICollectionViewDataSource, U
             break
         }
     }
+    
+    
 
     private func presentFilterAlert<T: RawRepresentable & CaseIterable>(for filterEnum: T.Type, title: String) where T.RawValue == String {
         let filterAlertVC = FilterAlertService().filterAlert(with: filterEnum, title: title)
@@ -168,7 +181,6 @@ class ResultsPageViewController: UIViewController, UICollectionViewDataSource, U
         filterAlertVC.modalTransitionStyle = .crossDissolve
         self.present(filterAlertVC, animated: true, completion: nil)
     }
-
     
     // TableView DataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -249,6 +261,5 @@ class ResultsPageViewController: UIViewController, UICollectionViewDataSource, U
             searchBar.resignFirstResponder() // Dismiss the keyboard
         }
     }
-    
     
 }

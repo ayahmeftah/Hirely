@@ -23,12 +23,13 @@ class FilterAlertViewController: UIViewController, UITableViewDelegate, UITableV
         optionsTableView.reloadData()
     }
 
-    
     @IBAction func didTapShowResults(_ sender: UIButton) {
         print("Show results button tapped")
         dismiss(animated: true)
     }
 
+    
+    
     var allFilters: [String: [String]] = [:] // All filters (categories and their options)
     var isMultiCategory: Bool = false // Flag to determine if multiple categories are displayed
     var selectedFilters: [String: String] = [:] // Track selected options per category
@@ -133,6 +134,8 @@ class FilterAlertViewController: UIViewController, UITableViewDelegate, UITableV
         
         // Optionally dismiss the alert or allow multiple selections
     }
+    
+    
     
 }
 

@@ -10,16 +10,6 @@ import UIKit
 
 class FilterAlertService{
     
-//    func filterAlert<T: RawRepresentable & CaseIterable>(with filterEnum: T.Type, title: String) -> FilterAlertViewController where T.RawValue == String {
-//        let storyboard = UIStoryboard(name: "FilterAlertStoryboard", bundle: .main)
-//        let alertVC = storyboard.instantiateViewController(withIdentifier: "FilterAlertVC") as! FilterAlertViewController
-//        
-//        // Pass the title and filter options dynamically
-//        alertVC.filterTitle = title
-//        alertVC.filterOptions = filterEnum.allCases.map { $0.rawValue }
-//        
-//        return alertVC
-//    }
     
     func filterAlert<T: RawRepresentable & CaseIterable>(with filterEnum: T.Type, title: String) -> FilterAlertViewController where T.RawValue == String {
         let storyboard = UIStoryboard(name: "FilterAlertStoryboard", bundle: .main)
@@ -41,4 +31,5 @@ class FilterAlertService{
         
         return alertVC
     }
+
 }
