@@ -9,7 +9,7 @@ import UIKit
 
 class ApplicationsTableViewCell: UITableViewCell {
     
-    weak var parentViewController: UIViewController? // Reference to the parent VC
+    weak var parentViewController: UIViewController? //Reference to the parent VC
 
     @IBAction func buttonTapped(_ sender: UIButton) {
         switch sender.tag {
@@ -63,7 +63,7 @@ class ApplicationsTableViewCell: UITableViewCell {
             }
     }
 
-    // Initialize the cell with applicant data
+    //Initialize the cell with applicant data
     func applicantsInit(_ applicantName: String, _ status: String) {
         applicantLbl.text = applicantName
         let badgeState: BadgeState
