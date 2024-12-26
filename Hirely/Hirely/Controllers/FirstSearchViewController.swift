@@ -149,6 +149,14 @@ class FirstSearchViewController: UIViewController, UISearchResultsUpdating, UISe
             }
     }
     
+//    func navigateToResultsPage(with query: String) {
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        if let resultsVC = storyboard.instantiateViewController(withIdentifier: "ResultsPageViewController") as? ResultsPageViewController {
+//            resultsVC.searchQuery = query // Pass the search query
+//            navigationController?.pushViewController(resultsVC, animated: true)
+//        }
+//    }
+    
     func navigateToResultsPage(with query: String) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         if let resultsVC = storyboard.instantiateViewController(withIdentifier: "ResultsPageViewController") as? ResultsPageViewController {
@@ -156,6 +164,7 @@ class FirstSearchViewController: UIViewController, UISearchResultsUpdating, UISe
             navigationController?.pushViewController(resultsVC, animated: true)
         }
     }
+
 
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {

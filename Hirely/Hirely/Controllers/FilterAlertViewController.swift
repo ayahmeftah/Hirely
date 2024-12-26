@@ -22,17 +22,23 @@ class FilterAlertViewController: UIViewController, UITableViewDelegate, UITableV
         // Reload the table view to reset the UI
         optionsTableView.reloadData()
     }
+    
+    var didApplyFilters: (([String: [String]]) -> Void)?
 
     @IBAction func didTapShowResults(_ sender: UIButton) {
-        print("Show results button tapped")
+        print("Filters applied: \(selectedFilters)")
+        didApplyFilters?(selectedFilters) // Pass selected filters back
         dismiss(animated: true)
     }
 
-    
-    
+
     var allFilters: [String: [String]] = [:] // All filters (categories and their options)
     var isMultiCategory: Bool = false // Flag to determine if multiple categories are displayed
-    var selectedFilters: [String: String] = [:] // Track selected options per category
+    
+//    var selectedFilters: [String: String] = [:] // Track selected options per category
+    var selectedFilters: [String: [String]] = [:] // Track selected options for all categories
+
+    
     var didSelectOption: ((String) -> Void)? // Callback for selected option
     
     var singleFilterTitle: String? // Header title for a single category
@@ -76,20 +82,19 @@ class FilterAlertViewController: UIViewController, UITableViewDelegate, UITableV
         let option: String
         if isMultiCategory {
             let category = Array(allFilters.keys)[indexPath.section]
-            option = allFilters[category]?[indexPath.row] ?? ""
-            let isSelected = selectedFilters[category] == option
-            cell.checkBoxBtn.isSelected = isSelected
-            cell.updateCheckBoxImage(for: isSelected)
+            if let options = allFilters[category] {
+                option = options[indexPath.row]
+            } else {
+                option = "" // Fallback to an empty string if no options exist
+            }
         } else {
             option = singleFilterOptions[indexPath.row]
-            let isSelected = selectedFilters[singleFilterTitle ?? ""] == option
-            cell.checkBoxBtn.isSelected = isSelected
-            cell.updateCheckBoxImage(for: isSelected)
         }
         
         cell.filterInit(option)
         return cell
     }
+
 
     
     
@@ -120,22 +125,41 @@ class FilterAlertViewController: UIViewController, UITableViewDelegate, UITableV
         return headerView
     }
     
+    
+    
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 40
     }
     
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        guard isMultiCategory else { return }
+//        
+//        let category = Array(allFilters.keys)[indexPath.section]
+//        let selectedOption = allFilters[category]?[indexPath.row] ?? ""
+//        selectedFilters[category] = selectedOption
+//        print("Selected \(selectedOption) in \(category)")
+//        
+//        // Optionally dismiss the alert or allow multiple selections
+//    }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard isMultiCategory else { return }
+        let category = isMultiCategory ? Array(allFilters.keys)[indexPath.section] : singleFilterTitle ?? ""
+        let selectedOption = isMultiCategory ? allFilters[category]?[indexPath.row] ?? "" : singleFilterOptions[indexPath.row]
         
-        let category = Array(allFilters.keys)[indexPath.section]
-        let selectedOption = allFilters[category]?[indexPath.row] ?? ""
-        selectedFilters[category] = selectedOption
-        print("Selected \(selectedOption) in \(category)")
+        if selectedFilters[category] != nil {
+            if let index = selectedFilters[category]?.firstIndex(of: selectedOption) {
+                selectedFilters[category]?.remove(at: index) // Deselect if already selected
+            } else {
+                selectedFilters[category]?.append(selectedOption) // Add selection
+            }
+        } else {
+            selectedFilters[category] = [selectedOption] // Initialize with the first selection
+        }
         
-        // Optionally dismiss the alert or allow multiple selections
+        print("Selected filters: \(selectedFilters)")
+        tableView.reloadData() // Update the checkboxes
     }
-    
-    
+
+   
     
 }
 

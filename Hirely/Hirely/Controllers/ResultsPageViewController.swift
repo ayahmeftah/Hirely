@@ -12,6 +12,18 @@ class ResultsPageViewController: UIViewController, UICollectionViewDataSource, U
     
     
     @IBAction func didTapAllFilters(_ sender: Any) {
+//        let allFilters: [String: [String]] = [
+//            "City": City.allCases.map { $0.rawValue },
+//            "Job Type": JobType.allCases.map { $0.rawValue },
+//            "Experience Level": ExperienceLevel.allCases.map { $0.rawValue },
+//            "Location Type": LocationType.allCases.map { $0.rawValue }
+//        ]
+//        
+//        let filterAlertVC = FilterAlertService().allFiltersAlert(with: allFilters)
+//        
+//        filterAlertVC.modalPresentationStyle = .overCurrentContext
+//        filterAlertVC.modalTransitionStyle = .crossDissolve
+//        self.present(filterAlertVC, animated: true, completion: nil)
         let allFilters: [String: [String]] = [
             "City": City.allCases.map { $0.rawValue },
             "Job Type": JobType.allCases.map { $0.rawValue },
@@ -21,30 +33,46 @@ class ResultsPageViewController: UIViewController, UICollectionViewDataSource, U
         
         let filterAlertVC = FilterAlertService().allFiltersAlert(with: allFilters)
         
-        filterAlertVC.modalPresentationStyle = .overCurrentContext
-        filterAlertVC.modalTransitionStyle = .crossDissolve
-        self.present(filterAlertVC, animated: true, completion: nil)
-      
-    }
-
-    
-    
-    @IBOutlet weak var CityBtnLbl: UIButton!
-    
-    @IBAction func didTapCity(_ sender: Any) {
-        let filterAlertVC = FilterAlertService().filterAlert(with: City.self, title: "City")
-        
-        // Handle the selection callback
-        filterAlertVC.didSelectOption = { [weak self] selectedOption in
+        filterAlertVC.didApplyFilters = { [weak self] appliedFilters in
             guard let self = self else { return }
-            self.CityBtnLbl.setTitle(selectedOption, for: .normal) // Update the button title
-            print("Selected City: \(selectedOption)")
+            self.applyFilters(appliedFilters) // Apply filters and refresh the table view
         }
         
         filterAlertVC.modalPresentationStyle = .overCurrentContext
         filterAlertVC.modalTransitionStyle = .crossDissolve
         self.present(filterAlertVC, animated: true, completion: nil)
     }
+
+
+    
+    
+    @IBOutlet weak var CityBtnLbl: UIButton!
+    
+    @IBAction func didTapCity(_ sender: Any) {
+//        let filterAlertVC = FilterAlertService().filterAlert(with: City.self, title: "City")
+//        
+//        // Handle the selection callback
+//        filterAlertVC.didSelectOption = { [weak self] selectedOption in
+//            guard let self = self else { return }
+//            self.CityBtnLbl.setTitle(selectedOption, for: .normal) // Update the button title
+//            print("Selected City: \(selectedOption)")
+//        }
+//        
+//        filterAlertVC.modalPresentationStyle = .overCurrentContext
+//        filterAlertVC.modalTransitionStyle = .crossDissolve
+//        self.present(filterAlertVC, animated: true, completion: nil)
+        let filterAlertVC = FilterAlertService().filterAlert(with: City.self, title: "City")
+        
+        filterAlertVC.didApplyFilters = { [weak self] appliedFilters in
+            guard let self = self else { return }
+            self.applyFilters(appliedFilters) // Apply single filter
+        }
+        
+        filterAlertVC.modalPresentationStyle = .overCurrentContext
+        filterAlertVC.modalTransitionStyle = .crossDissolve
+        self.present(filterAlertVC, animated: true, completion: nil)
+    }
+
 
     
     @IBOutlet weak var filtersCollectionView: UICollectionView!
@@ -91,14 +119,6 @@ class ResultsPageViewController: UIViewController, UICollectionViewDataSource, U
         searchController.searchResultsUpdater = self
         navigationItem.searchController = searchController
     }
-    
-    // Dictionary to store active filters
-    private var activeFilters: [String: Set<String>] = [
-        "City": [],
-        "Job Type": [],
-        "Experience Level": [],
-        "Location Type": []
-    ]
     
     func fetchJobPostings() {
         let db = Firestore.firestore()
@@ -182,7 +202,30 @@ class ResultsPageViewController: UIViewController, UICollectionViewDataSource, U
         self.present(filterAlertVC, animated: true, completion: nil)
     }
     
-    // TableView DataSource
+//    // TableView DataSource
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        return filteredJobs.count
+//    }
+//    
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        guard let cell = tableView.dequeueReusableCell(withIdentifier: "jobResultCell", for: indexPath) as? JobsResultTableViewCell else {
+//            return UITableViewCell()
+//        }
+//        
+//        let job = filteredJobs[indexPath.row]
+//        /*cell.resultiInit(job.companyName, job.jobTitle, "placeholder_image", job.jobType)*/ // Replace "placeholder_image" with real image loading logic
+//        // Use commonInit to configure the cell
+//        cell.resultiInit(
+//            "microsoft",
+//            job.jobTitle,
+//            "Microsoft company",
+//            job.jobType
+//        )
+//        cell.backgroundColor = .clear
+//        cell.contentView.backgroundColor = .clear
+//        return cell
+//    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return filteredJobs.count
     }
@@ -193,18 +236,16 @@ class ResultsPageViewController: UIViewController, UICollectionViewDataSource, U
         }
         
         let job = filteredJobs[indexPath.row]
-        /*cell.resultiInit(job.companyName, job.jobTitle, "placeholder_image", job.jobType)*/ // Replace "placeholder_image" with real image loading logic
-        // Use commonInit to configure the cell
         cell.resultiInit(
-            "microsoft",
-            job.jobTitle,
-            "Microsoft company",
-            job.jobType
-        )
-        cell.backgroundColor = .clear
-        cell.contentView.backgroundColor = .clear
+                        "microsoft",
+                        job.jobTitle,
+                        "Microsoft company",
+                        job.jobType
+                    )
         return cell
     }
+
+    
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let job = filteredJobs[indexPath.row]
@@ -261,5 +302,46 @@ class ResultsPageViewController: UIViewController, UICollectionViewDataSource, U
             searchBar.resignFirstResponder() // Dismiss the keyboard
         }
     }
+    
+    private func applyFilters(_ filters: [String: [String]]) {
+        guard !searchQuery.isEmpty else {
+            print("Search query is empty. Cannot apply filters.")
+            return
+        }
+        
+        let db = Firestore.firestore()
+        var query: Query = db.collection("jobPostings")
+            .whereField("jobTitle", isGreaterThanOrEqualTo: searchQuery)
+            .whereField("jobTitle", isLessThanOrEqualTo: searchQuery + "\u{f8ff}") // Search for jobs matching the query
+        
+        // Add filters dynamically
+        for (key, values) in filters {
+            if !values.isEmpty {
+                query = query.whereField(key, in: values) // Apply filters to the query
+            }
+        }
+        
+        // Fetch filtered results
+        query.getDocuments { [weak self] (snapshot, error) in
+            guard let self = self else { return }
+            
+            if let error = error {
+                print("Error applying filters: \(error.localizedDescription)")
+                return
+            }
+            
+            self.filteredJobs = snapshot?.documents.compactMap { document in
+                JobPosting(data: document.data())
+            } ?? []
+            
+            // Reload the table view with the filtered results
+            DispatchQueue.main.async {
+                self.jobResultsTableView.reloadData()
+            }
+        }
+    }
+
+
+
     
 }
