@@ -35,7 +35,7 @@ class ResultsPageViewController: UIViewController, UICollectionViewDataSource, U
         
         filterAlertVC.didApplyFilters = { [weak self] appliedFilters in
             guard let self = self else { return }
-            self.applyFilters(appliedFilters) // Apply filters and refresh the table view
+            self.applyFilters(appliedFilters) // Apply the selected filters
         }
         
         filterAlertVC.modalPresentationStyle = .overCurrentContext
@@ -65,7 +65,7 @@ class ResultsPageViewController: UIViewController, UICollectionViewDataSource, U
         
         filterAlertVC.didApplyFilters = { [weak self] appliedFilters in
             guard let self = self else { return }
-            self.applyFilters(appliedFilters) // Apply single filter
+            self.applyFilters(appliedFilters) // Apply the selected filter
         }
         
         filterAlertVC.modalPresentationStyle = .overCurrentContext
@@ -304,20 +304,20 @@ class ResultsPageViewController: UIViewController, UICollectionViewDataSource, U
     }
     
     private func applyFilters(_ filters: [String: [String]]) {
-        guard !searchQuery.isEmpty else {
-            print("Search query is empty. Cannot apply filters.")
-            return
-        }
-        
         let db = Firestore.firestore()
         var query: Query = db.collection("jobPostings")
-            .whereField("jobTitle", isGreaterThanOrEqualTo: searchQuery)
-            .whereField("jobTitle", isLessThanOrEqualTo: searchQuery + "\u{f8ff}") // Search for jobs matching the query
+        
+        // Include the search query in the Firestore query
+        if !searchQuery.isEmpty {
+            query = query
+                .whereField("jobTitle", isGreaterThanOrEqualTo: searchQuery)
+                .whereField("jobTitle", isLessThanOrEqualTo: searchQuery + "\u{f8ff}")
+        }
         
         // Add filters dynamically
         for (key, values) in filters {
             if !values.isEmpty {
-                query = query.whereField(key, in: values) // Apply filters to the query
+                query = query.whereField(key, in: values)
             }
         }
         
@@ -340,8 +340,6 @@ class ResultsPageViewController: UIViewController, UICollectionViewDataSource, U
             }
         }
     }
-
-
 
     
 }

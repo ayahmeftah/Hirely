@@ -27,9 +27,16 @@ class FilterAlertViewController: UIViewController, UITableViewDelegate, UITableV
 
     @IBAction func didTapShowResults(_ sender: UIButton) {
         print("Filters applied: \(selectedFilters)")
-        didApplyFilters?(selectedFilters) // Pass selected filters back
+        
+        // Ensure only non-empty filters are passed
+        let activeFilters = selectedFilters.filter { !$0.value.isEmpty }
+        
+        didApplyFilters?(activeFilters) // Pass active filters back
         dismiss(animated: true)
+        
+        print("Selected Filters: \(selectedFilters)")
     }
+
 
 
     var allFilters: [String: [String]] = [:] // All filters (categories and their options)
@@ -74,26 +81,50 @@ class FilterAlertViewController: UIViewController, UITableViewDelegate, UITableV
         }
     }
     
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        guard let cell = tableView.dequeueReusableCell(withIdentifier: "filterOptionCell", for: indexPath) as? FilterOptionTableViewCell else {
+//            return UITableViewCell()
+//        }
+//        
+//        let option: String
+//        if isMultiCategory {
+//            let category = Array(allFilters.keys)[indexPath.section]
+//            if let options = allFilters[category] {
+//                option = options[indexPath.row]
+//            } else {
+//                option = "" // Fallback to an empty string if no options exist
+//            }
+//        } else {
+//            option = singleFilterOptions[indexPath.row]
+//        }
+//        
+//        cell.filterInit(option)
+//        return cell
+//    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "filterOptionCell", for: indexPath) as? FilterOptionTableViewCell else {
             return UITableViewCell()
         }
         
         let option: String
+        let isSelected: Bool
         if isMultiCategory {
             let category = Array(allFilters.keys)[indexPath.section]
-            if let options = allFilters[category] {
-                option = options[indexPath.row]
-            } else {
-                option = "" // Fallback to an empty string if no options exist
-            }
+            option = allFilters[category]?[indexPath.row] ?? ""
+            isSelected = selectedFilters[category]?.contains(option) ?? false
         } else {
             option = singleFilterOptions[indexPath.row]
+            isSelected = selectedFilters[singleFilterTitle ?? ""]?.contains(option) ?? false
         }
         
         cell.filterInit(option)
+        cell.checkBoxBtn.isSelected = isSelected
+        cell.updateCheckBoxImage(for: isSelected)
+        
         return cell
     }
+
 
 
     
@@ -145,19 +176,24 @@ class FilterAlertViewController: UIViewController, UITableViewDelegate, UITableV
         let category = isMultiCategory ? Array(allFilters.keys)[indexPath.section] : singleFilterTitle ?? ""
         let selectedOption = isMultiCategory ? allFilters[category]?[indexPath.row] ?? "" : singleFilterOptions[indexPath.row]
         
-        if selectedFilters[category] != nil {
-            if let index = selectedFilters[category]?.firstIndex(of: selectedOption) {
-                selectedFilters[category]?.remove(at: index) // Deselect if already selected
+        if var selectedOptions = selectedFilters[category] {
+            if selectedOptions.contains(selectedOption) {
+                // If the option is already selected, remove it
+                selectedOptions.removeAll { $0 == selectedOption }
             } else {
-                selectedFilters[category]?.append(selectedOption) // Add selection
+                // Otherwise, add the option
+                selectedOptions.append(selectedOption)
             }
+            selectedFilters[category] = selectedOptions
         } else {
-            selectedFilters[category] = [selectedOption] // Initialize with the first selection
+            // If no options selected yet, initialize the array
+            selectedFilters[category] = [selectedOption]
         }
         
-        print("Selected filters: \(selectedFilters)")
-        tableView.reloadData() // Update the checkboxes
+        print("Selected Filters: \(selectedFilters)")
+        tableView.reloadRows(at: [indexPath], with: .none) // Update the UI for the selected cell
     }
+
 
    
     
