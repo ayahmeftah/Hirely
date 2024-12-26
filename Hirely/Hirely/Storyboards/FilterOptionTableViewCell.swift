@@ -10,28 +10,36 @@ import UIKit
 class FilterOptionTableViewCell: UITableViewCell {
     
     @IBOutlet weak var checkBoxBtn: UIButton!
-    
-    
     @IBOutlet weak var filterOptionLbl: UILabel!
     
     @IBAction func didTapCheckBox(_ sender: UIButton) {
-        sender.isSelected.toggle()
+        sender.isSelected.toggle() // Toggle the selected state
+        updateCheckBoxImage(for: sender.isSelected) // Update the image based on the selected state
         print("Checkbox tapped for: \(filterOptionLbl.text ?? "")")
     }
     
-
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        // Set the initial checkbox image
+        updateCheckBoxImage(for: false)
     }
     
-    func filterInit(_ filterOption: String){
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+    }
+    
+    func filterInit(_ filterOption: String) {
         filterOptionLbl.text = filterOption
+    }
+    
+    func reset() {
+        checkBoxBtn.isSelected = false // Reset the button state
+        updateCheckBoxImage(for: false) // Update the image
+    }
+    
+    // Helper method to update the checkbox image
+    func updateCheckBoxImage(for isSelected: Bool) {
+        let imageName = isSelected ? "checkmark.circle.fill" : "checkmark.circle"
+        checkBoxBtn.setImage(UIImage(systemName: imageName), for: .normal)
     }
 }

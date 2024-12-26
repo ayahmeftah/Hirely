@@ -20,31 +20,31 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JP6-fL-ycj">
                         <rect key="frame" x="2" y="2" width="316" height="40"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RaZ-ms-ifE">
-                                <rect key="frame" x="45" y="2" width="50" height="36"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="checkmark.circle" catalog="system"/>
-                                <connections>
-                                    <action selector="didTapCheckBox:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="K5i-jd-4kn"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SQX-QY-WVE">
-                                <rect key="frame" x="100" y="9" width="44" height="21"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="c7c-Rq-RMi">
+                                <rect key="frame" x="45" y="2" width="98" height="36"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RaZ-ms-ifE">
+                                        <rect key="frame" x="0.0" y="0.0" width="49.666666666666664" height="36"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="checkmark.circle" catalog="system"/>
+                                        <connections>
+                                            <action selector="didTapCheckBox:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="K5i-jd-4kn"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SQX-QY-WVE">
+                                        <rect key="frame" x="54.666666666666671" y="0.0" width="43.333333333333329" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="SQX-QY-WVE" firstAttribute="top" secondItem="JP6-fL-ycj" secondAttribute="top" constant="9" id="9s7-c8-qmy"/>
-                            <constraint firstItem="SQX-QY-WVE" firstAttribute="leading" secondItem="RaZ-ms-ifE" secondAttribute="trailing" constant="5" id="Ah4-9w-u6I"/>
-                            <constraint firstAttribute="bottom" secondItem="RaZ-ms-ifE" secondAttribute="bottom" constant="2" id="GJG-ZH-G4t"/>
-                            <constraint firstAttribute="trailing" secondItem="SQX-QY-WVE" secondAttribute="trailing" constant="172" id="VkM-EP-iiH"/>
-                            <constraint firstAttribute="bottom" secondItem="SQX-QY-WVE" secondAttribute="bottom" constant="10" id="ZLn-kf-kUg"/>
-                            <constraint firstItem="RaZ-ms-ifE" firstAttribute="leading" secondItem="JP6-fL-ycj" secondAttribute="leading" constant="45" id="b2V-Vm-FtV"/>
-                            <constraint firstItem="RaZ-ms-ifE" firstAttribute="top" secondItem="JP6-fL-ycj" secondAttribute="top" constant="2" id="caF-XV-hn1"/>
-                            <constraint firstItem="SQX-QY-WVE" firstAttribute="leading" secondItem="RaZ-ms-ifE" secondAttribute="trailing" constant="5" id="yIh-bi-piJ"/>
+                            <constraint firstAttribute="bottom" secondItem="c7c-Rq-RMi" secondAttribute="bottom" constant="2" id="YOT-tl-Z0M"/>
+                            <constraint firstItem="c7c-Rq-RMi" firstAttribute="top" secondItem="JP6-fL-ycj" secondAttribute="top" constant="2" id="c1Z-Xq-98p"/>
+                            <constraint firstItem="c7c-Rq-RMi" firstAttribute="leading" secondItem="JP6-fL-ycj" secondAttribute="leading" constant="45" id="zkp-s6-nn7"/>
                         </constraints>
                     </view>
                 </subviews>

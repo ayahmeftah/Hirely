@@ -9,36 +9,41 @@ import UIKit
 
 class FilterAlertViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    
-//    @IBOutlet weak var tableViewHeightConstraint: NSLayoutConstraint!
-    
-    
-    @IBOutlet weak var filterTitleLbl: UILabel!
+
     
     @IBOutlet weak var optionsTableView: UITableView!
     
     @IBAction func didTapReset(_ sender: UIButton) {
         print("Reset button tapped")
+        
+        // Clear all selected filters
+        selectedFilters.removeAll()
+        
+        // Reload the table view to reset the UI
+        optionsTableView.reloadData()
     }
+
     
     @IBAction func didTapShowResults(_ sender: UIButton) {
         print("Show results button tapped")
+        dismiss(animated: true)
     }
 
+    var allFilters: [String: [String]] = [:] // All filters (categories and their options)
+    var isMultiCategory: Bool = false // Flag to determine if multiple categories are displayed
+    var selectedFilters: [String: String] = [:] // Track selected options per category
+    var didSelectOption: ((String) -> Void)? // Callback for selected option
     
+    var singleFilterTitle: String? // Header title for a single category
+    var singleFilterOptions: [String] = [] // Options for a single category
+
     
     // Properties
-    var filterTitle: String = "" // Passed dynamically
-    private let filterOptions = ExperienceLevel.allCases // Enum cases
-
+    var filterTitle: String = "" // Header title
+    var filterOptions: [String] = [] // Options for the filter
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Set the title label to the name of the enum
-        //filterTitleLbl.text = "Experience Level"
-        
-        // Set the filter title
         
         
         // Set up the table view
@@ -46,19 +51,20 @@ class FilterAlertViewController: UIViewController, UITableViewDelegate, UITableV
         optionsTableView.dataSource = self
         optionsTableView.register(UINib(nibName: "FilterOptionTableViewCell", bundle: nil), forCellReuseIdentifier: "filterOptionCell")
         
-//        // Adjust the table view's height
-//        adjustTableViewHeight()
+
+    }
+
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return isMultiCategory ? allFilters.keys.count : 1
     }
     
-//    override func viewDidLayoutSubviews() {
-//        super.viewDidLayoutSubviews()
-//        // Ensure the table view height is adjusted after layout changes
-//        adjustTableViewHeight()
-//    }
-
-    // MARK: - Table View Data Source
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return filterOptions.count
+        if isMultiCategory {
+            let category = Array(allFilters.keys)[section]
+            return allFilters[category]?.count ?? 0
+        } else {
+            return singleFilterOptions.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -66,29 +72,67 @@ class FilterAlertViewController: UIViewController, UITableViewDelegate, UITableV
             return UITableViewCell()
         }
         
-        let filterOption = filterOptions[indexPath.row].rawValue
-        cell.filterInit(filterOption)
+        let option: String
+        if isMultiCategory {
+            let category = Array(allFilters.keys)[indexPath.section]
+            option = allFilters[category]?[indexPath.row] ?? ""
+            let isSelected = selectedFilters[category] == option
+            cell.checkBoxBtn.isSelected = isSelected
+            cell.updateCheckBoxImage(for: isSelected)
+        } else {
+            option = singleFilterOptions[indexPath.row]
+            let isSelected = selectedFilters[singleFilterTitle ?? ""] == option
+            cell.checkBoxBtn.isSelected = isSelected
+            cell.updateCheckBoxImage(for: isSelected)
+        }
+        
+        cell.filterInit(option)
         return cell
     }
+
     
-    // MARK: - Table View Delegate
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let selectedFilter = filterOptions[indexPath.row]
-        print("Selected filter: \(selectedFilter.rawValue)")
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView()
+        headerView.backgroundColor = .systemGray6
+        
+        let headerLabel = UILabel()
+        headerLabel.translatesAutoresizingMaskIntoConstraints = false
+        headerLabel.font = UIFont.boldSystemFont(ofSize: 18)
+        headerLabel.textColor = .black
+        
+        if isMultiCategory {
+            headerLabel.text = Array(allFilters.keys)[section]
+        } else {
+            headerLabel.text = singleFilterTitle // Use the single category name
+        }
+        
+        headerView.addSubview(headerLabel)
+        
+        NSLayoutConstraint.activate([
+            headerLabel.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: 16),
+            headerLabel.trailingAnchor.constraint(equalTo: headerView.trailingAnchor, constant: -16),
+            headerLabel.topAnchor.constraint(equalTo: headerView.topAnchor, constant: 8),
+            headerLabel.bottomAnchor.constraint(equalTo: headerView.bottomAnchor, constant: -8)
+        ])
+        
+        return headerView
     }
     
-    // MARK: - Dynamic Table View Height
-//    private func adjustTableViewHeight() {
-//        // Calculate the total height based on the number of rows and row height
-//        let rowCount = tableView(optionsTableView, numberOfRowsInSection: 0)
-//        let rowHeight = optionsTableView.rowHeight > 0 ? optionsTableView.rowHeight : 44.0
-//        let totalHeight = CGFloat(rowCount) * rowHeight
-//        
-//        // Update the height constraint
-//        tableViewHeightConstraint.constant = totalHeight
-//        
-//        // Layout the view again
-//        view.layoutIfNeeded()
-//    }
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 40
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard isMultiCategory else { return }
+        
+        let category = Array(allFilters.keys)[indexPath.section]
+        let selectedOption = allFilters[category]?[indexPath.row] ?? ""
+        selectedFilters[category] = selectedOption
+        print("Selected \(selectedOption) in \(category)")
+        
+        // Optionally dismiss the alert or allow multiple selections
+    }
+    
 }
 

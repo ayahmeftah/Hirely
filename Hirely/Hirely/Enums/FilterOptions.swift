@@ -32,7 +32,6 @@ enum City: String, CaseIterable {
     case juffair = "Juffair"
     case salmaniya = "Salmaniya"
     case diyar = "Diyar Al Muharraq"
-    case all = "All"
 }
 
 enum ExperienceLevel: String, CaseIterable {

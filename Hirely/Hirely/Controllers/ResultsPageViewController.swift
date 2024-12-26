@@ -10,14 +10,44 @@ import FirebaseFirestore
 
 class ResultsPageViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating, UISearchBarDelegate {
     
+    
+    @IBAction func didTapAllFilters(_ sender: Any) {
+        let allFilters: [String: [String]] = [
+            "City": City.allCases.map { $0.rawValue },
+            "Job Type": JobType.allCases.map { $0.rawValue },
+            "Experience Level": ExperienceLevel.allCases.map { $0.rawValue },
+            "Location Type": LocationType.allCases.map { $0.rawValue }
+        ]
+        
+        let filterAlertVC = FilterAlertService().allFiltersAlert(with: allFilters)
+        
+        filterAlertVC.modalPresentationStyle = .overCurrentContext
+        filterAlertVC.modalTransitionStyle = .crossDissolve
+        self.present(filterAlertVC, animated: true, completion: nil)
+    }
+
+    
+    @IBOutlet weak var CityBtnLbl: UIButton!
+    
+    @IBAction func didTapCity(_ sender: Any) {
+        let filterAlertVC = FilterAlertService().filterAlert(with: City.self, title: "City")
+        
+        // Handle the selection callback
+        filterAlertVC.didSelectOption = { [weak self] selectedOption in
+            guard let self = self else { return }
+            self.CityBtnLbl.setTitle(selectedOption, for: .normal) // Update the button title
+            print("Selected City: \(selectedOption)")
+        }
+        
+        filterAlertVC.modalPresentationStyle = .overCurrentContext
+        filterAlertVC.modalTransitionStyle = .crossDissolve
+        self.present(filterAlertVC, animated: true, completion: nil)
+    }
+
+    
     @IBOutlet weak var filtersCollectionView: UICollectionView!
     
     @IBOutlet weak var jobResultsTableView: UITableView!
-    
-    var selectedJobType: [JobType] = [] // Add selected options here
-    var selectedExperienceLevel: [ExperienceLevel] = []
-    var selectedLocationType: [LocationType] = []
-    var selectedCity: [City] = [] // Add selected options here
     
     let filters = ["Job Type", "Experience Level", "Location Type", "Salary Range"]
     
@@ -116,7 +146,29 @@ class ResultsPageViewController: UIViewController, UICollectionViewDataSource, U
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let selectedFilter = filters[indexPath.item]
         print("Selected Filter: \(selectedFilter)")
+        
+        switch selectedFilter {
+        case "Job Type":
+            presentFilterAlert(for: JobType.self, title: selectedFilter)
+        case "Experience Level":
+            presentFilterAlert(for: ExperienceLevel.self, title: selectedFilter)
+        case "Location Type":
+            presentFilterAlert(for: LocationType.self, title: selectedFilter)
+        case "Salary Range":
+            // Handle Salary Range or add a specific alert view logic for custom filtering
+            print("Salary Range filter selected.")
+        default:
+            break
+        }
     }
+
+    private func presentFilterAlert<T: RawRepresentable & CaseIterable>(for filterEnum: T.Type, title: String) where T.RawValue == String {
+        let filterAlertVC = FilterAlertService().filterAlert(with: filterEnum, title: title)
+        filterAlertVC.modalPresentationStyle = .overCurrentContext
+        filterAlertVC.modalTransitionStyle = .crossDissolve
+        self.present(filterAlertVC, animated: true, completion: nil)
+    }
+
     
     // TableView DataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
