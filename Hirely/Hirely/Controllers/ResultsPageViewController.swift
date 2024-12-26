@@ -14,6 +14,10 @@ class ResultsPageViewController: UIViewController, UICollectionViewDataSource, U
     
     @IBOutlet weak var jobResultsTableView: UITableView!
     
+    var selectedJobType: [JobType] = [] // Add selected options here
+    var selectedExperienceLevel: [ExperienceLevel] = []
+    var selectedLocationType: [LocationType] = []
+    var selectedCity: [City] = [] // Add selected options here
     
     let filters = ["Job Type", "Experience Level", "Location Type", "Salary Range"]
     
@@ -177,14 +181,7 @@ class ResultsPageViewController: UIViewController, UICollectionViewDataSource, U
                 }
             }
     }
-    
-    //    func navigateToResultsPage(with query: String) {
-    //        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-    //        if let resultsVC = storyboard.instantiateViewController(withIdentifier: "ResultsPageViewController") as? ResultsPageViewController {
-    //            resultsVC.searchQuery = query // Pass the search query
-    //            navigationController?.pushViewController(resultsVC, animated: true)
-    //        }
-    //    }
+ 
     func navigateToResultsPage(with query: String) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         if let resultsVC = storyboard.instantiateViewController(withIdentifier: "ResultsPageViewController") as? ResultsPageViewController {

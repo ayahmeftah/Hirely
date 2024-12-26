@@ -17,7 +17,12 @@
 		713EDA392D1B3812000918B2 /* JobsResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713EDA362D1B3812000918B2 /* JobsResultTableViewCell.swift */; };
 		713EDA3C2D1B438B000918B2 /* JobPosting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713EDA3B2D1B438B000918B2 /* JobPosting.swift */; };
 		713EDA3E2D1C1227000918B2 /* SuggestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713EDA3D2D1C1227000918B2 /* SuggestionsViewController.swift */; };
-		713EDA402D1C146C000918B2 /* SuggestionsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713EDA3F2D1C146C000918B2 /* SuggestionsDelegate.swift */; };
+		713EDA462D1D38B0000918B2 /* FilterAlertStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 713EDA452D1D38B0000918B2 /* FilterAlertStoryboard.storyboard */; };
+		713EDA482D1D38F7000918B2 /* FilterAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713EDA472D1D38F7000918B2 /* FilterAlertViewController.swift */; };
+		713EDA4A2D1D3D36000918B2 /* FilterAlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713EDA492D1D3D36000918B2 /* FilterAlertService.swift */; };
+		713EDA4D2D1D7389000918B2 /* FilterOptionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 713EDA4C2D1D7388000918B2 /* FilterOptionTableViewCell.xib */; };
+		713EDA4E2D1D7389000918B2 /* FilterOptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713EDA4B2D1D7388000918B2 /* FilterOptionTableViewCell.swift */; };
+		713EDA512D1D79F6000918B2 /* FilterOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713EDA502D1D79F6000918B2 /* FilterOptions.swift */; };
 		71BEBCDE2CFC502900DF795E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEBCDD2CFC502900DF795E /* AppDelegate.swift */; };
 		71BEBCE02CFC502900DF795E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEBCDF2CFC502900DF795E /* SceneDelegate.swift */; };
 		71BEBCE22CFC502900DF795E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEBCE12CFC502900DF795E /* ViewController.swift */; };
@@ -59,7 +64,12 @@
 		713EDA372D1B3812000918B2 /* JobsResultTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JobsResultTableViewCell.xib; sourceTree = "<group>"; };
 		713EDA3B2D1B438B000918B2 /* JobPosting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobPosting.swift; sourceTree = "<group>"; };
 		713EDA3D2D1C1227000918B2 /* SuggestionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionsViewController.swift; sourceTree = "<group>"; };
-		713EDA3F2D1C146C000918B2 /* SuggestionsDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionsDelegate.swift; sourceTree = "<group>"; };
+		713EDA452D1D38B0000918B2 /* FilterAlertStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FilterAlertStoryboard.storyboard; sourceTree = "<group>"; };
+		713EDA472D1D38F7000918B2 /* FilterAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterAlertViewController.swift; sourceTree = "<group>"; };
+		713EDA492D1D3D36000918B2 /* FilterAlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterAlertService.swift; sourceTree = "<group>"; };
+		713EDA4B2D1D7388000918B2 /* FilterOptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterOptionTableViewCell.swift; sourceTree = "<group>"; };
+		713EDA4C2D1D7388000918B2 /* FilterOptionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterOptionTableViewCell.xib; sourceTree = "<group>"; };
+		713EDA502D1D79F6000918B2 /* FilterOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterOptions.swift; sourceTree = "<group>"; };
 		71BEBCDA2CFC502900DF795E /* Hirely.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hirely.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71BEBCDD2CFC502900DF795E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		71BEBCDF2CFC502900DF795E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -120,6 +130,9 @@
 				713EDA332D1B1CB5000918B2 /* FiltersCollectionViewCell.xib */,
 				713EDA362D1B3812000918B2 /* JobsResultTableViewCell.swift */,
 				713EDA372D1B3812000918B2 /* JobsResultTableViewCell.xib */,
+				713EDA452D1D38B0000918B2 /* FilterAlertStoryboard.storyboard */,
+				713EDA4B2D1D7388000918B2 /* FilterOptionTableViewCell.swift */,
+				713EDA4C2D1D7388000918B2 /* FilterOptionTableViewCell.xib */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -131,7 +144,8 @@
 				713EDA2E2D18512B000918B2 /* FirstSearchViewController.swift */,
 				713EDA302D1ADAB7000918B2 /* ResultsPageViewController.swift */,
 				713EDA3D2D1C1227000918B2 /* SuggestionsViewController.swift */,
-				713EDA3F2D1C146C000918B2 /* SuggestionsDelegate.swift */,
+				713EDA472D1D38F7000918B2 /* FilterAlertViewController.swift */,
+				713EDA492D1D3D36000918B2 /* FilterAlertService.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -142,6 +156,14 @@
 				713EDA3B2D1B438B000918B2 /* JobPosting.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		713EDA4F2D1D79CB000918B2 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				713EDA502D1D79F6000918B2 /* FilterOptions.swift */,
+			);
+			path = Enums;
 			sourceTree = "<group>";
 		};
 		71BEBCD12CFC502900DF795E = {
@@ -168,6 +190,7 @@
 		71BEBCDC2CFC502900DF795E /* Hirely */ = {
 			isa = PBXGroup;
 			children = (
+				713EDA4F2D1D79CB000918B2 /* Enums */,
 				713EDA3A2D1B4371000918B2 /* Model */,
 				711B4EBF2CFC57F300910FB6 /* Controllers */,
 				711B4EBE2CFC57E200910FB6 /* Storyboards */,
@@ -311,12 +334,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				713EDA4D2D1D7389000918B2 /* FilterOptionTableViewCell.xib in Resources */,
 				71BEBCE72CFC502A00DF795E /* Assets.xcassets in Resources */,
 				71BEBCEA2CFC502A00DF795E /* Base in Resources */,
 				713EDA342D1B1CB5000918B2 /* FiltersCollectionViewCell.xib in Resources */,
 				71BEBCE52CFC502900DF795E /* Base in Resources */,
 				713EDA382D1B3812000918B2 /* JobsResultTableViewCell.xib in Resources */,
 				2C9302F52CFC9E6500CAD615 /* GoogleService-Info.plist in Resources */,
+				713EDA462D1D38B0000918B2 /* FilterAlertStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,8 +366,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				713EDA402D1C146C000918B2 /* SuggestionsDelegate.swift in Sources */,
+				713EDA4E2D1D7389000918B2 /* FilterOptionTableViewCell.swift in Sources */,
+				713EDA512D1D79F6000918B2 /* FilterOptions.swift in Sources */,
 				71BEBCE22CFC502900DF795E /* ViewController.swift in Sources */,
+				713EDA482D1D38F7000918B2 /* FilterAlertViewController.swift in Sources */,
 				713EDA392D1B3812000918B2 /* JobsResultTableViewCell.swift in Sources */,
 				713EDA3C2D1B438B000918B2 /* JobPosting.swift in Sources */,
 				71BEBCDE2CFC502900DF795E /* AppDelegate.swift in Sources */,
@@ -350,6 +377,7 @@
 				713EDA3E2D1C1227000918B2 /* SuggestionsViewController.swift in Sources */,
 				71BEBCE02CFC502900DF795E /* SceneDelegate.swift in Sources */,
 				713EDA2F2D18512B000918B2 /* FirstSearchViewController.swift in Sources */,
+				713EDA4A2D1D3D36000918B2 /* FilterAlertService.swift in Sources */,
 				713EDA312D1ADAB7000918B2 /* ResultsPageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

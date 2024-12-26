@@ -27,19 +27,34 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lvc-nU-4fu">
+                                <rect key="frame" x="159" y="516" width="75" height="39"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="didTapBtntry:" destination="4Ed-m8-ugN" eventType="touchUpInside" id="2bU-va-lE5"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="RhE-Ek-Uue"/>
                         <color key="backgroundColor" red="0.90980386729999996" green="0.91372549530000002" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstItem="lvc-nU-4fu" firstAttribute="leading" secondItem="RhE-Ek-Uue" secondAttribute="leading" constant="159" id="2UU-dA-kol"/>
                             <constraint firstItem="nLl-Xr-sjF" firstAttribute="leading" secondItem="RhE-Ek-Uue" secondAttribute="leading" constant="16" id="AQD-LO-lPk"/>
                             <constraint firstItem="nLl-Xr-sjF" firstAttribute="top" secondItem="rLA-HE-HVf" secondAttribute="bottom" constant="8" id="ISs-0A-fqQ"/>
                             <constraint firstItem="RhE-Ek-Uue" firstAttribute="trailing" secondItem="nLl-Xr-sjF" secondAttribute="trailing" constant="233" id="MaU-WF-AKw"/>
+                            <constraint firstItem="RhE-Ek-Uue" firstAttribute="trailing" secondItem="lvc-nU-4fu" secondAttribute="trailing" constant="159" id="NMT-XT-Ty8"/>
                             <constraint firstItem="rLA-HE-HVf" firstAttribute="trailing" secondItem="RhE-Ek-Uue" secondAttribute="trailing" id="PcU-aa-FoV"/>
+                            <constraint firstItem="RhE-Ek-Uue" firstAttribute="bottom" secondItem="lvc-nU-4fu" secondAttribute="bottom" constant="263" id="gRq-79-lHU"/>
                             <constraint firstItem="rLA-HE-HVf" firstAttribute="leading" secondItem="RhE-Ek-Uue" secondAttribute="leading" id="lZF-eK-wHQ"/>
                             <constraint firstItem="rLA-HE-HVf" firstAttribute="top" secondItem="i6q-78-Sqi" secondAttribute="top" id="nP2-lZ-iB1"/>
+                            <constraint firstItem="lvc-nU-4fu" firstAttribute="top" secondItem="rLA-HE-HVf" secondAttribute="bottom" constant="373" id="voB-BQ-hnI"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="R4f-Me-0Ws"/>
+                    <connections>
+                        <outlet property="btntry" destination="lvc-nU-4fu" id="3oM-sh-YKx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FXb-h1-PNv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

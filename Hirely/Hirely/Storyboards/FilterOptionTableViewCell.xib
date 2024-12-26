@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="filterOptionCell" id="KGk-i7-Jjw" customClass="FilterOptionTableViewCell" customModule="Hirely" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JP6-fL-ycj">
+                        <rect key="frame" x="2" y="2" width="316" height="40"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RaZ-ms-ifE">
+                                <rect key="frame" x="45" y="2" width="50" height="36"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="checkmark.circle" catalog="system"/>
+                                <connections>
+                                    <action selector="didTapCheckBox:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="K5i-jd-4kn"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SQX-QY-WVE">
+                                <rect key="frame" x="100" y="9" width="44" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="SQX-QY-WVE" firstAttribute="top" secondItem="JP6-fL-ycj" secondAttribute="top" constant="9" id="9s7-c8-qmy"/>
+                            <constraint firstItem="SQX-QY-WVE" firstAttribute="leading" secondItem="RaZ-ms-ifE" secondAttribute="trailing" constant="5" id="Ah4-9w-u6I"/>
+                            <constraint firstAttribute="bottom" secondItem="RaZ-ms-ifE" secondAttribute="bottom" constant="2" id="GJG-ZH-G4t"/>
+                            <constraint firstAttribute="trailing" secondItem="SQX-QY-WVE" secondAttribute="trailing" constant="172" id="VkM-EP-iiH"/>
+                            <constraint firstAttribute="bottom" secondItem="SQX-QY-WVE" secondAttribute="bottom" constant="10" id="ZLn-kf-kUg"/>
+                            <constraint firstItem="RaZ-ms-ifE" firstAttribute="leading" secondItem="JP6-fL-ycj" secondAttribute="leading" constant="45" id="b2V-Vm-FtV"/>
+                            <constraint firstItem="RaZ-ms-ifE" firstAttribute="top" secondItem="JP6-fL-ycj" secondAttribute="top" constant="2" id="caF-XV-hn1"/>
+                            <constraint firstItem="SQX-QY-WVE" firstAttribute="leading" secondItem="RaZ-ms-ifE" secondAttribute="trailing" constant="5" id="yIh-bi-piJ"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="JP6-fL-ycj" secondAttribute="bottom" constant="2" id="6PQ-sk-1BL"/>
+                    <constraint firstItem="JP6-fL-ycj" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="2" id="X1r-aN-Cai"/>
+                    <constraint firstAttribute="trailing" secondItem="JP6-fL-ycj" secondAttribute="trailing" constant="2" id="jbV-qz-d0g"/>
+                    <constraint firstItem="JP6-fL-ycj" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="2" id="qii-0g-LJy"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="checkBoxBtn" destination="RaZ-ms-ifE" id="dPg-1R-FcV"/>
+                <outlet property="filterOptionLbl" destination="SQX-QY-WVE" id="SsV-cX-Dnp"/>
+            </connections>
+            <point key="canvasLocation" x="62.595419847328245" y="-12.67605633802817"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="checkmark.circle" catalog="system" width="128" height="123"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

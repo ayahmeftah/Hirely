@@ -13,6 +13,22 @@ class FirstSearchViewController: UIViewController, UISearchResultsUpdating, UISe
     // Sample dataset for search suggestions
     //    let data = ["Software Engineer", "Data Scientist", "Product Manager", "UI/UX Designer", "Project Manager", "HR Specialist"]
     
+    
+    @IBOutlet weak var btntry: UIButton!
+    
+    let filterAlertService = FilterAlertService()
+    
+    @IBAction func didTapBtntry(_ sender: Any) {
+        // Use FilterAlertService to present the FilterAlertViewController
+        let filterService = FilterAlertService()
+        let filterAlertVC = filterService.filterAlert()
+        
+        // Present the FilterAlertViewController
+        filterAlertVC.modalPresentationStyle = .overCurrentContext
+        filterAlertVC.modalTransitionStyle = .crossDissolve
+        self.present(filterAlertVC, animated: true, completion: nil)
+    }
+    
     // Firestore reference
     let db = Firestore.firestore()
     var allJobTitles: [String] = [] // Store all job titles locally
@@ -119,14 +135,7 @@ class FirstSearchViewController: UIViewController, UISearchResultsUpdating, UISe
             navigationController?.pushViewController(resultsVC, animated: true)
         }
     }
-//    func navigateToResultsPage(with query: String) {
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        if let resultsVC = storyboard.instantiateViewController(withIdentifier: "ResultsPageViewController") as? ResultsPageViewController {
-//            resultsVC.searchQuery = query
-//            resultsVC.searchController = searchController // Pass the search controller
-//            navigationController?.pushViewController(resultsVC, animated: true)
-//        }
-//    }
+
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if let searchText = searchBar.text {
