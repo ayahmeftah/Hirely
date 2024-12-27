@@ -6,9 +6,13 @@
 //
 
 import UIKit
+import FirebaseFirestore
+import FirebaseAuth
 
 class ApplicantAccountInfoTableViewController: UITableViewController {
     
+    
+    var jobSeeker: JobSeeker? // Property to hold the passed job seeker
     @IBOutlet weak var applicantNameLbl: UILabel!
     
     @IBOutlet weak var applicantPhoneLbl: UILabel!
@@ -23,26 +27,119 @@ class ApplicantAccountInfoTableViewController: UITableViewController {
     
     @IBOutlet weak var applicantStatusLbl: UILabel!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        // Check if a job seeker was passed and populate the UI
+        if let jobSeeker = jobSeeker {
+            print("Selected Job Seeker: \(jobSeeker.firstName) \(jobSeeker.lastName)")
+            
+            // Populate the labels with jobSeeker's details
+            applicantNameLbl.text = "\(jobSeeker.firstName) \(jobSeeker.lastName)"
+            applicantPhoneLbl.text = jobSeeker.phoneNumber
+            applicantEmailLbl.text = jobSeeker.email
+            applicantAgeLbl.text = jobSeeker.age != nil ? "\(jobSeeker.age!) years old" : "N/A"
+            applicantGenderLbl.text = jobSeeker.gender
+            appliantCityLbl.text = jobSeeker.city
+            applicantStatusLbl.text = jobSeeker.status
+        }
     }
     
     
     @IBAction func applicantDeleteAccountTapped(_ sender: UIButton) {
+        
+        
+       //  Show a confirmation alert before deleting
+              let alert = UIAlertController(
+                  title: "Delete Account",
+                 message: "Are you sure you want to delete this account? This action cannot be undone.",
+                  preferredStyle: .alert
+               )
+       
+              alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+               alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { _ in
+                   self.deleteAccount()
+              }))
+       
+               present(alert, animated: true, completion: nil)
+          }
+           
+        
+        
     }
     
-    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+    
+    
+//    func applicantDeleteAccountTapped(_ sender: UIButton) {
+//        
+//        // Show a confirmation alert before deleting
+//        let alert = UIAlertController(
+//            title: "Delete Account",
+//            message: "Are you sure you want to delete this account? This action cannot be undone.",
+//            preferredStyle: .alert
+//        )
+//        
+//        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+//        alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { _ in
+//            self.deleteAccount()
+//        }))
+//        
+//        present(alert, animated: true, completion: nil)
+//    }
+    
+//}
+
+
+
+
+func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 0
     }
-    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 0
     }
+
+
+extension ApplicantAccountInfoTableViewController {
+    
+    func deleteAccount() {
+        guard let jobSeeker = jobSeeker else {
+            print("No job seeker found to delete.")
+            return
+        }
+
+        let db = Firestore.firestore()
+
+        // Step 1: Delete the document from Firestore
+        db.collection("Users").document(jobSeeker.id).delete { error in
+            if let error = error {
+                print("Error deleting Firestore document: \(error.localizedDescription)")
+                return
+            }
+
+            print("Firestore document deleted successfully.")
+
+            DispatchQueue.main.async {
+                // Step 2: Update the parent view controller's list
+                if let parentVC = self.navigationController?.viewControllers.first(where: { $0 is ManageJobSeekersAccViewController }) as? ManageJobSeekersAccViewController {
+                    // Remove the deleted job seeker from the array
+                    if let index = parentVC.jobSeekersList.firstIndex(where: { $0.id == jobSeeker.id }) {
+                        parentVC.jobSeekersList.remove(at: index)
+                        parentVC.jobSeekers.reloadData() // Reload the table view immediately
+                    }
+                }
+
+                // Step 3: Navigate back to the parent view controller
+                self.navigationController?.popViewController(animated: true)
+            }
+        }
+    }
+
+
+       }
+
+       
 
 
     // MARK: - Table view data source
@@ -112,4 +209,4 @@ class ApplicantAccountInfoTableViewController: UITableViewController {
     }
     */
 
-}
+

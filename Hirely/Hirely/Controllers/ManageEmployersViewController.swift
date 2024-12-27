@@ -20,7 +20,7 @@ class ManageEmployersViewController: UIViewController, UITableViewDelegate, UITa
     let pic = "man"
     
 
-    let accountStatuses: [AccountStatus] = [.active, .deleted]
+    let accountStatuses: [AccountStatus] = [.active]
 
 
     override func viewDidLoad() {

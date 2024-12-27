@@ -48,6 +48,7 @@
 		C363937D2D006A4C00E14337 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = C363937C2D006A4C00E14337 /* FirebaseDatabase */; };
 		C363937F2D006A5600E14337 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = C363937E2D006A5600E14337 /* FirebaseAuth */; };
 		C36393812D006A7800E14337 /* Cloudinary in Frameworks */ = {isa = PBXBuildFile; productRef = C36393802D006A7800E14337 /* Cloudinary */; };
+		D193C7F92D1EC56500B5F305 /* JobSeeker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D193C7F82D1EC56500B5F305 /* JobSeeker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +110,7 @@
 		71BEBCFA2CFC502B00DF795E /* HirelyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HirelyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		71BEBCFE2CFC502B00DF795E /* HirelyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HirelyUITests.swift; sourceTree = "<group>"; };
 		71BEBD002CFC502B00DF795E /* HirelyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HirelyUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D193C7F82D1EC56500B5F305 /* JobSeeker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobSeeker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +163,7 @@
 			children = (
 				2CD248E22D15BD9400602AD7 /* JobPosting.swift */,
 				2C7A0E712D1D9DC800900E11 /* FlaggedJob.swift */,
+				D193C7F82D1EC56500B5F305 /* JobSeeker.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -424,6 +427,7 @@
 				2C6940432D064F8D00823F72 /* FlagStatus.swift in Sources */,
 				2C69403D2D064C4600823F72 /* FlaggedJobsViewController.swift in Sources */,
 				2C4B28DF2D0F250100A5DE73 /* FlagPostViewController.swift in Sources */,
+				D193C7F92D1EC56500B5F305 /* JobSeeker.swift in Sources */,
 				2C4B28E12D0F268000A5DE73 /* AdminDashboardViewController.swift in Sources */,
 				2CD248E32D15BD9400602AD7 /* JobPosting.swift in Sources */,
 				2C6940492D0655DB00823F72 /* ManageJobSeekersAccTableViewCell.swift in Sources */,
