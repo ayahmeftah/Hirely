@@ -125,9 +125,17 @@ class ApplyJobViewController: UIViewController, UIDocumentPickerDelegate {
         // Cancel Option
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
 
+        // Fix for iPad
+        if let popoverController = alert.popoverPresentationController {
+            popoverController.sourceView = self.uploadCVbtn
+            popoverController.sourceRect = self.uploadCVbtn.bounds
+            popoverController.permittedArrowDirections = .any
+        }
+
         // Present the action sheet
         present(alert, animated: true, completion: nil)
     }
+
 
     func presentDocumentPicker(for button: UIButton) {
         let documentPicker = UIDocumentPickerViewController(forOpeningContentTypes: [UTType.pdf])
