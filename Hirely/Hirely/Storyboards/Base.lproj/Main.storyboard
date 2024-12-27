@@ -47,10 +47,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0gg-30-M62">
-                                <rect key="frame" x="159" y="268" width="75" height="35"/>
+                                <rect key="frame" x="159" y="264" width="75" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="gray" title="Button"/>
+                                <connections>
+                                    <segue destination="24o-eq-ZoE" kind="presentation" modalPresentationStyle="fullScreen" id="mlT-0m-OMq"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="RhE-Ek-Uue"/>
@@ -60,6 +63,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FXb-h1-PNv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1805" y="359"/>
+        </scene>
+        <!--UserAuthentication-->
+        <scene sceneID="a4y-GE-q87">
+            <objects>
+                <viewControllerPlaceholder storyboardName="UserAuthentication" id="24o-eq-ZoE" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4uH-tE-u0C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2258" y="261"/>
         </scene>
     </scenes>
     <resources>
