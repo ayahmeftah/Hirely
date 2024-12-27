@@ -48,6 +48,7 @@ enum JobType: String, CaseIterable {
     case partTime = "Part-time"
     case internship = "Internship"
     case contract = "Contract"
+    case seasonal = "Seasonal"
 }
 
 enum LocationType: String, CaseIterable {

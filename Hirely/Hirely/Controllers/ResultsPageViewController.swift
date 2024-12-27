@@ -10,6 +10,17 @@ import FirebaseFirestore
 
 class ResultsPageViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating, UISearchBarDelegate {
     
+    @IBOutlet weak var filtersCollectionView: UICollectionView!
+    @IBOutlet weak var jobResultsTableView: UITableView!
+    @IBOutlet weak var CityBtnLbl: UIButton!
+    
+    var selectedFilters: [String: String] = [:] // To store selected filters
+    
+    let filters = ["Job Type", "Experience Level", "Location Type", "Salary Range"]
+    var searchController: UISearchController? // To hold the passed search controller
+    var jobs: [JobPosting] = []
+    var filteredJobs: [JobPosting] = []
+    var searchQuery: String = ""
     
     @IBAction func didTapAllFilters(_ sender: Any) {
         let allFilters: [String: [String]] = [
@@ -27,8 +38,6 @@ class ResultsPageViewController: UIViewController, UICollectionViewDataSource, U
     }
     
     
-    @IBOutlet weak var CityBtnLbl: UIButton!
-    
     @IBAction func didTapCity(_ sender: Any) {
         let filterAlertVC = FilterAlertService().filterAlert(with: City.self, title: "City")
         
@@ -36,26 +45,13 @@ class ResultsPageViewController: UIViewController, UICollectionViewDataSource, U
         filterAlertVC.didSelectOption = { [weak self] selectedOption in
             guard let self = self else { return }
             self.CityBtnLbl.setTitle(selectedOption, for: .normal) // Update the button title
-            print("Selected City: \(selectedOption)")
+            print("Selected City: \(String(describing: selectedOption))")
         }
         
         filterAlertVC.modalPresentationStyle = .overCurrentContext
         filterAlertVC.modalTransitionStyle = .crossDissolve
         self.present(filterAlertVC, animated: true, completion: nil)
     }
-    
-    
-    @IBOutlet weak var filtersCollectionView: UICollectionView!
-    
-    @IBOutlet weak var jobResultsTableView: UITableView!
-    
-    let filters = ["Job Type", "Experience Level", "Location Type", "Salary Range"]
-    
-    
-    var searchController: UISearchController? // To hold the passed search controller
-    var jobs: [JobPosting] = []
-    var filteredJobs: [JobPosting] = []
-    var searchQuery: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -93,21 +89,25 @@ class ResultsPageViewController: UIViewController, UICollectionViewDataSource, U
     func fetchJobPostings() {
         let db = Firestore.firestore()
         
-        // Query Firestore for job postings matching the search query
+        // Query Firestore for job postings
         db.collection("jobPostings")
-            .whereField("jobTitle", isGreaterThanOrEqualTo: searchQuery)
-            .whereField("jobTitle", isLessThanOrEqualTo: searchQuery + "\u{f8ff}")
-            .getDocuments { (snapshot, error) in
+            .getDocuments { [weak self] (snapshot, error) in
+                guard let self = self else { return } // Ensure self is not nil
+                
                 if let error = error {
                     print("Error fetching job postings: \(error)")
                     return
                 }
                 
+                // Safely unwrap and map the documents to JobPosting models
                 self.jobs = snapshot?.documents.compactMap { document in
-                    JobPosting(data: document.data()) // Map Firestore document to JobPosting model
+                    JobPosting(data: document.data()) // Ensure JobPosting initializer is correct
                 } ?? []
                 
-                self.filteredJobs = self.jobs // Initially display all jobs
+                // Filter jobs based on the search query
+                self.filteredJobs = self.jobs.filter { job in
+                    job.jobTitle.lowercased().contains(self.searchQuery.lowercased())
+                }
                 
                 // Reload the table view on the main thread
                 DispatchQueue.main.async {
@@ -117,6 +117,7 @@ class ResultsPageViewController: UIViewController, UICollectionViewDataSource, U
     }
     
     
+    // Collection view of filters
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return filters.count
     }
@@ -162,14 +163,6 @@ class ResultsPageViewController: UIViewController, UICollectionViewDataSource, U
         }
     }
     
-    private func presentFilterAlert<T: RawRepresentable & CaseIterable>(for filterEnum: T.Type, title: String) where T.RawValue == String {
-        let filterAlertVC = FilterAlertService().filterAlert(with: filterEnum, title: title)
-        filterAlertVC.modalPresentationStyle = .overCurrentContext
-        filterAlertVC.modalTransitionStyle = .crossDissolve
-        self.present(filterAlertVC, animated: true, completion: nil)
-    }
-    
-    
     // TableView DataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return filteredJobs.count
@@ -199,6 +192,14 @@ class ResultsPageViewController: UIViewController, UICollectionViewDataSource, U
         print("Selected Job: \(job.jobTitle)")
         // Navigate to a detailed job posting view if needed
     }
+    
+    private func presentFilterAlert<T: RawRepresentable & CaseIterable>(for filterEnum: T.Type, title: String) where T.RawValue == String {
+        let filterAlertVC = FilterAlertService().filterAlert(with: filterEnum, title: title)
+        filterAlertVC.modalPresentationStyle = .overCurrentContext
+        filterAlertVC.modalTransitionStyle = .crossDissolve
+        self.present(filterAlertVC, animated: true, completion: nil)
+    }
+    
     
     func updateSearchResults(for searchController: UISearchController) {
         guard let searchText = searchController.searchBar.text?.lowercased(), !searchText.isEmpty else {
@@ -249,6 +250,5 @@ class ResultsPageViewController: UIViewController, UICollectionViewDataSource, U
             searchBar.resignFirstResponder() // Dismiss the keyboard
         }
     }
-    
     
 }

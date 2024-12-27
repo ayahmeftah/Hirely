@@ -13,43 +13,6 @@ class FirstSearchViewController: UIViewController, UISearchResultsUpdating, UISe
     // Sample dataset for search suggestions
     //    let data = ["Software Engineer", "Data Scientist", "Product Manager", "UI/UX Designer", "Project Manager", "HR Specialist"]
     
-    
-    let filterAlertService = FilterAlertService()
-    
-    @IBAction func didTapCity(_ sender: Any) {
-        presentFilterAlert(for: City.self, title: "City")
-    }
-    
-    @IBAction func didTapJobType(_ sender: Any) {
-        presentFilterAlert(for: JobType.self, title: "Job Type")
-    }
-    
-    @IBAction func didTapLocationType(_ sender: Any) {
-        presentFilterAlert(for: LocationType.self, title: "Location Type")
-    }
-    
-    @IBAction func didTapBtntry(_ sender: Any) {
-        presentFilterAlert(for: ExperienceLevel.self, title: "Experience Level")
-    }
-//    
-//    @IBAction func didTapBtntry(_ sender: Any) {
-//        // Use FilterAlertService to present the FilterAlertViewController
-//        let filterService = FilterAlertService()
-//        let filterAlertVC = filterService.filterAlert()
-//        
-//        // Present the FilterAlertViewController
-//        filterAlertVC.modalPresentationStyle = .overCurrentContext
-//        filterAlertVC.modalTransitionStyle = .crossDissolve
-//        self.present(filterAlertVC, animated: true, completion: nil)
-//    }
-    
-    private func presentFilterAlert<T: RawRepresentable & CaseIterable>(for filterEnum: T.Type, title: String) where T.RawValue == String {
-        let filterAlertVC = filterAlertService.filterAlert(with: filterEnum, title: title)
-        filterAlertVC.modalPresentationStyle = .overCurrentContext
-        filterAlertVC.modalTransitionStyle = .crossDissolve
-        self.present(filterAlertVC, animated: true, completion: nil)
-    }
-    
     // Firestore reference
     let db = Firestore.firestore()
     var allJobTitles: [String] = [] // Store all job titles locally

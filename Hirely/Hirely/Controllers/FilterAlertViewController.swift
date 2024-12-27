@@ -9,7 +9,7 @@ import UIKit
 
 class FilterAlertViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    
+
     
     @IBOutlet weak var optionsTableView: UITableView!
     
@@ -32,26 +32,23 @@ class FilterAlertViewController: UIViewController, UITableViewDelegate, UITableV
     var allFilters: [String: [String]] = [:] // All filters (categories and their options)
     var isMultiCategory: Bool = false // Flag to determine if multiple categories are displayed
     var selectedFilters: [String: String] = [:] // Track selected options per category
-    var didSelectOption: ((String) -> Void)? // Callback for selected option
-    
+    var didSelectOption: ((String?) -> Void)? // Allow optional string
+
     var singleFilterTitle: String? // Header title for a single category
     var singleFilterOptions: [String] = [] // Options for a single category
-    
-    
+
     // Properties
     var filterTitle: String = "" // Header title
     var filterOptions: [String] = [] // Options for the filter
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+
         // Set up the table view
         optionsTableView.delegate = self
         optionsTableView.dataSource = self
         optionsTableView.register(UINib(nibName: "FilterOptionTableViewCell", bundle: nil), forCellReuseIdentifier: "filterOptionCell")
-        
-        
+   
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -133,5 +130,6 @@ class FilterAlertViewController: UIViewController, UITableViewDelegate, UITableV
         
         // Optionally dismiss the alert or allow multiple selections
     }
+
     
 }
