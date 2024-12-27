@@ -123,7 +123,6 @@ class ResultsPageViewController: UIViewController, UICollectionViewDataSource, U
     func fetchJobPostings() {
         let db = Firestore.firestore()
         
-        // Query Firestore for job postings matching the search query
         db.collection("jobPostings")
             .whereField("jobTitle", isGreaterThanOrEqualTo: searchQuery)
             .whereField("jobTitle", isLessThanOrEqualTo: searchQuery + "\u{f8ff}")
@@ -133,18 +132,26 @@ class ResultsPageViewController: UIViewController, UICollectionViewDataSource, U
                     return
                 }
                 
-                self.jobs = snapshot?.documents.compactMap { document in
-                    JobPosting(data: document.data()) // Map Firestore document to JobPosting model
-                } ?? []
+                guard let documents = snapshot?.documents else {
+                    print("No documents found.")
+                    return
+                }
+                
+                self.jobs = documents.compactMap { document in
+                    let data = document.data()
+                    print("Job Document Data: \(data)") // Debugging log
+                    
+                    return JobPosting(data: data) // Map Firestore document to JobPosting model
+                }
                 
                 self.filteredJobs = self.jobs // Initially display all jobs
                 
-                // Reload the table view on the main thread
                 DispatchQueue.main.async {
                     self.jobResultsTableView.reloadData()
                 }
             }
     }
+
 
     
     
@@ -313,8 +320,8 @@ class ResultsPageViewController: UIViewController, UICollectionViewDataSource, U
                 .whereField("jobTitle", isGreaterThanOrEqualTo: searchQuery)
                 .whereField("jobTitle", isLessThanOrEqualTo: searchQuery + "\u{f8ff}")
         }
-        
-        // Add filters dynamically
+
+        // Add dynamic filters
         for (key, values) in filters {
             if !values.isEmpty {
                 query = query.whereField(key, in: values)
@@ -340,6 +347,7 @@ class ResultsPageViewController: UIViewController, UICollectionViewDataSource, U
             }
         }
     }
+
 
     
 }
