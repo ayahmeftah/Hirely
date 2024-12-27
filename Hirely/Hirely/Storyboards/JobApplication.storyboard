@@ -248,17 +248,21 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="uaG-aY-Fpc">
                                 <rect key="frame" x="0.0" y="103" width="393" height="103.66666666666669"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" image="Google" translatesAutoresizingMaskIntoConstraints="NO" id="dCJ-ZL-b6o">
-                                        <rect key="frame" x="184.66666666666666" y="0.0" width="24" height="52"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" image="app-logo" translatesAutoresizingMaskIntoConstraints="NO" id="dCJ-ZL-b6o">
+                                        <rect key="frame" x="174" y="0.0" width="45" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="DOc-RI-ORo"/>
+                                            <constraint firstAttribute="width" constant="45" id="uaT-Av-6JA"/>
+                                        </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Position " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JZR-8d-lRb">
-                                        <rect key="frame" x="0.0" y="57.999999999999993" width="393" height="21.666666666666664"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Position " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JZR-8d-lRb">
+                                        <rect key="frame" x="0.0" y="51" width="393" height="21.666666666666671"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comany Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hL3-Ni-EMa">
-                                        <rect key="frame" x="0.0" y="85.666666666666657" width="393" height="18"/>
+                                        <rect key="frame" x="0.0" y="78.666666666666657" width="393" height="25"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -367,7 +371,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="kre-Zr-p5r">
                                 <rect key="frame" x="0.0" y="61.000000000000007" width="393" height="104.66666666666669"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Google" translatesAutoresizingMaskIntoConstraints="NO" id="o0m-ep-cQb">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Checkmark-icon" translatesAutoresizingMaskIntoConstraints="NO" id="o0m-ep-cQb">
                                         <rect key="frame" x="170.66666666666666" y="0.0" width="52" height="45"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="52" id="39m-A6-7Uz"/>
@@ -431,13 +435,14 @@
     </scenes>
     <resources>
         <image name="BG" width="402" height="178"/>
-        <image name="Google" width="24" height="24"/>
+        <image name="Checkmark-icon" width="26" height="22"/>
+        <image name="app-logo" width="113" height="107"/>
         <image name="square.and.arrow.up" catalog="system" width="108" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray2Color">
-            <color red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
