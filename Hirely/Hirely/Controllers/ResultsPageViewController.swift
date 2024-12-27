@@ -12,18 +12,6 @@ class ResultsPageViewController: UIViewController, UICollectionViewDataSource, U
     
     
     @IBAction func didTapAllFilters(_ sender: Any) {
-//        let allFilters: [String: [String]] = [
-//            "City": City.allCases.map { $0.rawValue },
-//            "Job Type": JobType.allCases.map { $0.rawValue },
-//            "Experience Level": ExperienceLevel.allCases.map { $0.rawValue },
-//            "Location Type": LocationType.allCases.map { $0.rawValue }
-//        ]
-//        
-//        let filterAlertVC = FilterAlertService().allFiltersAlert(with: allFilters)
-//        
-//        filterAlertVC.modalPresentationStyle = .overCurrentContext
-//        filterAlertVC.modalTransitionStyle = .crossDissolve
-//        self.present(filterAlertVC, animated: true, completion: nil)
         let allFilters: [String: [String]] = [
             "City": City.allCases.map { $0.rawValue },
             "Job Type": JobType.allCases.map { $0.rawValue },
@@ -33,47 +21,29 @@ class ResultsPageViewController: UIViewController, UICollectionViewDataSource, U
         
         let filterAlertVC = FilterAlertService().allFiltersAlert(with: allFilters)
         
-        filterAlertVC.didApplyFilters = { [weak self] appliedFilters in
-            guard let self = self else { return }
-            self.applyFilters(appliedFilters) // Apply the selected filters
-        }
-        
         filterAlertVC.modalPresentationStyle = .overCurrentContext
         filterAlertVC.modalTransitionStyle = .crossDissolve
         self.present(filterAlertVC, animated: true, completion: nil)
     }
-
-
     
     
     @IBOutlet weak var CityBtnLbl: UIButton!
     
     @IBAction func didTapCity(_ sender: Any) {
-//        let filterAlertVC = FilterAlertService().filterAlert(with: City.self, title: "City")
-//        
-//        // Handle the selection callback
-//        filterAlertVC.didSelectOption = { [weak self] selectedOption in
-//            guard let self = self else { return }
-//            self.CityBtnLbl.setTitle(selectedOption, for: .normal) // Update the button title
-//            print("Selected City: \(selectedOption)")
-//        }
-//        
-//        filterAlertVC.modalPresentationStyle = .overCurrentContext
-//        filterAlertVC.modalTransitionStyle = .crossDissolve
-//        self.present(filterAlertVC, animated: true, completion: nil)
         let filterAlertVC = FilterAlertService().filterAlert(with: City.self, title: "City")
         
-        filterAlertVC.didApplyFilters = { [weak self] appliedFilters in
+        // Handle the selection callback
+        filterAlertVC.didSelectOption = { [weak self] selectedOption in
             guard let self = self else { return }
-            self.applyFilters(appliedFilters) // Apply the selected filter
+            self.CityBtnLbl.setTitle(selectedOption, for: .normal) // Update the button title
+            print("Selected City: \(selectedOption)")
         }
         
         filterAlertVC.modalPresentationStyle = .overCurrentContext
         filterAlertVC.modalTransitionStyle = .crossDissolve
         self.present(filterAlertVC, animated: true, completion: nil)
     }
-
-
+    
     
     @IBOutlet weak var filtersCollectionView: UICollectionView!
     
@@ -123,6 +93,7 @@ class ResultsPageViewController: UIViewController, UICollectionViewDataSource, U
     func fetchJobPostings() {
         let db = Firestore.firestore()
         
+        // Query Firestore for job postings matching the search query
         db.collection("jobPostings")
             .whereField("jobTitle", isGreaterThanOrEqualTo: searchQuery)
             .whereField("jobTitle", isLessThanOrEqualTo: searchQuery + "\u{f8ff}")
@@ -132,27 +103,18 @@ class ResultsPageViewController: UIViewController, UICollectionViewDataSource, U
                     return
                 }
                 
-                guard let documents = snapshot?.documents else {
-                    print("No documents found.")
-                    return
-                }
-                
-                self.jobs = documents.compactMap { document in
-                    let data = document.data()
-                    print("Job Document Data: \(data)") // Debugging log
-                    
-                    return JobPosting(data: data) // Map Firestore document to JobPosting model
-                }
+                self.jobs = snapshot?.documents.compactMap { document in
+                    JobPosting(data: document.data()) // Map Firestore document to JobPosting model
+                } ?? []
                 
                 self.filteredJobs = self.jobs // Initially display all jobs
                 
+                // Reload the table view on the main thread
                 DispatchQueue.main.async {
                     self.jobResultsTableView.reloadData()
                 }
             }
     }
-
-
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -200,8 +162,6 @@ class ResultsPageViewController: UIViewController, UICollectionViewDataSource, U
         }
     }
     
-    
-
     private func presentFilterAlert<T: RawRepresentable & CaseIterable>(for filterEnum: T.Type, title: String) where T.RawValue == String {
         let filterAlertVC = FilterAlertService().filterAlert(with: filterEnum, title: title)
         filterAlertVC.modalPresentationStyle = .overCurrentContext
@@ -209,30 +169,8 @@ class ResultsPageViewController: UIViewController, UICollectionViewDataSource, U
         self.present(filterAlertVC, animated: true, completion: nil)
     }
     
-//    // TableView DataSource
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return filteredJobs.count
-//    }
-//    
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        guard let cell = tableView.dequeueReusableCell(withIdentifier: "jobResultCell", for: indexPath) as? JobsResultTableViewCell else {
-//            return UITableViewCell()
-//        }
-//        
-//        let job = filteredJobs[indexPath.row]
-//        /*cell.resultiInit(job.companyName, job.jobTitle, "placeholder_image", job.jobType)*/ // Replace "placeholder_image" with real image loading logic
-//        // Use commonInit to configure the cell
-//        cell.resultiInit(
-//            "microsoft",
-//            job.jobTitle,
-//            "Microsoft company",
-//            job.jobType
-//        )
-//        cell.backgroundColor = .clear
-//        cell.contentView.backgroundColor = .clear
-//        return cell
-//    }
     
+    // TableView DataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return filteredJobs.count
     }
@@ -243,16 +181,18 @@ class ResultsPageViewController: UIViewController, UICollectionViewDataSource, U
         }
         
         let job = filteredJobs[indexPath.row]
+        /*cell.resultiInit(job.companyName, job.jobTitle, "placeholder_image", job.jobType)*/ // Replace "placeholder_image" with real image loading logic
+        // Use commonInit to configure the cell
         cell.resultiInit(
-                        "microsoft",
-                        job.jobTitle,
-                        "Microsoft company",
-                        job.jobType
-                    )
+            "microsoft",
+            job.jobTitle,
+            "Microsoft company",
+            job.jobType
+        )
+        cell.backgroundColor = .clear
+        cell.contentView.backgroundColor = .clear
         return cell
     }
-
-    
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let job = filteredJobs[indexPath.row]
@@ -293,7 +233,7 @@ class ResultsPageViewController: UIViewController, UICollectionViewDataSource, U
                 }
             }
     }
- 
+    
     func navigateToResultsPage(with query: String) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         if let resultsVC = storyboard.instantiateViewController(withIdentifier: "ResultsPageViewController") as? ResultsPageViewController {
@@ -310,44 +250,5 @@ class ResultsPageViewController: UIViewController, UICollectionViewDataSource, U
         }
     }
     
-    private func applyFilters(_ filters: [String: [String]]) {
-        let db = Firestore.firestore()
-        var query: Query = db.collection("jobPostings")
-        
-        // Include the search query in the Firestore query
-        if !searchQuery.isEmpty {
-            query = query
-                .whereField("jobTitle", isGreaterThanOrEqualTo: searchQuery)
-                .whereField("jobTitle", isLessThanOrEqualTo: searchQuery + "\u{f8ff}")
-        }
-
-        // Add dynamic filters
-        for (key, values) in filters {
-            if !values.isEmpty {
-                query = query.whereField(key, in: values)
-            }
-        }
-        
-        // Fetch filtered results
-        query.getDocuments { [weak self] (snapshot, error) in
-            guard let self = self else { return }
-            
-            if let error = error {
-                print("Error applying filters: \(error.localizedDescription)")
-                return
-            }
-            
-            self.filteredJobs = snapshot?.documents.compactMap { document in
-                JobPosting(data: document.data())
-            } ?? []
-            
-            // Reload the table view with the filtered results
-            DispatchQueue.main.async {
-                self.jobResultsTableView.reloadData()
-            }
-        }
-    }
-
-
     
 }

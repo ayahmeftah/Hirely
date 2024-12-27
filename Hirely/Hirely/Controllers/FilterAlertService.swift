@@ -31,5 +31,4 @@ class FilterAlertService{
         
         return alertVC
     }
-
 }
