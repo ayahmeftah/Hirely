@@ -27,9 +27,6 @@ class ApplyJobViewController: UIViewController, UIDocumentPickerDelegate {
     var jobPosting: JobPosting? // Holds the fetched job posting data
     var companyDetails: CompanyDetails? // Holds the fetched company details
 
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -45,9 +42,6 @@ class ApplyJobViewController: UIViewController, UIDocumentPickerDelegate {
         fetchCompanyDetails(companyId: "RYINaYeqoq6WXBkdCOoK")
     }
 
-    
-    
-    
     // Fetch job posting data from Firestore
     func fetchJobPostingData() {
         let db = Firestore.firestore()
@@ -68,9 +62,6 @@ class ApplyJobViewController: UIViewController, UIDocumentPickerDelegate {
         }
     }
 
-    
-    
-    
     // Fetch company details from Firestore using the fixed company ID
     func fetchCompanyDetails(companyId: String) {
         let db = Firestore.firestore()
@@ -90,9 +81,6 @@ class ApplyJobViewController: UIViewController, UIDocumentPickerDelegate {
         }
     }
 
-    
-    
-    
     // Update the UI with the fetched job posting data
     func updateUIWithJobPosting() {
         guard let jobPosting = self.jobPosting else { return }
@@ -102,9 +90,6 @@ class ApplyJobViewController: UIViewController, UIDocumentPickerDelegate {
         }
     }
 
-    
-    
-    
     // Update the UI with the fetched company details
     func updateUIWithCompanyDetails() {
         guard let companyDetails = self.companyDetails else { return }
@@ -114,9 +99,6 @@ class ApplyJobViewController: UIViewController, UIDocumentPickerDelegate {
         }
     }
 
-    
-    
-    
     @objc func uploadCVTapped() {
         // Show options for CV
         let alert = UIAlertController(title: "Upload CV", message: "Choose an option to upload your CV.", preferredStyle: .actionSheet)
@@ -138,9 +120,6 @@ class ApplyJobViewController: UIViewController, UIDocumentPickerDelegate {
         present(alert, animated: true, completion: nil)
     }
 
-    
-    
-    
     @objc func applyButtonTapped() {
         // Validate input fields
         guard let fullName = fullNametxt.text, !fullName.isEmpty else {
@@ -183,9 +162,6 @@ class ApplyJobViewController: UIViewController, UIDocumentPickerDelegate {
         saveApplicationData(data: applicationData)
     }
 
-    
-    
-    
     func saveApplicationData(data: [String: Any]) {
         let db = Firestore.firestore()
         db.collection("jobsApplied").addDocument(data: data) { error in
@@ -200,7 +176,6 @@ class ApplyJobViewController: UIViewController, UIDocumentPickerDelegate {
         }
     }
 
-
     
 
     @objc func validatePhoneNumber() {
@@ -211,9 +186,6 @@ class ApplyJobViewController: UIViewController, UIDocumentPickerDelegate {
         }
     }
 
-    
-    
-    
     func isValidPhoneNumber(_ phoneNumber: String) -> Bool {
         // Check if the phone number contains exactly 8 digits
         let phoneRegex = "^[0-9]{8}$"
@@ -221,16 +193,10 @@ class ApplyJobViewController: UIViewController, UIDocumentPickerDelegate {
         return phoneTest.evaluate(with: phoneNumber)
     }
 
-    
-    
-    
     func isValidEmail(_ email: String) -> Bool {
         // Check if the email contains "@" and a basic valid format
         return email.contains("@")
     }
-    
-    
-    
 
     func presentDocumentPicker(for button: UIButton) {
         let documentPicker = UIDocumentPickerViewController(forOpeningContentTypes: [UTType.pdf])
@@ -240,9 +206,6 @@ class ApplyJobViewController: UIViewController, UIDocumentPickerDelegate {
         present(documentPicker, animated: true, completion: nil)
     }
 
-    
-    
-    
     // MARK: - UIDocumentPickerDelegate Methods
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
         guard let fileTypeHint = controller.accessibilityHint,
@@ -257,16 +220,10 @@ class ApplyJobViewController: UIViewController, UIDocumentPickerDelegate {
         }
     }
 
-    
-    
-    
     func documentPickerWasCancelled(_ controller: UIDocumentPickerViewController) {
         print("Document picker was cancelled.")
     }
 
-    
-    
-    
     func fetchFirstCVAndDisplay() {
         let db = Firestore.firestore()
         db.collection("CVs").getDocuments { snapshot, error in
@@ -296,18 +253,12 @@ class ApplyJobViewController: UIViewController, UIDocumentPickerDelegate {
         }
     }
 
-    
-    
-    
     func showAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default))
         present(alert, animated: true, completion: nil)
     }
 
-    
-    
-    
     func clearForm() {
         fullNametxt.text = ""
         agetxt.text = ""
