@@ -2,6 +2,7 @@ import UIKit
 import UniformTypeIdentifiers
 import FirebaseFirestore
 import FirebaseAuth
+import Cloudinary
 
 class ApplyJobViewController: UIViewController, UIDocumentPickerDelegate {
 
@@ -21,8 +22,16 @@ class ApplyJobViewController: UIViewController, UIDocumentPickerDelegate {
     var jobPosting: JobPosting? // Holds the fetched job posting data
     var companyDetails: CompanyDetails? // Holds the fetched company details
 
+    // Cloudinary configuration
+    let cloudName: String = "drkt3vace"
+    let uploadPreset: String = "unsigned_upload"
+    var cloudinary: CLDCloudinary!
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        // Initialize Cloudinary
+        initCloudinary()
 
         // Add actions to buttons
         uploadCVbtn.addTarget(self, action: #selector(uploadCVTapped), for: .touchUpInside)
@@ -36,6 +45,11 @@ class ApplyJobViewController: UIViewController, UIDocumentPickerDelegate {
         setUpUI()
     }
 
+    private func initCloudinary() {
+        let config = CLDConfiguration(cloudName: cloudName, secure: true)
+        cloudinary = CLDCloudinary(configuration: config)
+    }
+
     func setUpUI() {
         guard let jobPosting = jobPosting, let companyDetails = companyDetails else {
             print("Job posting or company details are missing.")
@@ -44,17 +58,16 @@ class ApplyJobViewController: UIViewController, UIDocumentPickerDelegate {
 
         positionlbl.text = jobPosting.jobTitle
         companyNamelbl.text = companyDetails.name
-
-//        if let logoURL = URL(string: companyDetails.companyPicture) {
-//            // Load the company logo asynchronously
-//            DispatchQueue.global().async {
-//                if let data = try? Data(contentsOf: logoURL), let image = UIImage(data: data) {
-//                    DispatchQueue.main.async {
-//                        self.companyLogoimg.image = image
-//                    }
-//                }
-//            }
-//        }
+        //        if let logoURL = URL(string: companyDetails.companyPicture) {
+        //            // Load the company logo asynchronously
+        //            DispatchQueue.global().async {
+        //                if let data = try? Data(contentsOf: logoURL), let image = UIImage(data: data) {
+        //                    DispatchQueue.main.async {
+        //                        self.companyLogoimg.image = image
+        //                    }
+        //                }
+        //            }
+        //        }
     }
 
     func fetchJobPostingData() {
@@ -69,7 +82,6 @@ class ApplyJobViewController: UIViewController, UIDocumentPickerDelegate {
 
             if let data = snapshot?.data() {
                 self.jobPosting = JobPosting(data: data)
-                print("Fetched Job Posting: \(self.jobPosting!)") // Debug log
                 DispatchQueue.main.async {
                     self.setUpUI()
                 }
@@ -87,7 +99,6 @@ class ApplyJobViewController: UIViewController, UIDocumentPickerDelegate {
 
             if let data = snapshot?.data() {
                 self.companyDetails = CompanyDetails(data: data)
-                print("Fetched Company Details: \(self.companyDetails!)") // Debug log
                 DispatchQueue.main.async {
                     self.setUpUI()
                 }
@@ -116,6 +127,41 @@ class ApplyJobViewController: UIViewController, UIDocumentPickerDelegate {
 
         // Present the action sheet
         present(alert, animated: true, completion: nil)
+    }
+
+    func presentDocumentPicker(for button: UIButton) {
+        let documentPicker = UIDocumentPickerViewController(forOpeningContentTypes: [UTType.pdf])
+        documentPicker.delegate = self
+        documentPicker.modalPresentationStyle = .formSheet
+        present(documentPicker, animated: true)
+    }
+
+    func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
+        guard let selectedFileURL = urls.first else { return }
+        uploadCVToCloudinary(fileURL: selectedFileURL)
+    }
+
+    private func uploadCVToCloudinary(fileURL: URL) {
+        guard let data = try? Data(contentsOf: fileURL) else {
+            print("Failed to read file data.")
+            return
+        }
+
+        cloudinary.createUploader().upload(data: data, uploadPreset: uploadPreset, completionHandler:  { response, error in
+            DispatchQueue.main.async {
+                if let error = error {
+                    print("Error uploading CV to Cloudinary: \(error.localizedDescription)")
+                    self.uploadCVbtn.setTitle("Upload Failed", for: .normal)
+                    return
+                }
+                
+                if let secureUrl = response?.secureUrl {
+                    print("CV uploaded successfully: \(secureUrl)")
+                    self.selectedCVURL = secureUrl
+                    self.uploadCVbtn.setTitle("File Uploaded", for: .normal)
+                }
+            }
+        })
     }
 
     @objc func applyButtonTapped() {
@@ -159,6 +205,7 @@ class ApplyJobViewController: UIViewController, UIDocumentPickerDelegate {
             "scheduledInterviewId": "",
             //adjust
             "userId": "61knRZkFlpe6SRmSo3Fr"
+            //"userId": getCurrentUserId() ?? "Unknown"
         ]
 
         saveApplicationData(data: applicationData)
@@ -179,18 +226,13 @@ class ApplyJobViewController: UIViewController, UIDocumentPickerDelegate {
     }
 
     func getCurrentUserId() -> String? {
-        if let user = Auth.auth().currentUser {
-            return user.uid
-        } else {
-            print("No user is signed in.")
-            return nil
-        }
+        return Auth.auth().currentUser?.uid
     }
 
     func showAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default))
-        present(alert, animated: true, completion: nil)
+        present(alert, animated: true)
     }
 
     func clearForm() {
@@ -203,40 +245,32 @@ class ApplyJobViewController: UIViewController, UIDocumentPickerDelegate {
         selectedCVURL = nil
     }
 
-    func presentDocumentPicker(for button: UIButton) {
-        let documentPicker = UIDocumentPickerViewController(forOpeningContentTypes: [UTType.pdf])
-        documentPicker.delegate = self
-        documentPicker.modalPresentationStyle = .formSheet
-        documentPicker.accessibilityHint = "CV"
-        present(documentPicker, animated: true, completion: nil)
-    }
-
     func fetchFirstCVAndDisplay() {
         let db = Firestore.firestore()
         db.collection("CVs").getDocuments { snapshot, error in
             if let error = error {
                 print("Error fetching CVs: \(error.localizedDescription)")
-                DispatchQueue.main.async {
-                    self.uploadCVbtn.setTitle("Upload Failed", for: .normal)
-                }
+                self.uploadCVbtn.setTitle("Upload Failed", for: .normal)
                 return
             }
-
-            self.fetchedCVURL = nil // Clear any existing CV URL
 
             if let document = snapshot?.documents.first {
                 let data = document.data()
                 if let cvURL = data["cvUrl"] as? String {
                     self.fetchedCVURL = cvURL
-                    DispatchQueue.main.async {
-                        self.uploadCVbtn.setTitle("File Uploaded", for: .normal)
-                    }
+                    self.uploadCVbtn.setTitle("File Uploaded", for: .normal)
                 }
             } else {
-                DispatchQueue.main.async {
-                    self.uploadCVbtn.setTitle("No CV Found", for: .normal)
-                }
+                self.uploadCVbtn.setTitle("No CV Found", for: .normal)
             }
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            if segue.identifier == "goToCompanyDetails",
+               let destinationVC = segue.destination as? CompanyDetailsViewController {
+                destinationVC.companyDetails = companyDetails
+                destinationVC.jobposting = jobPosting
+            }
+        }
 }

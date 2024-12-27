@@ -44,7 +44,7 @@ class CompanyDetailsViewController: UIViewController, UITableViewDelegate, UITab
     
     func setupUI() {
         guard let comp = companyDetails else { return }
-        guard let job = jobposting else{return}// Ensure data is passed
+        guard let job = jobposting else{return}
         companyNamelbl.text = comp.name
         companyEmaillbl.text = job.contactEmail
     }

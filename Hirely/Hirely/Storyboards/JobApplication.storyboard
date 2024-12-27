@@ -301,7 +301,7 @@
                     <navigationItem key="navigationItem" id="IcZ-Qx-PHC">
                         <barButtonItem key="rightBarButtonItem" title="Company Details" style="done" id="QjA-5f-YWx">
                             <connections>
-                                <segue destination="dnV-1w-lqU" kind="show" id="wXB-ek-0xB"/>
+                                <segue destination="dnV-1w-lqU" kind="show" identifier="goToCompanyDetails" id="wXB-ek-0xB"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
