@@ -72,7 +72,7 @@ class ApplyJobViewController: UIViewController, UIDocumentPickerDelegate {
 
     func fetchJobPostingData() {
         let db = Firestore.firestore()
-        let jobId = "6zdg3JhufgPeqIoQgiPH" // Replace with the actual job document ID
+        let jobId = "7J4ZFgnWengAKzKSM6dM" // Replace with the actual job document ID
 
         db.collection("jobPostings").document(jobId).getDocument { snapshot, error in
             if let error = error {
