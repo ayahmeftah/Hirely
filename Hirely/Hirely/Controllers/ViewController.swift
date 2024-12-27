@@ -21,11 +21,14 @@ class ViewController: UIViewController {
 //    var cloudinary: CLDCloudinary!
 //    var url: String!
 //
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 //        initCloudinary()
 //        generateUrl()
 //        uploadImage()
+        print("Hello")
     }
     
     override func viewDidAppear(_ animated: Bool) {
