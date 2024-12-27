@@ -21,7 +21,8 @@ class ApplyJobViewController: UIViewController, UIDocumentPickerDelegate {
     var selectedCVURL: String? // Stores the selected CV file URL
     var jobPosting: JobPosting? // Holds the fetched job posting data
     var companyDetails: CompanyDetails? // Holds the fetched company details
-
+    let jobId = "7J4ZFgnWengAKzKSM6dM" // Replace with the actual job document ID
+    
     // Cloudinary configuration
     let cloudName: String = "drkt3vace"
     let uploadPreset: String = "unsigned_upload"
@@ -209,7 +210,7 @@ class ApplyJobViewController: UIViewController, UIDocumentPickerDelegate {
             "cv": validCVLink,
             "dateApplied": Timestamp(date: Date()),
             "applicationStatus": "New",
-            "jobId": "6zdg3JhufgPeqIoQgiPH",
+            "jobId": jobId,
             "scheduledInterviewId": "",
             //adjust
             "userId": "61knRZkFlpe6SRmSo3Fr"
