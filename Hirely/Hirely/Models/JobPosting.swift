@@ -1,10 +1,3 @@
-//
-//  JobPosting.swift
-//  Hirely
-//
-//  Created by Manar Alsatrawi on 20/12/2024.
-//
-
 import Foundation
 import FirebaseCore
 
@@ -23,6 +16,7 @@ struct JobPosting {
     var jobRequirements: String
     var contactEmail: String
     var deadline: String
+    var isHidden: Bool
     var isFlagged: Bool
     var isReported: Bool
 
@@ -39,6 +33,7 @@ struct JobPosting {
         self.jobDescription = data["jobDescription"] as? String ?? "No Description"
         self.jobRequirements = data["jobRequirements"] as? String ?? "No Requirements"
         self.contactEmail = data["contactEmail"] as? String ?? "No Email"
+        self.isHidden = data["isHidden"] as? Bool ?? false
         self.isFlagged = data["isFlagged"] as? Bool ?? false
         self.isReported = data["isReported"] as? Bool ?? false
         
