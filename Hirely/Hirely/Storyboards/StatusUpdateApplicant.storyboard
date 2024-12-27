@@ -170,7 +170,7 @@
                                 <rect key="frame" x="25" y="193" width="343" height="625"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="interviewDetailCell" rowHeight="84" id="kN1-Hu-q9V">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="interviewInfoTableViewCell" rowHeight="84" id="kN1-Hu-q9V">
                                         <rect key="frame" x="0.0" y="50" width="343" height="84"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kN1-Hu-q9V" id="n2z-u2-awg">
@@ -216,6 +216,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="X94-MH-Psb" id="5AE-Vb-pc4"/>
+                                    <outlet property="delegate" destination="X94-MH-Psb" id="Pn5-wj-Ic1"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="sTd-lh-1Lk"/>

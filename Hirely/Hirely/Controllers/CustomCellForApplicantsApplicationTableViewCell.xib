@@ -30,8 +30,8 @@
                                     <action selector="nextBtnClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="l5Q-Qa-7Xd"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="pz8-jQ-xab">
-                                <rect key="frame" x="8" y="19.000000000000004" width="56" height="33.333333333333343"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="pz8-jQ-xab">
+                                <rect key="frame" x="8" y="19" width="56" height="33.333333333333329"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Position" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w0w-lu-CKc">
                                         <rect key="frame" x="0.0" y="0.0" width="56" height="17"/>
@@ -73,10 +73,6 @@
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.58431372549019611" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="pz8-jQ-xab" firstAttribute="leading" secondItem="KJw-nL-eY3" secondAttribute="leading" constant="8" id="Bsy-IH-8Qy"/>
-                            <constraint firstItem="pz8-jQ-xab" firstAttribute="centerY" secondItem="KJw-nL-eY3" secondAttribute="centerY" id="Y3F-yW-27I"/>
-                        </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                 <integer key="value" value="10"/>

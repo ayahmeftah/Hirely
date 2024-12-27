@@ -23,7 +23,7 @@ class ApplicantsApplicationViewController: UIViewController, UITableViewDelegate
         tableView.backgroundColor = .clear
         // Register the custom table view cell
         let nib = UINib(nibName: "CustomCellForApplicantsApplicationTableViewCell", bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: "appliedJobsCell")
+                tableView.register(nib, forCellReuseIdentifier: "appliedJobsCell")
         
         // Update the subtitle label with styled text
         updatePageSubLabel()

@@ -17,6 +17,8 @@
 		71BEBCF52CFC502B00DF795E /* HirelyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEBCF42CFC502B00DF795E /* HirelyTests.swift */; };
 		71BEBCFF2CFC502B00DF795E /* HirelyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEBCFE2CFC502B00DF795E /* HirelyUITests.swift */; };
 		71BEBD012CFC502B00DF795E /* HirelyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEBD002CFC502B00DF795E /* HirelyUITestsLaunchTests.swift */; };
+		C30205BB2D1E9B020061F9F7 /* InterviewInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30205BA2D1E9B020061F9F7 /* InterviewInfoTableViewCell.swift */; };
+		C30205BD2D1EA0450061F9F7 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = C30205BC2D1EA0450061F9F7 /* FirebaseFirestore */; };
 		C332A7082D1D81FB00D037EB /* Badges.swift in Sources */ = {isa = PBXBuildFile; fileRef = C332A7072D1D81FB00D037EB /* Badges.swift */; };
 		C332A70C2D1DC32000D037EB /* ApplicationJobDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C332A70B2D1DC32000D037EB /* ApplicationJobDetailsViewController.swift */; };
 		C34BECD42D1D624800F1E876 /* StatusUpdateApplicant.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C34BECD32D1D624800F1E876 /* StatusUpdateApplicant.storyboard */; };
@@ -61,6 +63,7 @@
 		71BEBCFA2CFC502B00DF795E /* HirelyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HirelyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		71BEBCFE2CFC502B00DF795E /* HirelyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HirelyUITests.swift; sourceTree = "<group>"; };
 		71BEBD002CFC502B00DF795E /* HirelyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HirelyUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C30205BA2D1E9B020061F9F7 /* InterviewInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterviewInfoTableViewCell.swift; sourceTree = "<group>"; };
 		C332A7072D1D81FB00D037EB /* Badges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Badges.swift; sourceTree = "<group>"; };
 		C332A70B2D1DC32000D037EB /* ApplicationJobDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationJobDetailsViewController.swift; sourceTree = "<group>"; };
 		C34BECD32D1D624800F1E876 /* StatusUpdateApplicant.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StatusUpdateApplicant.storyboard; sourceTree = "<group>"; };
@@ -76,6 +79,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C363937D2D006A4C00E14337 /* FirebaseDatabase in Frameworks */,
+				C30205BD2D1EA0450061F9F7 /* FirebaseFirestore in Frameworks */,
 				C363937F2D006A5600E14337 /* FirebaseAuth in Frameworks */,
 				C36393812D006A7800E14337 /* Cloudinary in Frameworks */,
 			);
@@ -125,6 +129,7 @@
 				C332A7072D1D81FB00D037EB /* Badges.swift */,
 				C332A70B2D1DC32000D037EB /* ApplicationJobDetailsViewController.swift */,
 				C3EDE42E2D1DD849003D45BF /* InterviewDetailViewController.swift */,
+				C30205BA2D1E9B020061F9F7 /* InterviewInfoTableViewCell.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -201,6 +206,7 @@
 				C363937C2D006A4C00E14337 /* FirebaseDatabase */,
 				C363937E2D006A5600E14337 /* FirebaseAuth */,
 				C36393802D006A7800E14337 /* Cloudinary */,
+				C30205BC2D1EA0450061F9F7 /* FirebaseFirestore */,
 			);
 			productName = Hirely;
 			productReference = 71BEBCDA2CFC502900DF795E /* Hirely.app */;
@@ -325,6 +331,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				71BEBCE22CFC502900DF795E /* ViewController.swift in Sources */,
+				C30205BB2D1E9B020061F9F7 /* InterviewInfoTableViewCell.swift in Sources */,
 				71BEBCDE2CFC502900DF795E /* AppDelegate.swift in Sources */,
 				C34BECDD2D1D737C00F1E876 /* CustomCellForApplicantsApplicationTableViewCell.swift in Sources */,
 				C332A70C2D1DC32000D037EB /* ApplicationJobDetailsViewController.swift in Sources */,
@@ -695,6 +702,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		C30205BC2D1EA0450061F9F7 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2C9302F62CFC9EDF00CAD615 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
 		C363937C2D006A4C00E14337 /* FirebaseDatabase */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 2C9302F62CFC9EDF00CAD615 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
