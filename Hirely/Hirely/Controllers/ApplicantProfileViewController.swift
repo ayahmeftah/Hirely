@@ -6,15 +6,21 @@
 //
 
 import UIKit
+import Cloudinary
+import FirebaseFirestore
 
 class ApplicantProfileViewController: UIViewController {
+    
+    let db = Firestore.firestore()
+    let userId = currentUser().getCurrentUserId()
+    let cloudinary = CloudinarySetup.cloudinarySetup()
     
     @IBOutlet weak var prefrencesSettingsTblView: UITableView!
     
     @IBOutlet weak var userEmail: UILabel!
     @IBOutlet weak var userName: UILabel!
     
-    @IBOutlet weak var profilePicture: UIImageView!
+    @IBOutlet weak var profilePicture: CLDUIImageView!
     
     
     var sections: [UserProfileSection]{
@@ -28,15 +34,47 @@ class ApplicantProfileViewController: UIViewController {
         return [firstSection, secondSection]
     }
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         configureTableView()
         prefrencesSettingsTblView.reloadData()
         
         profilePicture.layer.cornerRadius = profilePicture.layer.frame.size.width / 2
         profilePicture.clipsToBounds = true
+    }
+    
+    func fetchFill(){
+        let collection = db.collection("Users")
+        
+        collection.whereField("userId", isEqualTo: userId!).getDocuments { snapshot, error in
+            if let error = error{
+                print("Error getting document: \(error)")
+                return
+            }
+            
+            if let snapshot = snapshot{
+                for doc in snapshot.documents{
+                    let data = doc.data()
+                    
+                    if let userId = data["userId"] as? String, userId == self.userId{
+                        if let firstName = data["firstName"] as? String{
+                            if let lastName = data["lastName"] as? String{
+                                self.userName.text = "\(firstName) \(lastName)"
+                            }
+                        }
+                        
+                        if let email = data["email"] as? String{
+                            self.userEmail.text = email
+                        }
+                        
+                        if let profilePhotoLink = data["profilePhoto"] as? String{
+                            self.profilePicture.cldSetImage(profilePhotoLink, cloudinary: self.cloudinary)
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -45,8 +83,7 @@ extension ApplicantProfileViewController: UITableViewDelegate, UITableViewDataSo
     private func configureTableView(){
         prefrencesSettingsTblView.delegate = self
         prefrencesSettingsTblView.dataSource = self
-        userName.text = "Khalid Ali"
-        userEmail.text = "khalidali@gmail.com"
+        fetchFill()
         //prefrencesSettingsTblView.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
     }
     
