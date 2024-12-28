@@ -320,9 +320,17 @@ extension ResultsPageViewController: FilterAlertDelegate {
         self.selectedFilters = filters
         applyFilters() // Apply filters
         jobResultsTableView.reloadData() // Refresh the table
+        
+        // Update the City button label if a city filter is applied
+        if let selectedCity = filters["City"] {
+            CityBtnLbl.setTitle(selectedCity, for: .normal)
+        } else {
+            CityBtnLbl.setTitle("Select City", for: .normal) // Default text if no city is selected
+        }
     }
     
     func didResetFilters() {
         resetFilters() // Reset all filters
+        CityBtnLbl.setTitle("City", for: .normal) // Reset city button label
     }
 }
