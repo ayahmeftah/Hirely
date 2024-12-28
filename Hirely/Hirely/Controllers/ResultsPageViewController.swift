@@ -10,6 +10,62 @@ import FirebaseFirestore
 
 class ResultsPageViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating, UISearchBarDelegate {
     
+    //try poe
+    // Example button action to filter for full-time jobs
+    // Call this function when the user selects a filter
+    // Apply the search filter to the current jobs
+    func applySearchFilter() {
+        filteredJobs = jobs.filter { job in
+            job.jobTitle.lowercased().contains(searchQuery.lowercased())
+        }
+    }
+    
+    // Call this function when the user selects a filter
+    var selectedJobType: String? // Store the currently selected job type
+    // Apply both search and job type filters
+    func applyFilters() {
+        filteredJobs = jobs.filter { job in
+            let matchesSearchQuery = job.jobTitle.lowercased().contains(searchQuery.lowercased())
+            let matchesJobType = selectedJobType == nil || job.jobType.lowercased() == selectedJobType!.lowercased()
+            return matchesSearchQuery && matchesJobType
+        }
+    }
+    
+    // Call this function when the user selects a job type filter
+    func filterJobs(by jobType: String) {
+        selectedJobType = jobType
+        applyFilters()
+        
+        // Reload the table view
+        DispatchQueue.main.async {
+            self.jobResultsTableView.reloadData()
+        }
+    }
+    
+    // Example button action to filter for full-time jobs
+    @IBAction func filterFullTimeJobs(_ sender: UIButton) {
+        filterJobs(by: "Full-time")
+    }
+    
+    // Example button action to filter for part-time jobs
+    @IBAction func filterPartTimeJobs(_ sender: UIButton) {
+        filterJobs(by: "Part-time")
+    }
+    
+    // Example button action to clear filters applied to the search query
+    @IBAction func clearFilters(_ sender: UIButton) {
+        selectedJobType = nil // Clear job type filter
+        applyFilters() // Reapply filters based on the current search query
+        
+        // Reload the table view
+        DispatchQueue.main.async {
+            self.jobResultsTableView.reloadData()
+        }
+    }
+    
+    
+    //
+    
     @IBOutlet weak var filtersCollectionView: UICollectionView!
     @IBOutlet weak var jobResultsTableView: UITableView!
     @IBOutlet weak var CityBtnLbl: UIButton!

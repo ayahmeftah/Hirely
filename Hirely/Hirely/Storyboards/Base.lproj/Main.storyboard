@@ -136,8 +136,8 @@
                                     <outlet property="delegate" destination="68i-Du-0gL" id="a7I-Li-8W1"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N4l-VY-i20">
-                                <rect key="frame" x="126" y="65" width="247" height="51"/>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N4l-VY-i20">
+                                <rect key="frame" x="126" y="65" width="99" height="51"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="51" id="slP-Xa-5BJ"/>
                                 </constraints>
@@ -145,6 +145,33 @@
                                 <buttonConfiguration key="configuration" style="filled" image="mappin.and.ellipse" catalog="system" title="City"/>
                                 <connections>
                                     <action selector="didTapCity:" destination="68i-Du-0gL" eventType="touchUpInside" id="Gk5-gg-YSv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lWy-zo-0nY">
+                                <rect key="frame" x="233" y="65" width="45" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="full"/>
+                                <connections>
+                                    <action selector="filterFullTimeJobs:" destination="68i-Du-0gL" eventType="touchUpInside" id="0Qh-v7-69k"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A2d-0G-8X8">
+                                <rect key="frame" x="285" y="64" width="48" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="part"/>
+                                <connections>
+                                    <action selector="filterPartTimeJobs:" destination="68i-Du-0gL" eventType="touchUpInside" id="aX0-Hq-1qS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Z4-yN-NNs">
+                                <rect key="frame" x="266" y="111" width="67" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                                <connections>
+                                    <action selector="clearFilters:" destination="68i-Du-0gL" eventType="touchUpInside" id="Kwp-Xk-TaK"/>
                                 </connections>
                             </button>
                         </subviews>
