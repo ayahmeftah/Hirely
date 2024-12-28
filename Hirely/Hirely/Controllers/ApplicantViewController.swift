@@ -119,7 +119,7 @@ class ApplicantViewController: UIViewController, UICollectionViewDataSource, UIC
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         // Adjust cell size (e.g., 90% of screen width and desired height)
         let width = collectionView.frame.width * 0.9
-        let height: CGFloat = 180 // Adjust height as needed
+        let height: CGFloat = 200 // Adjust height as needed
         return CGSize(width: width, height: height)
     }
     
