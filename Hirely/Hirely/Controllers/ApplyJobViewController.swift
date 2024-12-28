@@ -19,9 +19,14 @@ class ApplyJobViewController: UIViewController, UIDocumentPickerDelegate {
 
     var fetchedCVURL: String? // Stores the fetched CV URL from Hirely
     var selectedCVURL: String? // Stores the selected CV file URL
+    
     var jobPosting: JobPosting? // Holds the fetched job posting data
     var companyDetails: CompanyDetails? // Holds the fetched company details
-    let jobId = "7J4ZFgnWengAKzKSM6dM" // Replace with the actual job document ID
+    
+    
+    var jobId = "7J4ZFgnWengAKzKSM6dM" // Replace with the actual job document ID
+    var userId = "ppRloi8VPTvhItiWAYTT"
+    var companyId = "RYINaYeqoq6WXBkdCOoK"
     
     // Cloudinary configuration
     let cloudName: String = "drkt3vace"
@@ -40,7 +45,7 @@ class ApplyJobViewController: UIViewController, UIDocumentPickerDelegate {
 
         // Fetch job posting and company details
         fetchJobPostingData()
-        fetchCompanyDetails(companyId: "RYINaYeqoq6WXBkdCOoK")
+        fetchCompanyDetails(companyId: companyId)
 
         // Set up UI with fetched data
         setUpUI()
@@ -73,7 +78,7 @@ class ApplyJobViewController: UIViewController, UIDocumentPickerDelegate {
 
     func fetchJobPostingData() {
         let db = Firestore.firestore()
-        let jobId = "7J4ZFgnWengAKzKSM6dM" // Replace with the actual job document ID
+        
 
         db.collection("jobPostings").document(jobId).getDocument { snapshot, error in
             if let error = error {
@@ -110,32 +115,26 @@ class ApplyJobViewController: UIViewController, UIDocumentPickerDelegate {
     }
 
     @objc func uploadCVTapped() {
-        // Show options for CV
         let alert = UIAlertController(title: "Upload CV", message: "Choose an option to upload your CV.", preferredStyle: .actionSheet)
 
-        // Option 1: Upload from Device
         alert.addAction(UIAlertAction(title: "Upload from Device", style: .default, handler: { _ in
             self.presentDocumentPicker(for: self.uploadCVbtn)
         }))
 
-        // Option 2: Fetch from Hirely
         alert.addAction(UIAlertAction(title: "Fetch from Hirely", style: .default, handler: { _ in
-            self.fetchFirstCVAndDisplay()
+            self.fetchAndDisplayCVOptions()
         }))
 
-        // Cancel Option
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
 
-        // Fix for iPad
         if let popoverController = alert.popoverPresentationController {
             popoverController.sourceView = self.uploadCVbtn
             popoverController.sourceRect = self.uploadCVbtn.bounds
-            popoverController.permittedArrowDirections = .any
         }
 
-        // Present the action sheet
         present(alert, animated: true, completion: nil)
     }
+
 
 
     func presentDocumentPicker(for button: UIButton) {
@@ -213,7 +212,7 @@ class ApplyJobViewController: UIViewController, UIDocumentPickerDelegate {
             "jobId": jobId,
             "scheduledInterviewId": "",
             //adjust
-            "userId": "61knRZkFlpe6SRmSo3Fr"
+            "userId": userId
             //"userId": getCurrentUserId() ?? "Unknown"
         ]
 
@@ -254,26 +253,127 @@ class ApplyJobViewController: UIViewController, UIDocumentPickerDelegate {
         selectedCVURL = nil
     }
 
-    func fetchFirstCVAndDisplay() {
-        let db = Firestore.firestore()
-        db.collection("CVs").getDocuments { snapshot, error in
-            if let error = error {
-                print("Error fetching CVs: \(error.localizedDescription)")
-                self.uploadCVbtn.setTitle("Upload Failed", for: .normal)
-                return
-            }
-
-            if let document = snapshot?.documents.first {
-                let data = document.data()
-                if let cvURL = data["cvUrl"] as? String {
-                    self.fetchedCVURL = cvURL
-                    self.uploadCVbtn.setTitle("File Uploaded", for: .normal)
+    func fetchAndDisplayCVOptions() {
+        getCVs { cvUrls in
+            DispatchQueue.main.async {
+                guard !cvUrls.isEmpty else {
+                    self.showAlert(title: "No CVs Found", message: "There are no CVs available for selection.")
+                    return
                 }
-            } else {
-                self.uploadCVbtn.setTitle("No CV Found", for: .normal)
+                
+                // Create and display an alert with CV options
+                let cvAlert = UIAlertController(title: "Select a CV", message: "Choose a CV to upload.", preferredStyle: .actionSheet)
+                
+                var count = 1 //counter
+                
+                for (cvId, cvUrl) in cvUrls {
+                    cvAlert.addAction(UIAlertAction(title: "CV \(count) ID: \(cvId)", style: .default, handler: { _ in
+                        // Set the selected CV URL and update the button title
+                        self.fetchedCVURL = cvUrl
+                        self.uploadCVbtn.setTitle("CV Uploaded", for: .normal)
+                        print("Selected CV URL: \(cvUrl)")
+                    }))
+                    count += 1 //increment
+                }
+                
+                cvAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+                
+                // Handle iPad popover presentation
+                if let popoverController = cvAlert.popoverPresentationController {
+                    popoverController.sourceView = self.uploadCVbtn
+                    popoverController.sourceRect = self.uploadCVbtn.bounds
+                }
+                
+                self.present(cvAlert, animated: true, completion: nil)
             }
         }
     }
+
+    // Fetch CVs for the current user
+    func getCVs(completion: @escaping ([String: String]) -> Void) {
+        let db = Firestore.firestore()
+        let userDocRef = db.collection("Users").document(userId)
+        var cvUrls: [String: String] = [:] // Dictionary to hold CV ID and URL pairs
+
+        userDocRef.getDocument { snapshot, error in
+            if let error = error {
+                print("Error fetching user data: \(error.localizedDescription)")
+                completion(cvUrls) // Return an empty dictionary
+                return
+            }
+
+            guard let data = snapshot?.data(),
+                  let cvIds = data["cvs"] as? [String], !cvIds.isEmpty else {
+                print("No CVs found for the user.")
+                completion(cvUrls) // Return an empty dictionary
+                return
+            }
+
+            print("Fetched CV IDs: \(cvIds)") // Debug log
+
+            let group = DispatchGroup() // To manage multiple asynchronous calls
+            
+            for cvId in cvIds {
+                group.enter()
+                db.collection("CVs").document(cvId).getDocument { snapshot, error in
+                    if let error = error {
+                        print("Error fetching CV details for ID \(cvId): \(error.localizedDescription)")
+                    } else if let data = snapshot?.data(), let cvUrl = data["cvUrl"] as? String {
+                        cvUrls[cvId] = cvUrl
+                    }
+                    group.leave()
+                }
+            }
+
+            group.notify(queue: .main) {
+                print("Fetched CV URLs: \(cvUrls)") // Debug log
+                completion(cvUrls) // Return the fetched CVs
+            }
+        }
+    }
+
+
+    private func fetchCVDetails(cvIds: [String], completion: @escaping ([String: String]) -> Void) {
+        let db = Firestore.firestore()
+        var cvUrls: [String: String] = [:] // [cvId: cvUrl]
+        let group = DispatchGroup()
+
+        for cvId in cvIds {
+            group.enter()
+            db.collection("CVs").document(cvId).getDocument { snapshot, error in
+                if let error = error {
+                    print("Error fetching CV details for ID \(cvId): \(error.localizedDescription)")
+                } else if let data = snapshot?.data(), let cvUrl = data["cvUrl"] as? String {
+                    cvUrls[cvId] = cvUrl
+                }
+                group.leave()
+            }
+        }
+
+        group.notify(queue: .main) {
+            completion(cvUrls)
+        }
+    }
+
+    private func displayCVSelectionOptions(cvUrls: [String: String]) {
+        let alert = UIAlertController(title: "Select CV", message: "Choose a CV to upload.", preferredStyle: .alert)
+
+        for (cvId, cvUrl) in cvUrls {
+            alert.addAction(UIAlertAction(title: "CV ID: \(cvId)", style: .default, handler: { _ in
+                self.fetchedCVURL = cvUrl
+                self.uploadCVbtn.setTitle("CV Selected", for: .normal)
+                print("Selected CV URL: \(cvUrl)")
+            }))
+        }
+
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+
+        DispatchQueue.main.async {
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+
+
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
             if segue.identifier == "goToCompanyDetails",
