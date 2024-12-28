@@ -67,7 +67,7 @@ class EditJobPostViewController: UIViewController, UITextFieldDelegate, UIPicker
             pickerContainerView.addSubview(cityPicker)
 
             // Create a "Done" button
-            let doneButton = UIButton(frame: CGRect(x: pickerContainerView.frame.width - 80, y: 0, width: 80, height: 50))
+            let doneButton = UIButton(frame: CGRect(x:pickerContainerView.frame.width - 80, y: 0, width: 80, height: 50))
             doneButton.setTitle("Done", for: .normal)
             doneButton.setTitleColor(.systemBlue, for: .normal)
             doneButton.addTarget(self, action: #selector(doneButtonTapped), for: .touchUpInside)
@@ -154,21 +154,20 @@ class EditJobPostViewController: UIViewController, UITextFieldDelegate, UIPicker
     func populateFields() {
         guard let job = jobPosting else {
             print("Job data not found")
-            return }
+            return
+        }
 
         jobTitleLbl.text = job.jobTitle
         selectJobTypeBtn.setTitle(job.jobType, for: .normal)
         selectLocationBtn.setTitle(job.locationType, for: .normal)
         selectCityButton.setTitle(job.city, for: .normal)
         selectExperienceBtn.setTitle(job.experienceLevel, for: .normal)
-        print("Minimum Salary: \(job.minSalary)")
-        print("Maximum Salary: \(job.maxSalary)")
         minSalarySlider.value = Float(job.minSalary)
         maxSalarySlider.value = Float(job.maxSalary)
-        // Update labels
-         minimumLbl.text = "\(job.minSalary) BHD"
-         maximumLbl.text = "\(job.maxSalary) BHD"
+        minimumLbl.text = "\(job.minSalary) BHD"
+        maximumLbl.text = "\(job.maxSalary) BHD"
         jobDescLbl.text = job.jobDescription
+    
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

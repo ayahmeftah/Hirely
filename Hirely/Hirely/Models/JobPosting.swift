@@ -41,7 +41,7 @@ struct JobPosting {
         self.jobRequirements = data["jobRequirements"] as? String ?? "No Requirements"
         self.contactEmail = data["contactEmail"] as? String ?? "No Email"
         self.isHidden = data["isHidden"] as? Bool ?? false
- self.isFlagged = data["isFlagged"] as? Bool ?? false
+        self.isFlagged = data["isFlagged"] as? Bool ?? false
         self.isReported = data["isReported"] as? Bool ?? false
         
         // Handle Firestore Timestamps and convert to String

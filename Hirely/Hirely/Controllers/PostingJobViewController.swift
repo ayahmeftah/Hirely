@@ -42,8 +42,75 @@ class PostingJobViewController: UIViewController, UITextViewDelegate {
     }
     
     @IBAction func postJobButtonTapped(_ sender: Any) {
-        saveJobPostingToFirestore()
+        if validateFields() {
+            saveJobPostingToFirestore()
+
+        }
     }
+    
+    // Function to validate all input fields
+    func validateFields() -> Bool {
+        // Check for empty required fields
+        if jobTitle?.isEmpty ?? true {
+            showValidationAlert(message: "Please provide a job title.")
+            return false
+        }
+        
+        if jobType?.isEmpty ?? true {
+            showValidationAlert(message: "Please select a job type.")
+            return false
+        }
+        
+        if jobLocationType?.isEmpty ?? true {
+            showValidationAlert(message: "Please select a job location type.")
+            return false
+        }
+        
+        if jobCity?.isEmpty ?? true {
+            showValidationAlert(message: "Please provide a job city.")
+            return false
+        }
+        
+        if experienceLevel?.isEmpty ?? true {
+            showValidationAlert(message: "Please select an experience level.")
+            return false
+        }
+        
+        if jobDescription?.isEmpty ?? true {
+            showValidationAlert(message: "Please provide a job description.")
+            return false
+        }
+        
+        if jobReqTxt.text.isEmpty || jobReqTxt.text.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
+            showValidationAlert(message: "Please provide job requirements.")
+            return false
+        }
+        
+        if selectedSkills.isEmpty {
+            showValidationAlert(message: "Please select at least one skill.")
+            return false
+        }
+        
+        if minSalary == nil || maxSalary == nil || (minSalary ?? 0) <= 0 || (maxSalary ?? 0) <= 0 {
+            showValidationAlert(message: "Please provide valid salary values.")
+            return false
+        }
+        
+        if minSalary ?? 0 > maxSalary ?? 0 {
+            showValidationAlert(message: "Minimum salary cannot be greater than maximum salary.")
+            return false
+        }
+        
+        return true
+    }
+
+    // Function to display validation alert
+    func showValidationAlert(message: String) {
+        let alert = UIAlertController(title: "Validation Error", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
+
     
     func openSkillsSelection() {
            let skillsVC = SkillsSelectionViewController()
@@ -204,7 +271,7 @@ class PostingJobViewController: UIViewController, UITextViewDelegate {
         let jobRequirements = jobReqTxt.text ?? ""
         let deadline = daedlineDatePicker.date
         let contactEmail = emailTxt.text ?? ""
-        let datePosted = Timestamp(date: Date()) //get current date
+        let datePosted = Timestamp(date: Date()) //current data stamp
         
         //convert deadline date to firestore format
         let deadlineTimestamp = Timestamp(date: deadline)
@@ -231,7 +298,10 @@ class PostingJobViewController: UIViewController, UITextViewDelegate {
             "skills": selectedSkills,
             "deadline": deadlineTimestamp,
             "contactEmail": contactEmail,
-            "postedDate" : datePosted
+            "postedDate" : datePosted,
+            "isFlagged": false,
+            "isReported": false,
+            "isHidden":false
         ]
         
         //saving the document
@@ -240,6 +310,8 @@ class PostingJobViewController: UIViewController, UITextViewDelegate {
                 print("Error saving job posting: \(error.localizedDescription)")
             } else {
                 print("Job posting saved successfully with docId: \(newDocRef.documentID)")
+                // Notify previous screen to refresh
+            NotificationCenter.default.post(name: NSNotification.Name("JobPosted"), object: nil)
                 self.showSuccessAlert()
             }
         }

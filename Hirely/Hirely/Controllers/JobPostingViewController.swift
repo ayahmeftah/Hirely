@@ -25,7 +25,19 @@ class JobPostingViewController: UIViewController, UITableViewDelegate, UITableVi
         let nib = UINib.init(nibName: "CustomJobPostTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "jobCustomCell")
         fetchJobPostings() //get data
+    
+        // Add observer for job posted notification
+        NotificationCenter.default.addObserver(self, selector: #selector(refreshJobs), name: NSNotification.Name("JobPosted"), object: nil)
 
+    }
+    
+    @objc private func refreshJobs() {
+        fetchJobPostings()
+        tableView.reloadData()
+    }
+
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name("JobPosted"), object: nil)
     }
     //get data from firestore
     func fetchJobPostings() {
@@ -133,7 +145,6 @@ extension JobPostingViewController {
         
         let job = jobPostings[indexPath.row]
         
-        // Use commonInit to configure the cell
         cell.commonInit(
             "Microsoft Corporation",
             "microsoft",
@@ -141,47 +152,47 @@ extension JobPostingViewController {
             job.jobType,
             "Posted: \(job.postedDate)",
             "Deadline: \(job.deadline)",
-            "Applicants: 0"
+            job
         )
         cell.backgroundColor = .clear
         cell.contentView.backgroundColor = .clear
         
         // Set the icon based on visibility status
-            let buttonIcon = job.isHidden ? "eye.slash.fill" : "eye.fill"
-            cell.hideButton.setImage(UIImage(systemName: buttonIcon), for: .normal)
+        let buttonIcon = job.isHidden ? "eye.slash.fill" : "eye.fill"
+        cell.hideButton.setImage(UIImage(systemName: buttonIcon), for: .normal)
         
         cell.jobPosting = job
-        cell.parentViewController = self //pass view controller to the cell
+        cell.parentViewController = self 
         cell.parentController = self
         return cell
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let cell = sender as? CustomJobPostTableViewCell,
+        if segue.identifier == "goToDetails",
+           let detailsVC = segue.destination as? JobDetailsViewController,
+           let cell = sender as? CustomJobPostTableViewCell,
            let indexPath = tableView.indexPath(for: cell) {
-            let selectedJob = jobPostings[indexPath.row] //get the selected job posting
-            
-            //pass to Job Details Screen
-            if segue.identifier == "goToDetails" {
-                if let detailsVC = segue.destination as? JobDetailsViewController {
-                    detailsVC.jobPosting = selectedJob
-                }
-            }
-            //pass to applicant review screen
-            else if segue.identifier == "goToApplicants" {
-                if let applicantsVC = segue.destination as? ReviewApplicationsViewController {
-    //                applicantsVC.jobPosting = selectedJob
-                }
-            }
-            // Pass to Edit Job Post Screen
-            else if segue.identifier == "editJobDetails" {
-                if let editVC = segue.destination as? EditJobPostViewController {
-                    editVC.jobPosting = selectedJob // Pass the selected job data
-                }
-            
-            }
+            // Handle navigating to job details
+            let selectedJob = jobPostings[indexPath.row]
+            print("Navigating to Job Details with job: \(selectedJob.jobTitle)")
+            detailsVC.jobPosting = selectedJob
+        } else if segue.identifier == "goToApplicants",
+                  let applicantsVC = segue.destination as? ReviewApplicationsViewController,
+                  let cell = sender as? CustomJobPostTableViewCell,
+                  let indexPath = tableView.indexPath(for: cell) {
+            // Handle navigating to applicants
+            let selectedJob = jobPostings[indexPath.row]
+            print("Navigating to Applicants for job: \(selectedJob.jobTitle)")
+            applicantsVC.jobId = selectedJob.docId
+        } else if segue.identifier == "editJobDetails",
+                  let editVC = segue.destination as? EditJobPostViewController,
+                  let selectedJob = sender as? JobPosting {
+            // Handle editing job post
+            print("Navigating to Edit Job Post with job: \(selectedJob.jobTitle)")
+            editVC.jobPosting = selectedJob
+        } else {
+            print("Unknown segue identifier or sender type")
         }
     }
+    }
 
-
-}

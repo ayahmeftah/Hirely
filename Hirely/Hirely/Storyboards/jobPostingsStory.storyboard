@@ -145,7 +145,7 @@
                         <outlet property="tableView" destination="qnd-wN-eFx" id="fJS-Zh-LDn"/>
                         <segue destination="lfB-W9-73z" kind="show" identifier="goToDetails" id="GL6-jc-9g4"/>
                         <segue destination="kU2-PH-bks" kind="show" identifier="goToApplicants" id="byP-ja-mHq"/>
-                        <segue destination="Hsp-1X-VII" kind="show" identifier="editJobDetails" id="rTi-Vr-MEw"/>
+                        <segue destination="Hsp-1X-VII" kind="show" identifier="editJobDetails" id="K8J-We-4oH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l3h-Lr-U7L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
