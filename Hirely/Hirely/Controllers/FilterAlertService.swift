@@ -21,16 +21,7 @@ class FilterAlertService{
         
         return alertVC
     }
-    
-//    func allFiltersAlert(with allFilters: [String: [String]]) -> FilterAlertViewController {
-//        let storyboard = UIStoryboard(name: "FilterAlertStoryboard", bundle: .main)
-//        let alertVC = storyboard.instantiateViewController(withIdentifier: "FilterAlertVC") as! FilterAlertViewController
-//        
-//        alertVC.allFilters = allFilters
-//        alertVC.isMultiCategory = true // Indicate that multiple categories are displayed
-//        
-//        return alertVC
-//    }
+
     func allFiltersAlert(with allFilters: [String: [String]]) -> FilterAlertViewController {
         let storyboard = UIStoryboard(name: "FilterAlertStoryboard", bundle: .main)
         let alertVC = storyboard.instantiateViewController(withIdentifier: "FilterAlertVC") as! FilterAlertViewController

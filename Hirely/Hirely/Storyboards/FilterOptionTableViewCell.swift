@@ -14,13 +14,6 @@ class FilterOptionTableViewCell: UITableViewCell {
     
     var didSelectOption: ((String, Bool) -> Void)?
 
-    
-//    @IBAction func didTapCheckBox(_ sender: UIButton) {
-//        sender.isSelected.toggle() // Toggle the selected state
-//        updateCheckBoxImage(for: sender.isSelected) // Update the image based on the selected state
-//        print("Checkbox tapped for: \(filterOptionLbl.text ?? "")")
-//    }
-    
     @IBAction func didTapCheckBox(_ sender: UIButton) {
         sender.isSelected.toggle()
         updateCheckBoxImage(for: sender.isSelected)
@@ -38,7 +31,10 @@ class FilterOptionTableViewCell: UITableViewCell {
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+        // Highlight the cell with a light blue color when selected
+        self.contentView.backgroundColor = selected ? UIColor.systemBlue.withAlphaComponent(0.3) : UIColor.clear
     }
+
     
     func filterInit(_ filterOption: String) {
         filterOptionLbl.text = filterOption

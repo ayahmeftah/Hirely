@@ -81,20 +81,6 @@ class ResultsPageViewController: UIViewController, UICollectionViewDataSource, U
     var filteredJobs: [JobPosting] = []
     var searchQuery: String = ""
     
-//    @IBAction func didTapAllFilters(_ sender: Any) {
-//        let allFilters: [String: [String]] = [
-//            "City": CityOptions.allCases.map { $0.rawValue },
-//            "Job Type": JobTypeOptions.allCases.map { $0.rawValue },
-//            "Experience Level": ExperienceLevelOptions.allCases.map { $0.rawValue },
-//            "Location Type": LocationTypeOptions.allCases.map { $0.rawValue }
-//        ]
-//        
-//        let filterAlertVC = FilterAlertService().allFiltersAlert(with: allFilters)
-//        
-//        filterAlertVC.modalPresentationStyle = .overCurrentContext
-//        filterAlertVC.modalTransitionStyle = .crossDissolve
-//        self.present(filterAlertVC, animated: true, completion: nil)
-//    }
     var selectedFilters: [String: String] = [:]
     
     @IBAction func didTapAllFilters(_ sender: Any) {
@@ -113,20 +99,14 @@ class ResultsPageViewController: UIViewController, UICollectionViewDataSource, U
         self.present(filterAlertVC, animated: true, completion: nil)
     }
 
-
-
-    
-    
     @IBAction func didTapCity(_ sender: Any) {
-        let filterAlertVC = FilterAlertService().filterAlert(with: CityOptions.self, title: "City")
+        let cityFilters: [String: [String]] = [
+            "City": CityOptions.allCases.map { $0.rawValue }
+        ]
         
-        // Handle the selection callback
-        filterAlertVC.didSelectOption = { [weak self] selectedOption in
-            guard let self = self else { return }
-            self.CityBtnLbl.setTitle(selectedOption, for: .normal) // Update the button title
-            print("Selected City: \(String(describing: selectedOption))")
-        }
-        
+        let filterAlertVC = FilterAlertService().allFiltersAlert(with: cityFilters)
+        filterAlertVC.selectedFilters = self.selectedFilters // Pass existing filters
+        filterAlertVC.delegate = self // Set the delegate
         filterAlertVC.modalPresentationStyle = .overCurrentContext
         filterAlertVC.modalTransitionStyle = .crossDissolve
         self.present(filterAlertVC, animated: true, completion: nil)

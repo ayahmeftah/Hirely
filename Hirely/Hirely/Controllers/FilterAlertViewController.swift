@@ -74,28 +74,7 @@ class FilterAlertViewController: UIViewController, UITableViewDelegate, UITableV
         }
     }
     
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        guard let cell = tableView.dequeueReusableCell(withIdentifier: "filterOptionCell", for: indexPath) as? FilterOptionTableViewCell else {
-//            return UITableViewCell()
-//        }
-//        
-//        let option: String
-//        if isMultiCategory {
-//            let category = Array(allFilters.keys)[indexPath.section]
-//            option = allFilters[category]?[indexPath.row] ?? ""
-//            let isSelected = selectedFilters[category] == option
-//            cell.checkBoxBtn.isSelected = isSelected
-//            cell.updateCheckBoxImage(for: isSelected)
-//        } else {
-//            option = singleFilterOptions[indexPath.row]
-//            let isSelected = selectedFilters[singleFilterTitle ?? ""] == option
-//            cell.checkBoxBtn.isSelected = isSelected
-//            cell.updateCheckBoxImage(for: isSelected)
-//        }
-//        
-//        cell.filterInit(option)
-//        return cell
-//    }
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "filterOptionCell", for: indexPath) as? FilterOptionTableViewCell else {
             return UITableViewCell()
@@ -105,35 +84,45 @@ class FilterAlertViewController: UIViewController, UITableViewDelegate, UITableV
         if isMultiCategory {
             let category = Array(allFilters.keys)[indexPath.section]
             option = allFilters[category]?[indexPath.row] ?? ""
+            cell.filterInit(option)
+            
+            // Configure the cell's checkbox state
+            cell.checkBoxBtn.isSelected = selectedFilters[category] == option
+            cell.updateCheckBoxImage(for: cell.checkBoxBtn.isSelected)
         } else {
             option = singleFilterOptions[indexPath.row]
+            cell.filterInit(option)
+            
+            // Configure the cell's checkbox state
+            cell.checkBoxBtn.isSelected = selectedFilters[singleFilterTitle ?? ""] == option
+            cell.updateCheckBoxImage(for: cell.checkBoxBtn.isSelected)
         }
         
-        cell.filterInit(option)
-        cell.didSelectOption = { [weak self] selectedOption, isSelected in
+        // Handle checkbox selection via the cell's closure
+        cell.didSelectOption = { [weak self] option, isSelected in
             guard let self = self else { return }
             
-            if isMultiCategory {
+            if self.isMultiCategory {
                 let category = Array(self.allFilters.keys)[indexPath.section]
                 if isSelected {
-                    self.selectedFilters[category] = selectedOption // Add to selectedFilters
+                    self.selectedFilters[category] = option
                 } else {
-                    self.selectedFilters.removeValue(forKey: category) // Remove from selectedFilters
+                    self.selectedFilters[category] = nil
                 }
             } else {
                 if isSelected {
-                    self.selectedFilters[self.singleFilterTitle ?? ""] = selectedOption // Add to selectedFilters
+                    self.selectedFilters[self.singleFilterTitle ?? ""] = option
                 } else {
-                    self.selectedFilters.removeValue(forKey: self.singleFilterTitle ?? "") // Remove from selectedFilters
+                    self.selectedFilters[self.singleFilterTitle ?? ""] = nil
                 }
             }
+            
+            tableView.reloadData() // Reflect the changes in the UI
         }
         
         return cell
     }
 
-    
-    
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = UIView()
@@ -166,16 +155,7 @@ class FilterAlertViewController: UIViewController, UITableViewDelegate, UITableV
         return 40
     }
     
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        guard isMultiCategory else { return }
-//        
-//        let category = Array(allFilters.keys)[indexPath.section]
-//        let selectedOption = allFilters[category]?[indexPath.row] ?? ""
-//        selectedFilters[category] = selectedOption
-//        print("Selected \(selectedOption) in \(category)")
-//        
-//        // Optionally dismiss the alert or allow multiple selections
-//    }
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedOption: String
         if isMultiCategory {
@@ -189,8 +169,15 @@ class FilterAlertViewController: UIViewController, UITableViewDelegate, UITableV
             print("Selected \(selectedOption) for category \(singleFilterTitle ?? "")")
         }
         
-        tableView.reloadData() // Update the UI to reflect selection
+        // Get the cell for the selected row
+        if let cell = tableView.cellForRow(at: indexPath) as? FilterOptionTableViewCell {
+            cell.checkBoxBtn.isSelected = true // Update the checkbox state
+            cell.updateCheckBoxImage(for: true) // Update the checkbox image
+        }
+        
+        tableView.reloadData() // Reload the table view to reflect selection
     }
+
 
 
     
