@@ -29,6 +29,10 @@
 		C363937F2D006A5600E14337 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = C363937E2D006A5600E14337 /* FirebaseAuth */; };
 		C36393812D006A7800E14337 /* Cloudinary in Frameworks */ = {isa = PBXBuildFile; productRef = C36393802D006A7800E14337 /* Cloudinary */; };
 		C3EDE42F2D1DD849003D45BF /* InterviewDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EDE42E2D1DD849003D45BF /* InterviewDetailViewController.swift */; };
+		D2ECF57A2D1F364600E23AC0 /* JobPosting.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2ECF5782D1F364600E23AC0 /* JobPosting.swift */; };
+		D2ECF57B2D1F364600E23AC0 /* CompanyDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2ECF5792D1F364600E23AC0 /* CompanyDetails.swift */; };
+		D2FD4CBA2D1ECC02007E137C /* AppliedJobs.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FD4CB92D1ECC02007E137C /* AppliedJobs.swift */; };
+		D2FD4CBC2D1ECEF8007E137C /* ScheduledInterview.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FD4CBB2D1ECEF8007E137C /* ScheduledInterview.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +75,10 @@
 		C34BECDB2D1D737C00F1E876 /* CustomCellForApplicantsApplicationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCellForApplicantsApplicationTableViewCell.swift; sourceTree = "<group>"; };
 		C34BECDC2D1D737C00F1E876 /* CustomCellForApplicantsApplicationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCellForApplicantsApplicationTableViewCell.xib; sourceTree = "<group>"; };
 		C3EDE42E2D1DD849003D45BF /* InterviewDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterviewDetailViewController.swift; sourceTree = "<group>"; };
+		D2ECF5782D1F364600E23AC0 /* JobPosting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JobPosting.swift; path = "../../../../apply works/Hirely/Hirely/Hirely/structs/JobPosting.swift"; sourceTree = "<group>"; };
+		D2ECF5792D1F364600E23AC0 /* CompanyDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CompanyDetails.swift; path = "../../../../apply works/Hirely/Hirely/Hirely/structs/CompanyDetails.swift"; sourceTree = "<group>"; };
+		D2FD4CB92D1ECC02007E137C /* AppliedJobs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppliedJobs.swift; sourceTree = "<group>"; };
+		D2FD4CBB2D1ECEF8007E137C /* ScheduledInterview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduledInterview.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +130,8 @@
 		711B4EBF2CFC57F300910FB6 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D2ECF5792D1F364600E23AC0 /* CompanyDetails.swift */,
+				D2ECF5782D1F364600E23AC0 /* JobPosting.swift */,
 				71BEBCE12CFC502900DF795E /* ViewController.swift */,
 				C34BECD52D1D714D00F1E876 /* ApplicantsApplicationViewController.swift */,
 				C34BECDB2D1D737C00F1E876 /* CustomCellForApplicantsApplicationTableViewCell.swift */,
@@ -130,6 +140,8 @@
 				C332A70B2D1DC32000D037EB /* ApplicationJobDetailsViewController.swift */,
 				C3EDE42E2D1DD849003D45BF /* InterviewDetailViewController.swift */,
 				C30205BA2D1E9B020061F9F7 /* InterviewInfoTableViewCell.swift */,
+				D2FD4CB92D1ECC02007E137C /* AppliedJobs.swift */,
+				D2FD4CBB2D1ECEF8007E137C /* ScheduledInterview.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -331,13 +343,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				71BEBCE22CFC502900DF795E /* ViewController.swift in Sources */,
+				D2FD4CBA2D1ECC02007E137C /* AppliedJobs.swift in Sources */,
 				C30205BB2D1E9B020061F9F7 /* InterviewInfoTableViewCell.swift in Sources */,
 				71BEBCDE2CFC502900DF795E /* AppDelegate.swift in Sources */,
 				C34BECDD2D1D737C00F1E876 /* CustomCellForApplicantsApplicationTableViewCell.swift in Sources */,
+				D2ECF57B2D1F364600E23AC0 /* CompanyDetails.swift in Sources */,
 				C332A70C2D1DC32000D037EB /* ApplicationJobDetailsViewController.swift in Sources */,
+				D2FD4CBC2D1ECEF8007E137C /* ScheduledInterview.swift in Sources */,
 				C332A7082D1D81FB00D037EB /* Badges.swift in Sources */,
 				C3EDE42F2D1DD849003D45BF /* InterviewDetailViewController.swift in Sources */,
 				C34BECD62D1D714D00F1E876 /* ApplicantsApplicationViewController.swift in Sources */,
+				D2ECF57A2D1F364600E23AC0 /* JobPosting.swift in Sources */,
 				71BEBCE02CFC502900DF795E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
