@@ -25,6 +25,7 @@ struct JobPosting {
     var deadline: String
     var isFlagged: Bool
     var isReported: Bool
+    var isSaved: Bool
     
     init(data: [String: Any]) {
         self.docId = data["docId"] as? String ?? ""
@@ -41,6 +42,7 @@ struct JobPosting {
         self.contactEmail = data["contactEmail"] as? String ?? "No Email"
         self.isFlagged = data["isFlagged"] as? Bool ?? false
         self.isReported = data["isReported"] as? Bool ?? false
+        self.isSaved = data["isSaved"] as? Bool ?? false
         
         // Handle Firestore Timestamps and convert to String
         if let postedTimestamp = data["postedDate"] as? Timestamp {

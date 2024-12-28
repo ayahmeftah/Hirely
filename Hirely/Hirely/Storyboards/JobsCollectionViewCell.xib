@@ -124,8 +124,11 @@
             </constraints>
             <size key="customSize" width="224" height="129"/>
             <connections>
+                <outlet property="bookmarkButton" destination="kYq-Uo-nvY" id="aj8-qe-fbu"/>
                 <outlet property="companyImage" destination="wys-Vv-QG2" id="gdu-Be-9Jx"/>
                 <outlet property="companyNameLbl" destination="IUw-Lr-Ivo" id="WZR-4x-j2d"/>
+                <outlet property="jobDeadlineDateLbl" destination="aXk-IW-PBT" id="kwg-PF-zMC"/>
+                <outlet property="jobPostedDateLbl" destination="xOQ-Kr-cL8" id="cll-Nw-HN3"/>
                 <outlet property="jobTitleLbl" destination="GDG-Bi-tYA" id="9xo-zV-dJF"/>
                 <outlet property="jobTypeLbl" destination="Lzo-9W-m81" id="Wl7-Jk-wTj"/>
             </connections>

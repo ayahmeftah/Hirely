@@ -109,7 +109,7 @@ class ApplicantViewController: UIViewController, UICollectionViewDataSource, UIC
         let job = jobPostings[indexPath.row]
         
         // Pass job details to cell
-        cell.postInit(job.jobTitle, job.jobType, job.city, "defaultImage")
+        cell.postInit("Microsoft", job.jobType, job.jobTitle, "microsoft", job.postedDate, job.deadline, job.docId, job.isSaved)
         cell.contentView.layer.cornerRadius = 10
         cell.contentView.layer.masksToBounds = true
         return cell
