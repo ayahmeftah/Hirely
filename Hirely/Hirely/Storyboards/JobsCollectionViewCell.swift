@@ -16,6 +16,15 @@ class JobsCollectionViewCell: UICollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.layer.cornerRadius = 12
+        self.layer.masksToBounds = true
+        self.backgroundColor = .clear
+
+        
+        jobTitleLbl.adjustsFontForContentSizeCategory = true
+        companyNameLbl.adjustsFontForContentSizeCategory = true
+        jobTypeLbl.adjustsFontForContentSizeCategory = true
+        
         // Rounding the image
         self.companyImage.layer.cornerRadius = companyImage.frame.size.width / 2
         companyImage.clipsToBounds = true
