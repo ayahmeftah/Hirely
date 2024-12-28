@@ -204,7 +204,6 @@ class JobDetailsApplicantViewController: UIViewController {
     
     //initialize view with job data
     func setupUI() {
-        guard let job = jobPosting else { return } // Ensure data is passed
         
 //        companyNameLabel.text = "microsoft"
 //        jobTitleLabel.text = job.jobTitle
