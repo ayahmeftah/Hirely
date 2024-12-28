@@ -14,7 +14,6 @@ class ResultsPageViewController: UIViewController, UICollectionViewDataSource, U
     @IBOutlet weak var jobResultsTableView: UITableView!
     @IBOutlet weak var CityBtnLbl: UIButton!
     
-    var selectedFilters: [String: String] = [:] // To store selected filters
     
     let filters = ["Job Type", "Experience Level", "Location Type", "Salary Range"]
     var searchController: UISearchController? // To hold the passed search controller
@@ -24,10 +23,10 @@ class ResultsPageViewController: UIViewController, UICollectionViewDataSource, U
     
     @IBAction func didTapAllFilters(_ sender: Any) {
         let allFilters: [String: [String]] = [
-            "City": City.allCases.map { $0.rawValue },
-            "Job Type": JobType.allCases.map { $0.rawValue },
-            "Experience Level": ExperienceLevel.allCases.map { $0.rawValue },
-            "Location Type": LocationType.allCases.map { $0.rawValue }
+            "City": CityOptions.allCases.map { $0.rawValue },
+            "Job Type": JobTypeOptions.allCases.map { $0.rawValue },
+            "Experience Level": ExperienceLevelOptions.allCases.map { $0.rawValue },
+            "Location Type": LocationTypeOptions.allCases.map { $0.rawValue }
         ]
         
         let filterAlertVC = FilterAlertService().allFiltersAlert(with: allFilters)
@@ -39,7 +38,7 @@ class ResultsPageViewController: UIViewController, UICollectionViewDataSource, U
     
     
     @IBAction func didTapCity(_ sender: Any) {
-        let filterAlertVC = FilterAlertService().filterAlert(with: City.self, title: "City")
+        let filterAlertVC = FilterAlertService().filterAlert(with: CityOptions.self, title: "City")
         
         // Handle the selection callback
         filterAlertVC.didSelectOption = { [weak self] selectedOption in
@@ -116,7 +115,6 @@ class ResultsPageViewController: UIViewController, UICollectionViewDataSource, U
             }
     }
     
-    
     // Collection view of filters
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return filters.count
@@ -150,11 +148,11 @@ class ResultsPageViewController: UIViewController, UICollectionViewDataSource, U
         
         switch selectedFilter {
         case "Job Type":
-            presentFilterAlert(for: JobType.self, title: selectedFilter)
+            presentFilterAlert(for: JobTypeOptions.self, title: selectedFilter)
         case "Experience Level":
-            presentFilterAlert(for: ExperienceLevel.self, title: selectedFilter)
+            presentFilterAlert(for: ExperienceLevelOptions.self, title: selectedFilter)
         case "Location Type":
-            presentFilterAlert(for: LocationType.self, title: selectedFilter)
+            presentFilterAlert(for: LocationTypeOptions.self, title: selectedFilter)
         case "Salary Range":
             // Handle Salary Range or add a specific alert view logic for custom filtering
             print("Salary Range filter selected.")
@@ -199,7 +197,6 @@ class ResultsPageViewController: UIViewController, UICollectionViewDataSource, U
         filterAlertVC.modalTransitionStyle = .crossDissolve
         self.present(filterAlertVC, animated: true, completion: nil)
     }
-    
     
     func updateSearchResults(for searchController: UISearchController) {
         guard let searchText = searchController.searchBar.text?.lowercased(), !searchText.isEmpty else {

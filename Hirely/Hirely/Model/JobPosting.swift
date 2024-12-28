@@ -7,6 +7,7 @@
 
 import Foundation
 import FirebaseCore
+import FirebaseFirestore
 
 struct JobPosting {
     let docId: String

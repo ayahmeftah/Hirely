@@ -12,10 +12,21 @@ class FilterOptionTableViewCell: UITableViewCell {
     @IBOutlet weak var checkBoxBtn: UIButton!
     @IBOutlet weak var filterOptionLbl: UILabel!
     
+    var didSelectOption: ((String) -> Void)?
+
+    
+//    @IBAction func didTapCheckBox(_ sender: UIButton) {
+//        sender.isSelected.toggle() // Toggle the selected state
+//        updateCheckBoxImage(for: sender.isSelected) // Update the image based on the selected state
+//        print("Checkbox tapped for: \(filterOptionLbl.text ?? "")")
+//    }
+    
     @IBAction func didTapCheckBox(_ sender: UIButton) {
-        sender.isSelected.toggle() // Toggle the selected state
-        updateCheckBoxImage(for: sender.isSelected) // Update the image based on the selected state
-        print("Checkbox tapped for: \(filterOptionLbl.text ?? "")")
+        sender.isSelected.toggle()
+        updateCheckBoxImage(for: sender.isSelected)
+        if let option = filterOptionLbl.text {
+            didSelectOption?(option)
+        }
     }
     
     override func awakeFromNib() {

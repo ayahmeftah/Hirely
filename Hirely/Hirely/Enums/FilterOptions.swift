@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-enum City: String, CaseIterable {
+enum CityOptions: String, CaseIterable {
     case manama = "Manama"
     case muharraq = "Muharraq"
     case isaTown = "Isa Town"
@@ -34,7 +34,7 @@ enum City: String, CaseIterable {
     case diyar = "Diyar Al Muharraq"
 }
 
-enum ExperienceLevel: String, CaseIterable {
+enum ExperienceLevelOptions: String, CaseIterable {
     case junior = "Junior"
     case associate = "Associate"
     case midLevel = "Mid-level"
@@ -43,7 +43,7 @@ enum ExperienceLevel: String, CaseIterable {
     case manager = "Manager"
 }
 
-enum JobType: String, CaseIterable {
+enum JobTypeOptions: String, CaseIterable {
     case fullTime = "Full-time"
     case partTime = "Part-time"
     case internship = "Internship"
@@ -51,7 +51,7 @@ enum JobType: String, CaseIterable {
     case seasonal = "Seasonal"
 }
 
-enum LocationType: String, CaseIterable {
+enum LocationTypeOptions: String, CaseIterable {
     case onSite = "On-site"
     case remote = "Remote"
     case hybrid = "Hybrid"
