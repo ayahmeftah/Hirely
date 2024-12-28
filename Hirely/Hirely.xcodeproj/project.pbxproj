@@ -18,6 +18,27 @@
 		71BEBCF52CFC502B00DF795E /* HirelyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEBCF42CFC502B00DF795E /* HirelyTests.swift */; };
 		71BEBCFF2CFC502B00DF795E /* HirelyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEBCFE2CFC502B00DF795E /* HirelyUITests.swift */; };
 		71BEBD012CFC502B00DF795E /* HirelyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEBD002CFC502B00DF795E /* HirelyUITestsLaunchTests.swift */; };
+		71D5BF7F2D2086660098193C /* UserAuthentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71D5BF7E2D2086650098193C /* UserAuthentication.storyboard */; };
+		71D5BF812D2086F50098193C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D5BF802D2086F50098193C /* LoginViewController.swift */; };
+		71D5BF872D20871A0098193C /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D5BF822D20871A0098193C /* SignUpViewController.swift */; };
+		71D5BF882D20871A0098193C /* UploadProfilePhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D5BF832D20871A0098193C /* UploadProfilePhotoViewController.swift */; };
+		71D5BF892D20871A0098193C /* RegisterExpertiseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D5BF842D20871A0098193C /* RegisterExpertiseViewController.swift */; };
+		71D5BF8A2D20871A0098193C /* RegisterInterestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D5BF852D20871A0098193C /* RegisterInterestsViewController.swift */; };
+		71D5BF8B2D20871A0098193C /* RegisterDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D5BF862D20871A0098193C /* RegisterDetailsViewController.swift */; };
+		71D5BF922D20872D0098193C /* EmploymentTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D5BF8C2D20872D0098193C /* EmploymentTypeViewController.swift */; };
+		71D5BF932D20872D0098193C /* SkillTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D5BF8D2D20872D0098193C /* SkillTableViewCell.swift */; };
+		71D5BF942D20872D0098193C /* TechnicalSkillsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D5BF8E2D20872D0098193C /* TechnicalSkillsViewController.swift */; };
+		71D5BF952D20872D0098193C /* SoftSkillsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D5BF8F2D20872D0098193C /* SoftSkillsViewController.swift */; };
+		71D5BF962D20872D0098193C /* SalaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D5BF902D20872D0098193C /* SalaryViewController.swift */; };
+		71D5BF972D20872D0098193C /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D5BF912D20872D0098193C /* WelcomeViewController.swift */; };
+		71D5BF992D2087660098193C /* ExperienceLevelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D5BF982D2087660098193C /* ExperienceLevelViewController.swift */; };
+		71D5BFA22D2088D40098193C /* Cloudinary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D5BF9B2D2088D30098193C /* Cloudinary.swift */; };
+		71D5BFA32D2088D40098193C /* AddSoftSkillAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D5BF9C2D2088D30098193C /* AddSoftSkillAlert.swift */; };
+		71D5BFA42D2088D40098193C /* SKillItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D5BF9D2D2088D30098193C /* SKillItem.swift */; };
+		71D5BFA52D2088D40098193C /* currentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D5BF9E2D2088D30098193C /* currentUser.swift */; };
+		71D5BFA62D2088D40098193C /* Applicant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D5BF9F2D2088D30098193C /* Applicant.swift */; };
+		71D5BFA72D2088D40098193C /* Experience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D5BFA02D2088D30098193C /* Experience.swift */; };
+		71D5BFA82D2088D40098193C /* UserProfileSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D5BFA12D2088D40098193C /* UserProfileSection.swift */; };
 		C363937D2D006A4C00E14337 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = C363937C2D006A4C00E14337 /* FirebaseDatabase */; };
 		C363937F2D006A5600E14337 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = C363937E2D006A5600E14337 /* FirebaseAuth */; };
 		C36393812D006A7800E14337 /* Cloudinary in Frameworks */ = {isa = PBXBuildFile; productRef = C36393802D006A7800E14337 /* Cloudinary */; };
@@ -55,6 +76,27 @@
 		71BEBCFA2CFC502B00DF795E /* HirelyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HirelyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		71BEBCFE2CFC502B00DF795E /* HirelyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HirelyUITests.swift; sourceTree = "<group>"; };
 		71BEBD002CFC502B00DF795E /* HirelyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HirelyUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		71D5BF7E2D2086650098193C /* UserAuthentication.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = UserAuthentication.storyboard; path = "../../../../../../../Documents/Mayar Branches/Hirely/Hirely/Hirely/Storyboards/UserAuthentication.storyboard"; sourceTree = "<group>"; };
+		71D5BF802D2086F50098193C /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = "../../../../../../../Documents/Mayar Branches/Hirely/Hirely/Hirely/Controllers/LoginViewController.swift"; sourceTree = "<group>"; };
+		71D5BF822D20871A0098193C /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignUpViewController.swift; path = "../../../../../../../Documents/Mayar Branches/Hirely/Hirely/Hirely/Controllers/SignUpViewController.swift"; sourceTree = "<group>"; };
+		71D5BF832D20871A0098193C /* UploadProfilePhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UploadProfilePhotoViewController.swift; path = "../../../../../../../Documents/Mayar Branches/Hirely/Hirely/Hirely/Controllers/UploadProfilePhotoViewController.swift"; sourceTree = "<group>"; };
+		71D5BF842D20871A0098193C /* RegisterExpertiseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterExpertiseViewController.swift; path = "../../../../../../../Documents/Mayar Branches/Hirely/Hirely/Hirely/Controllers/RegisterExpertiseViewController.swift"; sourceTree = "<group>"; };
+		71D5BF852D20871A0098193C /* RegisterInterestsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterInterestsViewController.swift; path = "../../../../../../../Documents/Mayar Branches/Hirely/Hirely/Hirely/Controllers/RegisterInterestsViewController.swift"; sourceTree = "<group>"; };
+		71D5BF862D20871A0098193C /* RegisterDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterDetailsViewController.swift; path = "../../../../../../../Documents/Mayar Branches/Hirely/Hirely/Hirely/Controllers/RegisterDetailsViewController.swift"; sourceTree = "<group>"; };
+		71D5BF8C2D20872D0098193C /* EmploymentTypeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmploymentTypeViewController.swift; path = "../../../../../../../Documents/Mayar Branches/Hirely/Hirely/Hirely/Controllers/EmploymentTypeViewController.swift"; sourceTree = "<group>"; };
+		71D5BF8D2D20872D0098193C /* SkillTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SkillTableViewCell.swift; path = "../../../../../../../Documents/Mayar Branches/Hirely/Hirely/Hirely/Controllers/SkillTableViewCell.swift"; sourceTree = "<group>"; };
+		71D5BF8E2D20872D0098193C /* TechnicalSkillsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TechnicalSkillsViewController.swift; path = "../../../../../../../Documents/Mayar Branches/Hirely/Hirely/Hirely/Controllers/TechnicalSkillsViewController.swift"; sourceTree = "<group>"; };
+		71D5BF8F2D20872D0098193C /* SoftSkillsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SoftSkillsViewController.swift; path = "../../../../../../../Documents/Mayar Branches/Hirely/Hirely/Hirely/Controllers/SoftSkillsViewController.swift"; sourceTree = "<group>"; };
+		71D5BF902D20872D0098193C /* SalaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SalaryViewController.swift; path = "../../../../../../../Documents/Mayar Branches/Hirely/Hirely/Hirely/Controllers/SalaryViewController.swift"; sourceTree = "<group>"; };
+		71D5BF912D20872D0098193C /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WelcomeViewController.swift; path = "../../../../../../../Documents/Mayar Branches/Hirely/Hirely/Hirely/Controllers/WelcomeViewController.swift"; sourceTree = "<group>"; };
+		71D5BF982D2087660098193C /* ExperienceLevelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceLevelViewController.swift; sourceTree = "<group>"; };
+		71D5BF9B2D2088D30098193C /* Cloudinary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cloudinary.swift; path = "../../../../../../Documents/Mayar Branches/Hirely/Hirely/Hirely/Models/Cloudinary.swift"; sourceTree = "<group>"; };
+		71D5BF9C2D2088D30098193C /* AddSoftSkillAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddSoftSkillAlert.swift; path = "../../../../../../Documents/Mayar Branches/Hirely/Hirely/Hirely/Models/AddSoftSkillAlert.swift"; sourceTree = "<group>"; };
+		71D5BF9D2D2088D30098193C /* SKillItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SKillItem.swift; path = "../../../../../../Documents/Mayar Branches/Hirely/Hirely/Hirely/Models/SKillItem.swift"; sourceTree = "<group>"; };
+		71D5BF9E2D2088D30098193C /* currentUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = currentUser.swift; path = "../../../../../../Documents/Mayar Branches/Hirely/Hirely/Hirely/Models/currentUser.swift"; sourceTree = "<group>"; };
+		71D5BF9F2D2088D30098193C /* Applicant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Applicant.swift; path = "../../../../../../Documents/Mayar Branches/Hirely/Hirely/Hirely/Models/Applicant.swift"; sourceTree = "<group>"; };
+		71D5BFA02D2088D30098193C /* Experience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Experience.swift; path = "../../../../../../Documents/Mayar Branches/Hirely/Hirely/Hirely/Models/Experience.swift"; sourceTree = "<group>"; };
+		71D5BFA12D2088D40098193C /* UserProfileSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserProfileSection.swift; path = "../../../../../../Documents/Mayar Branches/Hirely/Hirely/Hirely/Models/UserProfileSection.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +138,11 @@
 		711B4EBE2CFC57E200910FB6 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				71D5BF7A2D20823E0098193C /* KhadijaStoryboards */,
+				71D5BF792D20822D0098193C /* ManarStoryboards */,
+				71D5BF782D20821A0098193C /* AreejStoryboards */,
+				71D5BF772D2082050098193C /* AyahStoryboards */,
+				71D5BF752D207AD00098193C /* MayarStoryboards */,
 				71BEBCE32CFC502900DF795E /* Main.storyboard */,
 				71BEBCE82CFC502A00DF795E /* LaunchScreen.storyboard */,
 			);
@@ -105,6 +152,11 @@
 		711B4EBF2CFC57F300910FB6 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				71D5BF7D2D20827C0098193C /* KhadijaControllers */,
+				71D5BF7C2D2082620098193C /* ManarControllers */,
+				71D5BF7B2D2082530098193C /* AreejControllers */,
+				71D5BF762D2081F20098193C /* AyahControllers */,
+				71D5BF742D207AAF0098193C /* MayarControllers */,
 				71BEBCE12CFC502900DF795E /* ViewController.swift */,
 			);
 			path = Controllers;
@@ -134,6 +186,7 @@
 		71BEBCDC2CFC502900DF795E /* Hirely */ = {
 			isa = PBXGroup;
 			children = (
+				71D5BF9A2D2088C10098193C /* Models */,
 				711B4EBF2CFC57F300910FB6 /* Controllers */,
 				711B4EBE2CFC57E200910FB6 /* Storyboards */,
 				71BEBCDD2CFC502900DF795E /* AppDelegate.swift */,
@@ -160,6 +213,104 @@
 				71BEBD002CFC502B00DF795E /* HirelyUITestsLaunchTests.swift */,
 			);
 			path = HirelyUITests;
+			sourceTree = "<group>";
+		};
+		71D5BF742D207AAF0098193C /* MayarControllers */ = {
+			isa = PBXGroup;
+			children = (
+				71D5BF802D2086F50098193C /* LoginViewController.swift */,
+				71D5BF862D20871A0098193C /* RegisterDetailsViewController.swift */,
+				71D5BF842D20871A0098193C /* RegisterExpertiseViewController.swift */,
+				71D5BF852D20871A0098193C /* RegisterInterestsViewController.swift */,
+				71D5BF822D20871A0098193C /* SignUpViewController.swift */,
+				71D5BF832D20871A0098193C /* UploadProfilePhotoViewController.swift */,
+				71D5BF8C2D20872D0098193C /* EmploymentTypeViewController.swift */,
+				71D5BF902D20872D0098193C /* SalaryViewController.swift */,
+				71D5BF8D2D20872D0098193C /* SkillTableViewCell.swift */,
+				71D5BF8F2D20872D0098193C /* SoftSkillsViewController.swift */,
+				71D5BF8E2D20872D0098193C /* TechnicalSkillsViewController.swift */,
+				71D5BF912D20872D0098193C /* WelcomeViewController.swift */,
+				71D5BF982D2087660098193C /* ExperienceLevelViewController.swift */,
+			);
+			path = MayarControllers;
+			sourceTree = "<group>";
+		};
+		71D5BF752D207AD00098193C /* MayarStoryboards */ = {
+			isa = PBXGroup;
+			children = (
+				71D5BF7E2D2086650098193C /* UserAuthentication.storyboard */,
+			);
+			path = MayarStoryboards;
+			sourceTree = "<group>";
+		};
+		71D5BF762D2081F20098193C /* AyahControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AyahControllers;
+			sourceTree = "<group>";
+		};
+		71D5BF772D2082050098193C /* AyahStoryboards */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AyahStoryboards;
+			sourceTree = "<group>";
+		};
+		71D5BF782D20821A0098193C /* AreejStoryboards */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AreejStoryboards;
+			sourceTree = "<group>";
+		};
+		71D5BF792D20822D0098193C /* ManarStoryboards */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ManarStoryboards;
+			sourceTree = "<group>";
+		};
+		71D5BF7A2D20823E0098193C /* KhadijaStoryboards */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = KhadijaStoryboards;
+			sourceTree = "<group>";
+		};
+		71D5BF7B2D2082530098193C /* AreejControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AreejControllers;
+			sourceTree = "<group>";
+		};
+		71D5BF7C2D2082620098193C /* ManarControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ManarControllers;
+			sourceTree = "<group>";
+		};
+		71D5BF7D2D20827C0098193C /* KhadijaControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = KhadijaControllers;
+			sourceTree = "<group>";
+		};
+		71D5BF9A2D2088C10098193C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				71D5BF9C2D2088D30098193C /* AddSoftSkillAlert.swift */,
+				71D5BF9F2D2088D30098193C /* Applicant.swift */,
+				71D5BF9B2D2088D30098193C /* Cloudinary.swift */,
+				71D5BF9E2D2088D30098193C /* currentUser.swift */,
+				71D5BFA02D2088D30098193C /* Experience.swift */,
+				71D5BF9D2D2088D30098193C /* SKillItem.swift */,
+				71D5BFA12D2088D40098193C /* UserProfileSection.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,6 +427,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71D5BF7F2D2086660098193C /* UserAuthentication.storyboard in Resources */,
 				71BEBCE72CFC502A00DF795E /* Assets.xcassets in Resources */,
 				71BEBCEA2CFC502A00DF795E /* Base in Resources */,
 				71BEBCE52CFC502900DF795E /* Base in Resources */,
@@ -304,9 +456,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71D5BF892D20871A0098193C /* RegisterExpertiseViewController.swift in Sources */,
+				71D5BFA72D2088D40098193C /* Experience.swift in Sources */,
+				71D5BFA22D2088D40098193C /* Cloudinary.swift in Sources */,
+				71D5BF812D2086F50098193C /* LoginViewController.swift in Sources */,
+				71D5BF922D20872D0098193C /* EmploymentTypeViewController.swift in Sources */,
 				71BEBCE22CFC502900DF795E /* ViewController.swift in Sources */,
+				71D5BF962D20872D0098193C /* SalaryViewController.swift in Sources */,
+				71D5BF992D2087660098193C /* ExperienceLevelViewController.swift in Sources */,
 				71BEBCDE2CFC502900DF795E /* AppDelegate.swift in Sources */,
+				71D5BF972D20872D0098193C /* WelcomeViewController.swift in Sources */,
 				71BEBCE02CFC502900DF795E /* SceneDelegate.swift in Sources */,
+				71D5BF8B2D20871A0098193C /* RegisterDetailsViewController.swift in Sources */,
+				71D5BF8A2D20871A0098193C /* RegisterInterestsViewController.swift in Sources */,
+				71D5BF882D20871A0098193C /* UploadProfilePhotoViewController.swift in Sources */,
+				71D5BF872D20871A0098193C /* SignUpViewController.swift in Sources */,
+				71D5BFA52D2088D40098193C /* currentUser.swift in Sources */,
+				71D5BF942D20872D0098193C /* TechnicalSkillsViewController.swift in Sources */,
+				71D5BF932D20872D0098193C /* SkillTableViewCell.swift in Sources */,
+				71D5BFA32D2088D40098193C /* AddSoftSkillAlert.swift in Sources */,
+				71D5BFA82D2088D40098193C /* UserProfileSection.swift in Sources */,
+				71D5BFA62D2088D40098193C /* Applicant.swift in Sources */,
+				71D5BF952D20872D0098193C /* SoftSkillsViewController.swift in Sources */,
+				71D5BFA42D2088D40098193C /* SKillItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
