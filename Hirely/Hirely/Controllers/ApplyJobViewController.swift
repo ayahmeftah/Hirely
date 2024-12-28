@@ -46,6 +46,7 @@ class ApplyJobViewController: UIViewController, UIDocumentPickerDelegate {
         // Fetch job posting and company details
         fetchJobPostingData()
         fetchCompanyDetails(companyId: companyId)
+        fetchUserData()
 
         // Set up UI with fetched data
         setUpUI()
@@ -56,6 +57,38 @@ class ApplyJobViewController: UIViewController, UIDocumentPickerDelegate {
         cloudinary = CLDCloudinary(configuration: config)
     }
 
+    func fetchUserData() {
+        let db = Firestore.firestore()
+        let userDocRef = db.collection("Users").document(userId) // Use the current user ID
+
+        userDocRef.getDocument { snapshot, error in
+            if let error = error {
+                print("Error fetching user data: \(error.localizedDescription)")
+                return
+            }
+
+            guard let data = snapshot?.data() else {
+                print("No data found for user ID: \(self.userId)")
+                return
+            }
+
+            // Populate the text fields with user information
+            DispatchQueue.main.async {
+                self.fullNametxt.text = "\(data["firstName"] as? String ?? "") \(data["lastName"] as? String ?? "")"
+                self.agetxt.text = "\(self.calculateAge(from: data["dateOfBirth"] as? Timestamp))"
+                self.phoneNumbertxt.text = data["phoneNumber"] as? String ?? ""
+                self.emailtxt.text = data["email"] as? String ?? ""
+            }
+        }
+    }
+
+    func calculateAge(from timestamp: Timestamp?) -> Int {
+        guard let dateOfBirth = timestamp?.dateValue() else { return 0 }
+        let calendar = Calendar.current
+        let ageComponents = calendar.dateComponents([.year], from: dateOfBirth, to: Date())
+        return ageComponents.year ?? 0
+    }
+    
     func setUpUI() {
         guard let jobPosting = jobPosting, let companyDetails = companyDetails else {
             print("Job posting or company details are missing.")
