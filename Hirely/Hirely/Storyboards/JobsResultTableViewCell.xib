@@ -38,7 +38,6 @@
                                 <rect key="frame" x="81" y="57" width="98" height="18"/>
                                 <color key="backgroundColor" red="0.74509803921568629" green="0.86290922619999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="98" id="EE4-cl-daU"/>
                                     <constraint firstAttribute="height" constant="18" id="KmK-TX-I1U"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
