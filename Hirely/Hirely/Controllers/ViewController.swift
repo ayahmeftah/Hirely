@@ -28,7 +28,7 @@ class ViewController: UIViewController {
 //        initCloudinary()
 //        generateUrl()
 //        uploadImage()
-        print("Hello World")
+        print("Hello World, I am dying")
     }
     
     override func viewDidAppear(_ animated: Bool) {
