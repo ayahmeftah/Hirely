@@ -11,6 +11,8 @@ import FirebaseFirestore
 class ResultsPageViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating, UISearchBarDelegate {
     
 
+    var appliedFilters: Set<String> = [] // Keep track of selected filter categories
+
     func applySearchFilter() {
         filteredJobs = jobs.filter { job in
             job.jobTitle.lowercased().contains(searchQuery.lowercased())
@@ -175,7 +177,6 @@ class ResultsPageViewController: UIViewController, UICollectionViewDataSource, U
         cell.postInit(filters[indexPath.item]) // Set label text
         cell.contentView.layer.cornerRadius = 10
         cell.contentView.layer.masksToBounds = true
-        /* cell.contentView.backgroundColor = .gray*/ // Update background color
         return cell
     }
     
@@ -228,6 +229,7 @@ class ResultsPageViewController: UIViewController, UICollectionViewDataSource, U
 
     
     // TableView DataSource
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return filteredJobs.count
     }

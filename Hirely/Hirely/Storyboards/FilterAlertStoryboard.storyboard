@@ -16,42 +16,42 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JAc-Xf-SDo">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JAc-Xf-SDo">
                                 <rect key="frame" x="0.0" y="170" width="393" height="682"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="UkS-SR-Zbt">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="UkS-SR-Zbt">
                                         <rect key="frame" x="0.0" y="60" width="393" height="504"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="504" id="pru-L5-c9H"/>
+                                        </constraints>
                                         <connections>
                                             <outlet property="dataSource" destination="Y6W-OH-hqX" id="bM9-uS-iyh"/>
                                             <outlet property="delegate" destination="Y6W-OH-hqX" id="z3m-0p-GpQ"/>
                                         </connections>
                                     </tableView>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xj8-WS-GNi">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xj8-WS-GNi">
                                         <rect key="frame" x="25" y="565" width="343" height="48"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="zJj-dU-ZlA"/>
+                                        </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Show Results"/>
                                         <connections>
                                             <action selector="didTapShowResults:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="IPa-lV-mXs"/>
                                         </connections>
                                     </button>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xfN-mN-p9z">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xfN-mN-p9z">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="60"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Filter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D5X-yW-xqy">
-                                                <rect key="frame" x="24" y="19" width="69" height="21"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D5X-yW-xqy">
+                                                <rect key="frame" x="24" y="18.999999999999996" width="69" height="34.666666666666657"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="29"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4aj-uf-U3e">
-                                                <rect key="frame" x="303.66666666666669" y="15" width="67.333333333333314" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4aj-uf-U3e">
+                                                <rect key="frame" x="303.66666666666669" y="15.000000000000004" width="67.333333333333314" height="38.333333333333343"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Reset"/>
                                                 <connections>
@@ -60,6 +60,13 @@
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="D5X-yW-xqy" firstAttribute="leading" secondItem="xfN-mN-p9z" secondAttribute="leading" constant="24" id="3fd-da-wZ6"/>
+                                            <constraint firstAttribute="trailing" secondItem="4aj-uf-U3e" secondAttribute="trailing" constant="22" id="8CZ-bA-WIm"/>
+                                            <constraint firstItem="D5X-yW-xqy" firstAttribute="top" secondItem="xfN-mN-p9z" secondAttribute="top" constant="19" id="SVJ-06-4VD"/>
+                                            <constraint firstAttribute="height" constant="60" id="aWv-mK-oks"/>
+                                            <constraint firstItem="4aj-uf-U3e" firstAttribute="top" secondItem="xfN-mN-p9z" secondAttribute="top" constant="15" id="oad-28-QPB"/>
+                                        </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                 <integer key="value" value="15"/>
@@ -68,6 +75,23 @@
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="Xj8-WS-GNi" firstAttribute="top" secondItem="UkS-SR-Zbt" secondAttribute="bottom" constant="1" id="BWs-5C-9nl"/>
+                                    <constraint firstItem="Xj8-WS-GNi" firstAttribute="leading" secondItem="JAc-Xf-SDo" secondAttribute="leading" constant="25" id="EW7-pZ-fEp"/>
+                                    <constraint firstItem="UkS-SR-Zbt" firstAttribute="top" secondItem="xfN-mN-p9z" secondAttribute="bottom" id="KCQ-yP-Lxt"/>
+                                    <constraint firstItem="UkS-SR-Zbt" firstAttribute="leading" secondItem="JAc-Xf-SDo" secondAttribute="leading" id="M52-py-X7i"/>
+                                    <constraint firstAttribute="trailing" secondItem="Xj8-WS-GNi" secondAttribute="trailing" constant="25" id="MI4-zD-N0U"/>
+                                    <constraint firstItem="UkS-SR-Zbt" firstAttribute="leading" secondItem="JAc-Xf-SDo" secondAttribute="leading" id="QD7-Wh-Eqw"/>
+                                    <constraint firstAttribute="trailing" secondItem="UkS-SR-Zbt" secondAttribute="trailing" id="Y4O-DX-lZe"/>
+                                    <constraint firstItem="xfN-mN-p9z" firstAttribute="top" secondItem="JAc-Xf-SDo" secondAttribute="top" id="cDe-mF-9Ui"/>
+                                    <constraint firstAttribute="trailing" secondItem="UkS-SR-Zbt" secondAttribute="trailing" id="f24-LT-Z3r"/>
+                                    <constraint firstAttribute="height" constant="682" id="ifp-LM-SUm"/>
+                                    <constraint firstItem="UkS-SR-Zbt" firstAttribute="top" secondItem="xfN-mN-p9z" secondAttribute="bottom" id="izh-gw-ViU"/>
+                                    <constraint firstItem="UkS-SR-Zbt" firstAttribute="top" secondItem="xfN-mN-p9z" secondAttribute="bottom" id="s2y-IO-Vaf"/>
+                                    <constraint firstAttribute="bottom" secondItem="Xj8-WS-GNi" secondAttribute="bottom" constant="69" id="syJ-9R-xqg"/>
+                                    <constraint firstAttribute="trailing" secondItem="xfN-mN-p9z" secondAttribute="trailing" id="u41-cF-1ca"/>
+                                    <constraint firstItem="xfN-mN-p9z" firstAttribute="leading" secondItem="JAc-Xf-SDo" secondAttribute="leading" id="wxU-ig-cZH"/>
+                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="15"/>
@@ -77,6 +101,12 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" white="0.0" alpha="0.34999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="JAc-Xf-SDo" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="Ahj-NS-VSN"/>
+                            <constraint firstAttribute="bottom" secondItem="JAc-Xf-SDo" secondAttribute="bottom" id="P3s-gj-QMS"/>
+                            <constraint firstItem="JAc-Xf-SDo" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="111" id="QA1-2Z-JUM"/>
+                            <constraint firstItem="JAc-Xf-SDo" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="vuy-9w-ZUf"/>
+                        </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                 <integer key="value" value="15"/>
