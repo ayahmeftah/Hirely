@@ -8,7 +8,7 @@ class ApplicantsApplicationViewController: UIViewController, UITableViewDelegate
     @IBOutlet weak var pageSub: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
-    // needs to be chnaged:
+    // needs to be chnaged
     // let userId: String = currentUser().getCurrentUserMethod()
     var userId: String = "ppRloi8VPTvhItiWAYTT" // Current user ID
     var companyIdSelected: String = ""
