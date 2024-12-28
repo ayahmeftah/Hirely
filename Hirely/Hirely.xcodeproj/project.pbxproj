@@ -38,7 +38,6 @@
 		2CD248E72D15C54600602AD7 /* JobInfoAdminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD248E62D15C54600602AD7 /* JobInfoAdminViewController.swift */; };
 		71BEBCDE2CFC502900DF795E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEBCDD2CFC502900DF795E /* AppDelegate.swift */; };
 		71BEBCE02CFC502900DF795E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEBCDF2CFC502900DF795E /* SceneDelegate.swift */; };
-		71BEBCE22CFC502900DF795E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEBCE12CFC502900DF795E /* ViewController.swift */; };
 		71BEBCE52CFC502900DF795E /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 71BEBCE42CFC502900DF795E /* Base */; };
 		71BEBCE72CFC502A00DF795E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71BEBCE62CFC502A00DF795E /* Assets.xcassets */; };
 		71BEBCEA2CFC502A00DF795E /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 71BEBCE92CFC502A00DF795E /* Base */; };
@@ -100,7 +99,6 @@
 		71BEBCDA2CFC502900DF795E /* Hirely.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hirely.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71BEBCDD2CFC502900DF795E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		71BEBCDF2CFC502900DF795E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		71BEBCE12CFC502900DF795E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		71BEBCE42CFC502900DF795E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		71BEBCE62CFC502A00DF795E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		71BEBCE92CFC502A00DF795E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -181,7 +179,6 @@
 		711B4EBF2CFC57F300910FB6 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				71BEBCE12CFC502900DF795E /* ViewController.swift */,
 				2C6940232D0620BB00823F72 /* ManageEmployersViewController.swift */,
 				2C6940252D06228500823F72 /* ManageEmployersTableViewCell.swift */,
 				2C6940262D06228500823F72 /* ManageEmployersTableViewCell.xib */,
@@ -413,7 +410,6 @@
 				2C7A0E722D1D9DC800900E11 /* FlaggedJob.swift in Sources */,
 				2CD248DE2D15A68C00602AD7 /* ApplicantAccountInfoTableViewController.swift in Sources */,
 				2C6940312D06326500823F72 /* ViewJobsAdminTableViewCell.swift in Sources */,
-				71BEBCE22CFC502900DF795E /* ViewController.swift in Sources */,
 				2C6940372D06446400823F72 /* ReportedJobsViewController.swift in Sources */,
 				2C6940452D0654F500823F72 /* ManageJobSeekersAccViewController.swift in Sources */,
 				2CD248E02D15ACB000602AD7 /* FlagInfoTableViewController.swift in Sources */,

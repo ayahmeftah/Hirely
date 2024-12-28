@@ -17,8 +17,20 @@ class FlaggedJobsViewController: UIViewController, UITableViewDelegate, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
+        flaggedJob.backgroundColor = .clear
+        // Observer for job deletion or flag removal
+           NotificationCenter.default.addObserver(self, selector: #selector(refreshFlaggedJobs), name: NSNotification.Name("JobDeleted"), object: nil)
+           NotificationCenter.default.addObserver(self, selector: #selector(refreshFlaggedJobs), name: NSNotification.Name("FlagRemoved"), object: nil)
         fetchFlaggedJobs()
     }
+    
+    @objc private func refreshFlaggedJobs(notification: NSNotification) {
+        if let userInfo = notification.userInfo, let jobId = userInfo["jobId"] as? String {
+            print("Refreshing flagged jobs after update for jobId: \(jobId)")
+        }
+        fetchFlaggedJobs()
+    }
+
     
     private func setupTableView() {
         flaggedJob.backgroundColor = .clear
@@ -95,6 +107,7 @@ extension FlaggedJobsViewController {
                 cell.parentViewController = self
             }
         }
+        cell.backgroundColor = .clear
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

@@ -23,17 +23,24 @@ class AdminDashboardViewController: UIViewController {
     
     private var jobPostingsListener: ListenerRegistration?
     private var flaggedPostsListener: ListenerRegistration?
+    private var reportedPostsListener: ListenerRegistration?
+    private var usersListener: ListenerRegistration?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         listenToTotalJobPostings()
         listenToTotalFlaggedPosts()
+        listenToTotalReportedPosts()
+        listenToTotalUsers()
+
     }
 
     deinit {
         // remove the listeners to avoid consuming memory
         jobPostingsListener?.remove()
         flaggedPostsListener?.remove()
+        reportedPostsListener?.remove()
+        usersListener?.remove()
     }
     
     //listen to total job postings
@@ -67,6 +74,40 @@ class AdminDashboardViewController: UIViewController {
                 }
             }
         }
+    
+    // Listen to total reported posts
+       private func listenToTotalReportedPosts() {
+           let db = Firestore.firestore()
+           reportedPostsListener = db.collection("jobPostings").whereField("isReported", isEqualTo: true).addSnapshotListener { snapshot, error in
+               if let error = error {
+                   print("Error listening to reported posts: \(error.localizedDescription)")
+               } else {
+                   let totalReportedPosts = snapshot?.documents.count ?? 0
+                   DispatchQueue.main.async {
+                       self.totalReportedPostsLbl.text = "Total reported job postings: \(totalReportedPosts)"
+                   }
+               }
+           }
+       }
+
+       // Listen to total users (employers and applicants)
+       private func listenToTotalUsers() {
+           let db = Firestore.firestore()
+           usersListener = db.collection("Users").addSnapshotListener { snapshot, error in
+               if let error = error {
+                   print("Error listening to users: \(error.localizedDescription)")
+               } else {
+                   let documents = snapshot?.documents ?? []
+                   let totalEmployers = documents.filter { $0.data()["isEmployer"] as? Bool == true }.count
+                   let totalApplicants = documents.filter { $0.data()["isApplicant"] as? Bool == true }.count
+                   
+                   DispatchQueue.main.async {
+                       self.totalEmployersLbl.text = "- Employers: \(totalEmployers)"
+                       self.totalApplicantsLbl.text = "- Job Seekers: \(totalApplicants)"
+                   }
+               }
+           }
+       }
     /*
     // MARK: - Navigation
 

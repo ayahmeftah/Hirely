@@ -13,7 +13,7 @@ class ManageEmployersViewController: UIViewController, UITableViewDelegate, UITa
     
     @IBOutlet weak var employersTableView: UITableView!
     
-    let employersNames = ["Sarah Lee", "John Smith"]
+    let employersNames = ["Sarah Lee"]
     
 //    let status = ["Active","Suspended"]
     

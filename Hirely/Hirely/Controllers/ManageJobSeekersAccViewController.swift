@@ -90,7 +90,8 @@ class ManageJobSeekersAccViewController: UIViewController{
            cell.seekersInit(seeker.fullName, seeker.profilePhoto) // Use fullName and profilePhoto
            cell.configureBadge(for: .active) // All fetched users should be active
            cell.parentViewController = self // Pass parent view controller
-
+           
+           cell.backgroundColor = .clear
            return cell
        }
 

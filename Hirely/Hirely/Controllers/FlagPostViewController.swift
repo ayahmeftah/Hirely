@@ -27,25 +27,36 @@ class FlagPostViewController: UIViewController {
     
     
     @IBAction func saveFlagDetails(_ sender: UIButton) {
-        // Validate inputs
-                guard let reason = reasonTextField.text, !reason.isEmpty,
-                      let comments = commentsTextField.text, !comments.isEmpty else {
-                    showAlert(title: "Error", message: "Please fill in all fields.")
-                    return
+        //validating user input
+            guard let reason = reasonTextField.text, !reason.isEmpty,
+                  let comments = commentsTextField.text, !comments.isEmpty else {
+                showAlert(title: "Error", message: "Please fill in all fields.")
+                return
+            }
+
+            //Pass data back using the callback
+            onSave?(reason, comments)
+
+            //Show confirmation alert
+            let confirmationAlert = UIAlertController(
+                title: "Job Flagged",
+                message: "The job has been successfully flagged.",
+                preferredStyle: .alert
+            )
+            confirmationAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+                //Navigate back to the parent view controller after the user taps OK
+                self.navigationController?.popViewController(animated: true)
+            }))
+            
+            //Present confirmation alert
+            present(confirmationAlert, animated: true, completion: nil)
         }
-        
-        // Pass data back using the callback
-                onSave?(reason, comments)
 
-                // Navigate back to the parent view controller
-                navigationController?.popViewController(animated: true)
-            }
-
-            private func showAlert(title: String, message: String) {
-                let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "OK", style: .default))
-                present(alert, animated: true, completion: nil)
-            }
+        private func showAlert(title: String, message: String) {
+            let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
+            present(alert, animated: true, completion: nil)
+        }
  
         
         /*

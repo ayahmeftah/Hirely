@@ -53,7 +53,7 @@ class ApplicantAccountInfoTableViewController: UITableViewController {
        //  Show a confirmation alert before deleting
               let alert = UIAlertController(
                   title: "Delete Account",
-                 message: "Are you sure you want to delete this account? This action cannot be undone.",
+                 message: "Are you sure you want to delete this account?",
                   preferredStyle: .alert
                )
        
@@ -64,9 +64,7 @@ class ApplicantAccountInfoTableViewController: UITableViewController {
        
                present(alert, animated: true, completion: nil)
           }
-           
-        
-        
+ 
     }
     
     
@@ -104,41 +102,55 @@ func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) 
 extension ApplicantAccountInfoTableViewController {
     
     func deleteAccount() {
-        guard let jobSeeker = jobSeeker else {
-            print("No job seeker found to delete.")
-            return
-        }
-
-        let db = Firestore.firestore()
-
-        // Step 1: Delete the document from Firestore
-        db.collection("Users").document(jobSeeker.id).delete { error in
-            if let error = error {
-                print("Error deleting Firestore document: \(error.localizedDescription)")
+            guard let jobSeeker = jobSeeker else {
+                print("No job seeker found to delete.")
                 return
             }
 
-            print("Firestore document deleted successfully.")
+            let db = Firestore.firestore()
+            let user = Auth.auth().currentUser
 
-            DispatchQueue.main.async {
-                // Step 2: Update the parent view controller's list
-                if let parentVC = self.navigationController?.viewControllers.first(where: { $0 is ManageJobSeekersAccViewController }) as? ManageJobSeekersAccViewController {
-                    // Remove the deleted job seeker from the array
-                    if let index = parentVC.jobSeekersList.firstIndex(where: { $0.id == jobSeeker.id }) {
-                        parentVC.jobSeekersList.remove(at: index)
-                        parentVC.jobSeekers.reloadData() // Reload the table view immediately
+            let alert = UIAlertController(title: "Delete Account", message: "Are you sure you want to delete this account?", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { _ in
+                //Delete the document from Firestore
+                db.collection("Users").document(jobSeeker.id).delete { error in
+                    if let error = error {
+                        print("Error deleting Firestore document: \(error.localizedDescription)")
+                        return
+                    }
+
+                    print("Firestore document deleted successfully.")
+
+                    //Delete the user from Firebase Authentication
+                    user?.delete { authError in
+                        if let authError = authError {
+                            print("Error deleting Firebase Authentication user: \(authError.localizedDescription)")
+                            return
+                        }
+
+                        print("Firebase Authentication user deleted successfully.")
+
+                        DispatchQueue.main.async {
+                            // Update the parent view controller's list
+                            if let parentVC = self.navigationController?.viewControllers.first(where: { $0 is ManageJobSeekersAccViewController }) as? ManageJobSeekersAccViewController {
+                                // Remove the deleted job seeker from the array
+                                if let index = parentVC.jobSeekersList.firstIndex(where: { $0.id == jobSeeker.id }) {
+                                    parentVC.jobSeekersList.remove(at: index)
+                                    parentVC.jobSeekers.reloadData() // Reload the table view immediately
+                                }
+                            }
+
+                            //Navigate back to the parent view controller
+                            self.navigationController?.popViewController(animated: true)
+                        }
                     }
                 }
+            }))
 
-                // Step 3: Navigate back to the parent view controller
-                self.navigationController?.popViewController(animated: true)
-            }
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+            present(alert, animated: true)
         }
     }
-
-
-       }
-
        
 
 

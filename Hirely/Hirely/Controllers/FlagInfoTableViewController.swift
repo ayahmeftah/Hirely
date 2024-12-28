@@ -11,6 +11,8 @@ import FirebaseFirestore
 class FlagInfoTableViewController: UITableViewController {
 
     var flagDetails: FlaggedJob?
+    var selectedJob: JobPosting? // Store fetched job data here
+
 
     @IBOutlet weak var jobTitlelLbl: UILabel!
     @IBOutlet weak var companyNameLbl: UILabel! // change later
@@ -22,6 +24,11 @@ class FlagInfoTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        //pre-fetch job details in advance to avoid long loading time
+            guard let flagDetails = flagDetails else { return }
+            fetchJobDetails(for: flagDetails.jobId) { [weak self] job in
+                self?.selectedJob = job // Cache the job details
+            }
     }
 
     private func setupUI() {
@@ -107,31 +114,96 @@ class FlagInfoTableViewController: UITableViewController {
 
     @IBAction func deletePostTapped(_ sender: UIButton) {
         let alert = UIAlertController(title: "Delete Flagged Post", message: "Are you sure you want to delete this post?", preferredStyle: .alert)
-        
-        let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { [weak self] _ in
-            guard let self = self,
-                  let jobId = self.flagDetails?.jobId else { return }
             
+            let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { [weak self] _ in
+                guard let self = self,
+                      let jobId = self.flagDetails?.jobId,
+                      let flagId = self.flagDetails?.docId else { return }
+                
+                let db = Firestore.firestore()
+                
+                // Delete the job posting
+                db.collection("jobPostings").document(jobId).delete { error in
+                    if let error = error {
+                        print("Error deleting job post: \(error.localizedDescription)")
+                    } else {
+                        print("Job post deleted.")
+                        
+                        // Delete the flagged job from flagDetails collection
+                        db.collection("flagDetails").document(flagId).delete { flagError in
+                            if let flagError = flagError {
+                                print("Error deleting flagDetails: \(flagError.localizedDescription)")
+                            } else {
+                                print("FlagDetails entry deleted.")
+                                
+                                // Notify the flagged jobs screen to refresh data
+                                NotificationCenter.default.post(name: NSNotification.Name("JobDeleted"), object: nil, userInfo: ["jobId": jobId])
+                                
+                                self.navigationController?.popViewController(animated: true)
+                            }
+                        }
+                    }
+                }
+            }
+            
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+            
+            alert.addAction(deleteAction)
+            alert.addAction(cancelAction)
+            
+            present(alert, animated: true)
+        }
+    
+    
+    private func fetchJobDetails(for jobId: String, completion: @escaping (JobPosting?) -> Void) {
             let db = Firestore.firestore()
-            
-            // Delete the job posting
-            db.collection("jobPostings").document(jobId).delete { error in
+
+            db.collection("jobPostings").document(jobId).getDocument { document, error in
                 if let error = error {
-                    print("Error deleting job post: \(error.localizedDescription)")
+                    print("Error fetching job details: \(error.localizedDescription)")
+                    completion(nil)
+                    return
+                }
+
+                if let document = document, document.exists {
+                    var data = document.data() ?? [:]
+                    data["docId"] = document.documentID // Include the document ID
+                    let job = JobPosting(data: data)
+                    completion(job)
                 } else {
-                    print("Job post deleted.")
-                    self.navigationController?.popViewController(animated: true)
+                    print("Error: Job document does not exist")
+                    completion(nil)
                 }
             }
         }
-        
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
-        
-        alert.addAction(deleteAction)
-        alert.addAction(cancelAction)
-        
-        present(alert, animated: true)
-    }
+    
+    
+    @IBAction func viewFlaggedPostDetailsTapped(_ sender: UIButton) {
+        guard let flagDetails = flagDetails else {
+                   print("Error: flagDetails is nil")
+                   return
+               }
+
+               fetchJobDetails(for: flagDetails.jobId) { [weak self] job in
+                   guard let self = self else { return }
+                   DispatchQueue.main.async {
+                       if let job = job {
+                           self.selectedJob = job
+
+                       } else {
+                           print("Failed to load job details.")
+                       }
+                   }
+               }
+           }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "viewFlaggedPostDetailsAdmin",
+                   let destinationVC = segue.destination as? JobInfoAdminViewController {
+                    destinationVC.jobPosting = selectedJob // Pass the selected job
+                }
+            }
+
     
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 0

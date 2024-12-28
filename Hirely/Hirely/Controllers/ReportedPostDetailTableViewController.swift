@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseFirestore
 
 class ReportedPostDetailTableViewController: UITableViewController {
 
@@ -14,23 +15,84 @@ class ReportedPostDetailTableViewController: UITableViewController {
     @IBOutlet weak var companyNameLbl: UILabel!
     
     @IBOutlet weak var employerNameLbl: UILabel!
-    
-    @IBOutlet weak var employerEmailLbl: UILabel!
+        
+    var job: JobPosting?
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        setupUI()
     }
+    
+    private func setupUI() {
+        guard let job = job else { return }
+        jobTitleLbl.text = job.jobTitle
+        companyNameLbl.text = "Google LLC" //change later
+        employerNameLbl.text = "John Doe" //change later
+        }
+   
     
     @IBAction func viewReportedPostTapped(_ sender: UIButton) {
     }
     
     @IBAction func flagPostTapped(_ sender: Any) {
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "flagReportedPost",
+               let destinationVC = segue.destination as? FlagPostViewController {
+                destinationVC.jobId = job?.docId // Pass the job id
+                destinationVC.onSave = { [weak self] reason, comments in
+                    self?.flagJob(reason: reason, comments: comments)
+                }
+            }
+        else if segue.identifier == "viewReportedJobDetails",
+                let destinationVC = segue.destination as? JobInfoAdminViewController {
+                        //Pass the job details to the JobInfoAdminViewController
+                        destinationVC.jobPosting = job
+                    }
+        }
+    
+    //code to addd flag job details for the reported post if it is flagged
+    private func flagJob(reason: String, comments: String) {
+        guard let jobId = job?.docId else { return }
+        
+        let db = Firestore.firestore()
+
+        // Create a new document reference in the flagDetails collection
+        let documentRef = db.collection("flagDetails").document()
+
+        // Create flag details including the document ID
+        let flagDetails: [String: Any] = [
+            "docId": documentRef.documentID, // Use the generated document ID
+            "jobId": jobId,
+            "flagReason": reason,
+            "comment": comments,
+            "flagDate": Timestamp(date: Date()),
+            "status": "Flagged"
+        ]
+
+        // Add the flag details to the document
+        documentRef.setData(flagDetails) { error in
+            if let error = error {
+                print("Error adding flag details: \(error.localizedDescription)")
+            } else {
+                print("Flag details added successfully.")
+
+                // Update isFlagged in jobPostings
+                db.collection("jobPostings").document(jobId).updateData(["isFlagged": true]) { error in
+                    if let error = error {
+                        print("Error updating job flag state: \(error.localizedDescription)")
+                    } else {
+                        print("Job flagged successfully.")
+                        DispatchQueue.main.async {
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 0

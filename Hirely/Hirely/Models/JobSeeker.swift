@@ -12,7 +12,7 @@ struct JobSeeker {
     let gender: String
     let city: String
 
-    // Computed property to calculate age
+    //computed property to calculate age
     var age: Int? {
         guard let dob = dateOfBirth else { return nil }
         let calendar = Calendar.current
@@ -20,7 +20,7 @@ struct JobSeeker {
         return components.year
     }
 
-    // Computed property for full name
+    //computed property for full name
     var fullName: String {
         return "\(firstName) \(lastName)"
     }
