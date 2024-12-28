@@ -10,26 +10,16 @@ import FirebaseFirestore
 
 class ResultsPageViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating, UISearchBarDelegate {
     
-    //try poe
-    // Example button action to filter for full-time jobs
-    // Call this function when the user selects a filter
-    // Apply the search filter to the current jobs
+
     func applySearchFilter() {
         filteredJobs = jobs.filter { job in
             job.jobTitle.lowercased().contains(searchQuery.lowercased())
         }
     }
     
-    // Call this function when the user selects a filter
+    
     var selectedJobType: String? // Store the currently selected job type
-    // Apply both search and job type filters
-//    func applyFilters() {
-//        filteredJobs = jobs.filter { job in
-//            let matchesSearchQuery = job.jobTitle.lowercased().contains(searchQuery.lowercased())
-//            let matchesJobType = selectedJobType == nil || job.jobType.lowercased() == selectedJobType!.lowercased()
-//            return matchesSearchQuery && matchesJobType
-//        }
-//    }
+
     func applyFilters() {
         // Filter the search results
         let searchFilteredJobs = jobs.filter { job in
@@ -75,7 +65,7 @@ class ResultsPageViewController: UIViewController, UICollectionViewDataSource, U
     @IBOutlet weak var CityBtnLbl: UIButton!
     
     
-    let filters = ["Job Type", "Experience Level", "Location Type", "Salary Range"]
+    let filters = ["Job Type", "Experience Level", "Location Type"]
     var searchController: UISearchController? // To hold the passed search controller
     var jobs: [JobPosting] = []
     var filteredJobs: [JobPosting] = []
@@ -204,22 +194,38 @@ class ResultsPageViewController: UIViewController, UICollectionViewDataSource, U
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let selectedFilter = filters[indexPath.item]
-        print("Selected Filter: \(selectedFilter)")
+        
+        // Configure the filter options based on the selected filter category
+        var filterOptions: [String: [String]] = [:]
         
         switch selectedFilter {
         case "Job Type":
-            presentFilterAlert(for: JobTypeOptions.self, title: selectedFilter)
-        case "Experience Level":
-            presentFilterAlert(for: ExperienceLevelOptions.self, title: selectedFilter)
+            filterOptions = [
+                "Job Type": JobTypeOptions.allCases.map { $0.rawValue }
+            ]
         case "Location Type":
-            presentFilterAlert(for: LocationTypeOptions.self, title: selectedFilter)
-        case "Salary Range":
-            // Handle Salary Range or add a specific alert view logic for custom filtering
-            print("Salary Range filter selected.")
+            filterOptions = [
+                "Location Type": LocationTypeOptions.allCases.map { $0.rawValue }
+            ]
+        case "Experience Level":
+            filterOptions = [
+                "Experience Level": ExperienceLevelOptions.allCases.map { $0.rawValue }
+            ]
         default:
-            break
+            print("Invalid filter selected.")
+            return
         }
+        
+        // Present the filter alert with the appropriate options
+        let filterAlertVC = FilterAlertService().allFiltersAlert(with: filterOptions)
+        filterAlertVC.selectedFilters = self.selectedFilters // Pass existing filters
+        filterAlertVC.delegate = self // Set the delegate
+        filterAlertVC.modalPresentationStyle = .overCurrentContext
+        filterAlertVC.modalTransitionStyle = .crossDissolve
+        self.present(filterAlertVC, animated: true, completion: nil)
     }
+
+
     
     // TableView DataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
