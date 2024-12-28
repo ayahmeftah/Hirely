@@ -26,6 +26,8 @@
 		71D5BFB72D208DB90098193C /* certiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D5BFAF2D208DB90098193C /* certiViewController.swift */; };
 		71D5BFB82D208DB90098193C /* skillsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D5BFB02D208DB90098193C /* skillsViewController.swift */; };
 		71D5BFB92D208DB90098193C /* expViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D5BFB12D208DB90098193C /* expViewController.swift */; };
+		71D5BFBB2D208E340098193C /* CVBuilder.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71D5BFBA2D208E340098193C /* CVBuilder.storyboard */; };
+		71D5BFBE2D208E600098193C /* CVData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D5BFBD2D208E600098193C /* CVData.swift */; };
 		C363937D2D006A4C00E14337 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = C363937C2D006A4C00E14337 /* FirebaseDatabase */; };
 		C363937F2D006A5600E14337 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = C363937E2D006A5600E14337 /* FirebaseAuth */; };
 		C36393812D006A7800E14337 /* Cloudinary in Frameworks */ = {isa = PBXBuildFile; productRef = C36393802D006A7800E14337 /* Cloudinary */; };
@@ -71,6 +73,8 @@
 		71D5BFAF2D208DB90098193C /* certiViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = certiViewController.swift; path = "../../../../../../../Documents/Areej Branches/Hirely-CVBuilderFeature/Hirely/Hirely/Controllers/certiViewController.swift"; sourceTree = "<group>"; };
 		71D5BFB02D208DB90098193C /* skillsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = skillsViewController.swift; path = "../../../../../../../Documents/Areej Branches/Hirely-CVBuilderFeature/Hirely/Hirely/Controllers/skillsViewController.swift"; sourceTree = "<group>"; };
 		71D5BFB12D208DB90098193C /* expViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = expViewController.swift; path = "../../../../../../../Documents/Areej Branches/Hirely-CVBuilderFeature/Hirely/Hirely/Controllers/expViewController.swift"; sourceTree = "<group>"; };
+		71D5BFBA2D208E340098193C /* CVBuilder.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = CVBuilder.storyboard; path = "../../../../../../../Documents/Areej Branches/Hirely-CVBuilderFeature/Hirely/Hirely/Storyboards/CVBuilder.storyboard"; sourceTree = "<group>"; };
+		71D5BFBD2D208E600098193C /* CVData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CVData.swift; path = "../../../../../../Documents/Areej Branches/Hirely-CVBuilderFeature/Hirely/Hirely/Storyboards/CVData.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +164,7 @@
 		71BEBCDC2CFC502900DF795E /* Hirely */ = {
 			isa = PBXGroup;
 			children = (
+				71D5BFBC2D208E440098193C /* Models */,
 				711B4EBF2CFC57F300910FB6 /* Controllers */,
 				711B4EBE2CFC57E200910FB6 /* Storyboards */,
 				71BEBCDD2CFC502900DF795E /* AppDelegate.swift */,
@@ -212,6 +217,7 @@
 		71D5BF782D20821A0098193C /* AreejStoryboards */ = {
 			isa = PBXGroup;
 			children = (
+				71D5BFBA2D208E340098193C /* CVBuilder.storyboard */,
 			);
 			path = AreejStoryboards;
 			sourceTree = "<group>";
@@ -264,6 +270,14 @@
 			children = (
 			);
 			path = MayarControllers;
+			sourceTree = "<group>";
+		};
+		71D5BFBC2D208E440098193C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				71D5BFBD2D208E600098193C /* CVData.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -381,6 +395,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				71BEBCE72CFC502A00DF795E /* Assets.xcassets in Resources */,
+				71D5BFBB2D208E340098193C /* CVBuilder.storyboard in Resources */,
 				71BEBCEA2CFC502A00DF795E /* Base in Resources */,
 				71BEBCE52CFC502900DF795E /* Base in Resources */,
 				2C9302F52CFC9E6500CAD615 /* GoogleService-Info.plist in Resources */,
@@ -414,6 +429,7 @@
 				71D5BFB22D208DB90098193C /* CloudinarySetUpCv.swift in Sources */,
 				71D5BFB92D208DB90098193C /* expViewController.swift in Sources */,
 				71D5BFB82D208DB90098193C /* skillsViewController.swift in Sources */,
+				71D5BFBE2D208E600098193C /* CVData.swift in Sources */,
 				71D5BFB52D208DB90098193C /* personalInfoViewController.swift in Sources */,
 				71BEBCE02CFC502900DF795E /* SceneDelegate.swift in Sources */,
 				71D5BFB32D208DB90098193C /* educationViewController.swift in Sources */,
