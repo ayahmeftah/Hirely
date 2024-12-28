@@ -10,9 +10,7 @@ import FirebaseFirestore
 
 class ResultsPageViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating, UISearchBarDelegate {
     
-
-    var appliedFilters: Set<String> = [] // Keep track of selected filter categories
-
+    
     func applySearchFilter() {
         filteredJobs = jobs.filter { job in
             job.jobTitle.lowercased().contains(searchQuery.lowercased())
