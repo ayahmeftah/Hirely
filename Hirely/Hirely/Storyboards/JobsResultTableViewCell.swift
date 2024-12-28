@@ -27,6 +27,7 @@ class JobsResultTableViewCell: UITableViewCell {
         // round image
         companyImg.layer.cornerRadius = companyImg.frame.size.width / 2
         companyImg.clipsToBounds = true
+        jobTypeLbl.layer.cornerRadius = 12
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

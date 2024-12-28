@@ -41,10 +41,10 @@ class FirstSearchViewController: UIViewController, UISearchResultsUpdating, UISe
         let textField = searchBar.searchTextField
         textField.backgroundColor = .white
         textField.borderStyle = .roundedRect
-        textField.layer.cornerRadius = 10
+        textField.layer.cornerRadius = 15
         textField.clipsToBounds = true
         textField.layer.borderColor = UIColor.gray.cgColor
-        textField.layer.borderWidth = 1.0
+        textField.layer.borderWidth = 0.5
         
         // Assign the search controller to the navigation item
         navigationItem.searchController = searchController
@@ -61,7 +61,7 @@ class FirstSearchViewController: UIViewController, UISearchResultsUpdating, UISe
             searchBar.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             searchBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 32),
             searchBar.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8),
-            searchBar.heightAnchor.constraint(equalToConstant: 44)
+            searchBar.heightAnchor.constraint(equalToConstant: 70)
         ])
     }
 

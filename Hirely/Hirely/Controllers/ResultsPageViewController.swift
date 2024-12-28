@@ -23,13 +23,32 @@ class ResultsPageViewController: UIViewController, UICollectionViewDataSource, U
     // Call this function when the user selects a filter
     var selectedJobType: String? // Store the currently selected job type
     // Apply both search and job type filters
+//    func applyFilters() {
+//        filteredJobs = jobs.filter { job in
+//            let matchesSearchQuery = job.jobTitle.lowercased().contains(searchQuery.lowercased())
+//            let matchesJobType = selectedJobType == nil || job.jobType.lowercased() == selectedJobType!.lowercased()
+//            return matchesSearchQuery && matchesJobType
+//        }
+//    }
     func applyFilters() {
-        filteredJobs = jobs.filter { job in
-            let matchesSearchQuery = job.jobTitle.lowercased().contains(searchQuery.lowercased())
-            let matchesJobType = selectedJobType == nil || job.jobType.lowercased() == selectedJobType!.lowercased()
-            return matchesSearchQuery && matchesJobType
+        // Filter the search results
+        let searchFilteredJobs = jobs.filter { job in
+            job.jobTitle.lowercased().contains(searchQuery.lowercased())
+        }
+        
+        // Apply additional filters
+        filteredJobs = searchFilteredJobs.filter { job in
+            let matchesJobType = selectedFilters["Job Type"] == nil || job.jobType.lowercased() == selectedFilters["Job Type"]!.lowercased()
+            let matchesExperienceLevel = selectedFilters["Experience Level"] == nil || job.experienceLevel.lowercased() == selectedFilters["Experience Level"]!.lowercased()
+            let matchesLocationType = selectedFilters["Location Type"] == nil || job.locationType.lowercased() == selectedFilters["Location Type"]!.lowercased()
+            let matchesCity = selectedFilters["City"] == nil || job.city.lowercased() == selectedFilters["City"]!.lowercased()
+            
+            return matchesJobType && matchesExperienceLevel && matchesLocationType && matchesCity
         }
     }
+
+
+
     
     // Call this function when the user selects a job type filter
     func filterJobs(by jobType: String) {
@@ -42,29 +61,14 @@ class ResultsPageViewController: UIViewController, UICollectionViewDataSource, U
         }
     }
     
-    // Example button action to filter for full-time jobs
-    @IBAction func filterFullTimeJobs(_ sender: UIButton) {
-        filterJobs(by: "Full-time")
-    }
-    
-    // Example button action to filter for part-time jobs
-    @IBAction func filterPartTimeJobs(_ sender: UIButton) {
-        filterJobs(by: "Part-time")
-    }
-    
-    // Example button action to clear filters applied to the search query
-    @IBAction func clearFilters(_ sender: UIButton) {
-        selectedJobType = nil // Clear job type filter
-        applyFilters() // Reapply filters based on the current search query
-        
-        // Reload the table view
-        DispatchQueue.main.async {
-            self.jobResultsTableView.reloadData()
+    func resetFilters() {
+        selectedFilters.removeAll() // Clear all filters
+        filteredJobs = jobs.filter { job in
+            job.jobTitle.lowercased().contains(searchQuery.lowercased())
         }
+        jobResultsTableView.reloadData() // Refresh the table
     }
-    
-    
-    //
+
     
     @IBOutlet weak var filtersCollectionView: UICollectionView!
     @IBOutlet weak var jobResultsTableView: UITableView!
@@ -77,6 +81,22 @@ class ResultsPageViewController: UIViewController, UICollectionViewDataSource, U
     var filteredJobs: [JobPosting] = []
     var searchQuery: String = ""
     
+//    @IBAction func didTapAllFilters(_ sender: Any) {
+//        let allFilters: [String: [String]] = [
+//            "City": CityOptions.allCases.map { $0.rawValue },
+//            "Job Type": JobTypeOptions.allCases.map { $0.rawValue },
+//            "Experience Level": ExperienceLevelOptions.allCases.map { $0.rawValue },
+//            "Location Type": LocationTypeOptions.allCases.map { $0.rawValue }
+//        ]
+//        
+//        let filterAlertVC = FilterAlertService().allFiltersAlert(with: allFilters)
+//        
+//        filterAlertVC.modalPresentationStyle = .overCurrentContext
+//        filterAlertVC.modalTransitionStyle = .crossDissolve
+//        self.present(filterAlertVC, animated: true, completion: nil)
+//    }
+    var selectedFilters: [String: String] = [:]
+    
     @IBAction func didTapAllFilters(_ sender: Any) {
         let allFilters: [String: [String]] = [
             "City": CityOptions.allCases.map { $0.rawValue },
@@ -86,11 +106,15 @@ class ResultsPageViewController: UIViewController, UICollectionViewDataSource, U
         ]
         
         let filterAlertVC = FilterAlertService().allFiltersAlert(with: allFilters)
-        
+        filterAlertVC.selectedFilters = self.selectedFilters // Pass existing filters
+        filterAlertVC.delegate = self // Set the delegate
         filterAlertVC.modalPresentationStyle = .overCurrentContext
         filterAlertVC.modalTransitionStyle = .crossDissolve
         self.present(filterAlertVC, animated: true, completion: nil)
     }
+
+
+
     
     
     @IBAction func didTapCity(_ sender: Any) {
@@ -304,4 +328,15 @@ class ResultsPageViewController: UIViewController, UICollectionViewDataSource, U
         }
     }
     
+}
+extension ResultsPageViewController: FilterAlertDelegate {
+    func didApplyFilters(_ filters: [String: String]) {
+        self.selectedFilters = filters
+        applyFilters() // Apply filters
+        jobResultsTableView.reloadData() // Refresh the table
+    }
+    
+    func didResetFilters() {
+        resetFilters() // Reset all filters
+    }
 }

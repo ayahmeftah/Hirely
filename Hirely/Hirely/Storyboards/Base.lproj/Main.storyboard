@@ -18,50 +18,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="extraShortTop" translatesAutoresizingMaskIntoConstraints="NO" id="rLA-HE-HVf">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="143"/>
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="140"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="140" id="0cj-QJ-C2k"/>
+                                </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jobs For You" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nLl-Xr-sjF">
-                                <rect key="frame" x="16" y="151" width="144" height="29"/>
+                                <rect key="frame" x="16" y="148" width="144" height="29"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lvc-nU-4fu">
-                                <rect key="frame" x="107" y="314" width="179" height="39"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Experience Level"/>
-                                <connections>
-                                    <action selector="didTapBtntry:" destination="4Ed-m8-ugN" eventType="touchUpInside" id="2bU-va-lE5"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="czM-Im-o1H">
-                                <rect key="frame" x="169" y="361" width="55" height="39"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="City"/>
-                                <connections>
-                                    <action selector="didTapCity:" destination="4Ed-m8-ugN" eventType="touchUpInside" id="S04-Ve-9Da"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ueW-mY-x6Z">
-                                <rect key="frame" x="131" y="484" width="131" height="39"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Location Type"/>
-                                <connections>
-                                    <action selector="didTapLocationType:" destination="4Ed-m8-ugN" eventType="touchUpInside" id="Qp8-aP-d9x"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Tx-bv-ujf">
-                                <rect key="frame" x="150" y="421" width="94" height="39"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Job Type"/>
-                                <connections>
-                                    <action selector="didTapJobType:" destination="4Ed-m8-ugN" eventType="touchUpInside" id="Zlu-54-Xkv"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="RhE-Ek-Uue"/>
                         <color key="backgroundColor" red="0.90980386729999996" green="0.91372549530000002" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -136,8 +103,8 @@
                                     <outlet property="delegate" destination="68i-Du-0gL" id="a7I-Li-8W1"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N4l-VY-i20">
-                                <rect key="frame" x="126" y="65" width="99" height="51"/>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N4l-VY-i20">
+                                <rect key="frame" x="126" y="65" width="239" height="51"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="51" id="slP-Xa-5BJ"/>
                                 </constraints>
@@ -147,38 +114,11 @@
                                     <action selector="didTapCity:" destination="68i-Du-0gL" eventType="touchUpInside" id="Gk5-gg-YSv"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lWy-zo-0nY">
-                                <rect key="frame" x="233" y="65" width="45" height="39"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="full"/>
-                                <connections>
-                                    <action selector="filterFullTimeJobs:" destination="68i-Du-0gL" eventType="touchUpInside" id="0Qh-v7-69k"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A2d-0G-8X8">
-                                <rect key="frame" x="285" y="64" width="48" height="39"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="part"/>
-                                <connections>
-                                    <action selector="filterPartTimeJobs:" destination="68i-Du-0gL" eventType="touchUpInside" id="aX0-Hq-1qS"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Z4-yN-NNs">
-                                <rect key="frame" x="266" y="111" width="67" height="39"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Button"/>
-                                <connections>
-                                    <action selector="clearFilters:" destination="68i-Du-0gL" eventType="touchUpInside" id="Kwp-Xk-TaK"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2Lg-qZ-Nau"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="2Lg-qZ-Nau" firstAttribute="trailing" secondItem="N4l-VY-i20" secondAttribute="trailing" constant="20" id="0Ku-aE-lC2"/>
+                            <constraint firstItem="2Lg-qZ-Nau" firstAttribute="trailing" secondItem="N4l-VY-i20" secondAttribute="trailing" constant="28" id="0Ku-aE-lC2"/>
                             <constraint firstItem="2ML-PV-bIW" firstAttribute="top" secondItem="2Lg-qZ-Nau" secondAttribute="top" constant="6" id="Gh0-RM-oap"/>
                             <constraint firstItem="P4u-pr-oFy" firstAttribute="leading" secondItem="2Lg-qZ-Nau" secondAttribute="leading" id="M1b-Lz-fPU"/>
                             <constraint firstItem="N4l-VY-i20" firstAttribute="leading" secondItem="2ML-PV-bIW" secondAttribute="trailing" constant="50" id="RwA-n4-IZO"/>
