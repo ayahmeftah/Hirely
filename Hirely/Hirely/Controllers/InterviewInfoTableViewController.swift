@@ -1,86 +1,55 @@
-//
-//  InterviewInfoTableViewController.swift
-//  Hirely
-//
-//  Created by Manar Alsatrawi on 17/12/2024.
-//
-
 import UIKit
 
 class InterviewInfoTableViewController: UITableViewController {
     
-    var titles = ["Applicant Name","Applied Position", "Interview Location", "Date", "Time", "Notes", "Applicant's Email", "Applicant's Phone" ]
-    
-    var info = ["John Doe","Software Engineer", "Head Office, Room 302", "2024/12/20","10:00 AM", "Bring relevant documents and a printed copy of your resume.", "johndoe@email.com", "+123-456-7890" ]
+    var titles = ["Interview Location", "Date", "Time", "Notes"]
+    var info: [String] = [] // Store the interview information
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Debugging: Print array sizes
+        print("Titles count: \(titles.count)")
+        print("Info count: \(info.count)")
+        
+        // Ensure info array has the same count as titles
+        if info.count != titles.count {
+            print("Mismatch in titles and info counts. Filling with placeholder data.")
+            while info.count < titles.count {
+                info.append("N/A") // Add placeholder data to avoid index out of range
+            }
+        }
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 65
+        tableView.reloadData()
+        
     }
-    // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
-//
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return titles.count
     }
 
-   
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "interviewCell", for: indexPath)
-
-        cell.textLabel?.text = titles[indexPath.row]
-        cell.detailTextLabel?.text = info[indexPath.row]
+        
+        // Safely access arrays
+        if indexPath.row < titles.count {
+            cell.textLabel?.text = titles[indexPath.row]
+        } else {
+            cell.textLabel?.text = "Unknown Title"
+        }
+        
+        if indexPath.row < info.count {
+            cell.detailTextLabel?.text = info[indexPath.row]
+        } else {
+            cell.detailTextLabel?.text = "N/A"
+        }
+        
         return cell
     }
-    
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
+

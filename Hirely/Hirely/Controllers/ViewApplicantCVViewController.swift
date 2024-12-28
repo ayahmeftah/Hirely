@@ -6,16 +6,17 @@
 //
 
 import UIKit
-import FirebaseFirestore
 import WebKit
 
 class ViewApplicantCVViewController: UIViewController {
     var webView: WKWebView!
+    var cvLink: String? //store CV link passed from the previous view controller
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupWebView()
-        loadPDF()
+        loadCV()
     }
 
     //create and add the web view
@@ -24,40 +25,25 @@ class ViewApplicantCVViewController: UIViewController {
         self.view.addSubview(webView)
     }
 
-    //load the pdf link
-    func loadPDF() {
-        fetchPDFLink { [weak self] pdfLink in
-            guard let self = self, let link = pdfLink, let url = URL(string: link) else {
-                print("Failed to fetch or load PDF link.")
-                return
-            }
-            DispatchQueue.main.async {
-                let request = URLRequest(url: url)
-                self.webView.load(request)
-            }
+    // Load the passed CV link
+    func loadCV() {
+        guard let cvLink = cvLink, let url = URL(string: cvLink) else {
+            print("Invalid CV link or no CV link provided.")
+            showErrorAlert()
+            return
         }
-        
-        //fetch the pdf link from Firestore
-        func fetchPDFLink(completion: @escaping (String?) -> Void) {
-            let db = Firestore.firestore()
-            let documentRef = db.collection("CVs").document("bvLwnPG1vRenTttTKBSJ")
-            
-            documentRef.getDocument { document, error in
-                if let error = error {
-                    print("Error fetching document: \(error)")
-                    completion(nil)
-                    return
-                }
-                
-                guard let document = document, document.exists, let pdfURL = document.data()?["cvUrl"] as? String else {
-                    print("cvUrl field not found or document does not exist.")
-                    completion(nil)
-                    return
-                }
-                
-                completion(pdfURL)
-            }
+
+        DispatchQueue.main.async {
+            let request = URLRequest(url: url)
+            self.webView.load(request)
         }
+    }
+
+    // Show an error alert if the CV link is invalid
+    func showErrorAlert() {
+        let alert = UIAlertController(title: "Error", message: "Failed to load the CV. Please try again later.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        present(alert, animated: true, completion: nil)
     }
 
     /*
