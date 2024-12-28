@@ -78,6 +78,9 @@
                                         <integer key="value" value="15"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="didTapViewDetails:" destination="gTV-IL-0wX" eventType="touchUpInside" id="6YD-ik-zCZ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kYq-Uo-nvY">
                                 <rect key="frame" x="306" y="8" width="56" height="42.666666666666664"/>

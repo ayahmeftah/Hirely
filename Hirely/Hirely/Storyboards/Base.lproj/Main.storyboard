@@ -45,9 +45,6 @@
                                                     <fontDescription key="titleFontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                                     <color key="baseBackgroundColor" red="0.27450981740000002" green="0.53725492949999998" blue="0.84313726430000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </buttonConfiguration>
-                                                <connections>
-                                                    <segue destination="3TF-DP-UCh" kind="show" id="AWb-aB-6fq"/>
-                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -110,6 +107,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </collectionViewCellContentView>
+                                        <connections>
+                                            <segue destination="3TF-DP-UCh" kind="show" identifier="goToJobDetails" id="zQF-yU-P2Y"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
@@ -158,8 +158,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1nw-EF-ThB">
-                                <rect key="frame" x="0.0" y="0.0" width="430" height="253"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DetailsTopBackground" translatesAutoresizingMaskIntoConstraints="NO" id="1nw-EF-ThB">
+                                <rect key="frame" x="0.0" y="0.0" width="430" height="261"/>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LFo-4w-IUb">
                                 <rect key="frame" x="0.0" y="261" width="430" height="491"/>
@@ -311,7 +311,7 @@
                                 </constraints>
                             </scrollView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lXy-D5-aQq">
-                                <rect key="frame" x="185" y="84" width="61" height="61"/>
+                                <rect key="frame" x="184.66666666666666" y="84" width="61" height="61"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="61" id="W7k-lF-AtU"/>
@@ -415,7 +415,7 @@
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="NAy-m6-YNA"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.91372549530000002" green="0.91764706370000004" blue="0.93333333730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="NAy-m6-YNA" firstAttribute="bottom" secondItem="mhb-rx-1rr" secondAttribute="bottom" constant="20" id="874-Pf-I7o"/>
                             <constraint firstItem="lXy-D5-aQq" firstAttribute="centerX" secondItem="LFo-4w-IUb" secondAttribute="centerX" id="BeB-Ca-WQs"/>
@@ -426,7 +426,7 @@
                             <constraint firstItem="mhb-rx-1rr" firstAttribute="leading" secondItem="NAy-m6-YNA" secondAttribute="leading" constant="20" id="aiL-gy-5KK"/>
                             <constraint firstItem="1nw-EF-ThB" firstAttribute="leading" secondItem="NAy-m6-YNA" secondAttribute="leading" id="b5i-Yc-QpK"/>
                             <constraint firstItem="lXy-D5-aQq" firstAttribute="top" secondItem="NAy-m6-YNA" secondAttribute="top" constant="-19" id="bvl-GV-zq6"/>
-                            <constraint firstItem="LFo-4w-IUb" firstAttribute="top" secondItem="1nw-EF-ThB" secondAttribute="bottom" constant="8" symbolic="YES" id="eP6-Wt-i1m"/>
+                            <constraint firstItem="LFo-4w-IUb" firstAttribute="top" secondItem="1nw-EF-ThB" secondAttribute="bottom" id="eP6-Wt-i1m"/>
                             <constraint firstItem="1nw-EF-ThB" firstAttribute="top" secondItem="BOu-5v-hka" secondAttribute="top" id="frc-S1-w7h"/>
                             <constraint firstItem="1nw-EF-ThB" firstAttribute="trailing" secondItem="NAy-m6-YNA" secondAttribute="trailing" id="hlJ-RU-DgK"/>
                             <constraint firstItem="LFo-4w-IUb" firstAttribute="top" secondItem="BOu-5v-hka" secondAttribute="top" constant="261" id="hsb-eq-JPs"/>
@@ -479,6 +479,7 @@
     </scenes>
     <resources>
         <image name="BackTop" width="134" height="65.666664123535156"/>
+        <image name="DetailsTopBackground" width="402" height="231"/>
         <namedColor name="size_red">
             <color red="1" green="0.34901960784313724" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

@@ -138,6 +138,26 @@ class ApplicantViewController: UIViewController, UICollectionViewDataSource, UIC
         return 16
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "goToJobDetails", sender: self)
+    }
+    
+    func didTapViewDetails(for job: JobPosting) {
+        // Trigger segue to details page with the selected job
+        performSegue(withIdentifier: "goToJobDetails", sender: job)
+    }
+    
+    // MARK: - Segue Preparation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToJobDetails" {
+            if let indexPath = jobsCollectionView.indexPathsForSelectedItems?.first,
+               let destinationVC = segue.destination as? JobDetailsApplicantViewController {
+                // Pass the selected job to the details page
+                let selectedJob = jobPostings[indexPath.row]
+                destinationVC.jobPosting = selectedJob
+            }
+        }
+    }
 
 }
 

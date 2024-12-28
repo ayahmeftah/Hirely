@@ -37,9 +37,14 @@ class JobDetailsApplicantViewController: UIViewController {
     
     @IBOutlet weak var SaveBtn: UIButton!
     
+    // Mock user skills for matching
+    var userSoftSkills: [String] = ["Teamwork", "Communication"]
+    var userTechnicalSkills: [String] = ["Swift", "Xcode", "SQL"]
+    
     // To track the current state of the button
     private var isReported = false
     private var isSaved = false
+    var jobPosting: JobPosting? // Selected job data
     
     @IBAction func didTapApply(_ sender: Any) {
     }
@@ -61,8 +66,6 @@ class JobDetailsApplicantViewController: UIViewController {
     }
     
     
-    var jobPosting: JobPosting? //selected job Data
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -70,20 +73,66 @@ class JobDetailsApplicantViewController: UIViewController {
         setupInitialSaveButtonStyle()
     }
     
-    func addSkill(_ skill: String) {
+    private func displaySkills(_ skills: [String]) {
+        var matchingSkillsCount = 0
+        
+        // Remove existing views in the stack view
+        mainStackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
+        
+        // Create and add the match label at the top
+        let matchLabel = UILabel()
+        matchLabel.textAlignment = .center
+        matchLabel.font = UIFont.systemFont(ofSize: 14) // Smaller font
+        matchLabel.textColor = .white
+        matchLabel.layer.cornerRadius = 8
+        matchLabel.layer.masksToBounds = true
+        matchLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true // Adjusted height
+        
+        // Check each skill
+        for skill in skills {
+            if userSoftSkills.contains(skill) || userTechnicalSkills.contains(skill) {
+                matchingSkillsCount += 1
+                addSkill(skill, isMatched: true) // Matched skill
+            } else {
+                addSkill(skill, isMatched: false) // Unmatched skill
+            }
+        }
+        
+        // Update match label text and background color
+        let totalSkills = skills.count
+        matchLabel.text = "\(matchingSkillsCount) of \(totalSkills) skills match"
+        
+        // Determine label background color
+        if matchingSkillsCount == totalSkills {
+            matchLabel.backgroundColor = .systemGreen // All skills match
+        } else if matchingSkillsCount == 0 {
+            matchLabel.backgroundColor = .systemGray // No skills match
+        } else if Double(matchingSkillsCount) / Double(totalSkills) >= 0.5 {
+            matchLabel.backgroundColor = .systemOrange // Close match (>= 50%)
+        } else {
+            matchLabel.backgroundColor = .systemYellow // Partial match (< 50% but > 0)
+        }
+        
+        // Add the match label to the stack view at the top
+        mainStackView.insertArrangedSubview(matchLabel, at: 0)
+    }
+
+
+    
+    private func addSkill(_ skill: String, isMatched: Bool) {
         // Create horizontal stack view
         let hStack = UIStackView()
         hStack.axis = .horizontal
-        hStack.spacing = 4 // Space between tick and label
+        hStack.spacing = 8 // Space between tick and label
         hStack.alignment = .center // Aligns tick and label vertically
         hStack.distribution = .fillProportionally
         
         // Create tick icon
-        let tickImageView = UIImageView(image: UIImage(systemName: "checkmark.square.fill"))
-        tickImageView.tintColor = .systemGreen
+        let tickImageView = UIImageView(image: UIImage(systemName: "checkmark.circle.fill"))
+        tickImageView.tintColor = isMatched ? .systemGreen : .systemGray
         tickImageView.translatesAutoresizingMaskIntoConstraints = false
-        tickImageView.widthAnchor.constraint(equalToConstant: 18).isActive = true // Fixed size
-        tickImageView.heightAnchor.constraint(equalToConstant: 18).isActive = true // Fixed size
+        tickImageView.widthAnchor.constraint(equalToConstant: 24).isActive = true // Fixed size
+        tickImageView.heightAnchor.constraint(equalToConstant: 24).isActive = true // Fixed size
         tickImageView.contentMode = .scaleAspectFit // Proper image scaling
         
         // Create skill label
@@ -100,7 +149,6 @@ class JobDetailsApplicantViewController: UIViewController {
         
         // Add horizontal stack to main vertical stack
         mainStackView.addArrangedSubview(hStack)
-        
     }
     
     private func setupInitialReportButtonStyle() {
@@ -158,7 +206,26 @@ class JobDetailsApplicantViewController: UIViewController {
     func setupUI() {
         guard let job = jobPosting else { return } // Ensure data is passed
         
-        companyNameLabel.text = "Google Inc"
+//        companyNameLabel.text = "microsoft"
+//        jobTitleLabel.text = job.jobTitle
+//        jobTypeLabel.text = job.jobType
+//        locationTypeLabel.text = job.locationType
+//        cityLabel.text = job.city
+//        experienceLevelLabel.text = job.experienceLevel
+//        jobDescriptionLabel.text = job.jobDescription
+//        jobRequirementsLabel.text = job.jobRequirements
+//        contactEmailLabel.text = job.contactEmail
+//        postedDateLabel.text = job.postedDate
+//        deadlineDateLabel.text = ("Deadline \(job.deadline)")
+//        postedDateLabel.text = ("Posted \(job.postedDate)")
+//        for skill in job.skills {
+//            addSkill(skill)
+//        }
+//        companyImage.image = UIImage(named: "microsoft")
+        guard let job = jobPosting else { return } // Ensure job data is passed
+        
+        // Populate job details
+        companyNameLabel.text = "Microsoft"
         jobTitleLabel.text = job.jobTitle
         jobTypeLabel.text = job.jobType
         locationTypeLabel.text = job.locationType
@@ -168,12 +235,11 @@ class JobDetailsApplicantViewController: UIViewController {
         jobRequirementsLabel.text = job.jobRequirements
         contactEmailLabel.text = job.contactEmail
         postedDateLabel.text = job.postedDate
-        deadlineDateLabel.text = ("Deadline \(job.deadline)")
-        postedDateLabel.text = ("Posted \(job.postedDate)")
-        for skill in job.skills {
-            addSkill(skill)
-        }
-        companyImage.image = UIImage(named: "google")
+        deadlineDateLabel.text = "Deadline \(job.deadline)"
+        companyImage.image = UIImage(named: "microsoft")
+        
+        // Add skills with matching logic
+        displaySkills(job.skills)
     }
 
 }

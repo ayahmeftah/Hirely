@@ -17,6 +17,11 @@ class JobsCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var jobDeadlineDateLbl: UILabel!
     @IBOutlet weak var bookmarkButton: UIButton!
     
+
+    @IBAction func didTapViewDetails(_ sender: Any) {
+
+    }
+    
     var jobId: String? //save the job id
     var isSaved: Bool = false {
         didSet {
