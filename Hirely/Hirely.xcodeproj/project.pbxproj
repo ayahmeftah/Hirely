@@ -18,26 +18,26 @@
 		71BEBCF52CFC502B00DF795E /* HirelyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEBCF42CFC502B00DF795E /* HirelyTests.swift */; };
 		71BEBCFF2CFC502B00DF795E /* HirelyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEBCFE2CFC502B00DF795E /* HirelyUITests.swift */; };
 		71BEBD012CFC502B00DF795E /* HirelyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEBD002CFC502B00DF795E /* HirelyUITestsLaunchTests.swift */; };
-		899FD9F82D1FE3380060E68A /* Applicant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899FD9F12D1FE3380060E68A /* Applicant.swift */; };
-		899FD9F92D1FE3380060E68A /* Cloudinary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899FD9F22D1FE3380060E68A /* Cloudinary.swift */; };
-		899FD9FA2D1FE3380060E68A /* currentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899FD9F32D1FE3380060E68A /* currentUser.swift */; };
-		899FD9FB2D1FE3380060E68A /* Experience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899FD9F42D1FE3380060E68A /* Experience.swift */; };
-		899FD9FC2D1FE3380060E68A /* SkillItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899FD9F52D1FE3380060E68A /* SkillItem.swift */; };
-		899FD9FD2D1FE3380060E68A /* UserProfileSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899FD9F62D1FE3380060E68A /* UserProfileSection.swift */; };
-		899FD9FF2D1FE3640060E68A /* RegisterExperienceLevelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899FD9FE2D1FE3640060E68A /* RegisterExperienceLevelViewController.swift */; };
-		899FDA012D1FE9360060E68A /* ApplicantProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 899FDA002D1FE9360060E68A /* ApplicantProfile.storyboard */; };
-		899FDA032D1FE96D0060E68A /* ApplicantProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899FDA022D1FE96D0060E68A /* ApplicantProfileViewController.swift */; };
-		899FDA0C2D1FE9830060E68A /* AddSoftSkillAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899FDA042D1FE9830060E68A /* AddSoftSkillAlert.swift */; };
-		899FDA0D2D1FE9830060E68A /* AddSoftSkillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899FDA052D1FE9830060E68A /* AddSoftSkillViewController.swift */; };
-		899FDA0E2D1FE9830060E68A /* EditPersonalInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899FDA062D1FE9830060E68A /* EditPersonalInfoViewController.swift */; };
-		899FDA0F2D1FE9830060E68A /* EmployerProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899FDA072D1FE9830060E68A /* EmployerProfileViewController.swift */; };
-		899FDA102D1FE9830060E68A /* EditSoftSkillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899FDA082D1FE9830060E68A /* EditSoftSkillViewController.swift */; };
-		899FDA112D1FE9830060E68A /* ExperienceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899FDA092D1FE9830060E68A /* ExperienceTableViewCell.swift */; };
-		899FDA122D1FE9830060E68A /* PersonalInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899FDA0A2D1FE9830060E68A /* PersonalInfoViewController.swift */; };
-		899FDA132D1FE9830060E68A /* SkillsExperienceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899FDA0B2D1FE9830060E68A /* SkillsExperienceViewController.swift */; };
 		C363937D2D006A4C00E14337 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = C363937C2D006A4C00E14337 /* FirebaseDatabase */; };
 		C363937F2D006A5600E14337 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = C363937E2D006A5600E14337 /* FirebaseAuth */; };
 		C36393812D006A7800E14337 /* Cloudinary in Frameworks */ = {isa = PBXBuildFile; productRef = C36393802D006A7800E14337 /* Cloudinary */; };
+		D1080E6B2D2003F30006B9AC /* UserProfileSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1080E6A2D2003F30006B9AC /* UserProfileSection.swift */; };
+		D1080E6D2D2004100006B9AC /* currentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1080E6C2D2004100006B9AC /* currentUser.swift */; };
+		D1080E6F2D20042A0006B9AC /* SKillItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1080E6E2D20042A0006B9AC /* SKillItem.swift */; };
+		D1080E712D20043F0006B9AC /* Cloudinary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1080E702D20043F0006B9AC /* Cloudinary.swift */; };
+		D1080E732D2004500006B9AC /* Applicant.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1080E722D2004500006B9AC /* Applicant.swift */; };
+		D1080E752D2004650006B9AC /* Experience.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1080E742D2004650006B9AC /* Experience.swift */; };
+		D1080E772D2004A20006B9AC /* RegisterExperienceLevelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1080E762D2004A20006B9AC /* RegisterExperienceLevelViewController.swift */; };
+		D1080E792D2005030006B9AC /* ApplicantProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1080E782D2005030006B9AC /* ApplicantProfileViewController.swift */; };
+		D1080E7B2D20052B0006B9AC /* EmployerProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1080E7A2D20052B0006B9AC /* EmployerProfileViewController.swift */; };
+		D1080E7D2D2005620006B9AC /* AddSoftSkillAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1080E7C2D2005620006B9AC /* AddSoftSkillAlert.swift */; };
+		D1080E7F2D2005810006B9AC /* AddSoftSkillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1080E7E2D2005810006B9AC /* AddSoftSkillViewController.swift */; };
+		D1080E812D2005BE0006B9AC /* EditPersonalInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1080E802D2005BE0006B9AC /* EditPersonalInfoViewController.swift */; };
+		D1080E832D2005F60006B9AC /* SkillsExperienceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1080E822D2005F60006B9AC /* SkillsExperienceViewController.swift */; };
+		D1080E852D2006310006B9AC /* ExperienceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1080E842D2006310006B9AC /* ExperienceTableViewCell.swift */; };
+		D1080E872D20066C0006B9AC /* EditSoftSkillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1080E862D20066C0006B9AC /* EditSoftSkillViewController.swift */; };
+		D1080E892D2006B80006B9AC /* PersonalInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1080E882D2006B80006B9AC /* PersonalInfoViewController.swift */; };
+		D1080E8B2D2007470006B9AC /* ApplicantProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1080E8A2D2007470006B9AC /* ApplicantProfile.storyboard */; };
 		D193C7FB2D1F08F500B5F305 /* UserAuthentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D193C7FA2D1F08F500B5F305 /* UserAuthentication.storyboard */; };
 		D193C8092D1F090D00B5F305 /* EmploymentTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D193C7FC2D1F090D00B5F305 /* EmploymentTypeViewController.swift */; };
 		D193C80A2D1F090D00B5F305 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D193C7FD2D1F090D00B5F305 /* LoginViewController.swift */; };
@@ -85,23 +85,23 @@
 		71BEBCFA2CFC502B00DF795E /* HirelyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HirelyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		71BEBCFE2CFC502B00DF795E /* HirelyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HirelyUITests.swift; sourceTree = "<group>"; };
 		71BEBD002CFC502B00DF795E /* HirelyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HirelyUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		899FD9F12D1FE3380060E68A /* Applicant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Applicant.swift; sourceTree = "<group>"; };
-		899FD9F22D1FE3380060E68A /* Cloudinary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cloudinary.swift; sourceTree = "<group>"; };
-		899FD9F32D1FE3380060E68A /* currentUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = currentUser.swift; sourceTree = "<group>"; };
-		899FD9F42D1FE3380060E68A /* Experience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Experience.swift; sourceTree = "<group>"; };
-		899FD9F52D1FE3380060E68A /* SkillItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkillItem.swift; sourceTree = "<group>"; };
-		899FD9F62D1FE3380060E68A /* UserProfileSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileSection.swift; sourceTree = "<group>"; };
-		899FD9FE2D1FE3640060E68A /* RegisterExperienceLevelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterExperienceLevelViewController.swift; path = ../../../../../Documents/Hirely/Hirely/Hirely/Controllers/RegisterExperienceLevelViewController.swift; sourceTree = "<group>"; };
-		899FDA002D1FE9360060E68A /* ApplicantProfile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = ApplicantProfile.storyboard; path = ../../../../../Documents/Hirely/Hirely/Hirely/Storyboards/ApplicantProfile.storyboard; sourceTree = "<group>"; };
-		899FDA022D1FE96D0060E68A /* ApplicantProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApplicantProfileViewController.swift; path = ../../../../../Documents/Hirely/Hirely/Hirely/Controllers/ApplicantProfileViewController.swift; sourceTree = "<group>"; };
-		899FDA042D1FE9830060E68A /* AddSoftSkillAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddSoftSkillAlert.swift; path = ../../../../../Documents/Hirely/Hirely/Hirely/Controllers/AddSoftSkillAlert.swift; sourceTree = "<group>"; };
-		899FDA052D1FE9830060E68A /* AddSoftSkillViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddSoftSkillViewController.swift; path = ../../../../../Documents/Hirely/Hirely/Hirely/Controllers/AddSoftSkillViewController.swift; sourceTree = "<group>"; };
-		899FDA062D1FE9830060E68A /* EditPersonalInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditPersonalInfoViewController.swift; path = ../../../../../Documents/Hirely/Hirely/Hirely/Controllers/EditPersonalInfoViewController.swift; sourceTree = "<group>"; };
-		899FDA072D1FE9830060E68A /* EmployerProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmployerProfileViewController.swift; path = ../../../../../Documents/Hirely/Hirely/Hirely/Controllers/EmployerProfileViewController.swift; sourceTree = "<group>"; };
-		899FDA082D1FE9830060E68A /* EditSoftSkillViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditSoftSkillViewController.swift; path = ../../../../../Documents/Hirely/Hirely/Hirely/Controllers/EditSoftSkillViewController.swift; sourceTree = "<group>"; };
-		899FDA092D1FE9830060E68A /* ExperienceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExperienceTableViewCell.swift; path = ../../../../../Documents/Hirely/Hirely/Hirely/Controllers/ExperienceTableViewCell.swift; sourceTree = "<group>"; };
-		899FDA0A2D1FE9830060E68A /* PersonalInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersonalInfoViewController.swift; path = ../../../../../Documents/Hirely/Hirely/Hirely/Controllers/PersonalInfoViewController.swift; sourceTree = "<group>"; };
-		899FDA0B2D1FE9830060E68A /* SkillsExperienceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SkillsExperienceViewController.swift; path = ../../../../../Documents/Hirely/Hirely/Hirely/Controllers/SkillsExperienceViewController.swift; sourceTree = "<group>"; };
+		D1080E6A2D2003F30006B9AC /* UserProfileSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileSection.swift; sourceTree = "<group>"; };
+		D1080E6C2D2004100006B9AC /* currentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = currentUser.swift; sourceTree = "<group>"; };
+		D1080E6E2D20042A0006B9AC /* SKillItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKillItem.swift; sourceTree = "<group>"; };
+		D1080E702D20043F0006B9AC /* Cloudinary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cloudinary.swift; sourceTree = "<group>"; };
+		D1080E722D2004500006B9AC /* Applicant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Applicant.swift; sourceTree = "<group>"; };
+		D1080E742D2004650006B9AC /* Experience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Experience.swift; sourceTree = "<group>"; };
+		D1080E762D2004A20006B9AC /* RegisterExperienceLevelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterExperienceLevelViewController.swift; sourceTree = "<group>"; };
+		D1080E782D2005030006B9AC /* ApplicantProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicantProfileViewController.swift; sourceTree = "<group>"; };
+		D1080E7A2D20052B0006B9AC /* EmployerProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployerProfileViewController.swift; sourceTree = "<group>"; };
+		D1080E7C2D2005620006B9AC /* AddSoftSkillAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSoftSkillAlert.swift; sourceTree = "<group>"; };
+		D1080E7E2D2005810006B9AC /* AddSoftSkillViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSoftSkillViewController.swift; sourceTree = "<group>"; };
+		D1080E802D2005BE0006B9AC /* EditPersonalInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPersonalInfoViewController.swift; sourceTree = "<group>"; };
+		D1080E822D2005F60006B9AC /* SkillsExperienceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillsExperienceViewController.swift; sourceTree = "<group>"; };
+		D1080E842D2006310006B9AC /* ExperienceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceTableViewCell.swift; sourceTree = "<group>"; };
+		D1080E862D20066C0006B9AC /* EditSoftSkillViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditSoftSkillViewController.swift; sourceTree = "<group>"; };
+		D1080E882D2006B80006B9AC /* PersonalInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInfoViewController.swift; sourceTree = "<group>"; };
+		D1080E8A2D2007470006B9AC /* ApplicantProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ApplicantProfile.storyboard; sourceTree = "<group>"; };
 		D193C7FA2D1F08F500B5F305 /* UserAuthentication.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = UserAuthentication.storyboard; path = ../../../../../Downloads/Hirely/Hirely/Hirely/Storyboards/UserAuthentication.storyboard; sourceTree = "<group>"; };
 		D193C7FC2D1F090D00B5F305 /* EmploymentTypeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmploymentTypeViewController.swift; path = ../../../../../Downloads/Hirely/Hirely/Hirely/Controllers/EmploymentTypeViewController.swift; sourceTree = "<group>"; };
 		D193C7FD2D1F090D00B5F305 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = ../../../../../Downloads/Hirely/Hirely/Hirely/Controllers/LoginViewController.swift; sourceTree = "<group>"; };
@@ -159,7 +159,7 @@
 				71BEBCE32CFC502900DF795E /* Main.storyboard */,
 				71BEBCE82CFC502A00DF795E /* LaunchScreen.storyboard */,
 				D193C7FA2D1F08F500B5F305 /* UserAuthentication.storyboard */,
-				899FDA002D1FE9360060E68A /* ApplicantProfile.storyboard */,
+				D1080E8A2D2007470006B9AC /* ApplicantProfile.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -172,7 +172,7 @@
 				D193C7FD2D1F090D00B5F305 /* LoginViewController.swift */,
 				D193C8082D1F090D00B5F305 /* RegisterDetailsViewController.swift */,
 				D193C8012D1F090D00B5F305 /* RegisterExpertiseViewController.swift */,
-				899FD9FE2D1FE3640060E68A /* RegisterExperienceLevelViewController.swift */,
+				D1080E762D2004A20006B9AC /* RegisterExperienceLevelViewController.swift */,
 				D193C8002D1F090D00B5F305 /* RegisterInterestsViewController.swift */,
 				D193C8032D1F090D00B5F305 /* SalaryViewController.swift */,
 				D193C8042D1F090D00B5F305 /* SignUpViewController.swift */,
@@ -180,16 +180,15 @@
 				D193C8022D1F090D00B5F305 /* SoftSkillsViewController.swift */,
 				D193C8052D1F090D00B5F305 /* TechnicalSkillsViewController.swift */,
 				D193C7FF2D1F090D00B5F305 /* UploadProfilePhotoViewController.swift */,
-				899FDA022D1FE96D0060E68A /* ApplicantProfileViewController.swift */,
-				899FDA042D1FE9830060E68A /* AddSoftSkillAlert.swift */,
-				899FDA052D1FE9830060E68A /* AddSoftSkillViewController.swift */,
-				899FDA062D1FE9830060E68A /* EditPersonalInfoViewController.swift */,
-				899FDA082D1FE9830060E68A /* EditSoftSkillViewController.swift */,
-				899FDA072D1FE9830060E68A /* EmployerProfileViewController.swift */,
-				899FDA092D1FE9830060E68A /* ExperienceTableViewCell.swift */,
-				899FDA0A2D1FE9830060E68A /* PersonalInfoViewController.swift */,
-				899FDA0B2D1FE9830060E68A /* SkillsExperienceViewController.swift */,
 				71BEBCE12CFC502900DF795E /* ViewController.swift */,
+				D1080E782D2005030006B9AC /* ApplicantProfileViewController.swift */,
+				D1080E7A2D20052B0006B9AC /* EmployerProfileViewController.swift */,
+				D1080E7E2D2005810006B9AC /* AddSoftSkillViewController.swift */,
+				D1080E802D2005BE0006B9AC /* EditPersonalInfoViewController.swift */,
+				D1080E822D2005F60006B9AC /* SkillsExperienceViewController.swift */,
+				D1080E842D2006310006B9AC /* ExperienceTableViewCell.swift */,
+				D1080E862D20066C0006B9AC /* EditSoftSkillViewController.swift */,
+				D1080E882D2006B80006B9AC /* PersonalInfoViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -218,7 +217,7 @@
 		71BEBCDC2CFC502900DF795E /* Hirely */ = {
 			isa = PBXGroup;
 			children = (
-				899FD9F72D1FE3380060E68A /* Models */,
+				D1080E692D2003A20006B9AC /* Models */,
 				711B4EBF2CFC57F300910FB6 /* Controllers */,
 				711B4EBE2CFC57E200910FB6 /* Storyboards */,
 				71BEBCDD2CFC502900DF795E /* AppDelegate.swift */,
@@ -247,18 +246,18 @@
 			path = HirelyUITests;
 			sourceTree = "<group>";
 		};
-		899FD9F72D1FE3380060E68A /* Models */ = {
+		D1080E692D2003A20006B9AC /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				899FD9F12D1FE3380060E68A /* Applicant.swift */,
-				899FD9F22D1FE3380060E68A /* Cloudinary.swift */,
-				899FD9F32D1FE3380060E68A /* currentUser.swift */,
-				899FD9F42D1FE3380060E68A /* Experience.swift */,
-				899FD9F52D1FE3380060E68A /* SkillItem.swift */,
-				899FD9F62D1FE3380060E68A /* UserProfileSection.swift */,
+				D1080E6A2D2003F30006B9AC /* UserProfileSection.swift */,
+				D1080E6C2D2004100006B9AC /* currentUser.swift */,
+				D1080E6E2D20042A0006B9AC /* SKillItem.swift */,
+				D1080E702D20043F0006B9AC /* Cloudinary.swift */,
+				D1080E722D2004500006B9AC /* Applicant.swift */,
+				D1080E742D2004650006B9AC /* Experience.swift */,
+				D1080E7C2D2005620006B9AC /* AddSoftSkillAlert.swift */,
 			);
-			name = Models;
-			path = ../../../../Documents/Hirely/Hirely/Hirely/Models;
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -376,7 +375,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D193C7FB2D1F08F500B5F305 /* UserAuthentication.storyboard in Resources */,
-				899FDA012D1FE9360060E68A /* ApplicantProfile.storyboard in Resources */,
+				D1080E8B2D2007470006B9AC /* ApplicantProfile.storyboard in Resources */,
 				71BEBCE72CFC502A00DF795E /* Assets.xcassets in Resources */,
 				71BEBCEA2CFC502A00DF795E /* Base in Resources */,
 				71BEBCE52CFC502900DF795E /* Base in Resources */,
@@ -405,36 +404,36 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				899FD9FF2D1FE3640060E68A /* RegisterExperienceLevelViewController.swift in Sources */,
 				D193C80F2D1F090D00B5F305 /* SoftSkillsViewController.swift in Sources */,
-				899FDA032D1FE96D0060E68A /* ApplicantProfileViewController.swift in Sources */,
-				899FDA132D1FE9830060E68A /* SkillsExperienceViewController.swift in Sources */,
 				D193C8132D1F090D00B5F305 /* SkillTableViewCell.swift in Sources */,
-				899FD9FD2D1FE3380060E68A /* UserProfileSection.swift in Sources */,
-				899FD9FC2D1FE3380060E68A /* SkillItem.swift in Sources */,
 				D193C8092D1F090D00B5F305 /* EmploymentTypeViewController.swift in Sources */,
-				899FD9FB2D1FE3380060E68A /* Experience.swift in Sources */,
-				899FDA0F2D1FE9830060E68A /* EmployerProfileViewController.swift in Sources */,
+				D1080E892D2006B80006B9AC /* PersonalInfoViewController.swift in Sources */,
 				71BEBCE22CFC502900DF795E /* ViewController.swift in Sources */,
+				D1080E6F2D20042A0006B9AC /* SKillItem.swift in Sources */,
+				D1080E6B2D2003F30006B9AC /* UserProfileSection.swift in Sources */,
 				D193C8122D1F090D00B5F305 /* TechnicalSkillsViewController.swift in Sources */,
+				D1080E792D2005030006B9AC /* ApplicantProfileViewController.swift in Sources */,
+				D1080E872D20066C0006B9AC /* EditSoftSkillViewController.swift in Sources */,
 				D193C80C2D1F090D00B5F305 /* UploadProfilePhotoViewController.swift in Sources */,
 				D193C80E2D1F090D00B5F305 /* RegisterExpertiseViewController.swift in Sources */,
+				D1080E772D2004A20006B9AC /* RegisterExperienceLevelViewController.swift in Sources */,
 				D193C8152D1F090D00B5F305 /* RegisterDetailsViewController.swift in Sources */,
 				D193C8112D1F090D00B5F305 /* SignUpViewController.swift in Sources */,
+				D1080E7D2D2005620006B9AC /* AddSoftSkillAlert.swift in Sources */,
 				71BEBCDE2CFC502900DF795E /* AppDelegate.swift in Sources */,
-				899FD9FA2D1FE3380060E68A /* currentUser.swift in Sources */,
-				899FD9F92D1FE3380060E68A /* Cloudinary.swift in Sources */,
-				899FD9F82D1FE3380060E68A /* Applicant.swift in Sources */,
-				899FDA0E2D1FE9830060E68A /* EditPersonalInfoViewController.swift in Sources */,
+				D1080E6D2D2004100006B9AC /* currentUser.swift in Sources */,
+				D1080E852D2006310006B9AC /* ExperienceTableViewCell.swift in Sources */,
+				D1080E732D2004500006B9AC /* Applicant.swift in Sources */,
+				D1080E7B2D20052B0006B9AC /* EmployerProfileViewController.swift in Sources */,
+				D1080E812D2005BE0006B9AC /* EditPersonalInfoViewController.swift in Sources */,
 				D193C80D2D1F090D00B5F305 /* RegisterInterestsViewController.swift in Sources */,
 				D193C80A2D1F090D00B5F305 /* LoginViewController.swift in Sources */,
-				899FDA122D1FE9830060E68A /* PersonalInfoViewController.swift in Sources */,
 				D193C8102D1F090D00B5F305 /* SalaryViewController.swift in Sources */,
-				899FDA0D2D1FE9830060E68A /* AddSoftSkillViewController.swift in Sources */,
-				899FDA102D1FE9830060E68A /* EditSoftSkillViewController.swift in Sources */,
+				D1080E832D2005F60006B9AC /* SkillsExperienceViewController.swift in Sources */,
+				D1080E752D2004650006B9AC /* Experience.swift in Sources */,
+				D1080E712D20043F0006B9AC /* Cloudinary.swift in Sources */,
+				D1080E7F2D2005810006B9AC /* AddSoftSkillViewController.swift in Sources */,
 				D193C8142D1F090D00B5F305 /* ExperienceLevelViewController.swift in Sources */,
-				899FDA112D1FE9830060E68A /* ExperienceTableViewCell.swift in Sources */,
-				899FDA0C2D1FE9830060E68A /* AddSoftSkillAlert.swift in Sources */,
 				71BEBCE02CFC502900DF795E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
