@@ -6,10 +6,12 @@ import Cloudinary
 
 class ApplyJobViewController: UIViewController, UIDocumentPickerDelegate {
 
-    @IBOutlet weak var companyLogoimg: UIImageView!
+    //@IBOutlet weak var companyLogoimg: CLDUIImageView!
+    
     @IBOutlet weak var positionlbl: UILabel!
     @IBOutlet weak var companyNamelbl: UILabel!
 
+    @IBOutlet weak var companyLogoimg: CLDUIImageView!
     @IBOutlet weak var fullNametxt: UITextField!
     @IBOutlet weak var agetxt: UITextField!
     @IBOutlet weak var phoneNumbertxt: UITextField!
@@ -23,9 +25,13 @@ class ApplyJobViewController: UIViewController, UIDocumentPickerDelegate {
     var jobPosting: JobPosting? // Holds the fetched job posting data
     var companyDetails: CompanyDetails? // Holds the fetched company details
     
-    
-    var jobId = "7J4ZFgnWengAKzKSM6dM" // Replace with the actual job document ID
+    //need to adjust
+    //let userId = currentUser().getCurrentUserId()
     var userId = "ppRloi8VPTvhItiWAYTT"
+    
+    //need adjustments
+    //passed from the previouse page
+    var jobId = "7J4ZFgnWengAKzKSM6dM"
     var companyId = "RYINaYeqoq6WXBkdCOoK"
     
     // Cloudinary configuration
@@ -52,7 +58,7 @@ class ApplyJobViewController: UIViewController, UIDocumentPickerDelegate {
         setUpUI()
     }
 
-    private func initCloudinary() {
+     func initCloudinary() {
         let config = CLDConfiguration(cloudName: cloudName, secure: true)
         cloudinary = CLDCloudinary(configuration: config)
     }
@@ -90,29 +96,27 @@ class ApplyJobViewController: UIViewController, UIDocumentPickerDelegate {
     }
     
     func setUpUI() {
-        guard let jobPosting = jobPosting, let companyDetails = companyDetails else {
-            print("Job posting or company details are missing.")
+        guard let jobPosting = jobPosting else {
+            print("Job posting details are missing.")
+            return
+        }
+
+        guard let companyDetails = companyDetails else {
+            print("Company details are missing.")
             return
         }
 
         positionlbl.text = jobPosting.jobTitle
         companyNamelbl.text = companyDetails.name
-        //        if let logoURL = URL(string: companyDetails.companyPicture) {
-        //            // Load the company logo asynchronously
-        //            DispatchQueue.global().async {
-        //                if let data = try? Data(contentsOf: logoURL), let image = UIImage(data: data) {
-        //                    DispatchQueue.main.async {
-        //                        self.companyLogoimg.image = image
-        //                    }
-        //                }
-        //            }
-        //        }
+        
+        let companylogo = companyDetails.companyPicture
+        companyLogoimg.cldSetImage(companylogo, cloudinary: cloudinary)
+        
+        
     }
 
     func fetchJobPostingData() {
         let db = Firestore.firestore()
-        
-
         db.collection("jobPostings").document(jobId).getDocument { snapshot, error in
             if let error = error {
                 print("Error fetching job posting: \(error.localizedDescription)")
@@ -128,6 +132,7 @@ class ApplyJobViewController: UIViewController, UIDocumentPickerDelegate {
         }
     }
 
+
     func fetchCompanyDetails(companyId: String) {
         let db = Firestore.firestore()
         db.collection("companies").document(companyId).getDocument { snapshot, error in
@@ -141,11 +146,10 @@ class ApplyJobViewController: UIViewController, UIDocumentPickerDelegate {
                 DispatchQueue.main.async {
                     self.setUpUI()
                 }
-            } else {
-                print("No company data found for ID: \(companyId)")
             }
         }
     }
+
 
     @objc func uploadCVTapped() {
         let alert = UIAlertController(title: "Upload CV", message: "Choose an option to upload your CV.", preferredStyle: .actionSheet)
@@ -233,24 +237,53 @@ class ApplyJobViewController: UIViewController, UIDocumentPickerDelegate {
             return
         }
 
-        // Prepare data to save in Firestore
-        let applicationData: [String: Any] = [
-            "fullName": fullName,
-            "age": age,
-            "phoneNumber": phoneNumber,
-            "email": email,
-            "cv": validCVLink,
-            "dateApplied": Timestamp(date: Date()),
-            "applicationStatus": "New",
-            "jobId": jobId,
-            "scheduledInterviewId": "",
-            //adjust
-            "userId": userId
-            //"userId": getCurrentUserId() ?? "Unknown"
-        ]
+        // Check if the user already applied for the job
+        checkIfUserAlreadyApplied { alreadyApplied in
+            if alreadyApplied {
+                self.showAlert(title: "Already Applied", message: "You have already applied for this job. Please check your status in your profile.")
+            } else {
+                // Prepare data to save in Firestore
+                let applicationData: [String: Any] = [
+                    "fullName": fullName,
+                    "age": age,
+                    "phoneNumber": phoneNumber,
+                    "email": email,
+                    "cv": validCVLink,
+                    "dateApplied": Timestamp(date: Date()),
+                    "applicationStatus": "New",
+                    "jobId": self.jobId,
+                    "scheduledInterviewId": "",
+                    "userId": self.userId
+                ]
 
-        saveApplicationData(data: applicationData)
+                self.saveApplicationData(data: applicationData)
+            }
+        }
     }
+
+    func checkIfUserAlreadyApplied(completion: @escaping (Bool) -> Void) {
+        let db = Firestore.firestore()
+        let appliedJobsRef = db.collection("appliedJobs")
+        
+        appliedJobsRef.whereField("userId", isEqualTo: userId)
+            .whereField("jobId", isEqualTo: jobId)
+            .getDocuments { snapshot, error in
+                if let error = error {
+                    print("Error checking existing applications: \(error.localizedDescription)")
+                    completion(false) // Assume no existing application to prevent blocking
+                    return
+                }
+                
+                if let documents = snapshot?.documents, !documents.isEmpty {
+                    // Found at least one matching application
+                    completion(true)
+                } else {
+                    // No matching application found
+                    completion(false)
+                }
+            }
+    }
+
 
     func saveApplicationData(data: [String: Any]) {
         let db = Firestore.firestore()
@@ -388,6 +421,7 @@ class ApplyJobViewController: UIViewController, UIDocumentPickerDelegate {
         }
     }
 
+    //This is for whe the applicant clicks 
     private func displayCVSelectionOptions(cvUrls: [String: String]) {
         let alert = UIAlertController(title: "Select CV", message: "Choose a CV to upload.", preferredStyle: .alert)
 
@@ -409,10 +443,24 @@ class ApplyJobViewController: UIViewController, UIDocumentPickerDelegate {
 
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            if segue.identifier == "goToCompanyDetails",
-               let destinationVC = segue.destination as? CompanyDetailsViewController {
-                destinationVC.companyDetails = companyDetails
-                destinationVC.jobposting = jobPosting
+        if segue.identifier == "goToCompanyDetails",
+           let destinationVC = segue.destination as? CompanyDetailsViewController {
+            
+            // Pass the actual structs
+            destinationVC.companyDetails = self.companyDetails
+            destinationVC.jobposting = self.jobPosting
+            
+            // Debug logs to confirm struct instances
+            if let companyDetails = self.companyDetails {
+                print("Passing Company Details Struct: \(companyDetails)")
+            }
+            
+            
+            if let jobPosting = self.jobPosting {
+                print("Passing Job Posting Struct: \(jobPosting)")
             }
         }
+    }
+
+
 }
