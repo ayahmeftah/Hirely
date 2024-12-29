@@ -18,16 +18,7 @@
 		71BEBCF52CFC502B00DF795E /* HirelyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEBCF42CFC502B00DF795E /* HirelyTests.swift */; };
 		71BEBCFF2CFC502B00DF795E /* HirelyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEBCFE2CFC502B00DF795E /* HirelyUITests.swift */; };
 		71BEBD012CFC502B00DF795E /* HirelyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEBD002CFC502B00DF795E /* HirelyUITestsLaunchTests.swift */; };
-		71D5BFB22D208DB90098193C /* CloudinarySetUpCv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D5BFAA2D208DB80098193C /* CloudinarySetUpCv.swift */; };
-		71D5BFB32D208DB90098193C /* educationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D5BFAB2D208DB80098193C /* educationViewController.swift */; };
-		71D5BFB42D208DB90098193C /* generatedCvViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D5BFAC2D208DB80098193C /* generatedCvViewController.swift */; };
-		71D5BFB52D208DB90098193C /* personalInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D5BFAD2D208DB90098193C /* personalInfoViewController.swift */; };
-		71D5BFB62D208DB90098193C /* CvBuilderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D5BFAE2D208DB90098193C /* CvBuilderViewController.swift */; };
-		71D5BFB72D208DB90098193C /* certiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D5BFAF2D208DB90098193C /* certiViewController.swift */; };
-		71D5BFB82D208DB90098193C /* skillsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D5BFB02D208DB90098193C /* skillsViewController.swift */; };
-		71D5BFB92D208DB90098193C /* expViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D5BFB12D208DB90098193C /* expViewController.swift */; };
-		71D5BFBB2D208E340098193C /* CVBuilder.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71D5BFBA2D208E340098193C /* CVBuilder.storyboard */; };
-		71D5BFBE2D208E600098193C /* CVData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D5BFBD2D208E600098193C /* CVData.swift */; };
+		71D5BFC02D212B860098193C /* certiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D5BFBF2D212B860098193C /* certiViewController.swift */; };
 		C363937D2D006A4C00E14337 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = C363937C2D006A4C00E14337 /* FirebaseDatabase */; };
 		C363937F2D006A5600E14337 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = C363937E2D006A5600E14337 /* FirebaseAuth */; };
 		C36393812D006A7800E14337 /* Cloudinary in Frameworks */ = {isa = PBXBuildFile; productRef = C36393802D006A7800E14337 /* Cloudinary */; };
@@ -65,16 +56,7 @@
 		71BEBCFA2CFC502B00DF795E /* HirelyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HirelyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		71BEBCFE2CFC502B00DF795E /* HirelyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HirelyUITests.swift; sourceTree = "<group>"; };
 		71BEBD002CFC502B00DF795E /* HirelyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HirelyUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		71D5BFAA2D208DB80098193C /* CloudinarySetUpCv.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CloudinarySetUpCv.swift; path = "../../../../../../../Documents/Areej Branches/Hirely-CVBuilderFeature/Hirely/Hirely/Controllers/CloudinarySetUpCv.swift"; sourceTree = "<group>"; };
-		71D5BFAB2D208DB80098193C /* educationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = educationViewController.swift; path = "../../../../../../../Documents/Areej Branches/Hirely-CVBuilderFeature/Hirely/Hirely/Controllers/educationViewController.swift"; sourceTree = "<group>"; };
-		71D5BFAC2D208DB80098193C /* generatedCvViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = generatedCvViewController.swift; path = "../../../../../../../Documents/Areej Branches/Hirely-CVBuilderFeature/Hirely/Hirely/Controllers/generatedCvViewController.swift"; sourceTree = "<group>"; };
-		71D5BFAD2D208DB90098193C /* personalInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = personalInfoViewController.swift; path = "../../../../../../../Documents/Areej Branches/Hirely-CVBuilderFeature/Hirely/Hirely/Controllers/personalInfoViewController.swift"; sourceTree = "<group>"; };
-		71D5BFAE2D208DB90098193C /* CvBuilderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CvBuilderViewController.swift; path = "../../../../../../../Documents/Areej Branches/Hirely-CVBuilderFeature/Hirely/Hirely/Controllers/CvBuilderViewController.swift"; sourceTree = "<group>"; };
-		71D5BFAF2D208DB90098193C /* certiViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = certiViewController.swift; path = "../../../../../../../Documents/Areej Branches/Hirely-CVBuilderFeature/Hirely/Hirely/Controllers/certiViewController.swift"; sourceTree = "<group>"; };
-		71D5BFB02D208DB90098193C /* skillsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = skillsViewController.swift; path = "../../../../../../../Documents/Areej Branches/Hirely-CVBuilderFeature/Hirely/Hirely/Controllers/skillsViewController.swift"; sourceTree = "<group>"; };
-		71D5BFB12D208DB90098193C /* expViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = expViewController.swift; path = "../../../../../../../Documents/Areej Branches/Hirely-CVBuilderFeature/Hirely/Hirely/Controllers/expViewController.swift"; sourceTree = "<group>"; };
-		71D5BFBA2D208E340098193C /* CVBuilder.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = CVBuilder.storyboard; path = "../../../../../../../Documents/Areej Branches/Hirely-CVBuilderFeature/Hirely/Hirely/Storyboards/CVBuilder.storyboard"; sourceTree = "<group>"; };
-		71D5BFBD2D208E600098193C /* CVData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CVData.swift; path = "../../../../../../Documents/Areej Branches/Hirely-CVBuilderFeature/Hirely/Hirely/Storyboards/CVData.swift"; sourceTree = "<group>"; };
+		71D5BFBF2D212B860098193C /* certiViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = certiViewController.swift; path = "../../../../../Documents/Areej Branches/Hirely-CVBuilderFeature/Hirely/Hirely/Controllers/certiViewController.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,7 +100,6 @@
 			children = (
 				71D5BF7A2D20823E0098193C /* KhadijaStoryboards */,
 				71D5BF792D20822D0098193C /* ManarStoryboards */,
-				71D5BF782D20821A0098193C /* AreejStoryboards */,
 				71D5BF772D2082050098193C /* AyahStoryboards */,
 				71D5BF752D207AD00098193C /* MayarStoryboards */,
 				71BEBCE32CFC502900DF795E /* Main.storyboard */,
@@ -133,7 +114,6 @@
 				71D5BFA92D208BAF0098193C /* MayarControllers */,
 				71D5BF7D2D20827C0098193C /* KhadijaControllers */,
 				71D5BF7C2D2082620098193C /* ManarControllers */,
-				71D5BF7B2D2082530098193C /* AreejControllers */,
 				71D5BF762D2081F20098193C /* AyahControllers */,
 				71BEBCE12CFC502900DF795E /* ViewController.swift */,
 			);
@@ -164,7 +144,7 @@
 		71BEBCDC2CFC502900DF795E /* Hirely */ = {
 			isa = PBXGroup;
 			children = (
-				71D5BFBC2D208E440098193C /* Models */,
+				71D5BFBF2D212B860098193C /* certiViewController.swift */,
 				711B4EBF2CFC57F300910FB6 /* Controllers */,
 				711B4EBE2CFC57E200910FB6 /* Storyboards */,
 				71BEBCDD2CFC502900DF795E /* AppDelegate.swift */,
@@ -214,14 +194,6 @@
 			path = AyahStoryboards;
 			sourceTree = "<group>";
 		};
-		71D5BF782D20821A0098193C /* AreejStoryboards */ = {
-			isa = PBXGroup;
-			children = (
-				71D5BFBA2D208E340098193C /* CVBuilder.storyboard */,
-			);
-			path = AreejStoryboards;
-			sourceTree = "<group>";
-		};
 		71D5BF792D20822D0098193C /* ManarStoryboards */ = {
 			isa = PBXGroup;
 			children = (
@@ -234,21 +206,6 @@
 			children = (
 			);
 			path = KhadijaStoryboards;
-			sourceTree = "<group>";
-		};
-		71D5BF7B2D2082530098193C /* AreejControllers */ = {
-			isa = PBXGroup;
-			children = (
-				71D5BFAF2D208DB90098193C /* certiViewController.swift */,
-				71D5BFAA2D208DB80098193C /* CloudinarySetUpCv.swift */,
-				71D5BFAE2D208DB90098193C /* CvBuilderViewController.swift */,
-				71D5BFAB2D208DB80098193C /* educationViewController.swift */,
-				71D5BFB12D208DB90098193C /* expViewController.swift */,
-				71D5BFAC2D208DB80098193C /* generatedCvViewController.swift */,
-				71D5BFAD2D208DB90098193C /* personalInfoViewController.swift */,
-				71D5BFB02D208DB90098193C /* skillsViewController.swift */,
-			);
-			path = AreejControllers;
 			sourceTree = "<group>";
 		};
 		71D5BF7C2D2082620098193C /* ManarControllers */ = {
@@ -270,14 +227,6 @@
 			children = (
 			);
 			path = MayarControllers;
-			sourceTree = "<group>";
-		};
-		71D5BFBC2D208E440098193C /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				71D5BFBD2D208E600098193C /* CVData.swift */,
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -395,7 +344,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				71BEBCE72CFC502A00DF795E /* Assets.xcassets in Resources */,
-				71D5BFBB2D208E340098193C /* CVBuilder.storyboard in Resources */,
 				71BEBCEA2CFC502A00DF795E /* Base in Resources */,
 				71BEBCE52CFC502900DF795E /* Base in Resources */,
 				2C9302F52CFC9E6500CAD615 /* GoogleService-Info.plist in Resources */,
@@ -424,17 +372,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				71BEBCE22CFC502900DF795E /* ViewController.swift in Sources */,
-				71D5BFB42D208DB90098193C /* generatedCvViewController.swift in Sources */,
 				71BEBCDE2CFC502900DF795E /* AppDelegate.swift in Sources */,
-				71D5BFB22D208DB90098193C /* CloudinarySetUpCv.swift in Sources */,
-				71D5BFB92D208DB90098193C /* expViewController.swift in Sources */,
-				71D5BFB82D208DB90098193C /* skillsViewController.swift in Sources */,
-				71D5BFBE2D208E600098193C /* CVData.swift in Sources */,
-				71D5BFB52D208DB90098193C /* personalInfoViewController.swift in Sources */,
+				71D5BFC02D212B860098193C /* certiViewController.swift in Sources */,
 				71BEBCE02CFC502900DF795E /* SceneDelegate.swift in Sources */,
-				71D5BFB32D208DB90098193C /* educationViewController.swift in Sources */,
-				71D5BFB62D208DB90098193C /* CvBuilderViewController.swift in Sources */,
-				71D5BFB72D208DB90098193C /* certiViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
