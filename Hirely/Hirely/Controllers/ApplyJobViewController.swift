@@ -31,7 +31,7 @@ class ApplyJobViewController: UIViewController, UIDocumentPickerDelegate {
     
     //need adjustments
     //passed from the previouse page
-    var jobId = "7J4ZFgnWengAKzKSM6dM"
+    var jobId = "8bHjOwYbcxXWMvyjXhI1"
     var companyId = "RYINaYeqoq6WXBkdCOoK"
     
     // Cloudinary configuration
@@ -257,6 +257,7 @@ class ApplyJobViewController: UIViewController, UIDocumentPickerDelegate {
                 ]
 
                 self.saveApplicationData(data: applicationData)
+                
             }
         }
     }
@@ -287,21 +288,55 @@ class ApplyJobViewController: UIViewController, UIDocumentPickerDelegate {
 
     func saveApplicationData(data: [String: Any]) {
         let db = Firestore.firestore()
-        db.collection("appliedJobs").addDocument(data: data) { error in
+        
+        // Add a new document to the appliedJobs collection
+        var ref: DocumentReference? = nil
+        ref = db.collection("appliedJobs").addDocument(data: data) { [weak self] error in
+            guard let self = self else { return }
+            
             if let error = error {
                 print("Error saving application: \(error.localizedDescription)")
                 self.showAlert(title: "Error", message: "Failed to submit your application. Please try again.")
+                return
+            }
+            
+            guard let documentId = ref?.documentID else {
+                print("Error: Failed to retrieve document ID for the new application.")
+                self.showAlert(title: "Error", message: "Failed to submit your application. Please try again.")
+                return
+            }
+            
+            print("Application submitted successfully with ID: \(documentId)")
+            
+            // Update the user's appliedJobs array
+            self.updateUserAppliedJobs(with: documentId)
+            
+            // Show success alert and clear the form
+            self.showAlert(title: "Success", message: "Your application has been submitted.")
+            self.clearForm()
+        }
+    }
+
+    func updateUserAppliedJobs(with applicationId: String) {
+        let db = Firestore.firestore()
+        let userDocRef = db.collection("Users").document(userId)
+        
+        // Update the appliedJobs array in the user's document
+        userDocRef.updateData([
+            "appliedJobs": FieldValue.arrayUnion([applicationId])
+        ]) { error in
+            if let error = error {
+                print("Error updating user's appliedJobs: \(error.localizedDescription)")
             } else {
-                print("Application submitted successfully!")
-                self.showAlert(title: "Success", message: "Your application has been submitted.")
-                self.clearForm()
+                print("User's appliedJobs updated successfully with application ID: \(applicationId)")
             }
         }
     }
 
-    func getCurrentUserId() -> String? {
-        return Auth.auth().currentUser?.uid
-    }
+
+//    func getCurrentUserId() -> String? {
+//        return Auth.auth().currentUser?.uid
+//    }
 
     func showAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
