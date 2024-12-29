@@ -7,11 +7,12 @@
 
 import UIKit
 import FirebaseFirestore
+import Cloudinary
 
 class InterviewDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     // TableView
     @IBOutlet weak var interviewTableView: UITableView!
-    
+    @IBOutlet weak var companyLogoImage: CLDUIImageView!
     @IBOutlet weak var companyNamelbl: UILabel!
     @IBOutlet weak var positionlbl: UILabel!
     
@@ -19,6 +20,12 @@ class InterviewDetailViewController: UIViewController, UITableViewDelegate, UITa
     var interviewId = ""
     var jobCompanySelected = ""
     var jobPositionSelected = ""
+    var companyLogo = ""
+    
+    // Cloudinary configuration
+    let cloudName: String = "drkt3vace"
+    let uploadPreset: String = "unsigned_upload"
+    var cloudinary: CLDCloudinary!
     
     // Initialize the data
     var icontitles = ["Date", "Time", "Location", "Notes"]
@@ -28,6 +35,9 @@ class InterviewDetailViewController: UIViewController, UITableViewDelegate, UITa
         super.viewDidLoad()
         interviewTableView.backgroundColor = .clear
         
+        // Initialize Cloudinary
+        initCloudinary()
+        
         // Update labels with passed data
         companyNamelbl.text = jobCompanySelected
         positionlbl.text = jobPositionSelected
@@ -35,9 +45,20 @@ class InterviewDetailViewController: UIViewController, UITableViewDelegate, UITa
         interviewTableView.delegate = self
         interviewTableView.dataSource = self
         
+        // Set the company logo image
+        if !companyLogo.isEmpty {
+            let companyLogoURL = companyLogo
+            companyLogoImage.cldSetImage(companyLogoURL, cloudinary: cloudinary)
+        }
+        
         // Fetch interview information
         fetchInterviewInfo()
                 
+    }
+    
+    func initCloudinary() {
+        let config = CLDConfiguration(cloudName: cloudName, secure: true)
+        cloudinary = CLDCloudinary(configuration: config)
     }
     
     func fetchInterviewInfo() {

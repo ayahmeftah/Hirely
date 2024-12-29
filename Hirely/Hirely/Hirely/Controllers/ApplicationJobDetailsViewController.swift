@@ -1,14 +1,24 @@
 import UIKit
 import FirebaseFirestore
+import Cloudinary
 
 class ApplicationJobDetailsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var positionlbl: UILabel!
     @IBOutlet weak var companyNamelbl: UILabel!
     @IBOutlet weak var jobDetailsTableView: UITableView!
+    @IBOutlet weak var companyLogoImage: CLDUIImageView!
+    
+    
+    // Cloudinary configuration
+    let cloudName: String = "drkt3vace"
+    let uploadPreset: String = "unsigned_upload"
+    var cloudinary: CLDCloudinary!
+    
     
     var jobPosting: JobPosting?
     var interviewId: String = ""
+    var companylogo = ""
     
     // Passed data
     var companyIdSelected: String = ""
@@ -24,6 +34,9 @@ class ApplicationJobDetailsViewController: UIViewController, UITableViewDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Initialize Cloudinary
+        initCloudinary()
+
         jobDetailsTableView.delegate = self
         jobDetailsTableView.dataSource = self
 
@@ -36,9 +49,20 @@ class ApplicationJobDetailsViewController: UIViewController, UITableViewDelegate
         positionlbl.text = jobPositionSelected
         companyNamelbl.text = jobCompanySelected
 
-        // Fetch the `interviewId` and job details
+        // Fetch the interviewId, job details, and company logo
         fetchInterviewId()
         fetchJobDetails()
+        fetchCompanyLogo()
+
+        // Set the company logo image
+        let companyLogoURL = companylogo
+        companyLogoImage.cldSetImage(companyLogoURL, cloudinary: cloudinary)
+
+    }
+
+    func initCloudinary() {
+        let config = CLDConfiguration(cloudName: cloudName, secure: true)
+        cloudinary = CLDCloudinary(configuration: config)
     }
 
     // Fetch the `scheduledInterviewId` from the `appliedJobs` collection
@@ -67,6 +91,33 @@ class ApplicationJobDetailsViewController: UIViewController, UITableViewDelegate
             print("Fetched Interview ID: \(self.interviewId)")
         }
     }
+    
+    func fetchCompanyLogo() {
+        let db = Firestore.firestore()
+        
+        db.collection("companies").document(companyIdSelected).getDocument { snapshot, error in
+            if let error = error {
+                print("Error fetching company details: \(error.localizedDescription)")
+                return
+            }
+            
+            guard let data = snapshot?.data(), let companyPicture = data["companyPicture"] as? String else {
+                print("No company picture found for company ID: \(self.companyIdSelected)")
+                return
+            }
+            
+            // Store the company picture URL
+            self.companylogo = companyPicture
+            
+            // Set the image using the Cloudinary helper method
+            DispatchQueue.main.async {
+                self.companyLogoImage.cldSetImage(companyPicture, cloudinary: self.cloudinary)
+            }
+        }
+    }
+
+
+    
 
     func configureNavigationBar() {
         // Check job status and scheduledInterviewId
@@ -140,9 +191,9 @@ class ApplicationJobDetailsViewController: UIViewController, UITableViewDelegate
             cell.detailTextLabel?.text = information[indexPath.row]
             cell.detailTextLabel?.font = UIFont.systemFont(ofSize: 16)
             cell.detailTextLabel?.textColor = .white
-            cell.detailTextLabel?.backgroundColor = UIColor.orange
+            cell.detailTextLabel?.backgroundColor = UIColor(red: 243/255.0, green: 95/255.0, blue: 49/255.0, alpha: 1.0)
             cell.detailTextLabel?.textAlignment = .center
-            cell.detailTextLabel?.layer.cornerRadius = 4
+            cell.detailTextLabel?.layer.cornerRadius = 10
             cell.detailTextLabel?.layer.masksToBounds = true
             cell.detailTextLabel?.clipsToBounds = true
             
@@ -180,8 +231,9 @@ class ApplicationJobDetailsViewController: UIViewController, UITableViewDelegate
             destinationVC.interviewId = interviewId
             destinationVC.jobPositionSelected = jobPositionSelected ?? ""
             destinationVC.jobCompanySelected = jobCompanySelected ?? ""
+            destinationVC.companyLogo = companylogo
             
-            print("Navigating to Interview Details with Interview: \(interviewId), Position: \(jobPositionSelected ?? ""), Company: \(jobCompanySelected ?? "")")
+            print("Navigating to Interview Details with Interview: \(interviewId), Position: \(jobPositionSelected ?? ""), Company: \(jobCompanySelected ?? ""), Logo URL: \(companylogo)")
         }
     }
 }
