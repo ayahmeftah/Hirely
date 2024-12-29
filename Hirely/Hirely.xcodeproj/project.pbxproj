@@ -18,7 +18,7 @@
 		71BEBCF52CFC502B00DF795E /* HirelyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEBCF42CFC502B00DF795E /* HirelyTests.swift */; };
 		71BEBCFF2CFC502B00DF795E /* HirelyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEBCFE2CFC502B00DF795E /* HirelyUITests.swift */; };
 		71BEBD012CFC502B00DF795E /* HirelyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEBD002CFC502B00DF795E /* HirelyUITestsLaunchTests.swift */; };
-		71D5BFC02D212B860098193C /* certiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D5BFBF2D212B860098193C /* certiViewController.swift */; };
+		71D5BFC22D212C230098193C /* certiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D5BFC12D212C230098193C /* certiViewController.swift */; };
 		C363937D2D006A4C00E14337 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = C363937C2D006A4C00E14337 /* FirebaseDatabase */; };
 		C363937F2D006A5600E14337 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = C363937E2D006A5600E14337 /* FirebaseAuth */; };
 		C36393812D006A7800E14337 /* Cloudinary in Frameworks */ = {isa = PBXBuildFile; productRef = C36393802D006A7800E14337 /* Cloudinary */; };
@@ -56,7 +56,7 @@
 		71BEBCFA2CFC502B00DF795E /* HirelyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HirelyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		71BEBCFE2CFC502B00DF795E /* HirelyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HirelyUITests.swift; sourceTree = "<group>"; };
 		71BEBD002CFC502B00DF795E /* HirelyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HirelyUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		71D5BFBF2D212B860098193C /* certiViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = certiViewController.swift; path = "../../../../../Documents/Areej Branches/Hirely-CVBuilderFeature/Hirely/Hirely/Controllers/certiViewController.swift"; sourceTree = "<group>"; };
+		71D5BFC12D212C230098193C /* certiViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = certiViewController.swift; path = "../../../../../Documents/Areej Branches/Hirely-CVBuilderFeature/Hirely/Hirely/Controllers/certiViewController.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,7 +144,7 @@
 		71BEBCDC2CFC502900DF795E /* Hirely */ = {
 			isa = PBXGroup;
 			children = (
-				71D5BFBF2D212B860098193C /* certiViewController.swift */,
+				71D5BFC12D212C230098193C /* certiViewController.swift */,
 				711B4EBF2CFC57F300910FB6 /* Controllers */,
 				711B4EBE2CFC57E200910FB6 /* Storyboards */,
 				71BEBCDD2CFC502900DF795E /* AppDelegate.swift */,
@@ -373,7 +373,7 @@
 			files = (
 				71BEBCE22CFC502900DF795E /* ViewController.swift in Sources */,
 				71BEBCDE2CFC502900DF795E /* AppDelegate.swift in Sources */,
-				71D5BFC02D212B860098193C /* certiViewController.swift in Sources */,
+				71D5BFC22D212C230098193C /* certiViewController.swift in Sources */,
 				71BEBCE02CFC502900DF795E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
