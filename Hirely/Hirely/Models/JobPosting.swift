@@ -3,6 +3,7 @@ import FirebaseCore
 
 struct JobPosting {
     let docId: String
+    let companyId:String
     var jobTitle: String
     var jobType: String
     var locationType: String
@@ -36,6 +37,7 @@ struct JobPosting {
         self.isHidden = data["isHidden"] as? Bool ?? false
         self.isFlagged = data["isFlagged"] as? Bool ?? false
         self.isReported = data["isReported"] as? Bool ?? false
+        self.companyId = data["companyId"] as? String ?? ""
         
         // Handle Firestore Timestamps and convert to String
               if let postedTimestamp = data["postedDate"] as? Timestamp {
