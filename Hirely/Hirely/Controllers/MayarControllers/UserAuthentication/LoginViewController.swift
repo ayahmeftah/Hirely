@@ -6,16 +6,20 @@
 //
 
 import UIKit
-import Firebase
+import FirebaseFirestore
 import FirebaseAuth
 
 class LoginViewController: UIViewController {
     
+    let db = Firestore.firestore()
     let userId = currentUser().getCurrentUserId()
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    var isApplicant = false
+    var isEmployer = false
+    var isAdmin = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -85,12 +89,57 @@ class LoginViewController: UIViewController {
                                       preferredStyle: .alert)
         
         let okAction = UIAlertAction(title: "OK", style: .default) { _ in
-            // Trigger the segue
-//            self.performSegue(withIdentifier: "goToProfile", sender: self)
+            if self.isApplicant == true{
+                self.performSegue(withIdentifier: "", sender: self)
+            }
+            else if self.isEmployer == true{
+                self.performSegue(withIdentifier: "", sender: self)
+            }
+            else if self.isAdmin == true{
+                self.performSegue(withIdentifier: "", sender: self)
+            }
         }
         
         alert.addAction(okAction)
         
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    func checkUserRole(){
+        let collection = db.collection("Users")
+        
+        collection.whereField("userId", isEqualTo: userId!).getDocuments { snapshot, error in
+            if let error = error{
+                print("Error getting document: \(error)")
+                return
+            }
+            
+            if let snapshot = snapshot{
+                for doc in snapshot.documents{
+                    let data = doc.data()
+                    
+                    if let userId = data["userId"] as? String, userId == self.userId{
+                        if let applicant = data["isApplicant"]{
+                            if applicant as! Bool == true{
+                                self.isApplicant = true
+                            }
+                        }
+                        
+                        if let employer = data["isEmployer"]{
+                            if employer as! Bool == true{
+                                self.isEmployer = true
+                            }
+                        }
+                        
+                        if let admin = data["isAdmin"]{
+                            if admin as! Bool == true{
+                                self.isAdmin = true
+                            }
+                        }
+                        
+                    }
+                }
+            }
+        }
     }
 }
