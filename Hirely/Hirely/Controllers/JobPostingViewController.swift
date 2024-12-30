@@ -8,7 +8,12 @@
 import UIKit
 import FirebaseFirestore
 
-class JobPostingViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+protocol JobPostingsRefreshDelegate: AnyObject {
+    func refreshJobPostings()
+}
+
+
+class JobPostingViewController: UIViewController, UITableViewDelegate, UITableViewDataSource,JobPostingsRefreshDelegate{
     
     @IBOutlet weak var tableView: UITableView!
 
@@ -29,6 +34,12 @@ class JobPostingViewController: UIViewController, UITableViewDelegate, UITableVi
         // Add observer for job posted notification
         NotificationCenter.default.addObserver(self, selector: #selector(refreshJobs), name: NSNotification.Name("JobPosted"), object: nil)
 
+    }
+    
+    func refreshJobPostings() {
+        // Fetch the updated job postings after editing and reload the table view
+        fetchJobPostings()
+        tableView.reloadData() // or collectionView.reloadData()
     }
     
     @objc private func refreshJobs() {

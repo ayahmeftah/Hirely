@@ -11,69 +11,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Dashboard-->
-        <scene sceneID="ccq-c8-Nnt">
-            <objects>
-                <viewController modalPresentationStyle="fullScreen" id="MFz-YF-RAS" customClass="ViewController" customModule="Hirely" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="zzw-Cs-Cek">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Blue-BG" translatesAutoresizingMaskIntoConstraints="NO" id="jlI-rL-cUG">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="193"/>
-                            </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="6iu-m0-eN6">
-                                <rect key="frame" x="20" y="205" width="353" height="553"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J0H-e4-3M4">
-                                        <rect key="frame" x="0.0" y="0.0" width="353" height="177.66666666666666"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
-                                        <inset key="titleEdgeInsets" minX="30" minY="-90" maxX="0.0" maxY="0.0"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="Posted Jobs" backgroundImage="postedJobs"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="fill" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nrL-Xw-1P6">
-                                        <rect key="frame" x="0.0" y="187.66666666666669" width="353" height="177.66666666666669"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
-                                        <inset key="titleEdgeInsets" minX="30" minY="-90" maxX="0.0" maxY="0.0"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="Flagged Jobs" backgroundImage="flaggedJobs">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="fill" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cq9-Bg-uU0">
-                                        <rect key="frame" x="0.0" y="375.33333333333337" width="353" height="177.66666666666663"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
-                                        <inset key="titleEdgeInsets" minX="30" minY="-90" maxX="0.0" maxY="0.0"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="Interviews" backgroundImage="scheduledInterviews">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="Sc9-Gz-eA0" kind="show" id="c7x-0Z-ORQ"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="ODZ-bC-u2q"/>
-                        <color key="backgroundColor" red="0.90980392160000001" green="0.91764705879999997" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="jlI-rL-cUG" firstAttribute="trailing" secondItem="ODZ-bC-u2q" secondAttribute="trailing" id="4rG-fo-PhY"/>
-                            <constraint firstItem="6iu-m0-eN6" firstAttribute="top" secondItem="ODZ-bC-u2q" secondAttribute="top" constant="50" id="5OW-hX-PNA"/>
-                            <constraint firstItem="jlI-rL-cUG" firstAttribute="top" secondItem="zzw-Cs-Cek" secondAttribute="top" id="5rq-2v-iAv"/>
-                            <constraint firstItem="jlI-rL-cUG" firstAttribute="leading" secondItem="ODZ-bC-u2q" secondAttribute="leading" id="F20-4P-Ccg"/>
-                            <constraint firstItem="6iu-m0-eN6" firstAttribute="leading" secondItem="ODZ-bC-u2q" secondAttribute="leading" constant="20" id="MPo-AT-4ON"/>
-                            <constraint firstItem="ODZ-bC-u2q" firstAttribute="bottom" secondItem="6iu-m0-eN6" secondAttribute="bottom" constant="11" id="N7D-eK-ZpA"/>
-                            <constraint firstItem="ODZ-bC-u2q" firstAttribute="trailing" secondItem="6iu-m0-eN6" secondAttribute="trailing" constant="20" id="OiC-xk-nDO"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Dashboard" largeTitleDisplayMode="always" id="dyx-UY-IjF"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Jg1-iZ-67I" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="9917" y="558"/>
-        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="upS-d7-YiO">
             <objects>
@@ -85,8 +22,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="Fdt-pP-y2n" kind="relationship" relationship="viewControllers" id="U3C-S0-joy"/>
                         <segue destination="Cxc-vS-OF6" kind="relationship" relationship="viewControllers" id="Kfp-f8-fMD"/>
+                        <segue destination="6WV-F9-nM2" kind="relationship" relationship="viewControllers" id="wdU-dB-FLF"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CPt-ec-ebI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -151,7 +88,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l3h-Lr-U7L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="kAd-Q9-fzj" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="12063.358778625954" y="-226.05633802816902"/>
+            <point key="canvasLocation" x="12990.076335877862" y="-226.05633802816902"/>
         </scene>
         <!--Add a job Posting-->
         <scene sceneID="WXb-tI-q2y">
@@ -809,7 +746,7 @@
         <!--Scheduled Interviews-->
         <scene sceneID="dP2-Cr-Tgp">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" hidesBottomBarWhenPushed="YES" id="Sc9-Gz-eA0" customClass="ScheduledInterviewsViewController" customModule="Hirely" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="Sc9-Gz-eA0" customClass="ScheduledInterviewsViewController" customModule="Hirely" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KUD-OD-2VJ">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -822,7 +759,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="128" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="A0s-9p-691">
-                                <rect key="frame" x="16" y="108" width="361" height="710"/>
+                                <rect key="frame" x="16" y="108" width="361" height="607"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <connections>
@@ -844,7 +781,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CuI-pv-IuO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="10862" y="744"/>
+            <point key="canvasLocation" x="10337" y="608"/>
         </scene>
         <!--Interview Details-->
         <scene sceneID="cg3-ze-zps">
@@ -892,7 +829,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F4x-qe-EUw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="10862" y="1513"/>
+            <point key="canvasLocation" x="10337" y="1385"/>
         </scene>
         <!--Applicant Details-->
         <scene sceneID="BAo-XD-veB">
@@ -1636,7 +1573,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="14V-pM-14M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="13054" y="-226"/>
+            <point key="canvasLocation" x="13979.389312977099" y="-226.05633802816902"/>
         </scene>
         <!--Save Job Changes View Controller-->
         <scene sceneID="Jcc-aa-6j6">
@@ -1733,7 +1670,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4SC-KI-0r6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="14044" y="-226"/>
+            <point key="canvasLocation" x="14970.229007633587" y="-226.05633802816902"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gok-gd-uJT">
@@ -1756,28 +1693,6 @@
             </objects>
             <point key="canvasLocation" x="13514" y="825"/>
         </scene>
-        <!--Home-->
-        <scene sceneID="ss8-fa-a8J">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="Fdt-pP-y2n" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" image="house.fill" catalog="system" id="HOh-jN-iWv"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="mfc-2N-Jot">
-                        <rect key="frame" x="0.0" y="59" width="393" height="96"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <textAttributes key="largeTitleTextAttributes">
-                            <color key="textColor" red="0.90980392160000001" green="0.91764705879999997" blue="0.93725490199999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        </textAttributes>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="MFz-YF-RAS" kind="relationship" relationship="rootViewController" id="L4b-yf-Vfj"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="IKf-Ag-rwI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="9917" y="-226"/>
-        </scene>
         <!--Post-->
         <scene sceneID="j0k-iE-gOr">
             <objects>
@@ -1799,7 +1714,26 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vCc-pm-Rto" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="11136.641221374046" y="-226.05633802816902"/>
+            <point key="canvasLocation" x="12063.358778625954" y="-226.05633802816902"/>
+        </scene>
+        <!--Interviews-->
+        <scene sceneID="k5b-jO-cEA">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6WV-F9-nM2" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Interviews" image="calendar" catalog="system" id="TVv-6b-vec"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rBT-Vx-hbl">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Sc9-Gz-eA0" kind="relationship" relationship="rootViewController" id="QkC-Iq-mN4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eYp-lw-GYv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="10337" y="-226"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
@@ -1807,14 +1741,11 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Blue-BG" width="402" height="193"/>
+        <image name="calendar" catalog="system" width="128" height="107"/>
         <image name="checkmark.square" catalog="system" width="128" height="114"/>
         <image name="doc.text.magnifyingglass" catalog="system" width="110" height="128"/>
-        <image name="flaggedJobs" width="372" height="166"/>
-        <image name="house.fill" catalog="system" width="128" height="104"/>
         <image name="line.3.horizontal.decrease.circle.fill" catalog="system" width="128" height="123"/>
         <image name="plus.circle.fill" catalog="system" width="128" height="123"/>
-        <image name="postedJobs" width="372" height="166"/>
-        <image name="scheduledInterviews" width="372" height="166"/>
         <image name="sort:filter-bg" width="224" height="50"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
         <namedColor name="size_red">

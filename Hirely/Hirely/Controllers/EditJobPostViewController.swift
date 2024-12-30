@@ -9,7 +9,8 @@ import UIKit
 import FirebaseFirestore
 
 class EditJobPostViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
-    
+
+  
 
     @IBOutlet weak var minSalarySlider: UISlider!
     @IBOutlet weak var maxSalarySlider: UISlider!
@@ -170,13 +171,13 @@ class EditJobPostViewController: UIViewController, UITextFieldDelegate, UIPicker
     
     }
 
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "gotoSaveChanges",
            let saveVC = segue.destination as? saveJobChangesViewController,
            let updatedJob = sender as? JobPosting {
             saveVC.jobPosting = updatedJob
             print("Job data before segue: \(updatedJob)")
-
         }
     }
 

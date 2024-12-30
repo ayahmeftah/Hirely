@@ -8,13 +8,9 @@ class InterviewInfoTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Debugging: Print array sizes
-        print("Titles count: \(titles.count)")
-        print("Info count: \(info.count)")
         
         // Ensure info array has the same count as titles
         if info.count != titles.count {
-            print("Mismatch in titles and info counts. Filling with placeholder data.")
             while info.count < titles.count {
                 info.append("N/A") // Add placeholder data to avoid index out of range
             }

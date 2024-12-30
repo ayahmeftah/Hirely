@@ -17,6 +17,7 @@ class saveJobChangesViewController: UIViewController, UITextViewDelegate{
     var jobCity:String?
     var experienceLevel:String?
     var jobDescription: String?
+
     
     @IBOutlet weak var jobRequirementsTextView: UITextView!
     
@@ -30,11 +31,10 @@ class saveJobChangesViewController: UIViewController, UITextViewDelegate{
     var selectedSkills: [String] = []
 
 
+
     override func viewDidLoad() {
         super.viewDidLoad()
         populateFields()
-//        print("Job data received: \(jobPosting)")
-
         jobRequirementsTextView.delegate = self
         // Do any additional setup after loading the view.
     }
