@@ -155,14 +155,27 @@ class generatedCvViewController: UIViewController {
         }
         
         let exitAction = UIAlertAction(title: "Exit", style: .destructive) { _ in
-            self.dismiss(animated: true, completion: nil)
-        }
-        
-        alertController.addAction(exportAction)
-        alertController.addAction(exitAction)
-        
-        self.present(alertController, animated: true, completion: nil)
-    }
+                    self.navigateToCvBuilder() // Navigate to CvBuilderViewController
+                }
+                
+                alertController.addAction(exportAction)
+                alertController.addAction(exitAction)
+                
+                self.present(alertController, animated: true, completion: nil)
+            }
+            
+            private func navigateToCvBuilder() {
+                if let navigationController = self.navigationController {
+                    for controller in navigationController.viewControllers {
+                        if controller is CvBuilderViewController { // Navigate to CvBuilderViewController
+                            navigationController.popToViewController(controller, animated: true)
+                            return
+                        }
+                    }
+                }
+                // If the CvBuilderViewController isn't in the stack, navigate to root
+                self.navigationController?.popToRootViewController(animated: true)
+            }
     
    
     private func generatePDF(completion: (URL?) -> Void) {

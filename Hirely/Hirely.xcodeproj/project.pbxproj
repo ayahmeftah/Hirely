@@ -9,6 +9,16 @@
 /* Begin PBXBuildFile section */
 		2C9302F52CFC9E6500CAD615 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C9302F42CFC9E6500CAD615 /* GoogleService-Info.plist */; };
 		713EDA2D2D12E4F4000918B2 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 713EDA2C2D12E4F4000918B2 /* FirebaseFirestore */; };
+		716C29ED2D23095A000760D4 /* expViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C29E52D230959000760D4 /* expViewController.swift */; };
+		716C29EE2D23095A000760D4 /* generatedCvViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C29E62D230959000760D4 /* generatedCvViewController.swift */; };
+		716C29EF2D23095A000760D4 /* personalInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C29E72D230959000760D4 /* personalInfoViewController.swift */; };
+		716C29F02D23095A000760D4 /* certiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C29E82D23095A000760D4 /* certiViewController.swift */; };
+		716C29F12D23095A000760D4 /* CvBuilderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C29E92D23095A000760D4 /* CvBuilderViewController.swift */; };
+		716C29F22D23095A000760D4 /* skillsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C29EA2D23095A000760D4 /* skillsViewController.swift */; };
+		716C29F32D23095A000760D4 /* CloudinarySetUpCv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C29EB2D23095A000760D4 /* CloudinarySetUpCv.swift */; };
+		716C29F42D23095A000760D4 /* educationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C29EC2D23095A000760D4 /* educationViewController.swift */; };
+		716C29F62D23096E000760D4 /* CVBuilder.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 716C29F52D23096E000760D4 /* CVBuilder.storyboard */; };
+		716C29F82D230978000760D4 /* CVData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C29F72D230978000760D4 /* CVData.swift */; };
 		71BEBCDE2CFC502900DF795E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEBCDD2CFC502900DF795E /* AppDelegate.swift */; };
 		71BEBCE02CFC502900DF795E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEBCDF2CFC502900DF795E /* SceneDelegate.swift */; };
 		71BEBCE22CFC502900DF795E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEBCE12CFC502900DF795E /* ViewController.swift */; };
@@ -18,16 +28,6 @@
 		71BEBCF52CFC502B00DF795E /* HirelyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEBCF42CFC502B00DF795E /* HirelyTests.swift */; };
 		71BEBCFF2CFC502B00DF795E /* HirelyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEBCFE2CFC502B00DF795E /* HirelyUITests.swift */; };
 		71BEBD012CFC502B00DF795E /* HirelyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEBD002CFC502B00DF795E /* HirelyUITestsLaunchTests.swift */; };
-		71F4E1142D212EBF00A24C4C /* generatedCvViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F4E1132D212EBF00A24C4C /* generatedCvViewController.swift */; };
-		71F4E11C2D21300200A24C4C /* educationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F4E1162D21300200A24C4C /* educationViewController.swift */; };
-		71F4E11D2D21300200A24C4C /* expViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F4E1172D21300200A24C4C /* expViewController.swift */; };
-		71F4E11E2D21300200A24C4C /* skillsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F4E1182D21300200A24C4C /* skillsViewController.swift */; };
-		71F4E11F2D21300200A24C4C /* personalInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F4E1192D21300200A24C4C /* personalInfoViewController.swift */; };
-		71F4E1202D21300200A24C4C /* CvBuilderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F4E11A2D21300200A24C4C /* CvBuilderViewController.swift */; };
-		71F4E1212D21300200A24C4C /* certiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F4E11B2D21300200A24C4C /* certiViewController.swift */; };
-		71F4E1232D21301300A24C4C /* CloudinarySetUpCv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F4E1222D21301200A24C4C /* CloudinarySetUpCv.swift */; };
-		71F4E1262D21303000A24C4C /* CVData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F4E1252D21303000A24C4C /* CVData.swift */; };
-		71F4E1292D21305A00A24C4C /* CVBuilder.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71F4E1282D21305A00A24C4C /* CVBuilder.storyboard */; };
 		C363937D2D006A4C00E14337 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = C363937C2D006A4C00E14337 /* FirebaseDatabase */; };
 		C363937F2D006A5600E14337 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = C363937E2D006A5600E14337 /* FirebaseAuth */; };
 		C36393812D006A7800E14337 /* Cloudinary in Frameworks */ = {isa = PBXBuildFile; productRef = C36393802D006A7800E14337 /* Cloudinary */; };
@@ -52,6 +52,16 @@
 
 /* Begin PBXFileReference section */
 		2C9302F42CFC9E6500CAD615 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		716C29E52D230959000760D4 /* expViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = expViewController.swift; sourceTree = "<group>"; };
+		716C29E62D230959000760D4 /* generatedCvViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = generatedCvViewController.swift; sourceTree = "<group>"; };
+		716C29E72D230959000760D4 /* personalInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = personalInfoViewController.swift; sourceTree = "<group>"; };
+		716C29E82D23095A000760D4 /* certiViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = certiViewController.swift; sourceTree = "<group>"; };
+		716C29E92D23095A000760D4 /* CvBuilderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CvBuilderViewController.swift; sourceTree = "<group>"; };
+		716C29EA2D23095A000760D4 /* skillsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = skillsViewController.swift; sourceTree = "<group>"; };
+		716C29EB2D23095A000760D4 /* CloudinarySetUpCv.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudinarySetUpCv.swift; sourceTree = "<group>"; };
+		716C29EC2D23095A000760D4 /* educationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = educationViewController.swift; sourceTree = "<group>"; };
+		716C29F52D23096E000760D4 /* CVBuilder.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CVBuilder.storyboard; sourceTree = "<group>"; };
+		716C29F72D230978000760D4 /* CVData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVData.swift; sourceTree = "<group>"; };
 		71BEBCDA2CFC502900DF795E /* Hirely.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hirely.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71BEBCDD2CFC502900DF795E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		71BEBCDF2CFC502900DF795E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,16 +75,6 @@
 		71BEBCFA2CFC502B00DF795E /* HirelyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HirelyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		71BEBCFE2CFC502B00DF795E /* HirelyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HirelyUITests.swift; sourceTree = "<group>"; };
 		71BEBD002CFC502B00DF795E /* HirelyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HirelyUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		71F4E1132D212EBF00A24C4C /* generatedCvViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = generatedCvViewController.swift; sourceTree = "<group>"; };
-		71F4E1162D21300200A24C4C /* educationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = educationViewController.swift; sourceTree = "<group>"; };
-		71F4E1172D21300200A24C4C /* expViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = expViewController.swift; sourceTree = "<group>"; };
-		71F4E1182D21300200A24C4C /* skillsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = skillsViewController.swift; sourceTree = "<group>"; };
-		71F4E1192D21300200A24C4C /* personalInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = personalInfoViewController.swift; sourceTree = "<group>"; };
-		71F4E11A2D21300200A24C4C /* CvBuilderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CvBuilderViewController.swift; sourceTree = "<group>"; };
-		71F4E11B2D21300200A24C4C /* certiViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = certiViewController.swift; sourceTree = "<group>"; };
-		71F4E1222D21301200A24C4C /* CloudinarySetUpCv.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudinarySetUpCv.swift; sourceTree = "<group>"; };
-		71F4E1252D21303000A24C4C /* CVData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVData.swift; sourceTree = "<group>"; };
-		71F4E1282D21305A00A24C4C /* CVBuilder.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CVBuilder.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +138,21 @@
 				71BEBCE12CFC502900DF795E /* ViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		716C29E42D230940000760D4 /* CVBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				716C29E82D23095A000760D4 /* certiViewController.swift */,
+				716C29EB2D23095A000760D4 /* CloudinarySetUpCv.swift */,
+				716C29E92D23095A000760D4 /* CvBuilderViewController.swift */,
+				716C29EC2D23095A000760D4 /* educationViewController.swift */,
+				716C29E52D230959000760D4 /* expViewController.swift */,
+				716C29E62D230959000760D4 /* generatedCvViewController.swift */,
+				716C29E72D230959000760D4 /* personalInfoViewController.swift */,
+				716C29EA2D23095A000760D4 /* skillsViewController.swift */,
+			);
+			path = CVBuilder;
 			sourceTree = "<group>";
 		};
 		71BEBCD12CFC502900DF795E = {
@@ -252,14 +267,7 @@
 		71F4E1152D212FD100A24C4C /* AreejControllers */ = {
 			isa = PBXGroup;
 			children = (
-				71F4E1132D212EBF00A24C4C /* generatedCvViewController.swift */,
-				71F4E11B2D21300200A24C4C /* certiViewController.swift */,
-				71F4E11A2D21300200A24C4C /* CvBuilderViewController.swift */,
-				71F4E1162D21300200A24C4C /* educationViewController.swift */,
-				71F4E1172D21300200A24C4C /* expViewController.swift */,
-				71F4E1192D21300200A24C4C /* personalInfoViewController.swift */,
-				71F4E1222D21301200A24C4C /* CloudinarySetUpCv.swift */,
-				71F4E1182D21300200A24C4C /* skillsViewController.swift */,
+				716C29E42D230940000760D4 /* CVBuilder */,
 			);
 			path = AreejControllers;
 			sourceTree = "<group>";
@@ -267,7 +275,7 @@
 		71F4E1242D21301B00A24C4C /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				71F4E1252D21303000A24C4C /* CVData.swift */,
+				716C29F72D230978000760D4 /* CVData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -275,7 +283,7 @@
 		71F4E1272D21303900A24C4C /* AreejStoryboards */ = {
 			isa = PBXGroup;
 			children = (
-				71F4E1282D21305A00A24C4C /* CVBuilder.storyboard */,
+				716C29F52D23096E000760D4 /* CVBuilder.storyboard */,
 			);
 			path = AreejStoryboards;
 			sourceTree = "<group>";
@@ -395,7 +403,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				71BEBCE72CFC502A00DF795E /* Assets.xcassets in Resources */,
-				71F4E1292D21305A00A24C4C /* CVBuilder.storyboard in Resources */,
+				716C29F62D23096E000760D4 /* CVBuilder.storyboard in Resources */,
 				71BEBCEA2CFC502A00DF795E /* Base in Resources */,
 				71BEBCE52CFC502900DF795E /* Base in Resources */,
 				2C9302F52CFC9E6500CAD615 /* GoogleService-Info.plist in Resources */,
@@ -423,18 +431,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				71F4E1232D21301300A24C4C /* CloudinarySetUpCv.swift in Sources */,
-				71F4E11D2D21300200A24C4C /* expViewController.swift in Sources */,
 				71BEBCE22CFC502900DF795E /* ViewController.swift in Sources */,
-				71F4E1142D212EBF00A24C4C /* generatedCvViewController.swift in Sources */,
-				71F4E1202D21300200A24C4C /* CvBuilderViewController.swift in Sources */,
-				71F4E11E2D21300200A24C4C /* skillsViewController.swift in Sources */,
-				71F4E1262D21303000A24C4C /* CVData.swift in Sources */,
-				71F4E11F2D21300200A24C4C /* personalInfoViewController.swift in Sources */,
-				71F4E1212D21300200A24C4C /* certiViewController.swift in Sources */,
+				716C29EE2D23095A000760D4 /* generatedCvViewController.swift in Sources */,
 				71BEBCDE2CFC502900DF795E /* AppDelegate.swift in Sources */,
+				716C29F02D23095A000760D4 /* certiViewController.swift in Sources */,
+				716C29ED2D23095A000760D4 /* expViewController.swift in Sources */,
+				716C29EF2D23095A000760D4 /* personalInfoViewController.swift in Sources */,
+				716C29F82D230978000760D4 /* CVData.swift in Sources */,
+				716C29F22D23095A000760D4 /* skillsViewController.swift in Sources */,
 				71BEBCE02CFC502900DF795E /* SceneDelegate.swift in Sources */,
-				71F4E11C2D21300200A24C4C /* educationViewController.swift in Sources */,
+				716C29F32D23095A000760D4 /* CloudinarySetUpCv.swift in Sources */,
+				716C29F12D23095A000760D4 /* CvBuilderViewController.swift in Sources */,
+				716C29F42D23095A000760D4 /* educationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
