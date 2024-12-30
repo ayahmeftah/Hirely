@@ -43,7 +43,7 @@ class JobDetailsApplicantViewController: UIViewController {
     
     // To track the current state of the button
     private var isReported = false
-    private var isSaved = false
+//    private var isSaved = false
     var jobPosting: JobPosting? // Selected job data
     
     @IBAction func didTapApply(_ sender: Any) {
@@ -59,10 +59,10 @@ class JobDetailsApplicantViewController: UIViewController {
     
     @IBAction func didTapSave(_ sender: Any) {
         // Toggle the reported state
-        isSaved.toggle()
+//        isSaved.toggle()
         
         // Update the button's appearance based on the new state
-        updateSaveButtonStyle()
+//        updateSaveButtonStyle()
     }
     
     
@@ -185,22 +185,22 @@ class JobDetailsApplicantViewController: UIViewController {
         SaveBtn.layer.cornerRadius = 30
     }
     
-    private func updateSaveButtonStyle() {
-        if isSaved {
-            // Change to reported state
-            SaveBtn.setTitle("Unsave", for: .normal)
-            SaveBtn.setTitleColor(.white, for: .normal)
-            SaveBtn.backgroundColor = .systemGreen
-            SaveBtn.layer.cornerRadius = 30
-        } else {
-            // Revert to the default state
-            SaveBtn.setTitle("Save", for: .normal)
-            SaveBtn.setTitleColor(.systemGreen, for: .normal)
-            SaveBtn.backgroundColor = .white
-            SaveBtn.layer.cornerRadius = 30
-        }
-    }
-    
+//    private func updateSaveButtonStyle() {
+//        if isSaved {
+//            // Change to reported state
+//            SaveBtn.setTitle("Unsave", for: .normal)
+//            SaveBtn.setTitleColor(.white, for: .normal)
+//            SaveBtn.backgroundColor = .systemGreen
+//            SaveBtn.layer.cornerRadius = 30
+//        } else {
+//            // Revert to the default state
+//            SaveBtn.setTitle("Save", for: .normal)
+//            SaveBtn.setTitleColor(.systemGreen, for: .normal)
+//            SaveBtn.backgroundColor = .white
+//            SaveBtn.layer.cornerRadius = 30
+//        }
+//    }
+//    
     
     //initialize view with job data
     func setupUI() {

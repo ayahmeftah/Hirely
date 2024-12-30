@@ -23,8 +23,6 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func goToSignUp(_ sender: UIButton) {
@@ -85,18 +83,24 @@ class LoginViewController: UIViewController {
     
     func showSuccessAlert(){
         let alert = UIAlertController(title: "Success",
-                                      message: "You have Loged in Successfully!",
+                                      message: "You have logged in successfully!",
                                       preferredStyle: .alert)
         
         let okAction = UIAlertAction(title: "OK", style: .default) { _ in
-            if self.isApplicant == true{
-                self.performSegue(withIdentifier: "", sender: self)
-            }
-            else if self.isEmployer == true{
-                self.performSegue(withIdentifier: "", sender: self)
-            }
-            else if self.isAdmin == true{
-                self.performSegue(withIdentifier: "", sender: self)
+            // Fetch user role before performing any segue
+            self.checkUserRole { isApplicant, isEmployer, isAdmin in
+                if isApplicant {
+                    self.performSegue(withIdentifier: "goToApplicantDashboard", sender: self)
+                } 
+//                else if isEmployer {
+//                    self.performSegue(withIdentifier: "", sender: self)
+//                } else if isAdmin {
+//                    self.performSegue(withIdentifier: "", sender: self)
+//                } 
+                else {
+                    // Handle unexpected case
+                    self.showErrorAlert("No valid role found.")
+                }
             }
         }
         
@@ -105,41 +109,78 @@ class LoginViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
-    func checkUserRole(){
+    func checkUserRole(completion: @escaping (Bool, Bool, Bool) -> Void) {
         let collection = db.collection("Users")
         
         collection.whereField("userId", isEqualTo: userId!).getDocuments { snapshot, error in
-            if let error = error{
+            if let error = error {
                 print("Error getting document: \(error)")
+                completion(false, false, false) // Return default values on error
                 return
             }
             
-            if let snapshot = snapshot{
-                for doc in snapshot.documents{
+            var isApplicant = false
+            var isEmployer = false
+            var isAdmin = false
+            
+            if let snapshot = snapshot {
+                for doc in snapshot.documents {
                     let data = doc.data()
                     
-                    if let userId = data["userId"] as? String, userId == self.userId{
-                        if let applicant = data["isApplicant"]{
-                            if applicant as! Bool == true{
-                                self.isApplicant = true
-                            }
-                        }
-                        
-                        if let employer = data["isEmployer"]{
-                            if employer as! Bool == true{
-                                self.isEmployer = true
-                            }
-                        }
-                        
-                        if let admin = data["isAdmin"]{
-                            if admin as! Bool == true{
-                                self.isAdmin = true
-                            }
-                        }
-                        
+                    if let applicant = data["isApplicant"] as? Bool, applicant {
+                        isApplicant = true
+                    }
+                    
+                    if let employer = data["isEmployer"] as? Bool, employer {
+                        isEmployer = true
+                    }
+                    
+                    if let admin = data["isAdmin"] as? Bool, admin {
+                        isAdmin = true
                     }
                 }
             }
+            
+            // Call completion handler with fetched values
+            completion(isApplicant, isEmployer, isAdmin)
         }
     }
+    
+//    func checkUserRole(){
+//        let collection = db.collection("Users")
+//        
+//        collection.whereField("userId", isEqualTo: userId!).getDocuments { snapshot, error in
+//            if let error = error{
+//                print("Error getting document: \(error)")
+//                return
+//            }
+//            
+//            if let snapshot = snapshot{
+//                for doc in snapshot.documents{
+//                    let data = doc.data()
+//                    
+//                    if let userId = data["userId"] as? String, userId == self.userId{
+//                        if let applicant = data["isApplicant"]{
+//                            if applicant as! Bool == true{
+//                                self.isApplicant = true
+//                            }
+//                        }
+//                        
+//                        if let employer = data["isEmployer"]{
+//                            if employer as! Bool == true{
+//                                self.isEmployer = true
+//                            }
+//                        }
+//                        
+//                        if let admin = data["isAdmin"]{
+//                            if admin as! Bool == true{
+//                                self.isAdmin = true
+//                            }
+//                        }
+//                        
+//                    }
+//                }
+//            }
+//        }
+//    }
 }

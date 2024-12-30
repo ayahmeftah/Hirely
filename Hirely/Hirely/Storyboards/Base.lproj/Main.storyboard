@@ -116,6 +116,14 @@
             </objects>
             <point key="canvasLocation" x="-1537" y="-718"/>
         </scene>
+        <!--RecommendationsAndDetailsStory-->
+        <scene sceneID="Vey-1B-xKk">
+            <objects>
+                <viewControllerPlaceholder storyboardName="RecommendationsAndDetailsStory" id="mo9-Bo-cEF" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="064-5n-pSR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2646" y="155"/>
+        </scene>
         <!--Login-->
         <scene sceneID="Phm-ND-1D2">
             <objects>
@@ -252,6 +260,7 @@
                     <connections>
                         <outlet property="emailTextField" destination="Y4Z-a8-yHa" id="bYr-ee-GCP"/>
                         <outlet property="passwordTextField" destination="dTq-QW-9O8" id="zgn-P3-Oed"/>
+                        <segue destination="mo9-Bo-cEF" kind="presentation" identifier="goToApplicantDashboard" modalPresentationStyle="fullScreen" id="kDt-Ek-AO1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iTQ-eb-gN6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
