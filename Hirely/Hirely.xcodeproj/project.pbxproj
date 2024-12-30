@@ -130,6 +130,7 @@
 		711B4EBF2CFC57F300910FB6 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				71F4E1152D212FD100A24C4C /* AreejControllers */,
 				71D5BFA92D208BAF0098193C /* MayarControllers */,
 				71D5BF7D2D20827C0098193C /* KhadijaControllers */,
 				71D5BF7C2D2082620098193C /* ManarControllers */,
@@ -164,7 +165,6 @@
 			isa = PBXGroup;
 			children = (
 				71F4E1242D21301B00A24C4C /* Models */,
-				71F4E1152D212FD100A24C4C /* AreejControllers */,
 				711B4EBF2CFC57F300910FB6 /* Controllers */,
 				711B4EBE2CFC57E200910FB6 /* Storyboards */,
 				71BEBCDD2CFC502900DF795E /* AppDelegate.swift */,
