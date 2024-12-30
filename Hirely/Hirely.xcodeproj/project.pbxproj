@@ -31,6 +31,21 @@
 		716C2A0D2D230B94000760D4 /* CareerTipsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2A052D230B94000760D4 /* CareerTipsViewController.swift */; };
 		716C2A0F2D230BAB000760D4 /* ResourceManagmentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2A0E2D230BAB000760D4 /* ResourceManagmentTableViewController.swift */; };
 		716C2A112D230BBC000760D4 /* ResourceManagment.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 716C2A102D230BBC000760D4 /* ResourceManagment.storyboard */; };
+		716C2A152D230D8A000760D4 /* FilterOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2A142D230D8A000760D4 /* FilterOptions.swift */; };
+		716C2A1B2D230DE4000760D4 /* SuggestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2A162D230DE3000760D4 /* SuggestionsViewController.swift */; };
+		716C2A1C2D230DE4000760D4 /* FilterAlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2A172D230DE3000760D4 /* FilterAlertService.swift */; };
+		716C2A1D2D230DE4000760D4 /* ResultsPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2A182D230DE3000760D4 /* ResultsPageViewController.swift */; };
+		716C2A1E2D230DE4000760D4 /* FilterAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2A192D230DE3000760D4 /* FilterAlertViewController.swift */; };
+		716C2A1F2D230DE4000760D4 /* FirstSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2A1A2D230DE4000760D4 /* FirstSearchViewController.swift */; };
+		716C2A232D230DF7000760D4 /* FiltersCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2A202D230DF7000760D4 /* FiltersCollectionViewCell.swift */; };
+		716C2A242D230DF7000760D4 /* FilterOptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2A212D230DF7000760D4 /* FilterOptionTableViewCell.swift */; };
+		716C2A252D230DF7000760D4 /* JobsResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2A222D230DF7000760D4 /* JobsResultTableViewCell.swift */; };
+		716C2A2A2D230E69000760D4 /* SearchAndList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 716C2A292D230E69000760D4 /* SearchAndList.storyboard */; };
+		716C2A2F2D230E76000760D4 /* JobsResultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 716C2A2B2D230E76000760D4 /* JobsResultTableViewCell.xib */; };
+		716C2A302D230E76000760D4 /* FiltersCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 716C2A2C2D230E76000760D4 /* FiltersCollectionViewCell.xib */; };
+		716C2A312D230E76000760D4 /* FilterOptionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 716C2A2D2D230E76000760D4 /* FilterOptionTableViewCell.xib */; };
+		716C2A322D230E76000760D4 /* FilterAlertStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 716C2A2E2D230E76000760D4 /* FilterAlertStoryboard.storyboard */; };
+		716C2A342D230ECA000760D4 /* JobPosting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2A332D230ECA000760D4 /* JobPosting.swift */; };
 		71BEBCDE2CFC502900DF795E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEBCDD2CFC502900DF795E /* AppDelegate.swift */; };
 		71BEBCE02CFC502900DF795E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEBCDF2CFC502900DF795E /* SceneDelegate.swift */; };
 		71BEBCE22CFC502900DF795E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEBCE12CFC502900DF795E /* ViewController.swift */; };
@@ -86,6 +101,21 @@
 		716C2A052D230B94000760D4 /* CareerTipsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CareerTipsViewController.swift; sourceTree = "<group>"; };
 		716C2A0E2D230BAB000760D4 /* ResourceManagmentTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourceManagmentTableViewController.swift; sourceTree = "<group>"; };
 		716C2A102D230BBC000760D4 /* ResourceManagment.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ResourceManagment.storyboard; sourceTree = "<group>"; };
+		716C2A142D230D8A000760D4 /* FilterOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterOptions.swift; sourceTree = "<group>"; };
+		716C2A162D230DE3000760D4 /* SuggestionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuggestionsViewController.swift; sourceTree = "<group>"; };
+		716C2A172D230DE3000760D4 /* FilterAlertService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterAlertService.swift; sourceTree = "<group>"; };
+		716C2A182D230DE3000760D4 /* ResultsPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsPageViewController.swift; sourceTree = "<group>"; };
+		716C2A192D230DE3000760D4 /* FilterAlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterAlertViewController.swift; sourceTree = "<group>"; };
+		716C2A1A2D230DE4000760D4 /* FirstSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstSearchViewController.swift; sourceTree = "<group>"; };
+		716C2A202D230DF7000760D4 /* FiltersCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FiltersCollectionViewCell.swift; sourceTree = "<group>"; };
+		716C2A212D230DF7000760D4 /* FilterOptionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterOptionTableViewCell.swift; sourceTree = "<group>"; };
+		716C2A222D230DF7000760D4 /* JobsResultTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobsResultTableViewCell.swift; sourceTree = "<group>"; };
+		716C2A292D230E69000760D4 /* SearchAndList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SearchAndList.storyboard; sourceTree = "<group>"; };
+		716C2A2B2D230E76000760D4 /* JobsResultTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JobsResultTableViewCell.xib; sourceTree = "<group>"; };
+		716C2A2C2D230E76000760D4 /* FiltersCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FiltersCollectionViewCell.xib; sourceTree = "<group>"; };
+		716C2A2D2D230E76000760D4 /* FilterOptionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FilterOptionTableViewCell.xib; sourceTree = "<group>"; };
+		716C2A2E2D230E76000760D4 /* FilterAlertStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FilterAlertStoryboard.storyboard; sourceTree = "<group>"; };
+		716C2A332D230ECA000760D4 /* JobPosting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobPosting.swift; sourceTree = "<group>"; };
 		71BEBCDA2CFC502900DF795E /* Hirely.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hirely.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71BEBCDD2CFC502900DF795E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		71BEBCDF2CFC502900DF795E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -197,6 +227,41 @@
 			path = ResourcesManagement;
 			sourceTree = "<group>";
 		};
+		716C2A122D230D5C000760D4 /* SearchAndFilter */ = {
+			isa = PBXGroup;
+			children = (
+				716C2A212D230DF7000760D4 /* FilterOptionTableViewCell.swift */,
+				716C2A202D230DF7000760D4 /* FiltersCollectionViewCell.swift */,
+				716C2A222D230DF7000760D4 /* JobsResultTableViewCell.swift */,
+				716C2A172D230DE3000760D4 /* FilterAlertService.swift */,
+				716C2A192D230DE3000760D4 /* FilterAlertViewController.swift */,
+				716C2A1A2D230DE4000760D4 /* FirstSearchViewController.swift */,
+				716C2A182D230DE3000760D4 /* ResultsPageViewController.swift */,
+				716C2A162D230DE3000760D4 /* SuggestionsViewController.swift */,
+			);
+			path = SearchAndFilter;
+			sourceTree = "<group>";
+		};
+		716C2A132D230D7B000760D4 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				716C2A142D230D8A000760D4 /* FilterOptions.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		716C2A282D230E54000760D4 /* SearchStoryboards */ = {
+			isa = PBXGroup;
+			children = (
+				716C2A2E2D230E76000760D4 /* FilterAlertStoryboard.storyboard */,
+				716C2A2D2D230E76000760D4 /* FilterOptionTableViewCell.xib */,
+				716C2A2C2D230E76000760D4 /* FiltersCollectionViewCell.xib */,
+				716C2A2B2D230E76000760D4 /* JobsResultTableViewCell.xib */,
+				716C2A292D230E69000760D4 /* SearchAndList.storyboard */,
+			);
+			path = SearchStoryboards;
+			sourceTree = "<group>";
+		};
 		71BEBCD12CFC502900DF795E = {
 			isa = PBXGroup;
 			children = (
@@ -221,6 +286,7 @@
 		71BEBCDC2CFC502900DF795E /* Hirely */ = {
 			isa = PBXGroup;
 			children = (
+				716C2A132D230D7B000760D4 /* Enums */,
 				71F4E1242D21301B00A24C4C /* Models */,
 				711B4EBF2CFC57F300910FB6 /* Controllers */,
 				711B4EBE2CFC57E200910FB6 /* Storyboards */,
@@ -260,6 +326,7 @@
 		71D5BF762D2081F20098193C /* AyahControllers */ = {
 			isa = PBXGroup;
 			children = (
+				716C2A122D230D5C000760D4 /* SearchAndFilter */,
 			);
 			path = AyahControllers;
 			sourceTree = "<group>";
@@ -267,6 +334,7 @@
 		71D5BF772D2082050098193C /* AyahStoryboards */ = {
 			isa = PBXGroup;
 			children = (
+				716C2A282D230E54000760D4 /* SearchStoryboards */,
 			);
 			path = AyahStoryboards;
 			sourceTree = "<group>";
@@ -318,6 +386,7 @@
 		71F4E1242D21301B00A24C4C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				716C2A332D230ECA000760D4 /* JobPosting.swift */,
 				716C29F72D230978000760D4 /* CVData.swift */,
 			);
 			path = Models;
@@ -448,10 +517,15 @@
 			files = (
 				71BEBCE72CFC502A00DF795E /* Assets.xcassets in Resources */,
 				716C2A112D230BBC000760D4 /* ResourceManagment.storyboard in Resources */,
+				716C2A312D230E76000760D4 /* FilterOptionTableViewCell.xib in Resources */,
 				716C29F62D23096E000760D4 /* CVBuilder.storyboard in Resources */,
+				716C2A302D230E76000760D4 /* FiltersCollectionViewCell.xib in Resources */,
 				71BEBCEA2CFC502A00DF795E /* Base in Resources */,
+				716C2A2F2D230E76000760D4 /* JobsResultTableViewCell.xib in Resources */,
 				71BEBCE52CFC502900DF795E /* Base in Resources */,
 				2C9302F52CFC9E6500CAD615 /* GoogleService-Info.plist in Resources */,
+				716C2A322D230E76000760D4 /* FilterAlertStoryboard.storyboard in Resources */,
+				716C2A2A2D230E69000760D4 /* SearchAndList.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -476,15 +550,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				716C2A1C2D230DE4000760D4 /* FilterAlertService.swift in Sources */,
+				716C2A152D230D8A000760D4 /* FilterOptions.swift in Sources */,
 				716C2A0D2D230B94000760D4 /* CareerTipsViewController.swift in Sources */,
 				716C2A062D230B94000760D4 /* ResourceTableViewCell.swift in Sources */,
 				716C2A082D230B94000760D4 /* CoursesTableViewCell.swift in Sources */,
 				71BEBCE22CFC502900DF795E /* ViewController.swift in Sources */,
+				716C2A1F2D230DE4000760D4 /* FirstSearchViewController.swift in Sources */,
 				716C29EE2D23095A000760D4 /* generatedCvViewController.swift in Sources */,
+				716C2A252D230DF7000760D4 /* JobsResultTableViewCell.swift in Sources */,
+				716C2A232D230DF7000760D4 /* FiltersCollectionViewCell.swift in Sources */,
 				71BEBCDE2CFC502900DF795E /* AppDelegate.swift in Sources */,
 				716C29F02D23095A000760D4 /* certiViewController.swift in Sources */,
 				716C29ED2D23095A000760D4 /* expViewController.swift in Sources */,
+				716C2A342D230ECA000760D4 /* JobPosting.swift in Sources */,
 				716C2A0A2D230B94000760D4 /* VideosViewController.swift in Sources */,
+				716C2A1E2D230DE4000760D4 /* FilterAlertViewController.swift in Sources */,
 				716C2A0C2D230B94000760D4 /* CoursesViewController.swift in Sources */,
 				716C2A072D230B94000760D4 /* ImageViewController.swift in Sources */,
 				716C29EF2D23095A000760D4 /* personalInfoViewController.swift in Sources */,
@@ -493,6 +574,9 @@
 				71BEBCE02CFC502900DF795E /* SceneDelegate.swift in Sources */,
 				716C2A0B2D230B94000760D4 /* Resource.swift in Sources */,
 				716C29FD2D230B86000760D4 /* AddEditResourceTableViewController.swift in Sources */,
+				716C2A1D2D230DE4000760D4 /* ResultsPageViewController.swift in Sources */,
+				716C2A1B2D230DE4000760D4 /* SuggestionsViewController.swift in Sources */,
+				716C2A242D230DF7000760D4 /* FilterOptionTableViewCell.swift in Sources */,
 				716C29FB2D230B6E000760D4 /* ResourcesPageViewController.swift in Sources */,
 				716C29F32D23095A000760D4 /* CloudinarySetUpCv.swift in Sources */,
 				716C29F12D23095A000760D4 /* CvBuilderViewController.swift in Sources */,
