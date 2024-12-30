@@ -290,7 +290,7 @@ class TechnicalSkillsViewController: UIViewController {
     
     @IBAction func doneBtnClicked(_ sender: UIButton) {
         updateDatabase()
-        performSegue(withIdentifier: "goToPS", sender: sender)
+        //performSegue(withIdentifier: "goToPS", sender: sender)
     }
     
     func updateDatabase(){

@@ -11,55 +11,32 @@ import Cloudinary
 
 class ViewController: UIViewController {
     
-//    let cloudName: String = "drkt3vace"
-//    var uploadPreset: String = "unsigned_upload"
-//    var publicId: String = "samples/animals/cat"
-//    
-//    @IBOutlet weak var ivGenerateUrl: CLDUIImageView!
-//    @IBOutlet weak var ivUploadedImage: CLDUIImageView!
-//
-//    var cloudinary: CLDCloudinary!
-//    var url: String!
-//
     override func viewDidLoad() {
         super.viewDidLoad()
-//        initCloudinary()
-//        generateUrl()
-//        uploadImage()
-        print("Hello world")
+//        
+//        // Perform any additional setup for the splash screen, such as animations or logos
+//        
+//        // Delay of 5 seconds before navigating to the next screen
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
+//            self.navigateToUserAuthenticationStoryboard()
+//        }
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-//        setImageView()
-    }
-//    
-//    private func initCloudinary() {
-//        let config = CLDConfiguration(cloudName: cloudName, secure: true)
-//        cloudinary = CLDCloudinary(configuration: config)
-//    }
-//    
-//    
-//    private func generateUrl() {
-//        url = cloudinary.createUrl().setTransformation(CLDTransformation().setEffect("sepia")).generate(publicId)
-//    }
-//
-//    private func setImageView() {
-//        ivGenerateUrl.cldSetImage(url, cloudinary: cloudinary)
-//    }
-//    
-//    private func uploadImage() {
-//        guard let data = UIImage(named: "cloudinary_logo")?.pngData() else {
-//            return
-//        }
-//        cloudinary.createUploader().upload(data: data, uploadPreset: uploadPreset, completionHandler:  { response,error in
-//            DispatchQueue.main.async {
-//                guard let url = response?.secureUrl else {
-//                    return
-//                }
-//                self.ivUploadedImage.cldSetImage(url, cloudinary: self.cloudinary)
+//    private func navigateToUserAuthenticationStoryboard() {
+//        // Load Shaima.storyboard
+//        let storyboard = UIStoryboard(name: "UserAuthentication", bundle: nil)
+//        
+//        // Instantiate the initial view controller of UserAuthentication.storyboard
+//        if let nextViewController = storyboard.instantiateInitialViewController() {
+//            // Get the active scene
+//            if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+//               let window = windowScene.windows.first {
+//                window.rootViewController = nextViewController
+//                window.makeKeyAndVisible()
 //            }
-//        })
-//    }
-
-}
+//        } else {
+//            print("Error: Could not load the initial view controller from Shaima.storyboard")
+//        }
+    }
+    
 

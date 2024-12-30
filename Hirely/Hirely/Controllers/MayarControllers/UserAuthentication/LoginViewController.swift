@@ -11,6 +11,7 @@ import FirebaseAuth
 
 class LoginViewController: UIViewController {
     
+    let userId = currentUser().getCurrentUserId()
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -85,7 +86,7 @@ class LoginViewController: UIViewController {
         
         let okAction = UIAlertAction(title: "OK", style: .default) { _ in
             // Trigger the segue
-            self.performSegue(withIdentifier: "goToProfile", sender: self)
+//            self.performSegue(withIdentifier: "goToProfile", sender: self)
         }
         
         alert.addAction(okAction)

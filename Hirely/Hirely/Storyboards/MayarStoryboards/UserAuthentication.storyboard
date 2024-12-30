@@ -233,7 +233,6 @@
                     <connections>
                         <outlet property="emailTextField" destination="E18-7P-F0Y" id="aXB-AG-Ope"/>
                         <outlet property="passwordTextField" destination="yJV-oA-wtM" id="VsR-UG-AYD"/>
-                        <segue destination="IZ6-YS-FlZ" kind="presentation" identifier="goToProfile" modalPresentationStyle="fullScreen" id="7d9-Ra-52A"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hzb-y2-laf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -877,8 +876,8 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ART-MC-O6K">
                                 <rect key="frame" x="0.0" y="16" width="319" height="820"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="51f-3N-Noo">
-                                        <rect key="frame" x="-10" y="-13" width="403" height="846"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="51f-3N-Noo">
+                                        <rect key="frame" x="-10" y="15" width="403" height="846"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L3O-Rl-O42">
                                                 <rect key="frame" x="20" y="694" width="299" height="52"/>
@@ -1116,16 +1115,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yJo-QL-R3R" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2733.5877862595421" y="-11.267605633802818"/>
-        </scene>
-        <!--ApplicantProfile-->
-        <scene sceneID="htF-DK-Vxn">
-            <objects>
-                <viewControllerPlaceholder storyboardName="ApplicantProfile" id="IZ6-YS-FlZ" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="ejb-tW-els"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xP5-Du-BAd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2734" y="656"/>
         </scene>
         <!--Register Expertise-->
         <scene sceneID="5PP-C7-fYm">
@@ -2132,7 +2121,6 @@ Technical Skills</string>
                     <connections>
                         <outlet property="screenTitleLabel" destination="NJr-dv-wnr" id="DMV-dA-Saf"/>
                         <outlet property="tblTechnicalSkillsList" destination="YXD-1b-5qz" id="0Pb-VH-TdL"/>
-                        <segue destination="IZ6-YS-FlZ" kind="presentation" identifier="goToPS" modalPresentationStyle="fullScreen" id="Wu6-CM-v9Z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eud-yR-KJH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -2177,9 +2165,6 @@ Technical Skills</string>
             <point key="canvasLocation" x="-0.76335877862595414" y="-11.267605633802818"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="7d9-Ra-52A"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="app-logo" width="113" height="107"/>
         <image name="appleLogo" width="2048" height="2048"/>
@@ -2223,7 +2208,7 @@ Technical Skills</string>
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="tintColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
