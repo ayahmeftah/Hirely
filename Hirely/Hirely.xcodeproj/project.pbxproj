@@ -61,6 +61,19 @@
 		716C2A502D231282000760D4 /* ScheduledInterview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2A4D2D231282000760D4 /* ScheduledInterview.swift */; };
 		716C2A522D231291000760D4 /* StatusUpdateApplicant.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 716C2A512D231291000760D4 /* StatusUpdateApplicant.storyboard */; };
 		716C2A542D23129C000760D4 /* CustomCellForApplicantsApplicationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 716C2A532D23129C000760D4 /* CustomCellForApplicantsApplicationTableViewCell.xib */; };
+		716C2A632D231523000760D4 /* RegisterExpertiseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2A562D231523000760D4 /* RegisterExpertiseViewController.swift */; };
+		716C2A642D231523000760D4 /* ExperienceLevelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2A572D231523000760D4 /* ExperienceLevelViewController.swift */; };
+		716C2A652D231523000760D4 /* SalaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2A582D231523000760D4 /* SalaryViewController.swift */; };
+		716C2A662D231523000760D4 /* TechnicalSkillsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2A592D231523000760D4 /* TechnicalSkillsViewController.swift */; };
+		716C2A672D231523000760D4 /* RegisterDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2A5A2D231523000760D4 /* RegisterDetailsViewController.swift */; };
+		716C2A682D231523000760D4 /* SkillTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2A5B2D231523000760D4 /* SkillTableViewCell.swift */; };
+		716C2A692D231523000760D4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2A5C2D231523000760D4 /* LoginViewController.swift */; };
+		716C2A6A2D231523000760D4 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2A5D2D231523000760D4 /* WelcomeViewController.swift */; };
+		716C2A6B2D231523000760D4 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2A5E2D231523000760D4 /* SignUpViewController.swift */; };
+		716C2A6C2D231523000760D4 /* UploadProfilePhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2A5F2D231523000760D4 /* UploadProfilePhotoViewController.swift */; };
+		716C2A6D2D231523000760D4 /* SoftSkillsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2A602D231523000760D4 /* SoftSkillsViewController.swift */; };
+		716C2A6E2D231523000760D4 /* RegisterInterestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2A612D231523000760D4 /* RegisterInterestsViewController.swift */; };
+		716C2A6F2D231523000760D4 /* EmploymentTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2A622D231523000760D4 /* EmploymentTypeViewController.swift */; };
 		71BEBCDE2CFC502900DF795E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEBCDD2CFC502900DF795E /* AppDelegate.swift */; };
 		71BEBCE02CFC502900DF795E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEBCDF2CFC502900DF795E /* SceneDelegate.swift */; };
 		71BEBCE22CFC502900DF795E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEBCE12CFC502900DF795E /* ViewController.swift */; };
@@ -146,6 +159,19 @@
 		716C2A4D2D231282000760D4 /* ScheduledInterview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduledInterview.swift; sourceTree = "<group>"; };
 		716C2A512D231291000760D4 /* StatusUpdateApplicant.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = StatusUpdateApplicant.storyboard; sourceTree = "<group>"; };
 		716C2A532D23129C000760D4 /* CustomCellForApplicantsApplicationTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCellForApplicantsApplicationTableViewCell.xib; sourceTree = "<group>"; };
+		716C2A562D231523000760D4 /* RegisterExpertiseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterExpertiseViewController.swift; sourceTree = "<group>"; };
+		716C2A572D231523000760D4 /* ExperienceLevelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperienceLevelViewController.swift; sourceTree = "<group>"; };
+		716C2A582D231523000760D4 /* SalaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SalaryViewController.swift; sourceTree = "<group>"; };
+		716C2A592D231523000760D4 /* TechnicalSkillsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TechnicalSkillsViewController.swift; sourceTree = "<group>"; };
+		716C2A5A2D231523000760D4 /* RegisterDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterDetailsViewController.swift; sourceTree = "<group>"; };
+		716C2A5B2D231523000760D4 /* SkillTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkillTableViewCell.swift; sourceTree = "<group>"; };
+		716C2A5C2D231523000760D4 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		716C2A5D2D231523000760D4 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		716C2A5E2D231523000760D4 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		716C2A5F2D231523000760D4 /* UploadProfilePhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadProfilePhotoViewController.swift; sourceTree = "<group>"; };
+		716C2A602D231523000760D4 /* SoftSkillsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoftSkillsViewController.swift; sourceTree = "<group>"; };
+		716C2A612D231523000760D4 /* RegisterInterestsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterInterestsViewController.swift; sourceTree = "<group>"; };
+		716C2A622D231523000760D4 /* EmploymentTypeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmploymentTypeViewController.swift; sourceTree = "<group>"; };
 		71BEBCDA2CFC502900DF795E /* Hirely.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hirely.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71BEBCDD2CFC502900DF795E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		71BEBCDF2CFC502900DF795E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -313,6 +339,26 @@
 			path = ApplicationStatusTracker;
 			sourceTree = "<group>";
 		};
+		716C2A552D2314A1000760D4 /* UserAuthentication */ = {
+			isa = PBXGroup;
+			children = (
+				716C2A622D231523000760D4 /* EmploymentTypeViewController.swift */,
+				716C2A572D231523000760D4 /* ExperienceLevelViewController.swift */,
+				716C2A5C2D231523000760D4 /* LoginViewController.swift */,
+				716C2A5A2D231523000760D4 /* RegisterDetailsViewController.swift */,
+				716C2A562D231523000760D4 /* RegisterExpertiseViewController.swift */,
+				716C2A612D231523000760D4 /* RegisterInterestsViewController.swift */,
+				716C2A582D231523000760D4 /* SalaryViewController.swift */,
+				716C2A5E2D231523000760D4 /* SignUpViewController.swift */,
+				716C2A5B2D231523000760D4 /* SkillTableViewCell.swift */,
+				716C2A602D231523000760D4 /* SoftSkillsViewController.swift */,
+				716C2A592D231523000760D4 /* TechnicalSkillsViewController.swift */,
+				716C2A5F2D231523000760D4 /* UploadProfilePhotoViewController.swift */,
+				716C2A5D2D231523000760D4 /* WelcomeViewController.swift */,
+			);
+			path = UserAuthentication;
+			sourceTree = "<group>";
+		};
 		71BEBCD12CFC502900DF795E = {
 			isa = PBXGroup;
 			children = (
@@ -426,6 +472,7 @@
 		71D5BFA92D208BAF0098193C /* MayarControllers */ = {
 			isa = PBXGroup;
 			children = (
+				716C2A552D2314A1000760D4 /* UserAuthentication */,
 			);
 			path = MayarControllers;
 			sourceTree = "<group>";
@@ -614,28 +661,40 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				716C2A652D231523000760D4 /* SalaryViewController.swift in Sources */,
 				716C2A1C2D230DE4000760D4 /* FilterAlertService.swift in Sources */,
 				716C2A152D230D8A000760D4 /* FilterOptions.swift in Sources */,
 				716C2A0D2D230B94000760D4 /* CareerTipsViewController.swift in Sources */,
 				716C2A062D230B94000760D4 /* ResourceTableViewCell.swift in Sources */,
 				716C2A082D230B94000760D4 /* CoursesTableViewCell.swift in Sources */,
+				716C2A6F2D231523000760D4 /* EmploymentTypeViewController.swift in Sources */,
+				716C2A6B2D231523000760D4 /* SignUpViewController.swift in Sources */,
+				716C2A662D231523000760D4 /* TechnicalSkillsViewController.swift in Sources */,
 				71BEBCE22CFC502900DF795E /* ViewController.swift in Sources */,
 				716C2A1F2D230DE4000760D4 /* FirstSearchViewController.swift in Sources */,
 				716C2A3D2D231026000760D4 /* getCV.swift in Sources */,
 				716C29EE2D23095A000760D4 /* generatedCvViewController.swift in Sources */,
 				716C2A252D230DF7000760D4 /* JobsResultTableViewCell.swift in Sources */,
+				716C2A642D231523000760D4 /* ExperienceLevelViewController.swift in Sources */,
 				716C2A232D230DF7000760D4 /* FiltersCollectionViewCell.swift in Sources */,
 				716C2A492D23126F000760D4 /* InterviewInfoTableViewCell.swift in Sources */,
 				716C2A502D231282000760D4 /* ScheduledInterview.swift in Sources */,
+				716C2A6C2D231523000760D4 /* UploadProfilePhotoViewController.swift in Sources */,
 				71BEBCDE2CFC502900DF795E /* AppDelegate.swift in Sources */,
 				716C2A4F2D231282000760D4 /* Badges.swift in Sources */,
 				716C2A462D23126F000760D4 /* CustomCellForApplicantsApplicationTableViewCell.swift in Sources */,
+				716C2A6E2D231523000760D4 /* RegisterInterestsViewController.swift in Sources */,
 				716C29F02D23095A000760D4 /* certiViewController.swift in Sources */,
 				716C29ED2D23095A000760D4 /* expViewController.swift in Sources */,
 				716C2A342D230ECA000760D4 /* JobPosting.swift in Sources */,
 				716C2A0A2D230B94000760D4 /* VideosViewController.swift in Sources */,
 				716C2A1E2D230DE4000760D4 /* FilterAlertViewController.swift in Sources */,
+				716C2A6A2D231523000760D4 /* WelcomeViewController.swift in Sources */,
+				716C2A692D231523000760D4 /* LoginViewController.swift in Sources */,
+				716C2A632D231523000760D4 /* RegisterExpertiseViewController.swift in Sources */,
 				716C2A0C2D230B94000760D4 /* CoursesViewController.swift in Sources */,
+				716C2A6D2D231523000760D4 /* SoftSkillsViewController.swift in Sources */,
+				716C2A672D231523000760D4 /* RegisterDetailsViewController.swift in Sources */,
 				716C2A072D230B94000760D4 /* ImageViewController.swift in Sources */,
 				716C29EF2D23095A000760D4 /* personalInfoViewController.swift in Sources */,
 				716C2A482D23126F000760D4 /* InterviewDetailViewController.swift in Sources */,
@@ -657,6 +716,7 @@
 				716C2A392D230FD0000760D4 /* CompanyDetailsViewController.swift in Sources */,
 				716C29F42D23095A000760D4 /* educationViewController.swift in Sources */,
 				716C2A382D230FD0000760D4 /* ApplyJobViewController.swift in Sources */,
+				716C2A682D231523000760D4 /* SkillTableViewCell.swift in Sources */,
 				716C2A0F2D230BAB000760D4 /* ResourceManagmentTableViewController.swift in Sources */,
 				716C2A092D230B94000760D4 /* VideoTableViewCell.swift in Sources */,
 			);
