@@ -27,27 +27,12 @@ class ManageEmployerTableViewController: UITableViewController {
     @IBOutlet weak var employerAccountStatusLbl: UILabel!
     
     @IBOutlet weak var totalJobs: UILabel!
-
-    @IBOutlet weak var addPostingsBtn: UIButton!
     
-    @IBOutlet weak var editPostingsBtn: UIButton!
-    
-    @IBOutlet weak var deletePostingsBtn: UIButton!
-    
-    @IBOutlet weak var selectActionBtn: UIButton!
-    
-    var isAddChecked = true
-    var isDeleteChecked = true
-    var isEditChecked = true
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Update checkboxes to show initial checked state
-        updateAddCheckbox()
-        updateDeleteCheckbox()
-        updateEditCheckbox()
+    
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -56,43 +41,9 @@ class ManageEmployerTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
-    @IBAction func editCheckboxTapped(_ sender: UIButton) {
-        isEditChecked.toggle()
-        updateEditCheckbox()
-    }
+
+
     
-    @IBAction func addCheckboxTapped(_ sender: UIButton) {
-        isAddChecked.toggle()
-        updateAddCheckbox()
-    }
-    
-    @IBAction func deleteCheckboxTapped(_ sender: UIButton) {
-        isDeleteChecked.toggle()
-        updateDeleteCheckbox()
-    }
-    
-    func updateAddCheckbox() {
-        let imageName = isAddChecked ? "checkmark.square.fill" : "square"
-        addPostingsBtn.setImage(UIImage(systemName: imageName), for: .normal)
-        addPostingsBtn.tintColor = isAddChecked ? .systemGreen : .systemBlue // Green if checked, blue if uncheckede
-        
-    }
-    
-    func updateDeleteCheckbox() {
-        let imageName = isDeleteChecked ? "checkmark.square.fill" : "square"
-        
-        deletePostingsBtn.setImage(UIImage(systemName: imageName), for: .normal)
-        deletePostingsBtn.tintColor = isDeleteChecked ? .systemGreen : .systemBlue // Green if checked, blue if uncheckede
-        
-    }
-    
-    func updateEditCheckbox() {
-        let imageName = isEditChecked ? "checkmark.square.fill" : "square"
-        
-        editPostingsBtn.setImage(UIImage(systemName: imageName), for: .normal)
-        editPostingsBtn.tintColor = isEditChecked ? .systemGreen : .systemBlue // Green if checked, blue if uncheckede
-        
-    }
 
     
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
