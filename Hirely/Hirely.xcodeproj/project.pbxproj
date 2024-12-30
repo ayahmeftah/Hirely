@@ -19,6 +19,18 @@
 		716C29F42D23095A000760D4 /* educationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C29EC2D23095A000760D4 /* educationViewController.swift */; };
 		716C29F62D23096E000760D4 /* CVBuilder.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 716C29F52D23096E000760D4 /* CVBuilder.storyboard */; };
 		716C29F82D230978000760D4 /* CVData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C29F72D230978000760D4 /* CVData.swift */; };
+		716C29FB2D230B6E000760D4 /* ResourcesPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C29FA2D230B6E000760D4 /* ResourcesPageViewController.swift */; };
+		716C29FD2D230B86000760D4 /* AddEditResourceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C29FC2D230B86000760D4 /* AddEditResourceTableViewController.swift */; };
+		716C2A062D230B94000760D4 /* ResourceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C29FE2D230B94000760D4 /* ResourceTableViewCell.swift */; };
+		716C2A072D230B94000760D4 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C29FF2D230B94000760D4 /* ImageViewController.swift */; };
+		716C2A082D230B94000760D4 /* CoursesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2A002D230B94000760D4 /* CoursesTableViewCell.swift */; };
+		716C2A092D230B94000760D4 /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2A012D230B94000760D4 /* VideoTableViewCell.swift */; };
+		716C2A0A2D230B94000760D4 /* VideosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2A022D230B94000760D4 /* VideosViewController.swift */; };
+		716C2A0B2D230B94000760D4 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2A032D230B94000760D4 /* Resource.swift */; };
+		716C2A0C2D230B94000760D4 /* CoursesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2A042D230B94000760D4 /* CoursesViewController.swift */; };
+		716C2A0D2D230B94000760D4 /* CareerTipsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2A052D230B94000760D4 /* CareerTipsViewController.swift */; };
+		716C2A0F2D230BAB000760D4 /* ResourceManagmentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2A0E2D230BAB000760D4 /* ResourceManagmentTableViewController.swift */; };
+		716C2A112D230BBC000760D4 /* ResourceManagment.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 716C2A102D230BBC000760D4 /* ResourceManagment.storyboard */; };
 		71BEBCDE2CFC502900DF795E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEBCDD2CFC502900DF795E /* AppDelegate.swift */; };
 		71BEBCE02CFC502900DF795E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEBCDF2CFC502900DF795E /* SceneDelegate.swift */; };
 		71BEBCE22CFC502900DF795E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEBCE12CFC502900DF795E /* ViewController.swift */; };
@@ -62,6 +74,18 @@
 		716C29EC2D23095A000760D4 /* educationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = educationViewController.swift; sourceTree = "<group>"; };
 		716C29F52D23096E000760D4 /* CVBuilder.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CVBuilder.storyboard; sourceTree = "<group>"; };
 		716C29F72D230978000760D4 /* CVData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVData.swift; sourceTree = "<group>"; };
+		716C29FA2D230B6E000760D4 /* ResourcesPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourcesPageViewController.swift; sourceTree = "<group>"; };
+		716C29FC2D230B86000760D4 /* AddEditResourceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEditResourceTableViewController.swift; sourceTree = "<group>"; };
+		716C29FE2D230B94000760D4 /* ResourceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourceTableViewCell.swift; sourceTree = "<group>"; };
+		716C29FF2D230B94000760D4 /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
+		716C2A002D230B94000760D4 /* CoursesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoursesTableViewCell.swift; sourceTree = "<group>"; };
+		716C2A012D230B94000760D4 /* VideoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoTableViewCell.swift; sourceTree = "<group>"; };
+		716C2A022D230B94000760D4 /* VideosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideosViewController.swift; sourceTree = "<group>"; };
+		716C2A032D230B94000760D4 /* Resource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
+		716C2A042D230B94000760D4 /* CoursesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoursesViewController.swift; sourceTree = "<group>"; };
+		716C2A052D230B94000760D4 /* CareerTipsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CareerTipsViewController.swift; sourceTree = "<group>"; };
+		716C2A0E2D230BAB000760D4 /* ResourceManagmentTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourceManagmentTableViewController.swift; sourceTree = "<group>"; };
+		716C2A102D230BBC000760D4 /* ResourceManagment.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ResourceManagment.storyboard; sourceTree = "<group>"; };
 		71BEBCDA2CFC502900DF795E /* Hirely.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hirely.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71BEBCDD2CFC502900DF795E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		71BEBCDF2CFC502900DF795E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -153,6 +177,24 @@
 				716C29EA2D23095A000760D4 /* skillsViewController.swift */,
 			);
 			path = CVBuilder;
+			sourceTree = "<group>";
+		};
+		716C29F92D230B4E000760D4 /* ResourcesManagement */ = {
+			isa = PBXGroup;
+			children = (
+				716C2A0E2D230BAB000760D4 /* ResourceManagmentTableViewController.swift */,
+				716C29FA2D230B6E000760D4 /* ResourcesPageViewController.swift */,
+				716C29FC2D230B86000760D4 /* AddEditResourceTableViewController.swift */,
+				716C2A052D230B94000760D4 /* CareerTipsViewController.swift */,
+				716C2A002D230B94000760D4 /* CoursesTableViewCell.swift */,
+				716C2A042D230B94000760D4 /* CoursesViewController.swift */,
+				716C29FF2D230B94000760D4 /* ImageViewController.swift */,
+				716C2A032D230B94000760D4 /* Resource.swift */,
+				716C29FE2D230B94000760D4 /* ResourceTableViewCell.swift */,
+				716C2A022D230B94000760D4 /* VideosViewController.swift */,
+				716C2A012D230B94000760D4 /* VideoTableViewCell.swift */,
+			);
+			path = ResourcesManagement;
 			sourceTree = "<group>";
 		};
 		71BEBCD12CFC502900DF795E = {
@@ -267,6 +309,7 @@
 		71F4E1152D212FD100A24C4C /* AreejControllers */ = {
 			isa = PBXGroup;
 			children = (
+				716C29F92D230B4E000760D4 /* ResourcesManagement */,
 				716C29E42D230940000760D4 /* CVBuilder */,
 			);
 			path = AreejControllers;
@@ -283,6 +326,7 @@
 		71F4E1272D21303900A24C4C /* AreejStoryboards */ = {
 			isa = PBXGroup;
 			children = (
+				716C2A102D230BBC000760D4 /* ResourceManagment.storyboard */,
 				716C29F52D23096E000760D4 /* CVBuilder.storyboard */,
 			);
 			path = AreejStoryboards;
@@ -403,6 +447,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				71BEBCE72CFC502A00DF795E /* Assets.xcassets in Resources */,
+				716C2A112D230BBC000760D4 /* ResourceManagment.storyboard in Resources */,
 				716C29F62D23096E000760D4 /* CVBuilder.storyboard in Resources */,
 				71BEBCEA2CFC502A00DF795E /* Base in Resources */,
 				71BEBCE52CFC502900DF795E /* Base in Resources */,
@@ -431,18 +476,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				716C2A0D2D230B94000760D4 /* CareerTipsViewController.swift in Sources */,
+				716C2A062D230B94000760D4 /* ResourceTableViewCell.swift in Sources */,
+				716C2A082D230B94000760D4 /* CoursesTableViewCell.swift in Sources */,
 				71BEBCE22CFC502900DF795E /* ViewController.swift in Sources */,
 				716C29EE2D23095A000760D4 /* generatedCvViewController.swift in Sources */,
 				71BEBCDE2CFC502900DF795E /* AppDelegate.swift in Sources */,
 				716C29F02D23095A000760D4 /* certiViewController.swift in Sources */,
 				716C29ED2D23095A000760D4 /* expViewController.swift in Sources */,
+				716C2A0A2D230B94000760D4 /* VideosViewController.swift in Sources */,
+				716C2A0C2D230B94000760D4 /* CoursesViewController.swift in Sources */,
+				716C2A072D230B94000760D4 /* ImageViewController.swift in Sources */,
 				716C29EF2D23095A000760D4 /* personalInfoViewController.swift in Sources */,
 				716C29F82D230978000760D4 /* CVData.swift in Sources */,
 				716C29F22D23095A000760D4 /* skillsViewController.swift in Sources */,
 				71BEBCE02CFC502900DF795E /* SceneDelegate.swift in Sources */,
+				716C2A0B2D230B94000760D4 /* Resource.swift in Sources */,
+				716C29FD2D230B86000760D4 /* AddEditResourceTableViewController.swift in Sources */,
+				716C29FB2D230B6E000760D4 /* ResourcesPageViewController.swift in Sources */,
 				716C29F32D23095A000760D4 /* CloudinarySetUpCv.swift in Sources */,
 				716C29F12D23095A000760D4 /* CvBuilderViewController.swift in Sources */,
 				716C29F42D23095A000760D4 /* educationViewController.swift in Sources */,
+				716C2A0F2D230BAB000760D4 /* ResourceManagmentTableViewController.swift in Sources */,
+				716C2A092D230B94000760D4 /* VideoTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
