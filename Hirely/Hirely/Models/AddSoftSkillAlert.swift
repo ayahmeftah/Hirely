@@ -9,7 +9,7 @@ import UIKit
 
 class AddSoftSkillAlert{
     func alert () -> AddSoftSkillViewController{
-        let storyboard = UIStoryboard(name: "ApplicantProfile", bundle: .main)
+        let storyboard = UIStoryboard(name: "RecommendationsAndDetailsStory", bundle: .main)
         let alertVC = storyboard.instantiateViewController(withIdentifier: "addSoftSkill") as! AddSoftSkillViewController
         return alertVC
     }

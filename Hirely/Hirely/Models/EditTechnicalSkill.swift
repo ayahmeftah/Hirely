@@ -10,7 +10,7 @@ import UIKit
 
 class EditTechnicalSkill{
     func show () -> EditTechnicalSkillsViewController{
-        let storyboard = UIStoryboard(name: "ApplicantProfile", bundle: .main)
+        let storyboard = UIStoryboard(name: "RecommendationsAndDetailsStory", bundle: .main)
         let alertVC = storyboard.instantiateViewController(withIdentifier: "editTechnicalSkills") as! EditTechnicalSkillsViewController
         return alertVC
     }

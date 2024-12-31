@@ -9,7 +9,7 @@ import UIKit
 
 class AddTechnicalSkillAlert{
     func alert () -> AddTechnicalSkillViewController{
-        let storyboard = UIStoryboard(name: "ApplicantProfile", bundle: .main)
+        let storyboard = UIStoryboard(name: "RecommendationsAndDetailsStory", bundle: .main)
         let alertVC = storyboard.instantiateViewController(withIdentifier: "addTechnicalSkill") as! AddTechnicalSkillViewController
         return alertVC
     }

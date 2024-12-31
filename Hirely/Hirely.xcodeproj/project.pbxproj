@@ -157,6 +157,7 @@
 		716C2B7A2D23BD37000760D4 /* AddJobPostingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2B652D23BD37000760D4 /* AddJobPostingViewController.swift */; };
 		716C2B7B2D23BD37000760D4 /* PostingJobViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2B662D23BD37000760D4 /* PostingJobViewController.swift */; };
 		716C2B7D2D23BD55000760D4 /* jobPostingsStory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 716C2B7C2D23BD55000760D4 /* jobPostingsStory.storyboard */; };
+		716C2B7F2D23C598000760D4 /* Employer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2B7E2D23C598000760D4 /* Employer.swift */; };
 		71BEBCDE2CFC502900DF795E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEBCDD2CFC502900DF795E /* AppDelegate.swift */; };
 		71BEBCE02CFC502900DF795E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEBCDF2CFC502900DF795E /* SceneDelegate.swift */; };
 		71BEBCE22CFC502900DF795E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEBCE12CFC502900DF795E /* ViewController.swift */; };
@@ -338,6 +339,7 @@
 		716C2B652D23BD37000760D4 /* AddJobPostingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddJobPostingViewController.swift; sourceTree = "<group>"; };
 		716C2B662D23BD37000760D4 /* PostingJobViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostingJobViewController.swift; sourceTree = "<group>"; };
 		716C2B7C2D23BD55000760D4 /* jobPostingsStory.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = jobPostingsStory.storyboard; sourceTree = "<group>"; };
+		716C2B7E2D23C598000760D4 /* Employer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employer.swift; sourceTree = "<group>"; };
 		71BEBCDA2CFC502900DF795E /* Hirely.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hirely.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71BEBCDD2CFC502900DF795E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		71BEBCDF2CFC502900DF795E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -769,6 +771,7 @@
 				716C2A3B2D231026000760D4 /* getCV.swift */,
 				716C2A332D230ECA000760D4 /* JobPosting.swift */,
 				716C29F72D230978000760D4 /* CVData.swift */,
+				716C2B7E2D23C598000760D4 /* Employer.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -983,6 +986,7 @@
 				716C2A252D230DF7000760D4 /* JobsResultTableViewCell.swift in Sources */,
 				716C2A792D231612000760D4 /* company.swift in Sources */,
 				716C2A842D232D5D000760D4 /* JobsCollectionViewCell.swift in Sources */,
+				716C2B7F2D23C598000760D4 /* Employer.swift in Sources */,
 				716C2B412D23BCAC000760D4 /* ApplicantAccountInfoTableViewController.swift in Sources */,
 				716C2B3F2D23BCAC000760D4 /* ReportedJobsViewController.swift in Sources */,
 				716C2B0F2D23B7B2000760D4 /* ResumesViewController.swift in Sources */,

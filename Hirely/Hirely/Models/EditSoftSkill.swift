@@ -10,7 +10,7 @@ import UIKit
 
 class EditSoftSkill{
     func show () -> EditSoftSkillViewController{
-        let storyboard = UIStoryboard(name: "ApplicantProfile", bundle: .main)
+        let storyboard = UIStoryboard(name: "RecommendationsAndDetailsStory", bundle: .main)
         let alertVC = storyboard.instantiateViewController(withIdentifier: "editSoftSkills") as! EditSoftSkillViewController
         return alertVC
     }
