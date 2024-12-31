@@ -30,38 +30,46 @@
 |  | Application Review & Scheduling      | Manar Alsetrawi     | Khadija Abdulla     |
 |  | Resource Management                  | Areej Yusuf         | Manar Alsetrawi     |
 
-## Extra Features
+## Extra Features 
 
-| Name            | Extra Feature  |
-|-----------------|-------------|
+| Name            | Extra Feature                                      |
+|-----------------|----------------------------------------------------|
 | Mayyar Sakhnini | Firebase(Authintication & Firestore) + Cloudinary  |
-| Khadija Abdulla | Firebase(Firestore) + Cloudinary   |
-| Manar Alsetrawi | Firebase(Firestore) + Cloudinary   |
-| Areej Yusuf     | Firebase(Firestore) + Cloudinary   |
-| Ayah Meftah     | Firebase(Firestore) + Cloudinary   |
+| Khadija Abdulla | Firebase(Firestore) + Cloudinary                   |
+| Manar Alsetrawi | Firebase(Firestore) + Cloudinary                   |
+| Areej Yusuf     | Firebase(Firestore) + Cloudinary                   |
+| Ayah Meftah     | Firebase(Firestore) + Cloudinary                   |
 
 ## Design Changes
 
-|**Category| **Feature**                          | **Developer**       | **Changes**          |
-|----------|--------------------------------------|---------------------|---------------------|
-|Job Discovery & Career Recommendations| Job Details & Recommendations        | Ayah Meftah         |      |
-|    | Job Searching & Listing              | Ayah Meftah         |      |
-|Job Application| Job Application                      | Khadija Abdulla     |          |
-|  | Application Status Tracker           | Khadija Abdulla     |      |
-|CV Creation & Career Resources| CV Builder                           | Areej Yusuf         |      |
-|  | Career Resources Hub                 | Areej Yusuf         |      |
-| User Authentication & Preferences| User Authentication                  | Mayyar Sakhnini     |          |
-|  | User Profiles and Settings           | Mayyar Sakhnini     |          |
-|Admin Controls & Platform Management| Content Moderation Tool              | Manar Alsetrawi     |         |
-|  | Job Posting                          | Manar Alsetrawi     |          |
-|  | Application Review & Scheduling      | Manar Alsetrawi     |      |
-|  | Resource Management                  | Areej Yusuf         |     |
+|**Category**                                  | **Feature**                          | **Developer**       | **Changes**         |
+|----------------------------------------------|--------------------------------------|---------------------|---------------------|
+|Job Discovery & Career Recommendations        | Job Details & Recommendations        | Ayah Meftah         |      |
+|                                              | Job Searching & Listing              | Ayah Meftah         |      |
+|Job Application                               | Job Application                      | Khadija Abdulla     |          |
+|                                              | Application Status Tracker           | Khadija Abdulla     |      |
+|CV Creation & Career Resources                | CV Builder                           | Areej Yusuf         |    No changes  |
+|                                              | Career Resources Hub                 | Areej Yusuf         |    No changes|
+| User Authentication & Preferences            | User Authentication                  | Mayyar Sakhnini     |          |
+|                                              | User Profiles and Settings           | Mayyar Sakhnini     |          |
+|Admin Controls & Platform Management          | Content Moderation Tool              | Manar Alsetrawi     |         |
+|                                              | Job Posting                          | Manar Alsetrawi     |          |
+|                                              | Application Review & Scheduling      | Manar Alsetrawi     |      |
+|                                              | Resource Management                  | Areej Yusuf         |     |
 
 ## Libraries, Packages, External Code Implementations
 
-- Firebase for backend services and data storage.
-- Cocoapods for dependency management.
-- SwiftLint for code quality enforcement.
+- Firebase Package: https://github.com/firebase/firebase-ios-sdk
+- Cloudinary: https://github.com/cloudinary/cloudinary_ios
+- This is a playlist created by Manar (Watched by all members): https://youtube.com/playlist?list=PLz-abeZuamzCg2vbGClmHaDzJGf3rKIdt&si=GlJ2uihYuEFHsZ0y
+- **and more videos below:**
+- https://youtu.be/NP7H_LjTZGw?si=ZQwmwBcqO2bshWAd
+- https://youtu.be/F-gUZztPTgI?si=axFnnHrBFLyGT7cJ
+- https://youtu.be/NkOU60vwUEY?si=B04_gR_aykG03e9N
+- https://youtube.com/playlist?list=PLsLF8jZ6jKMhy0WQV0y_cST7vNtLgMU2W&si=YMZsNu5arm5ZoEwp
+- https://youtu.be/Mjukh3KnkVo?si=yypdiyxiTfpRMESd
+- https://youtu.be/P5ob4TXIK90?si=aTgjx9f2JymoBeV7
+- https://youtu.be/fbYMaJciMZY?si=1zHQ7pZJNIg2qbI4
 
 ## Setup
 
