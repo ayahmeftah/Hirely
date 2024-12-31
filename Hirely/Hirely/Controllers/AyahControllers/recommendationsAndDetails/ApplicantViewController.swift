@@ -9,15 +9,18 @@ import UIKit
 import FirebaseFirestore
 
 class ApplicantViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    let db = Firestore.firestore()
+    let userId = currentUser().getCurrentUserId()
 
     //Creating an Outlet for the recommended jobs table view
 //    @IBOutlet weak var jobsTableView : UITableView!
     @IBOutlet weak var jobsCollectionView: UICollectionView!
     
     // User's answers
-    var answerExperience = "Associate"
-    var softSkills = ["Teamwork", "Communication"]
-    var technicalSkills = ["Swift", "Xcode","SQL"]
+    var answerExperience = ""
+    var softSkills: [String] = []
+    var technicalSkills: [String] = []
+    
     
     // Array to hold JobPostings
     var jobPostings: [JobPosting] = []
@@ -44,12 +47,46 @@ class ApplicantViewController: UIViewController, UICollectionViewDataSource, UIC
             layout.minimumLineSpacing = 10
             layout.minimumInteritemSpacing = 10
         }
+        fetchFill()
+        
         // Fetch jobs
         fetchRecommendedJobsFromFirestore()
     }
     
+    func fetchFill(){
+        let collection = db.collection("Users")
+        
+        collection.whereField("userId", isEqualTo: userId!).getDocuments { snapshot, error in
+            if let error = error{
+                print("Error getting document: \(error)")
+                return
+            }
+            
+            if let snapshot = snapshot{
+                for doc in snapshot.documents{
+                    let data = doc.data()
+                    
+                    if let userId = data["userId"] as? String, userId == self.userId{
+                        
+                        if let softSkills = data["softSkills"] as? [String]{
+                            self.softSkills = softSkills
+                        }
+                        
+                        if let techSkills = data["technicalSkills"] as? [String]{
+                            self.technicalSkills = techSkills
+                        }
+                        
+                        if let experienceLevel = data["experienceLevel"] as? String{
+                            self.answerExperience = experienceLevel
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
     func fetchRecommendedJobsFromFirestore() {
-        let db = Firestore.firestore()
+        
         
         // Fetch all jobs from Firestore
         db.collection("jobPostings")

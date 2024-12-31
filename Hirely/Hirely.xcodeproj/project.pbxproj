@@ -156,6 +156,7 @@
 		716C2B1C2D23B7F2000760D4 /* AddSoftSkillAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2B182D23B7F2000760D4 /* AddSoftSkillAlert.swift */; };
 		716C2B1D2D23B7F2000760D4 /* AddTechnicalSkillAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2B192D23B7F2000760D4 /* AddTechnicalSkillAlert.swift */; };
 		716C2B1E2D23B7F2000760D4 /* EditSoftSkill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2B1A2D23B7F2000760D4 /* EditSoftSkill.swift */; };
+		716C2B202D23B981000760D4 /* UserProfileSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2B1F2D23B981000760D4 /* UserProfileSection.swift */; };
 		71BEBCDE2CFC502900DF795E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEBCDD2CFC502900DF795E /* AppDelegate.swift */; };
 		71BEBCE02CFC502900DF795E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEBCDF2CFC502900DF795E /* SceneDelegate.swift */; };
 		71BEBCE22CFC502900DF795E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEBCE12CFC502900DF795E /* ViewController.swift */; };
@@ -336,6 +337,7 @@
 		716C2B182D23B7F2000760D4 /* AddSoftSkillAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddSoftSkillAlert.swift; sourceTree = "<group>"; };
 		716C2B192D23B7F2000760D4 /* AddTechnicalSkillAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTechnicalSkillAlert.swift; sourceTree = "<group>"; };
 		716C2B1A2D23B7F2000760D4 /* EditSoftSkill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditSoftSkill.swift; sourceTree = "<group>"; };
+		716C2B1F2D23B981000760D4 /* UserProfileSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileSection.swift; sourceTree = "<group>"; };
 		71BEBCDA2CFC502900DF795E /* Hirely.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hirely.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71BEBCDD2CFC502900DF795E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		71BEBCDF2CFC502900DF795E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -757,6 +759,7 @@
 		71F4E1242D21301B00A24C4C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				716C2B1F2D23B981000760D4 /* UserProfileSection.swift */,
 				716C2B182D23B7F2000760D4 /* AddSoftSkillAlert.swift */,
 				716C2B192D23B7F2000760D4 /* AddTechnicalSkillAlert.swift */,
 				716C2B1A2D23B7F2000760D4 /* EditSoftSkill.swift */,
@@ -1028,6 +1031,7 @@
 				716C2A692D231523000760D4 /* LoginViewController.swift in Sources */,
 				716C2A632D231523000760D4 /* RegisterExpertiseViewController.swift in Sources */,
 				716C2AA02D233638000760D4 /* ReportedJobsTableViewCell.swift in Sources */,
+				716C2B202D23B981000760D4 /* UserProfileSection.swift in Sources */,
 				716C2A0C2D230B94000760D4 /* CoursesViewController.swift in Sources */,
 				716C2A7F2D232D2F000760D4 /* ApplicantViewController.swift in Sources */,
 				716C2A6D2D231523000760D4 /* SoftSkillsViewController.swift in Sources */,
