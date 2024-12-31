@@ -30,7 +30,7 @@
 |  | Application Review & Scheduling      | Manar Alsetrawi     | Khadija Abdulla     |
 |  | Resource Management                  | Areej Yusuf         | Manar Alsetrawi     |
 
-## Extra Features
+## Extra Features 
 
 | Name            | Extra Feature                                      |
 |-----------------|----------------------------------------------------|
