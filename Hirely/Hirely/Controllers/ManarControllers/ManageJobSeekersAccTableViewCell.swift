@@ -6,16 +6,22 @@
 //
 
 import UIKit
+import Cloudinary
 
 class ManageJobSeekersAccTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var jobSeekerPic: UIImageView!
+    @IBOutlet weak var jobSeekerPic: CLDUIImageView!
     
     @IBOutlet weak var jobSeekerName: UILabel!
     
     @IBOutlet weak var jobSeekerAccStatus: UILabel!
     
     weak var parentViewController: UIViewController? //reference the parent view controller
+    
+    // Cloudinary configuration
+        let cloudName: String = "drkt3vace"
+        let uploadPreset: String = "unsigned_upload"
+        var cloudinary: CLDCloudinary!
 
     @IBAction func buttonTapped(_ sender:UIButton){
         switch sender.tag{
@@ -33,7 +39,13 @@ class ManageJobSeekersAccTableViewCell: UITableViewCell {
         self.jobSeekerPic.layer.cornerRadius = jobSeekerPic.frame.size.width / 2
         jobSeekerPic.clipsToBounds = true
         // Initialization code
+        initCloudinary()
     }
+    
+    func initCloudinary() {
+       let config = CLDConfiguration(cloudName: cloudName, secure: true)
+       cloudinary = CLDCloudinary(configuration: config)
+   }
     
     // Function to configure the badge based on status
     func configureBadge(for status: AccountStatus) {
@@ -50,7 +62,7 @@ class ManageJobSeekersAccTableViewCell: UITableViewCell {
     
     func seekersInit(_ name: String, _ image: String){
         jobSeekerName.text = name
-        jobSeekerPic.image = UIImage(named: image)
+        jobSeekerPic.cldSetImage(image, cloudinary: cloudinary)
     }
     
 }

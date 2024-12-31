@@ -85,56 +85,11 @@
 		716C2A882D232DA5000760D4 /* JobsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 716C2A862D232DA5000760D4 /* JobsTableViewCell.xib */; };
 		716C2A892D232DA5000760D4 /* JobsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 716C2A872D232DA5000760D4 /* JobsCollectionViewCell.xib */; };
 		716C2A8B2D232DC8000760D4 /* RecommendationsAndDetailsStory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 716C2A8A2D232DC8000760D4 /* RecommendationsAndDetailsStory.storyboard */; };
-		716C2A9E2D233638000760D4 /* JobInfoAdminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2A8D2D233638000760D4 /* JobInfoAdminViewController.swift */; };
-		716C2A9F2D233638000760D4 /* ReportedJobsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2A8E2D233638000760D4 /* ReportedJobsViewController.swift */; };
-		716C2AA02D233638000760D4 /* ReportedJobsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2A8F2D233638000760D4 /* ReportedJobsTableViewCell.swift */; };
-		716C2AA12D233638000760D4 /* FlaggedJobsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2A902D233638000760D4 /* FlaggedJobsTableViewCell.swift */; };
-		716C2AA22D233638000760D4 /* ApplicantAccountInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2A912D233638000760D4 /* ApplicantAccountInfoTableViewController.swift */; };
-		716C2AA32D233638000760D4 /* ManageEmployersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2A922D233638000760D4 /* ManageEmployersViewController.swift */; };
-		716C2AA42D233638000760D4 /* FlagInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2A932D233638000760D4 /* FlagInfoTableViewController.swift */; };
-		716C2AA52D233638000760D4 /* ViewJobsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2A942D233638000760D4 /* ViewJobsViewController.swift */; };
-		716C2AA62D233638000760D4 /* ManageJobSeekersAccTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2A952D233638000760D4 /* ManageJobSeekersAccTableViewCell.swift */; };
-		716C2AA72D233638000760D4 /* ViewJobsAdminTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2A962D233638000760D4 /* ViewJobsAdminTableViewCell.swift */; };
-		716C2AA82D233638000760D4 /* ManageJobSeekersAccViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2A972D233638000760D4 /* ManageJobSeekersAccViewController.swift */; };
-		716C2AA92D233638000760D4 /* ManageEmployersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2A982D233638000760D4 /* ManageEmployersTableViewCell.swift */; };
-		716C2AAA2D233638000760D4 /* ManageEmployerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2A992D233638000760D4 /* ManageEmployerTableViewController.swift */; };
-		716C2AAB2D233638000760D4 /* AdminDashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2A9A2D233638000760D4 /* AdminDashboardViewController.swift */; };
-		716C2AAC2D233638000760D4 /* ReportedPostDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2A9B2D233638000760D4 /* ReportedPostDetailTableViewController.swift */; };
-		716C2AAD2D233638000760D4 /* FlagPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2A9C2D233638000760D4 /* FlagPostViewController.swift */; };
-		716C2AAE2D233638000760D4 /* FlaggedJobsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2A9D2D233638000760D4 /* FlaggedJobsViewController.swift */; };
-		716C2AB62D23368B000760D4 /* ManageEmployersTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 716C2AB02D23368B000760D4 /* ManageEmployersTableViewCell.xib */; };
-		716C2AB72D23368B000760D4 /* FlaggedJobsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 716C2AB12D23368B000760D4 /* FlaggedJobsTableViewCell.xib */; };
-		716C2AB82D23368B000760D4 /* ManageJobSeekersAccTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 716C2AB22D23368B000760D4 /* ManageJobSeekersAccTableViewCell.xib */; };
-		716C2AB92D23368B000760D4 /* ReportedJobsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 716C2AB32D23368B000760D4 /* ReportedJobsTableViewCell.xib */; };
-		716C2ABA2D23368B000760D4 /* ViewJobsAdminTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 716C2AB42D23368B000760D4 /* ViewJobsAdminTableViewCell.xib */; };
-		716C2ABB2D23368B000760D4 /* AdminFeature.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 716C2AB52D23368B000760D4 /* AdminFeature.storyboard */; };
 		716C2ABE2D2336D9000760D4 /* AccountStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2ABC2D2336D9000760D4 /* AccountStatus.swift */; };
 		716C2ABF2D2336D9000760D4 /* FlagStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2ABD2D2336D9000760D4 /* FlagStatus.swift */; };
 		716C2AC22D2336FE000760D4 /* JobSeeker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2AC02D2336FE000760D4 /* JobSeeker.swift */; };
 		716C2AC32D2336FE000760D4 /* FlaggedJob.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2AC12D2336FE000760D4 /* FlaggedJob.swift */; };
 		716C2AC52D233986000760D4 /* BadgeState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2AC42D233986000760D4 /* BadgeState.swift */; };
-		716C2AD92D233A12000760D4 /* EditJobPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2AC72D233A11000760D4 /* EditJobPostViewController.swift */; };
-		716C2ADA2D233A12000760D4 /* ScheduledInterviewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2AC82D233A11000760D4 /* ScheduledInterviewsViewController.swift */; };
-		716C2ADB2D233A12000760D4 /* JobPostingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2AC92D233A11000760D4 /* JobPostingViewController.swift */; };
-		716C2ADC2D233A12000760D4 /* ScheduleInterviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2ACA2D233A11000760D4 /* ScheduleInterviewViewController.swift */; };
-		716C2ADD2D233A12000760D4 /* CustomJobPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2ACB2D233A11000760D4 /* CustomJobPostTableViewCell.swift */; };
-		716C2ADE2D233A12000760D4 /* AddJobPostingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2ACC2D233A11000760D4 /* AddJobPostingViewController.swift */; };
-		716C2ADF2D233A12000760D4 /* JobDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2ACD2D233A11000760D4 /* JobDetailsViewController.swift */; };
-		716C2AE02D233A12000760D4 /* saveJobChangesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2ACE2D233A11000760D4 /* saveJobChangesViewController.swift */; };
-		716C2AE12D233A12000760D4 /* ScheduledInterviewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2ACF2D233A11000760D4 /* ScheduledInterviewsTableViewCell.swift */; };
-		716C2AE22D233A12000760D4 /* InterviewInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2AD02D233A12000760D4 /* InterviewInfoTableViewController.swift */; };
-		716C2AE32D233A12000760D4 /* InterviewDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2AD12D233A12000760D4 /* InterviewDetailsViewController.swift */; };
-		716C2AE42D233A12000760D4 /* SkillsSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2AD22D233A12000760D4 /* SkillsSelectionViewController.swift */; };
-		716C2AE52D233A12000760D4 /* ReviewApplicationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2AD32D233A12000760D4 /* ReviewApplicationsViewController.swift */; };
-		716C2AE62D233A12000760D4 /* ApplicationsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2AD42D233A12000760D4 /* ApplicationsTableViewCell.swift */; };
-		716C2AE72D233A12000760D4 /* PostingJobViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2AD52D233A12000760D4 /* PostingJobViewController.swift */; };
-		716C2AE82D233A12000760D4 /* EditInterviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2AD62D233A12000760D4 /* EditInterviewViewController.swift */; };
-		716C2AE92D233A12000760D4 /* ViewApplicantCVViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2AD72D233A12000760D4 /* ViewApplicantCVViewController.swift */; };
-		716C2AEA2D233A12000760D4 /* ApplicantInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2AD82D233A12000760D4 /* ApplicantInfoTableViewController.swift */; };
-		716C2AEE2D233A3F000760D4 /* ApplicationsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 716C2AEB2D233A3F000760D4 /* ApplicationsTableViewCell.xib */; };
-		716C2AEF2D233A3F000760D4 /* ScheduledInterviewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 716C2AEC2D233A3F000760D4 /* ScheduledInterviewsTableViewCell.xib */; };
-		716C2AF02D233A3F000760D4 /* CustomJobPostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 716C2AED2D233A3F000760D4 /* CustomJobPostTableViewCell.xib */; };
-		716C2AF42D23B656000760D4 /* jobPostingsStory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 716C2AF32D23B656000760D4 /* jobPostingsStory.storyboard */; };
 		716C2AF72D23B759000760D4 /* ApplicantProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 716C2AF52D23B759000760D4 /* ApplicantProfile.storyboard */; };
 		716C2AF82D23B759000760D4 /* AddEmployerAddCompany.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 716C2AF62D23B759000760D4 /* AddEmployerAddCompany.storyboard */; };
 		716C2B082D23B7B2000760D4 /* ApplicantGuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2AF92D23B7B1000760D4 /* ApplicantGuideViewController.swift */; };
@@ -157,6 +112,29 @@
 		716C2B1D2D23B7F2000760D4 /* AddTechnicalSkillAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2B192D23B7F2000760D4 /* AddTechnicalSkillAlert.swift */; };
 		716C2B1E2D23B7F2000760D4 /* EditSoftSkill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2B1A2D23B7F2000760D4 /* EditSoftSkill.swift */; };
 		716C2B202D23B981000760D4 /* UserProfileSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2B1F2D23B981000760D4 /* UserProfileSection.swift */; };
+		716C2B392D23BCAC000760D4 /* ManageEmployerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2B232D23BCAA000760D4 /* ManageEmployerTableViewController.swift */; };
+		716C2B3A2D23BCAC000760D4 /* FlagInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2B242D23BCAA000760D4 /* FlagInfoTableViewController.swift */; };
+		716C2B3B2D23BCAC000760D4 /* ManageJobSeekersAccTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 716C2B252D23BCAA000760D4 /* ManageJobSeekersAccTableViewCell.xib */; };
+		716C2B3C2D23BCAC000760D4 /* ReportedJobsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 716C2B262D23BCAA000760D4 /* ReportedJobsTableViewCell.xib */; };
+		716C2B3D2D23BCAC000760D4 /* AdminDashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2B272D23BCAA000760D4 /* AdminDashboardViewController.swift */; };
+		716C2B3E2D23BCAC000760D4 /* ManageEmployersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2B282D23BCAB000760D4 /* ManageEmployersViewController.swift */; };
+		716C2B3F2D23BCAC000760D4 /* ReportedJobsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2B292D23BCAB000760D4 /* ReportedJobsViewController.swift */; };
+		716C2B402D23BCAC000760D4 /* ViewJobsAdminTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2B2A2D23BCAB000760D4 /* ViewJobsAdminTableViewCell.swift */; };
+		716C2B412D23BCAC000760D4 /* ApplicantAccountInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2B2B2D23BCAB000760D4 /* ApplicantAccountInfoTableViewController.swift */; };
+		716C2B422D23BCAC000760D4 /* ManageJobSeekersAccTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2B2C2D23BCAB000760D4 /* ManageJobSeekersAccTableViewCell.swift */; };
+		716C2B432D23BCAC000760D4 /* ReportedPostDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2B2D2D23BCAB000760D4 /* ReportedPostDetailTableViewController.swift */; };
+		716C2B442D23BCAC000760D4 /* FlaggedJobsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 716C2B2E2D23BCAB000760D4 /* FlaggedJobsTableViewCell.xib */; };
+		716C2B452D23BCAC000760D4 /* ReportedJobsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2B2F2D23BCAB000760D4 /* ReportedJobsTableViewCell.swift */; };
+		716C2B462D23BCAC000760D4 /* JobInfoAdminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2B302D23BCAB000760D4 /* JobInfoAdminViewController.swift */; };
+		716C2B472D23BCAC000760D4 /* ViewJobsAdminTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 716C2B312D23BCAB000760D4 /* ViewJobsAdminTableViewCell.xib */; };
+		716C2B482D23BCAC000760D4 /* ManageEmployersTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 716C2B322D23BCAB000760D4 /* ManageEmployersTableViewCell.xib */; };
+		716C2B492D23BCAC000760D4 /* ViewJobsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2B332D23BCAB000760D4 /* ViewJobsViewController.swift */; };
+		716C2B4A2D23BCAC000760D4 /* FlaggedJobsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2B342D23BCAB000760D4 /* FlaggedJobsTableViewCell.swift */; };
+		716C2B4B2D23BCAC000760D4 /* FlaggedJobsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2B352D23BCAB000760D4 /* FlaggedJobsViewController.swift */; };
+		716C2B4C2D23BCAC000760D4 /* FlagPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2B362D23BCAB000760D4 /* FlagPostViewController.swift */; };
+		716C2B4D2D23BCAC000760D4 /* ManageEmployersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2B372D23BCAB000760D4 /* ManageEmployersTableViewCell.swift */; };
+		716C2B4E2D23BCAC000760D4 /* ManageJobSeekersAccViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2B382D23BCAB000760D4 /* ManageJobSeekersAccViewController.swift */; };
+		716C2B502D23BCC1000760D4 /* AdminFeature.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 716C2B4F2D23BCC1000760D4 /* AdminFeature.storyboard */; };
 		71BEBCDE2CFC502900DF795E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEBCDD2CFC502900DF795E /* AppDelegate.swift */; };
 		71BEBCE02CFC502900DF795E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEBCDF2CFC502900DF795E /* SceneDelegate.swift */; };
 		71BEBCE22CFC502900DF795E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEBCE12CFC502900DF795E /* ViewController.swift */; };
@@ -266,56 +244,11 @@
 		716C2A862D232DA5000760D4 /* JobsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JobsTableViewCell.xib; sourceTree = "<group>"; };
 		716C2A872D232DA5000760D4 /* JobsCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JobsCollectionViewCell.xib; sourceTree = "<group>"; };
 		716C2A8A2D232DC8000760D4 /* RecommendationsAndDetailsStory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RecommendationsAndDetailsStory.storyboard; sourceTree = "<group>"; };
-		716C2A8D2D233638000760D4 /* JobInfoAdminViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobInfoAdminViewController.swift; sourceTree = "<group>"; };
-		716C2A8E2D233638000760D4 /* ReportedJobsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportedJobsViewController.swift; sourceTree = "<group>"; };
-		716C2A8F2D233638000760D4 /* ReportedJobsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportedJobsTableViewCell.swift; sourceTree = "<group>"; };
-		716C2A902D233638000760D4 /* FlaggedJobsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlaggedJobsTableViewCell.swift; sourceTree = "<group>"; };
-		716C2A912D233638000760D4 /* ApplicantAccountInfoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicantAccountInfoTableViewController.swift; sourceTree = "<group>"; };
-		716C2A922D233638000760D4 /* ManageEmployersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManageEmployersViewController.swift; sourceTree = "<group>"; };
-		716C2A932D233638000760D4 /* FlagInfoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlagInfoTableViewController.swift; sourceTree = "<group>"; };
-		716C2A942D233638000760D4 /* ViewJobsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewJobsViewController.swift; sourceTree = "<group>"; };
-		716C2A952D233638000760D4 /* ManageJobSeekersAccTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManageJobSeekersAccTableViewCell.swift; sourceTree = "<group>"; };
-		716C2A962D233638000760D4 /* ViewJobsAdminTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewJobsAdminTableViewCell.swift; sourceTree = "<group>"; };
-		716C2A972D233638000760D4 /* ManageJobSeekersAccViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManageJobSeekersAccViewController.swift; sourceTree = "<group>"; };
-		716C2A982D233638000760D4 /* ManageEmployersTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManageEmployersTableViewCell.swift; sourceTree = "<group>"; };
-		716C2A992D233638000760D4 /* ManageEmployerTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManageEmployerTableViewController.swift; sourceTree = "<group>"; };
-		716C2A9A2D233638000760D4 /* AdminDashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminDashboardViewController.swift; sourceTree = "<group>"; };
-		716C2A9B2D233638000760D4 /* ReportedPostDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportedPostDetailTableViewController.swift; sourceTree = "<group>"; };
-		716C2A9C2D233638000760D4 /* FlagPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlagPostViewController.swift; sourceTree = "<group>"; };
-		716C2A9D2D233638000760D4 /* FlaggedJobsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlaggedJobsViewController.swift; sourceTree = "<group>"; };
-		716C2AB02D23368B000760D4 /* ManageEmployersTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ManageEmployersTableViewCell.xib; sourceTree = "<group>"; };
-		716C2AB12D23368B000760D4 /* FlaggedJobsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FlaggedJobsTableViewCell.xib; sourceTree = "<group>"; };
-		716C2AB22D23368B000760D4 /* ManageJobSeekersAccTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ManageJobSeekersAccTableViewCell.xib; sourceTree = "<group>"; };
-		716C2AB32D23368B000760D4 /* ReportedJobsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReportedJobsTableViewCell.xib; sourceTree = "<group>"; };
-		716C2AB42D23368B000760D4 /* ViewJobsAdminTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewJobsAdminTableViewCell.xib; sourceTree = "<group>"; };
-		716C2AB52D23368B000760D4 /* AdminFeature.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AdminFeature.storyboard; sourceTree = "<group>"; };
 		716C2ABC2D2336D9000760D4 /* AccountStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountStatus.swift; sourceTree = "<group>"; };
 		716C2ABD2D2336D9000760D4 /* FlagStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlagStatus.swift; sourceTree = "<group>"; };
 		716C2AC02D2336FE000760D4 /* JobSeeker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobSeeker.swift; sourceTree = "<group>"; };
 		716C2AC12D2336FE000760D4 /* FlaggedJob.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlaggedJob.swift; sourceTree = "<group>"; };
 		716C2AC42D233986000760D4 /* BadgeState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadgeState.swift; sourceTree = "<group>"; };
-		716C2AC72D233A11000760D4 /* EditJobPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditJobPostViewController.swift; sourceTree = "<group>"; };
-		716C2AC82D233A11000760D4 /* ScheduledInterviewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduledInterviewsViewController.swift; sourceTree = "<group>"; };
-		716C2AC92D233A11000760D4 /* JobPostingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobPostingViewController.swift; sourceTree = "<group>"; };
-		716C2ACA2D233A11000760D4 /* ScheduleInterviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleInterviewViewController.swift; sourceTree = "<group>"; };
-		716C2ACB2D233A11000760D4 /* CustomJobPostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomJobPostTableViewCell.swift; sourceTree = "<group>"; };
-		716C2ACC2D233A11000760D4 /* AddJobPostingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddJobPostingViewController.swift; sourceTree = "<group>"; };
-		716C2ACD2D233A11000760D4 /* JobDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobDetailsViewController.swift; sourceTree = "<group>"; };
-		716C2ACE2D233A11000760D4 /* saveJobChangesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = saveJobChangesViewController.swift; sourceTree = "<group>"; };
-		716C2ACF2D233A11000760D4 /* ScheduledInterviewsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduledInterviewsTableViewCell.swift; sourceTree = "<group>"; };
-		716C2AD02D233A12000760D4 /* InterviewInfoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterviewInfoTableViewController.swift; sourceTree = "<group>"; };
-		716C2AD12D233A12000760D4 /* InterviewDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterviewDetailsViewController.swift; sourceTree = "<group>"; };
-		716C2AD22D233A12000760D4 /* SkillsSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkillsSelectionViewController.swift; sourceTree = "<group>"; };
-		716C2AD32D233A12000760D4 /* ReviewApplicationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewApplicationsViewController.swift; sourceTree = "<group>"; };
-		716C2AD42D233A12000760D4 /* ApplicationsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationsTableViewCell.swift; sourceTree = "<group>"; };
-		716C2AD52D233A12000760D4 /* PostingJobViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostingJobViewController.swift; sourceTree = "<group>"; };
-		716C2AD62D233A12000760D4 /* EditInterviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditInterviewViewController.swift; sourceTree = "<group>"; };
-		716C2AD72D233A12000760D4 /* ViewApplicantCVViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewApplicantCVViewController.swift; sourceTree = "<group>"; };
-		716C2AD82D233A12000760D4 /* ApplicantInfoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicantInfoTableViewController.swift; sourceTree = "<group>"; };
-		716C2AEB2D233A3F000760D4 /* ApplicationsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ApplicationsTableViewCell.xib; sourceTree = "<group>"; };
-		716C2AEC2D233A3F000760D4 /* ScheduledInterviewsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScheduledInterviewsTableViewCell.xib; sourceTree = "<group>"; };
-		716C2AED2D233A3F000760D4 /* CustomJobPostTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomJobPostTableViewCell.xib; sourceTree = "<group>"; };
-		716C2AF32D23B656000760D4 /* jobPostingsStory.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = jobPostingsStory.storyboard; sourceTree = "<group>"; };
 		716C2AF52D23B759000760D4 /* ApplicantProfile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ApplicantProfile.storyboard; sourceTree = "<group>"; };
 		716C2AF62D23B759000760D4 /* AddEmployerAddCompany.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AddEmployerAddCompany.storyboard; sourceTree = "<group>"; };
 		716C2AF92D23B7B1000760D4 /* ApplicantGuideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicantGuideViewController.swift; sourceTree = "<group>"; };
@@ -338,6 +271,29 @@
 		716C2B192D23B7F2000760D4 /* AddTechnicalSkillAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTechnicalSkillAlert.swift; sourceTree = "<group>"; };
 		716C2B1A2D23B7F2000760D4 /* EditSoftSkill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditSoftSkill.swift; sourceTree = "<group>"; };
 		716C2B1F2D23B981000760D4 /* UserProfileSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileSection.swift; sourceTree = "<group>"; };
+		716C2B232D23BCAA000760D4 /* ManageEmployerTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManageEmployerTableViewController.swift; sourceTree = "<group>"; };
+		716C2B242D23BCAA000760D4 /* FlagInfoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlagInfoTableViewController.swift; sourceTree = "<group>"; };
+		716C2B252D23BCAA000760D4 /* ManageJobSeekersAccTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ManageJobSeekersAccTableViewCell.xib; sourceTree = "<group>"; };
+		716C2B262D23BCAA000760D4 /* ReportedJobsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReportedJobsTableViewCell.xib; sourceTree = "<group>"; };
+		716C2B272D23BCAA000760D4 /* AdminDashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminDashboardViewController.swift; sourceTree = "<group>"; };
+		716C2B282D23BCAB000760D4 /* ManageEmployersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManageEmployersViewController.swift; sourceTree = "<group>"; };
+		716C2B292D23BCAB000760D4 /* ReportedJobsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportedJobsViewController.swift; sourceTree = "<group>"; };
+		716C2B2A2D23BCAB000760D4 /* ViewJobsAdminTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewJobsAdminTableViewCell.swift; sourceTree = "<group>"; };
+		716C2B2B2D23BCAB000760D4 /* ApplicantAccountInfoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicantAccountInfoTableViewController.swift; sourceTree = "<group>"; };
+		716C2B2C2D23BCAB000760D4 /* ManageJobSeekersAccTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManageJobSeekersAccTableViewCell.swift; sourceTree = "<group>"; };
+		716C2B2D2D23BCAB000760D4 /* ReportedPostDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportedPostDetailTableViewController.swift; sourceTree = "<group>"; };
+		716C2B2E2D23BCAB000760D4 /* FlaggedJobsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FlaggedJobsTableViewCell.xib; sourceTree = "<group>"; };
+		716C2B2F2D23BCAB000760D4 /* ReportedJobsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportedJobsTableViewCell.swift; sourceTree = "<group>"; };
+		716C2B302D23BCAB000760D4 /* JobInfoAdminViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobInfoAdminViewController.swift; sourceTree = "<group>"; };
+		716C2B312D23BCAB000760D4 /* ViewJobsAdminTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewJobsAdminTableViewCell.xib; sourceTree = "<group>"; };
+		716C2B322D23BCAB000760D4 /* ManageEmployersTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ManageEmployersTableViewCell.xib; sourceTree = "<group>"; };
+		716C2B332D23BCAB000760D4 /* ViewJobsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewJobsViewController.swift; sourceTree = "<group>"; };
+		716C2B342D23BCAB000760D4 /* FlaggedJobsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlaggedJobsTableViewCell.swift; sourceTree = "<group>"; };
+		716C2B352D23BCAB000760D4 /* FlaggedJobsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlaggedJobsViewController.swift; sourceTree = "<group>"; };
+		716C2B362D23BCAB000760D4 /* FlagPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlagPostViewController.swift; sourceTree = "<group>"; };
+		716C2B372D23BCAB000760D4 /* ManageEmployersTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManageEmployersTableViewCell.swift; sourceTree = "<group>"; };
+		716C2B382D23BCAB000760D4 /* ManageJobSeekersAccViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManageJobSeekersAccViewController.swift; sourceTree = "<group>"; };
+		716C2B4F2D23BCC1000760D4 /* AdminFeature.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AdminFeature.storyboard; sourceTree = "<group>"; };
 		71BEBCDA2CFC502900DF795E /* Hirely.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hirely.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71BEBCDD2CFC502900DF795E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		71BEBCDF2CFC502900DF795E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -392,9 +348,9 @@
 		711B4EBE2CFC57E200910FB6 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				716C2B212D23BC23000760D4 /* ManarStory */,
 				71F4E1272D21303900A24C4C /* AreejStoryboards */,
 				71D5BF7A2D20823E0098193C /* KhadijaStoryboards */,
-				71D5BF792D20822D0098193C /* ManarStoryboards */,
 				71D5BF772D2082050098193C /* AyahStoryboards */,
 				71D5BF752D207AD00098193C /* MayarStoryboards */,
 				71BEBCE32CFC502900DF795E /* Main.storyboard */,
@@ -406,10 +362,10 @@
 		711B4EBF2CFC57F300910FB6 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				716C2B222D23BC2E000760D4 /* ManarControllers */,
 				71F4E1152D212FD100A24C4C /* AreejControllers */,
 				71D5BFA92D208BAF0098193C /* MayarControllers */,
 				71D5BF7D2D20827C0098193C /* KhadijaControllers */,
-				71D5BF7C2D2082620098193C /* ManarControllers */,
 				71D5BF762D2081F20098193C /* AyahControllers */,
 				71BEBCE12CFC502900DF795E /* ViewController.swift */,
 			);
@@ -548,53 +504,41 @@
 			path = applicantdashboardandRecommendation;
 			sourceTree = "<group>";
 		};
-		716C2A8C2D2335FC000760D4 /* ContentModeration */ = {
+		716C2B212D23BC23000760D4 /* ManarStory */ = {
 			isa = PBXGroup;
 			children = (
-				716C2A9A2D233638000760D4 /* AdminDashboardViewController.swift */,
-				716C2A912D233638000760D4 /* ApplicantAccountInfoTableViewController.swift */,
-				716C2A902D233638000760D4 /* FlaggedJobsTableViewCell.swift */,
-				716C2A9D2D233638000760D4 /* FlaggedJobsViewController.swift */,
-				716C2A932D233638000760D4 /* FlagInfoTableViewController.swift */,
-				716C2A9C2D233638000760D4 /* FlagPostViewController.swift */,
-				716C2A8D2D233638000760D4 /* JobInfoAdminViewController.swift */,
-				716C2A982D233638000760D4 /* ManageEmployersTableViewCell.swift */,
-				716C2A922D233638000760D4 /* ManageEmployersViewController.swift */,
-				716C2A992D233638000760D4 /* ManageEmployerTableViewController.swift */,
-				716C2A952D233638000760D4 /* ManageJobSeekersAccTableViewCell.swift */,
-				716C2A972D233638000760D4 /* ManageJobSeekersAccViewController.swift */,
-				716C2A8F2D233638000760D4 /* ReportedJobsTableViewCell.swift */,
-				716C2A8E2D233638000760D4 /* ReportedJobsViewController.swift */,
-				716C2A9B2D233638000760D4 /* ReportedPostDetailTableViewController.swift */,
-				716C2A962D233638000760D4 /* ViewJobsAdminTableViewCell.swift */,
-				716C2A942D233638000760D4 /* ViewJobsViewController.swift */,
+				716C2B4F2D23BCC1000760D4 /* AdminFeature.storyboard */,
 			);
-			path = ContentModeration;
+			path = ManarStory;
 			sourceTree = "<group>";
 		};
-		716C2AC62D2339DC000760D4 /* JobPostingFeature */ = {
+		716C2B222D23BC2E000760D4 /* ManarControllers */ = {
 			isa = PBXGroup;
 			children = (
-				716C2ACC2D233A11000760D4 /* AddJobPostingViewController.swift */,
-				716C2AD82D233A12000760D4 /* ApplicantInfoTableViewController.swift */,
-				716C2AD42D233A12000760D4 /* ApplicationsTableViewCell.swift */,
-				716C2ACB2D233A11000760D4 /* CustomJobPostTableViewCell.swift */,
-				716C2AD62D233A12000760D4 /* EditInterviewViewController.swift */,
-				716C2AC72D233A11000760D4 /* EditJobPostViewController.swift */,
-				716C2AD12D233A12000760D4 /* InterviewDetailsViewController.swift */,
-				716C2AD02D233A12000760D4 /* InterviewInfoTableViewController.swift */,
-				716C2ACD2D233A11000760D4 /* JobDetailsViewController.swift */,
-				716C2AC92D233A11000760D4 /* JobPostingViewController.swift */,
-				716C2AD52D233A12000760D4 /* PostingJobViewController.swift */,
-				716C2AD32D233A12000760D4 /* ReviewApplicationsViewController.swift */,
-				716C2ACE2D233A11000760D4 /* saveJobChangesViewController.swift */,
-				716C2ACF2D233A11000760D4 /* ScheduledInterviewsTableViewCell.swift */,
-				716C2AC82D233A11000760D4 /* ScheduledInterviewsViewController.swift */,
-				716C2ACA2D233A11000760D4 /* ScheduleInterviewViewController.swift */,
-				716C2AD22D233A12000760D4 /* SkillsSelectionViewController.swift */,
-				716C2AD72D233A12000760D4 /* ViewApplicantCVViewController.swift */,
+				716C2B272D23BCAA000760D4 /* AdminDashboardViewController.swift */,
+				716C2B2B2D23BCAB000760D4 /* ApplicantAccountInfoTableViewController.swift */,
+				716C2B342D23BCAB000760D4 /* FlaggedJobsTableViewCell.swift */,
+				716C2B2E2D23BCAB000760D4 /* FlaggedJobsTableViewCell.xib */,
+				716C2B352D23BCAB000760D4 /* FlaggedJobsViewController.swift */,
+				716C2B242D23BCAA000760D4 /* FlagInfoTableViewController.swift */,
+				716C2B362D23BCAB000760D4 /* FlagPostViewController.swift */,
+				716C2B302D23BCAB000760D4 /* JobInfoAdminViewController.swift */,
+				716C2B372D23BCAB000760D4 /* ManageEmployersTableViewCell.swift */,
+				716C2B322D23BCAB000760D4 /* ManageEmployersTableViewCell.xib */,
+				716C2B282D23BCAB000760D4 /* ManageEmployersViewController.swift */,
+				716C2B232D23BCAA000760D4 /* ManageEmployerTableViewController.swift */,
+				716C2B2C2D23BCAB000760D4 /* ManageJobSeekersAccTableViewCell.swift */,
+				716C2B252D23BCAA000760D4 /* ManageJobSeekersAccTableViewCell.xib */,
+				716C2B382D23BCAB000760D4 /* ManageJobSeekersAccViewController.swift */,
+				716C2B2F2D23BCAB000760D4 /* ReportedJobsTableViewCell.swift */,
+				716C2B262D23BCAA000760D4 /* ReportedJobsTableViewCell.xib */,
+				716C2B292D23BCAB000760D4 /* ReportedJobsViewController.swift */,
+				716C2B2D2D23BCAB000760D4 /* ReportedPostDetailTableViewController.swift */,
+				716C2B2A2D23BCAB000760D4 /* ViewJobsAdminTableViewCell.swift */,
+				716C2B312D23BCAB000760D4 /* ViewJobsAdminTableViewCell.xib */,
+				716C2B332D23BCAB000760D4 /* ViewJobsViewController.swift */,
 			);
-			path = JobPostingFeature;
+			path = ManarControllers;
 			sourceTree = "<group>";
 		};
 		71BEBCD12CFC502900DF795E = {
@@ -679,23 +623,6 @@
 			path = AyahStoryboards;
 			sourceTree = "<group>";
 		};
-		71D5BF792D20822D0098193C /* ManarStoryboards */ = {
-			isa = PBXGroup;
-			children = (
-				716C2AF32D23B656000760D4 /* jobPostingsStory.storyboard */,
-				716C2AEB2D233A3F000760D4 /* ApplicationsTableViewCell.xib */,
-				716C2AED2D233A3F000760D4 /* CustomJobPostTableViewCell.xib */,
-				716C2AEC2D233A3F000760D4 /* ScheduledInterviewsTableViewCell.xib */,
-				716C2AB52D23368B000760D4 /* AdminFeature.storyboard */,
-				716C2AB12D23368B000760D4 /* FlaggedJobsTableViewCell.xib */,
-				716C2AB02D23368B000760D4 /* ManageEmployersTableViewCell.xib */,
-				716C2AB22D23368B000760D4 /* ManageJobSeekersAccTableViewCell.xib */,
-				716C2AB32D23368B000760D4 /* ReportedJobsTableViewCell.xib */,
-				716C2AB42D23368B000760D4 /* ViewJobsAdminTableViewCell.xib */,
-			);
-			path = ManarStoryboards;
-			sourceTree = "<group>";
-		};
 		71D5BF7A2D20823E0098193C /* KhadijaStoryboards */ = {
 			isa = PBXGroup;
 			children = (
@@ -704,15 +631,6 @@
 				716C2A3E2D231091000760D4 /* JobApplication.storyboard */,
 			);
 			path = KhadijaStoryboards;
-			sourceTree = "<group>";
-		};
-		71D5BF7C2D2082620098193C /* ManarControllers */ = {
-			isa = PBXGroup;
-			children = (
-				716C2AC62D2339DC000760D4 /* JobPostingFeature */,
-				716C2A8C2D2335FC000760D4 /* ContentModeration */,
-			);
-			path = ManarControllers;
 			sourceTree = "<group>";
 		};
 		71D5BF7D2D20827C0098193C /* KhadijaControllers */ = {
@@ -904,32 +822,28 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				716C2AEE2D233A3F000760D4 /* ApplicationsTableViewCell.xib in Resources */,
-				716C2AB92D23368B000760D4 /* ReportedJobsTableViewCell.xib in Resources */,
-				716C2AF42D23B656000760D4 /* jobPostingsStory.storyboard in Resources */,
 				716C2A8B2D232DC8000760D4 /* RecommendationsAndDetailsStory.storyboard in Resources */,
 				71BEBCE72CFC502A00DF795E /* Assets.xcassets in Resources */,
+				716C2B482D23BCAC000760D4 /* ManageEmployersTableViewCell.xib in Resources */,
 				716C2A112D230BBC000760D4 /* ResourceManagment.storyboard in Resources */,
-				716C2AB62D23368B000760D4 /* ManageEmployersTableViewCell.xib in Resources */,
 				716C2A312D230E76000760D4 /* FilterOptionTableViewCell.xib in Resources */,
-				716C2AEF2D233A3F000760D4 /* ScheduledInterviewsTableViewCell.xib in Resources */,
 				716C2A892D232DA5000760D4 /* JobsCollectionViewCell.xib in Resources */,
-				716C2AB82D23368B000760D4 /* ManageJobSeekersAccTableViewCell.xib in Resources */,
 				716C29F62D23096E000760D4 /* CVBuilder.storyboard in Resources */,
 				716C2A302D230E76000760D4 /* FiltersCollectionViewCell.xib in Resources */,
-				716C2ABA2D23368B000760D4 /* ViewJobsAdminTableViewCell.xib in Resources */,
+				716C2B502D23BCC1000760D4 /* AdminFeature.storyboard in Resources */,
 				716C2A712D231590000760D4 /* UserAuthentication.storyboard in Resources */,
 				716C2AF82D23B759000760D4 /* AddEmployerAddCompany.storyboard in Resources */,
+				716C2B3B2D23BCAC000760D4 /* ManageJobSeekersAccTableViewCell.xib in Resources */,
+				716C2B472D23BCAC000760D4 /* ViewJobsAdminTableViewCell.xib in Resources */,
+				716C2B442D23BCAC000760D4 /* FlaggedJobsTableViewCell.xib in Resources */,
 				71BEBCEA2CFC502A00DF795E /* Base in Resources */,
-				716C2AF02D233A3F000760D4 /* CustomJobPostTableViewCell.xib in Resources */,
 				716C2A882D232DA5000760D4 /* JobsTableViewCell.xib in Resources */,
 				716C2A2F2D230E76000760D4 /* JobsResultTableViewCell.xib in Resources */,
 				716C2A3F2D231091000760D4 /* JobApplication.storyboard in Resources */,
+				716C2B3C2D23BCAC000760D4 /* ReportedJobsTableViewCell.xib in Resources */,
 				716C2A542D23129C000760D4 /* CustomCellForApplicantsApplicationTableViewCell.xib in Resources */,
 				71BEBCE52CFC502900DF795E /* Base in Resources */,
-				716C2ABB2D23368B000760D4 /* AdminFeature.storyboard in Resources */,
 				716C2AF72D23B759000760D4 /* ApplicantProfile.storyboard in Resources */,
-				716C2AB72D23368B000760D4 /* FlaggedJobsTableViewCell.xib in Resources */,
 				2C9302F52CFC9E6500CAD615 /* GoogleService-Info.plist in Resources */,
 				716C2A322D230E76000760D4 /* FilterAlertStoryboard.storyboard in Resources */,
 				716C2A522D231291000760D4 /* StatusUpdateApplicant.storyboard in Resources */,
@@ -957,131 +871,113 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				716C2ADB2D233A12000760D4 /* JobPostingViewController.swift in Sources */,
 				716C2A652D231523000760D4 /* SalaryViewController.swift in Sources */,
 				716C2A1C2D230DE4000760D4 /* FilterAlertService.swift in Sources */,
 				716C2B1B2D23B7F2000760D4 /* EditTechnicalSkill.swift in Sources */,
 				716C2A152D230D8A000760D4 /* FilterOptions.swift in Sources */,
-				716C2AA92D233638000760D4 /* ManageEmployersTableViewCell.swift in Sources */,
 				716C2A0D2D230B94000760D4 /* CareerTipsViewController.swift in Sources */,
 				716C2A062D230B94000760D4 /* ResourceTableViewCell.swift in Sources */,
+				716C2B4C2D23BCAC000760D4 /* FlagPostViewController.swift in Sources */,
+				716C2B3E2D23BCAC000760D4 /* ManageEmployersViewController.swift in Sources */,
+				716C2B432D23BCAC000760D4 /* ReportedPostDetailTableViewController.swift in Sources */,
 				716C2B0B2D23B7B2000760D4 /* ApplicantProfileViewController.swift in Sources */,
 				716C2A082D230B94000760D4 /* CoursesTableViewCell.swift in Sources */,
 				716C2A762D231612000760D4 /* currentUser.swift in Sources */,
 				716C2B122D23B7B2000760D4 /* ViewCVViewController.swift in Sources */,
 				716C2A6F2D231523000760D4 /* EmploymentTypeViewController.swift in Sources */,
 				716C2B112D23B7B2000760D4 /* changePassword1ViewController.swift in Sources */,
-				716C2AE82D233A12000760D4 /* EditInterviewViewController.swift in Sources */,
 				716C2A6B2D231523000760D4 /* SignUpViewController.swift in Sources */,
 				716C2A662D231523000760D4 /* TechnicalSkillsViewController.swift in Sources */,
 				716C2B0C2D23B7B2000760D4 /* AddCompanyViewController.swift in Sources */,
 				716C2B142D23B7B2000760D4 /* EditSoftSkillViewController.swift in Sources */,
 				716C2ABE2D2336D9000760D4 /* AccountStatus.swift in Sources */,
 				71BEBCE22CFC502900DF795E /* ViewController.swift in Sources */,
-				716C2AAD2D233638000760D4 /* FlagPostViewController.swift in Sources */,
 				716C2A1F2D230DE4000760D4 /* FirstSearchViewController.swift in Sources */,
-				716C2AE62D233A12000760D4 /* ApplicationsTableViewCell.swift in Sources */,
 				716C2B0E2D23B7B2000760D4 /* PersonalInfoViewController.swift in Sources */,
 				716C2A3D2D231026000760D4 /* getCV.swift in Sources */,
-				716C2AE32D233A12000760D4 /* InterviewDetailsViewController.swift in Sources */,
 				716C29EE2D23095A000760D4 /* generatedCvViewController.swift in Sources */,
-				716C2AAE2D233638000760D4 /* FlaggedJobsViewController.swift in Sources */,
 				716C2A252D230DF7000760D4 /* JobsResultTableViewCell.swift in Sources */,
 				716C2A792D231612000760D4 /* company.swift in Sources */,
-				716C2ADC2D233A12000760D4 /* ScheduleInterviewViewController.swift in Sources */,
 				716C2A842D232D5D000760D4 /* JobsCollectionViewCell.swift in Sources */,
+				716C2B412D23BCAC000760D4 /* ApplicantAccountInfoTableViewController.swift in Sources */,
+				716C2B3F2D23BCAC000760D4 /* ReportedJobsViewController.swift in Sources */,
 				716C2B0F2D23B7B2000760D4 /* ResumesViewController.swift in Sources */,
 				716C2B1D2D23B7F2000760D4 /* AddTechnicalSkillAlert.swift in Sources */,
-				716C2AE72D233A12000760D4 /* PostingJobViewController.swift in Sources */,
 				716C2A642D231523000760D4 /* ExperienceLevelViewController.swift in Sources */,
-				716C2AE42D233A12000760D4 /* SkillsSelectionViewController.swift in Sources */,
 				716C2A232D230DF7000760D4 /* FiltersCollectionViewCell.swift in Sources */,
-				716C2AE12D233A12000760D4 /* ScheduledInterviewsTableViewCell.swift in Sources */,
+				716C2B4E2D23BCAC000760D4 /* ManageJobSeekersAccViewController.swift in Sources */,
 				716C2A492D23126F000760D4 /* InterviewInfoTableViewCell.swift in Sources */,
 				716C2B162D23B7B2000760D4 /* SoftTechnicalSkills.swift in Sources */,
 				716C2A502D231282000760D4 /* ScheduledInterview.swift in Sources */,
-				716C2AAA2D233638000760D4 /* ManageEmployerTableViewController.swift in Sources */,
-				716C2AA52D233638000760D4 /* ViewJobsViewController.swift in Sources */,
 				716C2B092D23B7B2000760D4 /* AddEmployerViewController.swift in Sources */,
+				716C2B3D2D23BCAC000760D4 /* AdminDashboardViewController.swift in Sources */,
 				716C2A6C2D231523000760D4 /* UploadProfilePhotoViewController.swift in Sources */,
 				71BEBCDE2CFC502900DF795E /* AppDelegate.swift in Sources */,
+				716C2B452D23BCAC000760D4 /* ReportedJobsTableViewCell.swift in Sources */,
 				716C2A4F2D231282000760D4 /* Badges.swift in Sources */,
 				716C2A462D23126F000760D4 /* CustomCellForApplicantsApplicationTableViewCell.swift in Sources */,
 				716C2A6E2D231523000760D4 /* RegisterInterestsViewController.swift in Sources */,
-				716C2AE92D233A12000760D4 /* ViewApplicantCVViewController.swift in Sources */,
 				716C29F02D23095A000760D4 /* certiViewController.swift in Sources */,
-				716C2AEA2D233A12000760D4 /* ApplicantInfoTableViewController.swift in Sources */,
 				716C29ED2D23095A000760D4 /* expViewController.swift in Sources */,
 				716C2A342D230ECA000760D4 /* JobPosting.swift in Sources */,
 				716C2B1C2D23B7F2000760D4 /* AddSoftSkillAlert.swift in Sources */,
-				716C2AD92D233A12000760D4 /* EditJobPostViewController.swift in Sources */,
-				716C2AAC2D233638000760D4 /* ReportedPostDetailTableViewController.swift in Sources */,
+				716C2B462D23BCAC000760D4 /* JobInfoAdminViewController.swift in Sources */,
 				716C2ABF2D2336D9000760D4 /* FlagStatus.swift in Sources */,
 				716C2A0A2D230B94000760D4 /* VideosViewController.swift in Sources */,
 				716C2B0D2D23B7B2000760D4 /* EditTechnicalSkillsViewController.swift in Sources */,
+				716C2B4A2D23BCAC000760D4 /* FlaggedJobsTableViewCell.swift in Sources */,
 				716C2A1E2D230DE4000760D4 /* FilterAlertViewController.swift in Sources */,
 				716C2B132D23B7B2000760D4 /* changePassword2ViewController.swift in Sources */,
 				716C2AC52D233986000760D4 /* BadgeState.swift in Sources */,
 				716C2AC32D2336FE000760D4 /* FlaggedJob.swift in Sources */,
-				716C2ADF2D233A12000760D4 /* JobDetailsViewController.swift in Sources */,
-				716C2ADD2D233A12000760D4 /* CustomJobPostTableViewCell.swift in Sources */,
+				716C2B4D2D23BCAC000760D4 /* ManageEmployersTableViewCell.swift in Sources */,
 				716C2A6A2D231523000760D4 /* WelcomeViewController.swift in Sources */,
-				716C2AE52D233A12000760D4 /* ReviewApplicationsViewController.swift in Sources */,
-				716C2A9E2D233638000760D4 /* JobInfoAdminViewController.swift in Sources */,
 				716C2A692D231523000760D4 /* LoginViewController.swift in Sources */,
 				716C2A632D231523000760D4 /* RegisterExpertiseViewController.swift in Sources */,
-				716C2AA02D233638000760D4 /* ReportedJobsTableViewCell.swift in Sources */,
 				716C2B202D23B981000760D4 /* UserProfileSection.swift in Sources */,
 				716C2A0C2D230B94000760D4 /* CoursesViewController.swift in Sources */,
 				716C2A7F2D232D2F000760D4 /* ApplicantViewController.swift in Sources */,
 				716C2A6D2D231523000760D4 /* SoftSkillsViewController.swift in Sources */,
-				716C2AA62D233638000760D4 /* ManageJobSeekersAccTableViewCell.swift in Sources */,
 				716C2A672D231523000760D4 /* RegisterDetailsViewController.swift in Sources */,
 				716C2A072D230B94000760D4 /* ImageViewController.swift in Sources */,
 				716C29EF2D23095A000760D4 /* personalInfoViewController.swift in Sources */,
-				716C2AA72D233638000760D4 /* ViewJobsAdminTableViewCell.swift in Sources */,
-				716C2AE02D233A12000760D4 /* saveJobChangesViewController.swift in Sources */,
 				716C2A782D231612000760D4 /* SkillItem.swift in Sources */,
 				716C2A482D23126F000760D4 /* InterviewDetailViewController.swift in Sources */,
-				716C2AE22D233A12000760D4 /* InterviewInfoTableViewController.swift in Sources */,
 				716C29F82D230978000760D4 /* CVData.swift in Sources */,
 				716C29F22D23095A000760D4 /* skillsViewController.swift in Sources */,
-				716C2AA32D233638000760D4 /* ManageEmployersViewController.swift in Sources */,
 				71BEBCE02CFC502900DF795E /* SceneDelegate.swift in Sources */,
-				716C2A9F2D233638000760D4 /* ReportedJobsViewController.swift in Sources */,
-				716C2AA12D233638000760D4 /* FlaggedJobsTableViewCell.swift in Sources */,
 				716C2A772D231612000760D4 /* Cloudinary.swift in Sources */,
 				716C2B102D23B7B2000760D4 /* AddTechnicalSkillViewController.swift in Sources */,
 				716C2B082D23B7B2000760D4 /* ApplicantGuideViewController.swift in Sources */,
+				716C2B392D23BCAC000760D4 /* ManageEmployerTableViewController.swift in Sources */,
 				716C2B1E2D23B7F2000760D4 /* EditSoftSkill.swift in Sources */,
 				716C2A0B2D230B94000760D4 /* Resource.swift in Sources */,
 				716C2AC22D2336FE000760D4 /* JobSeeker.swift in Sources */,
-				716C2AA42D233638000760D4 /* FlagInfoTableViewController.swift in Sources */,
-				716C2AA22D233638000760D4 /* ApplicantAccountInfoTableViewController.swift in Sources */,
 				716C29FD2D230B86000760D4 /* AddEditResourceTableViewController.swift in Sources */,
+				716C2B422D23BCAC000760D4 /* ManageJobSeekersAccTableViewCell.swift in Sources */,
 				716C2A3C2D231026000760D4 /* CompanyDetails.swift in Sources */,
 				716C2A472D23126F000760D4 /* ApplicationJobDetailsViewController.swift in Sources */,
 				716C2A1D2D230DE4000760D4 /* ResultsPageViewController.swift in Sources */,
 				716C2A4E2D231282000760D4 /* AppliedJobs.swift in Sources */,
+				716C2B492D23BCAC000760D4 /* ViewJobsViewController.swift in Sources */,
 				716C2A1B2D230DE4000760D4 /* SuggestionsViewController.swift in Sources */,
-				716C2AAB2D233638000760D4 /* AdminDashboardViewController.swift in Sources */,
 				716C2A242D230DF7000760D4 /* FilterOptionTableViewCell.swift in Sources */,
-				716C2ADE2D233A12000760D4 /* AddJobPostingViewController.swift in Sources */,
 				716C29FB2D230B6E000760D4 /* ResourcesPageViewController.swift in Sources */,
 				716C29F32D23095A000760D4 /* CloudinarySetUpCv.swift in Sources */,
-				716C2ADA2D233A12000760D4 /* ScheduledInterviewsViewController.swift in Sources */,
 				716C29F12D23095A000760D4 /* CvBuilderViewController.swift in Sources */,
+				716C2B402D23BCAC000760D4 /* ViewJobsAdminTableViewCell.swift in Sources */,
 				716C2A4A2D23126F000760D4 /* ApplicantsApplicationViewController.swift in Sources */,
 				716C2A832D232D5D000760D4 /* JobsTableViewCell.swift in Sources */,
 				716C2A392D230FD0000760D4 /* CompanyDetailsViewController.swift in Sources */,
-				716C2AA82D233638000760D4 /* ManageJobSeekersAccViewController.swift in Sources */,
 				716C29F42D23095A000760D4 /* educationViewController.swift in Sources */,
 				716C2A382D230FD0000760D4 /* ApplyJobViewController.swift in Sources */,
 				716C2B0A2D23B7B2000760D4 /* EditPersonalInfoViewController.swift in Sources */,
 				716C2A682D231523000760D4 /* SkillTableViewCell.swift in Sources */,
 				716C2B152D23B7B2000760D4 /* AddSoftSkillViewController.swift in Sources */,
+				716C2B4B2D23BCAC000760D4 /* FlaggedJobsViewController.swift in Sources */,
 				716C2A0F2D230BAB000760D4 /* ResourceManagmentTableViewController.swift in Sources */,
 				716C2A802D232D2F000760D4 /* JobDetailsApplicantViewController.swift in Sources */,
+				716C2B3A2D23BCAC000760D4 /* FlagInfoTableViewController.swift in Sources */,
 				716C2A092D230B94000760D4 /* VideoTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

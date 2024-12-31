@@ -8,13 +8,12 @@ import UIKit
 import FirebaseFirestore
 
 
-
 class ManageJobSeekersAccViewController: UIViewController{
 
     @IBOutlet weak var jobSeekers: UITableView!
 
     var jobSeekersList: [JobSeeker] = [] // Array to hold job seekers fetched from Firestore
-
+    
        override func viewDidLoad() {
            super.viewDidLoad()
            jobSeekers.backgroundColor = .clear

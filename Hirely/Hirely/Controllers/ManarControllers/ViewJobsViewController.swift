@@ -9,36 +9,7 @@ import UIKit
 import FirebaseFirestore
 
 class ViewJobsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
-    
-    var selectedFilters: [String: String] = [:]
-    
-    @IBAction func filterJobsTap(_ sender: Any) {
-        // Define the filter categories and their respective options
-        let allFilters: [String: [String]] = [
-            "City": CityOptions.allCases.map { $0.rawValue },
-            "Job Type": JobTypeOptions.allCases.map { $0.rawValue },
-            "Experience Level": ExperienceLevelOptions.allCases.map { $0.rawValue },
-            "Location Type": LocationTypeOptions.allCases.map { $0.rawValue }
-        ]
-        
-        // Create the filter alert using FilterAlertService
-        let filterAlertVC = FilterAlertService().allFiltersAlert(with: allFilters)
-        
-        // Pass the currently selected filters (if any) to the alert
-        filterAlertVC.selectedFilters = selectedFilters
-        
-        // Set the delegate to handle filter actions
-        filterAlertVC.delegate = self
-        
-        // Configure the modal presentation style
-        filterAlertVC.modalPresentationStyle = .overCurrentContext
-        filterAlertVC.modalTransitionStyle = .crossDissolve
-        
-        // Present the alert
-        self.present(filterAlertVC, animated: true, completion: nil)
-    }
-
-    
+       
     @IBOutlet weak var jobPosts: UITableView!
     
     var jobPostings: [JobPosting] = [] //array to store job postings
@@ -158,32 +129,3 @@ extension ViewJobsViewController{
         }
         
     }}
-extension ViewJobsViewController: FilterAlertDelegate {
-    func didApplyFilters(_ filters: [String: String]) {
-        // Save the selected filters
-        selectedFilters = filters
-        
-        // Filter the job postings based on the selected filters
-        let searchFilteredJobs = jobPostings.filter { job in
-            let matchesJobType = filters["Job Type"] == nil || job.jobType.lowercased() == filters["Job Type"]!.lowercased()
-            let matchesExperienceLevel = filters["Experience Level"] == nil || job.experienceLevel.lowercased() == filters["Experience Level"]!.lowercased()
-            let matchesLocationType = filters["Location Type"] == nil || job.locationType.lowercased() == filters["Location Type"]!.lowercased()
-            let matchesCity = filters["City"] == nil || job.city.lowercased() == filters["City"]!.lowercased()
-            
-            return matchesJobType && matchesExperienceLevel && matchesLocationType && matchesCity
-        }
-        
-        // Update the job postings displayed in the table view
-        self.jobPostings = searchFilteredJobs
-        self.jobPosts.reloadData()
-    }
-    
-    func didResetFilters() {
-        // Reset all filters
-        selectedFilters.removeAll()
-        
-        // Reload the original job postings (no filters applied)
-        fetchJobPostings()
-    }
-}
-
