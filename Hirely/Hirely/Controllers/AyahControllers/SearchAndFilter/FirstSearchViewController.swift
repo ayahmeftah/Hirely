@@ -121,7 +121,7 @@ class FirstSearchViewController: UIViewController, UISearchResultsUpdating, UISe
 //    }
     
     func navigateToResultsPage(with query: String) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let storyboard = UIStoryboard(name: "RecommendationsAndDetailsStory", bundle: nil)
         if let resultsVC = storyboard.instantiateViewController(withIdentifier: "ResultsPageViewController") as? ResultsPageViewController {
             resultsVC.searchQuery = query // Pass the search query
             navigationController?.pushViewController(resultsVC, animated: true)

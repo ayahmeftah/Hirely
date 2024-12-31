@@ -292,6 +292,9 @@
                                             <imageReference key="image" image="doc.text.magnifyingglass" catalog="system" symbolScale="medium"/>
                                             <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="16"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="filterJobsTap:" destination="yFf-aL-gpt" eventType="touchUpInside" id="MNf-FV-CkR"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </view>
@@ -1690,7 +1693,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v22-Pj-PV2">
                                 <rect key="frame" x="0.0" y="270" width="393" height="582"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sfj-mt-hON">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sfj-mt-hON">
                                         <rect key="frame" x="26" y="-114" width="393" height="1058"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="seE-Kf-iBd">
@@ -1703,7 +1706,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XZM-Kf-4zc">
-                                                        <rect key="frame" x="0.0" y="26.333333333333314" width="100" height="17"/>
+                                                        <rect key="frame" x="0.0" y="26.333333333333343" width="100" height="17"/>
                                                         <color key="backgroundColor" red="0.95294117649999999" green="0.37254901959999998" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="100" id="to3-UD-FbH"/>
@@ -1719,13 +1722,13 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h5h-MC-4bc">
-                                                        <rect key="frame" x="0.0" y="49.333333333333314" width="114.33333333333333" height="20.333333333333329"/>
+                                                        <rect key="frame" x="0.0" y="49.333333333333343" width="114.33333333333333" height="20.333333333333329"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                         <color key="textColor" red="0.015686274510000001" green="0.074509803920000006" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dEv-5m-GDt">
-                                                        <rect key="frame" x="0.0" y="75.666666666666686" width="100" height="17"/>
+                                                        <rect key="frame" x="0.0" y="75.666666666666657" width="100" height="17"/>
                                                         <color key="backgroundColor" red="0.95294117649999999" green="0.37254901959999998" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="100" id="rdS-6f-l6c"/>
@@ -1828,11 +1831,11 @@
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="sfj-mt-hON" secondAttribute="trailing" id="5c8-6B-9E7"/>
-                                    <constraint firstItem="sfj-mt-hON" firstAttribute="leading" secondItem="v22-Pj-PV2" secondAttribute="leading" id="KeA-00-jyG"/>
+                                    <constraint firstAttribute="trailing" secondItem="sfj-mt-hON" secondAttribute="trailing" constant="-26" id="5c8-6B-9E7"/>
+                                    <constraint firstItem="sfj-mt-hON" firstAttribute="leading" secondItem="v22-Pj-PV2" secondAttribute="leading" constant="26" id="KeA-00-jyG"/>
                                     <constraint firstItem="Sv5-lD-Ah4" firstAttribute="width" secondItem="v22-Pj-PV2" secondAttribute="width" multiplier="0.687023" id="Ogn-3B-ZLO"/>
-                                    <constraint firstItem="sfj-mt-hON" firstAttribute="top" secondItem="v22-Pj-PV2" secondAttribute="top" id="pRe-3m-g88"/>
-                                    <constraint firstAttribute="bottom" secondItem="sfj-mt-hON" secondAttribute="bottom" id="tOY-sm-bxe"/>
+                                    <constraint firstItem="sfj-mt-hON" firstAttribute="top" secondItem="v22-Pj-PV2" secondAttribute="top" constant="-114" id="pRe-3m-g88"/>
+                                    <constraint firstAttribute="bottom" secondItem="sfj-mt-hON" secondAttribute="bottom" constant="-362" id="tOY-sm-bxe"/>
                                 </constraints>
                             </scrollView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="z7g-n3-EMS">
@@ -1931,8 +1934,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="I0B-4D-l3i"/>
-        <segue reference="CGE-VX-C2T"/>
+        <segue reference="eqW-J9-s1d"/>
+        <segue reference="9tW-TC-Rrc"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Blue-BG" width="402" height="193"/>

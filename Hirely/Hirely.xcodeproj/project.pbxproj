@@ -78,7 +78,6 @@
 		716C2A772D231612000760D4 /* Cloudinary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2A732D231611000760D4 /* Cloudinary.swift */; };
 		716C2A782D231612000760D4 /* SkillItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2A742D231611000760D4 /* SkillItem.swift */; };
 		716C2A792D231612000760D4 /* company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2A752D231611000760D4 /* company.swift */; };
-		716C2A7B2D231B73000760D4 /* SearchAndList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 716C2A7A2D231B73000760D4 /* SearchAndList.storyboard */; };
 		716C2A7F2D232D2F000760D4 /* ApplicantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2A7D2D232D2F000760D4 /* ApplicantViewController.swift */; };
 		716C2A802D232D2F000760D4 /* JobDetailsApplicantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2A7E2D232D2F000760D4 /* JobDetailsApplicantViewController.swift */; };
 		716C2A832D232D5D000760D4 /* JobsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C2A812D232D5D000760D4 /* JobsTableViewCell.swift */; };
@@ -238,7 +237,6 @@
 		716C2A732D231611000760D4 /* Cloudinary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cloudinary.swift; sourceTree = "<group>"; };
 		716C2A742D231611000760D4 /* SkillItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkillItem.swift; sourceTree = "<group>"; };
 		716C2A752D231611000760D4 /* company.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = company.swift; sourceTree = "<group>"; };
-		716C2A7A2D231B73000760D4 /* SearchAndList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SearchAndList.storyboard; sourceTree = "<group>"; };
 		716C2A7D2D232D2F000760D4 /* ApplicantViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicantViewController.swift; sourceTree = "<group>"; };
 		716C2A7E2D232D2F000760D4 /* JobDetailsApplicantViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobDetailsApplicantViewController.swift; sourceTree = "<group>"; };
 		716C2A812D232D5D000760D4 /* JobsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobsTableViewCell.swift; sourceTree = "<group>"; };
@@ -440,7 +438,6 @@
 				716C2A2D2D230E76000760D4 /* FilterOptionTableViewCell.xib */,
 				716C2A2C2D230E76000760D4 /* FiltersCollectionViewCell.xib */,
 				716C2A2B2D230E76000760D4 /* JobsResultTableViewCell.xib */,
-				716C2A7A2D231B73000760D4 /* SearchAndList.storyboard */,
 			);
 			path = SearchStoryboards;
 			sourceTree = "<group>";
@@ -859,7 +856,6 @@
 				716C2AF02D233A3F000760D4 /* CustomJobPostTableViewCell.xib in Resources */,
 				716C2A882D232DA5000760D4 /* JobsTableViewCell.xib in Resources */,
 				716C2A2F2D230E76000760D4 /* JobsResultTableViewCell.xib in Resources */,
-				716C2A7B2D231B73000760D4 /* SearchAndList.storyboard in Resources */,
 				716C2A3F2D231091000760D4 /* JobApplication.storyboard in Resources */,
 				716C2A542D23129C000760D4 /* CustomCellForApplicantsApplicationTableViewCell.xib in Resources */,
 				716C2AF22D233A61000760D4 /* jobPostingsStory.storyboard in Resources */,
