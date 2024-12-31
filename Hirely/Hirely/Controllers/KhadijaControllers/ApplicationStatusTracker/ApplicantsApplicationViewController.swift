@@ -9,8 +9,8 @@ class ApplicantsApplicationViewController: UIViewController, UITableViewDelegate
     @IBOutlet weak var tableView: UITableView!
     
     // needs to be chnaged
-    // let userId: String = currentUser().getCurrentUserMethod()
-    var userId: String = "ppRloi8VPTvhItiWAYTT" // Current user ID
+    let userId = "HiG1taJhkrOsryNM7PtG"
+    //var userId: String = "ppRloi8VPTvhItiWAYTT" // Current user ID
     var companyIdSelected: String = ""
     var jobIdSelected: String = ""
     var jobPositionSelected: String? = nil

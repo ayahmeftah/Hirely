@@ -186,6 +186,9 @@ extension ApplicantProfileViewController: UITableViewDelegate, UITableViewDataSo
             else if indexPath.row == 1{
                 performSegue(withIdentifier: "goToSkillsExperience", sender: nil)
             }
+            else if indexPath.row == 2{
+                performSegue(withIdentifier: "goToAppliedJobs", sender: nil)
+            }
             else if indexPath.row == 3{
                 performSegue(withIdentifier: "showCV", sender: nil)
             }

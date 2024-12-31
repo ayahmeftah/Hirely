@@ -122,7 +122,25 @@
                 <viewControllerPlaceholder storyboardName="RecommendationsAndDetailsStory" id="mo9-Bo-cEF" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="064-5n-pSR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2646" y="155"/>
+            <point key="canvasLocation" x="-2466" y="408"/>
+        </scene>
+        <!--jobPostingsStory-->
+        <scene sceneID="0Xy-me-pva">
+            <objects>
+                <viewControllerPlaceholder storyboardName="jobPostingsStory" id="76U-hk-gfO" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Zr0-oj-Q2g"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5z7-8R-glC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2005" y="408"/>
+        </scene>
+        <!--AdminFeature-->
+        <scene sceneID="Pu7-oh-K80">
+            <objects>
+                <viewControllerPlaceholder storyboardName="AdminFeature" id="Ju6-o6-RMw" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gjr-fP-Aqz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1538" y="408"/>
         </scene>
         <!--Login-->
         <scene sceneID="Phm-ND-1D2">
@@ -261,6 +279,8 @@
                         <outlet property="emailTextField" destination="Y4Z-a8-yHa" id="bYr-ee-GCP"/>
                         <outlet property="passwordTextField" destination="dTq-QW-9O8" id="zgn-P3-Oed"/>
                         <segue destination="mo9-Bo-cEF" kind="presentation" identifier="goToApplicantDashboard" modalPresentationStyle="fullScreen" id="kDt-Ek-AO1"/>
+                        <segue destination="76U-hk-gfO" kind="presentation" identifier="goToEmployerDashboard" modalPresentationStyle="fullScreen" id="SBS-Ii-6hl"/>
+                        <segue destination="Ju6-o6-RMw" kind="presentation" identifier="goToAdminDashboard" modalPresentationStyle="fullScreen" id="r4s-zf-IRC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iTQ-eb-gN6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -2217,7 +2237,7 @@ Experience Level</string>
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="tintColor">
-            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

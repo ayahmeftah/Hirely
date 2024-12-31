@@ -135,6 +135,12 @@ class ApplicantViewController: UIViewController, UICollectionViewDataSource, UIC
                 }
             }
     }
+    var companies: [(name: String, imageName: String)] = [
+        ("Google Inc", "google"),
+        ("Microsoft", "microsoft"),
+        ("AWS", "aws"),
+        ("NBB Bank", "nbb")
+    ]
 
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -146,7 +152,8 @@ class ApplicantViewController: UIViewController, UICollectionViewDataSource, UIC
         let job = jobPostings[indexPath.row]
         
         // Pass job details to cell
-        cell.postInit("Microsoft", job.jobType, job.jobTitle, "microsoft", job.postedDate, job.deadline, job.docId, true)
+        let company = companies[indexPath.row % companies.count]
+        cell.postInit(company.name, job.jobType, job.jobTitle, company.imageName, job.postedDate, job.deadline, job.docId, false)
         cell.contentView.layer.cornerRadius = 10
         cell.contentView.layer.masksToBounds = true
         return cell

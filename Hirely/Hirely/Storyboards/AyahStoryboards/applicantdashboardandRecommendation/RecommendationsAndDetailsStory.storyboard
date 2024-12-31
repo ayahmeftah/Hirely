@@ -986,11 +986,11 @@
             </objects>
             <point key="canvasLocation" x="-691" y="1751"/>
         </scene>
-        <!--Item-->
+        <!--Resources-->
         <scene sceneID="EgO-rR-6xl">
             <objects>
                 <navigationController modalPresentationStyle="fullScreen" toolbarHidden="NO" id="DEl-zM-KhX" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="Ljd-nl-Td9"/>
+                    <tabBarItem key="tabBarItem" title="Resources" id="Ljd-nl-Td9"/>
                     <navigationItem key="navigationItem" id="AGV-DT-BVs"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="9vh-Uo-Ic7">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -2250,11 +2250,11 @@
             </objects>
             <point key="canvasLocation" x="-1453" y="-219"/>
         </scene>
-        <!--Item-->
+        <!--CV Builder-->
         <scene sceneID="frO-1j-Jd9">
             <objects>
                 <navigationController modalPresentationStyle="fullScreen" id="S36-xb-Cvk" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="cdp-3B-5bX"/>
+                    <tabBarItem key="tabBarItem" title="CV Builder" id="cdp-3B-5bX"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="MYV-r3-BfT">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -3569,6 +3569,16 @@ Join Hirely today and experience a smarter way to navigate the job market. Becau
             </objects>
             <point key="canvasLocation" x="13218" y="-794"/>
         </scene>
+        <!--StatusUpdateApplicant-->
+        <scene sceneID="LRl-OJ-h5O">
+            <objects>
+                <viewControllerPlaceholder storyboardName="StatusUpdateApplicant" id="AjL-aI-IWH" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="85m-ij-jjx"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kd7-aG-iF3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="13918" y="-401"/>
+        </scene>
         <!--Add Soft Skill-->
         <scene sceneID="eyl-2f-5JZ">
             <objects>
@@ -3784,6 +3794,7 @@ Join Hirely today and experience a smarter way to navigate the job market. Becau
                         <segue destination="upi-Ls-tDF" kind="show" identifier="goToAbout" id="CQE-WD-dZR"/>
                         <segue destination="qxL-xn-TEd" kind="show" identifier="goToAppGuide" id="Se6-Bb-Yev"/>
                         <segue destination="E50-IQ-DkR" kind="show" identifier="showCV" id="GNZ-vM-2ye"/>
+                        <segue destination="AjL-aI-IWH" kind="show" identifier="goToAppliedJobs" id="MhU-cV-rdX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JDb-Fm-imr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -3903,14 +3914,14 @@ Join Hirely today and experience a smarter way to navigate the job market. Becau
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="pageBackground" translatesAutoresizingMaskIntoConstraints="NO" id="MnY-Bt-Hd0">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="185"/>
+                                <rect key="frame" x="0.0" y="-49" width="393" height="185"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="185" id="Lnk-Qp-oM4"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="185" id="dQn-of-ZAD"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rYk-yy-HbA">
-                                <rect key="frame" x="16" y="239" width="361" height="85"/>
+                                <rect key="frame" x="16" y="190" width="361" height="85"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="85" id="e5s-ZU-N6K"/>
                                 </constraints>
@@ -3921,14 +3932,14 @@ Current Password</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="password" translatesAutoresizingMaskIntoConstraints="NO" id="C2k-S4-C44">
-                                <rect key="frame" x="16" y="332" width="361" height="173"/>
+                                <rect key="frame" x="16" y="283" width="361" height="173"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="173" id="t0M-jP-ny1"/>
                                     <constraint firstAttribute="width" constant="361" id="vhE-Xq-jEf"/>
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Current Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RMH-rI-EMW">
-                                <rect key="frame" x="70" y="556" width="253" height="42"/>
+                                <rect key="frame" x="70" y="507" width="253" height="42"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="CBn-Yz-ntk"/>
                                 </constraints>
@@ -3936,7 +3947,7 @@ Current Password</string>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dbY-hx-gLf">
-                                <rect key="frame" x="49.666666666666657" y="637" width="294" height="38"/>
+                                <rect key="frame" x="49.666666666666657" y="588" width="294" height="38"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="38" id="D9b-qG-tEE"/>
                                     <constraint firstAttribute="height" constant="38" id="EVQ-6B-wda"/>
