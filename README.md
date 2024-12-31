@@ -1,7 +1,7 @@
 # Hirely
 
 ## GitHub Link
-[Hirely Public Repository](https://github.com/your-repo/hirely)
+[Hirely Public Repository](https://github.com/ayahmeftah/Hirely)
 
 ## Group Members
 
