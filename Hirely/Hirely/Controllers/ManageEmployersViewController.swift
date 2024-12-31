@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import FirebaseFirestore
+
 
 class ManageEmployersViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -13,15 +15,9 @@ class ManageEmployersViewController: UIViewController, UITableViewDelegate, UITa
     
     @IBOutlet weak var employersTableView: UITableView!
     
-    let employersNames = ["Sarah Lee"]
-    
-//    let status = ["Active","Suspended"]
-    
+        
     let pic = "man"
-    
-
-    let accountStatuses: [AccountStatus] = [.active]
-
+    var employersList: [Employer] = [] //Array to hold employers fetched from Firestore
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,46 +25,78 @@ class ManageEmployersViewController: UIViewController, UITableViewDelegate, UITa
 
         let nib = UINib.init(nibName: "ManageEmployersTableViewCell", bundle: nil)
         employersTableView.register(nib, forCellReuseIdentifier: "employer")
-
-        // Do any additional setup after loading the view.
+        fetchActiveEmployers()
     }
     
+    func fetchActiveEmployers() {
+        let db = Firestore.firestore()
 
-    /*
-    // MARK: - Navigation
+        db.collection("Users")
+            .whereField("isEmployer", isEqualTo: true)
+            .getDocuments { snapshot, error in
+                if let error = error {
+                    print("Error fetching employers: \(error)")
+                    return
+                }
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+                guard let documents = snapshot?.documents, !documents.isEmpty else {
+                    print("No matching documents found.")
+                    return
+                }
+
+                print("Fetched \(documents.count) employers.")
+
+                self.employersList = documents.compactMap { document -> Employer? in
+                    let data = document.data()
+
+                    let dobTimestamp = data["dateOfBirth"] as? Timestamp
+                    let dateOfBirth = dobTimestamp?.dateValue()
+
+                    return Employer(
+                        id: document.documentID,
+                        firstName: data["firstName"] as? String ?? "",
+                        lastName: data["lastName"] as? String ?? "",
+                        profilePhoto: data["profilePhoto"] as? String ?? "",
+                        status: data["status"] as? String ?? "Active",
+                        dateOfBirth: dateOfBirth,
+                        phoneNumber: data["phoneNumber"] as? String ?? "N/A",
+                        email: data["email"] as? String ?? "N/A",
+                        gender: data["gender"] as? String ?? "N/A",
+                        city: data["city"] as? String ?? "N/A"
+                    )
+                }
+
+                DispatchQueue.main.async {
+                                self.employersTableView.reloadData() // Refresh the table view
+                            }
+            }
     }
-    */
+
 
 }
 extension ManageEmployersViewController{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return employersNames.count
+        return employersList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "employer", for: indexPath) as? ManageEmployersTableViewCell
-        cell?.employersInit(employersNames[indexPath.row], pic)
-        cell?.backgroundColor = .clear
         
-        let status = accountStatuses[indexPath.row]
-
-        cell?.configureBadge(for: status)
-        cell?.parentViewController = self //pass view controller to cell
+        let employer = employersList[indexPath.row]
+        cell?.employersInit(employer.fullName, employer.profilePhoto)
+        cell?.configureBadge(for: .active) // All fetched users should be active
+        cell?.parentViewController = self // Pass parent view controller
+        
+        cell?.backgroundColor = .clear
         return cell!
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let cell = sender as? ManageEmployersTableViewCell,
-           let _ = employersTableView.indexPath(for: cell){
-            if segue.identifier == "goToEmployerAccount"{
-                if segue.destination is ManageEmployerTableViewController{
-                    //passing data
-                }
+           let indexPath = employersTableView.indexPath(for: cell) {
+            if segue.identifier == "goToEmployerAccount",
+               let destinationVC = segue.destination as? ManageEmployerTableViewController {
+                destinationVC.employer = employersList[indexPath.row]
             }
         }
     }
