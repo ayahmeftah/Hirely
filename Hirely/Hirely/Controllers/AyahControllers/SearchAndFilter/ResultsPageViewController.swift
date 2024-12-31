@@ -241,9 +241,9 @@ class ResultsPageViewController: UIViewController, UICollectionViewDataSource, U
         /*cell.resultiInit(job.companyName, job.jobTitle, "placeholder_image", job.jobType)*/ // Replace "placeholder_image" with real image loading logic
         // Use commonInit to configure the cell
         cell.resultiInit(
-            "microsoft",
+            "Google",
             job.jobTitle,
-            "Microsoft company",
+            "google",
             job.jobType
         )
         cell.backgroundColor = .clear
