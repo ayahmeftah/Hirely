@@ -62,6 +62,14 @@
 - Firebase Package: https://github.com/firebase/firebase-ios-sdk
 - Cloudinary: https://github.com/cloudinary/cloudinary_ios
 - This is a playlist created by Manar (Watched by all members): https://youtube.com/playlist?list=PLz-abeZuamzCg2vbGClmHaDzJGf3rKIdt&si=GlJ2uihYuEFHsZ0y
+- **and more videos below:**
+- https://youtu.be/NP7H_LjTZGw?si=ZQwmwBcqO2bshWAd
+- https://youtu.be/F-gUZztPTgI?si=axFnnHrBFLyGT7cJ
+- https://youtu.be/NkOU60vwUEY?si=B04_gR_aykG03e9N
+- https://youtube.com/playlist?list=PLsLF8jZ6jKMhy0WQV0y_cST7vNtLgMU2W&si=YMZsNu5arm5ZoEwp
+- https://youtu.be/Mjukh3KnkVo?si=yypdiyxiTfpRMESd
+- https://youtu.be/P5ob4TXIK90?si=aTgjx9f2JymoBeV7
+- https://youtu.be/fbYMaJciMZY?si=1zHQ7pZJNIg2qbI4
 
 ## Setup
 
