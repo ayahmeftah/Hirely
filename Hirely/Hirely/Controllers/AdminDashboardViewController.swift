@@ -7,6 +7,7 @@
 
 import UIKit
 import FirebaseFirestore
+import FirebaseAuth
 
 class AdminDashboardViewController: UIViewController {
     
@@ -21,6 +22,9 @@ class AdminDashboardViewController: UIViewController {
     
     @IBOutlet weak var totalReportedPostsLbl: UILabel!
     
+    
+    @IBOutlet weak var logoutBtn: UIBarButtonItem!
+ 
     private var jobPostingsListener: ListenerRegistration?
     private var flaggedPostsListener: ListenerRegistration?
     private var reportedPostsListener: ListenerRegistration?
@@ -35,12 +39,59 @@ class AdminDashboardViewController: UIViewController {
 
     }
 
+
     deinit {
         // remove the listeners to avoid consuming memory
         jobPostingsListener?.remove()
         flaggedPostsListener?.remove()
         reportedPostsListener?.remove()
         usersListener?.remove()
+    }
+    
+    func showErrorAlert(_ errorMessage: String){
+        let alert = UIAlertController(title: "Error",
+                                      message: errorMessage,
+                                      preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    // Call this function when you want to show the logout confirmation alert
+    func showLogoutAlert() {
+        // Create an alert controller
+        let alertController = UIAlertController(title: "Log Out", message: "Are you sure you want to log out?", preferredStyle: .alert)
+        
+        // Create the "Yes" action
+        let yesAction = UIAlertAction(title: "Yes", style: .destructive) { (action) in
+            // Handle the log out action
+            self.logOut()
+        }
+        
+        // Create the "No" action
+        let noAction = UIAlertAction(title: "No", style: .cancel) { (action) in
+            // Handle the cancel action (do nothing)
+            print("User canceled log out.")
+        }
+        
+        // Add actions to the alert controller
+        alertController.addAction(yesAction)
+        alertController.addAction(noAction)
+        
+        // Present the alert controller
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    func logOut(){
+        let auth = Auth.auth()
+        do{
+            try auth.signOut()
+            UserDefaults.standard.set(false, forKey: "isUserLoggedIn")
+            self.dismiss(animated: true)
+        }catch let signOutError{
+            showErrorAlert("\(signOutError)")
+        }
     }
     
     //listen to total job postings
@@ -89,7 +140,12 @@ class AdminDashboardViewController: UIViewController {
                }
            }
        }
-
+    
+    
+    @IBAction func logoutTapped(_ sender: UIBarButtonItem) {
+        showLogoutAlert()
+    }
+    
        // Listen to total users (employers and applicants)
        private func listenToTotalUsers() {
            let db = Firestore.firestore()
