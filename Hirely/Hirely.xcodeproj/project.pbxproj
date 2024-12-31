@@ -134,7 +134,7 @@
 		716C2AEE2D233A3F000760D4 /* ApplicationsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 716C2AEB2D233A3F000760D4 /* ApplicationsTableViewCell.xib */; };
 		716C2AEF2D233A3F000760D4 /* ScheduledInterviewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 716C2AEC2D233A3F000760D4 /* ScheduledInterviewsTableViewCell.xib */; };
 		716C2AF02D233A3F000760D4 /* CustomJobPostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 716C2AED2D233A3F000760D4 /* CustomJobPostTableViewCell.xib */; };
-		716C2AF22D233A61000760D4 /* jobPostingsStory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 716C2AF12D233A60000760D4 /* jobPostingsStory.storyboard */; };
+		716C2AF42D23B656000760D4 /* jobPostingsStory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 716C2AF32D23B656000760D4 /* jobPostingsStory.storyboard */; };
 		71BEBCDE2CFC502900DF795E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEBCDD2CFC502900DF795E /* AppDelegate.swift */; };
 		71BEBCE02CFC502900DF795E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEBCDF2CFC502900DF795E /* SceneDelegate.swift */; };
 		71BEBCE22CFC502900DF795E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEBCE12CFC502900DF795E /* ViewController.swift */; };
@@ -293,7 +293,7 @@
 		716C2AEB2D233A3F000760D4 /* ApplicationsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ApplicationsTableViewCell.xib; sourceTree = "<group>"; };
 		716C2AEC2D233A3F000760D4 /* ScheduledInterviewsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScheduledInterviewsTableViewCell.xib; sourceTree = "<group>"; };
 		716C2AED2D233A3F000760D4 /* CustomJobPostTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomJobPostTableViewCell.xib; sourceTree = "<group>"; };
-		716C2AF12D233A60000760D4 /* jobPostingsStory.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = jobPostingsStory.storyboard; sourceTree = "<group>"; };
+		716C2AF32D23B656000760D4 /* jobPostingsStory.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = jobPostingsStory.storyboard; sourceTree = "<group>"; };
 		71BEBCDA2CFC502900DF795E /* Hirely.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hirely.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71BEBCDD2CFC502900DF795E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		71BEBCDF2CFC502900DF795E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -636,7 +636,7 @@
 		71D5BF792D20822D0098193C /* ManarStoryboards */ = {
 			isa = PBXGroup;
 			children = (
-				716C2AF12D233A60000760D4 /* jobPostingsStory.storyboard */,
+				716C2AF32D23B656000760D4 /* jobPostingsStory.storyboard */,
 				716C2AEB2D233A3F000760D4 /* ApplicationsTableViewCell.xib */,
 				716C2AED2D233A3F000760D4 /* CustomJobPostTableViewCell.xib */,
 				716C2AEC2D233A3F000760D4 /* ScheduledInterviewsTableViewCell.xib */,
@@ -840,6 +840,7 @@
 			files = (
 				716C2AEE2D233A3F000760D4 /* ApplicationsTableViewCell.xib in Resources */,
 				716C2AB92D23368B000760D4 /* ReportedJobsTableViewCell.xib in Resources */,
+				716C2AF42D23B656000760D4 /* jobPostingsStory.storyboard in Resources */,
 				716C2A8B2D232DC8000760D4 /* RecommendationsAndDetailsStory.storyboard in Resources */,
 				71BEBCE72CFC502A00DF795E /* Assets.xcassets in Resources */,
 				716C2A112D230BBC000760D4 /* ResourceManagment.storyboard in Resources */,
@@ -858,7 +859,6 @@
 				716C2A2F2D230E76000760D4 /* JobsResultTableViewCell.xib in Resources */,
 				716C2A3F2D231091000760D4 /* JobApplication.storyboard in Resources */,
 				716C2A542D23129C000760D4 /* CustomCellForApplicantsApplicationTableViewCell.xib in Resources */,
-				716C2AF22D233A61000760D4 /* jobPostingsStory.storyboard in Resources */,
 				71BEBCE52CFC502900DF795E /* Base in Resources */,
 				716C2ABB2D23368B000760D4 /* AdminFeature.storyboard in Resources */,
 				716C2AB72D23368B000760D4 /* FlaggedJobsTableViewCell.xib in Resources */,
