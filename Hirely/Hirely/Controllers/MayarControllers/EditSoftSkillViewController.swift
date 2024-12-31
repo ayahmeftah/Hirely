@@ -60,10 +60,15 @@ class EditSoftSkillViewController: UIViewController {
         }
     }
     
+    @IBAction func savedBtnClicked(_ sender: Any) {
+        dismiss(animated: true)
+    }
     
     @IBAction func cancelBtnClicked(_ sender: UIButton) {
         dismiss(animated: true)
     }
+    
+    
 }
 
 

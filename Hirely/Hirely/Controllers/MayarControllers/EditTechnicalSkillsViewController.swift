@@ -61,6 +61,10 @@ class EditTechnicalSkillsViewController: UIViewController {
         present(alertVC, animated: true)
     }
     
+    @IBAction func saveBtnClicked(_ sender: UIButton) {
+        dismiss(animated: true)
+    }
+    
     @IBAction func cancelBtnClicked(_ sender: UIButton) {
         dismiss(animated: true)
     }
