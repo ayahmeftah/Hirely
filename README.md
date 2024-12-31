@@ -15,7 +15,7 @@
 
 ## Main Features
 
-|**Category| **Feature**                          | **Developer**       | **Tester**          |
+|**Category**| **Feature**                          | **Developer**       | **Tester**          |
 |----------|--------------------------------------|---------------------|---------------------|
 |Job Discovery & Career Recommendations| Job Details & Recommendations        | Ayah Meftah         | Khadija Abdulla     |
 |    | Job Searching & Listing              | Ayah Meftah         | Manar Alsetrawi     |
