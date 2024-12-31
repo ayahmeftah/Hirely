@@ -47,11 +47,11 @@
 |Job Discovery & Career Recommendations| Job Details & Recommendations        | Ayah Meftah         |      |
 |    | Job Searching & Listing              | Ayah Meftah         |      |
 |Job Application| Job Application                      | Khadija Abdulla     |          |
-|  | Application Status Tracker           | Khadija Abdulla     | Manar Alsetrawi     |
+|  | Application Status Tracker           | Khadija Abdulla     |      |
 |CV Creation & Career Resources| CV Builder                           | Areej Yusuf         |      |
 |  | Career Resources Hub                 | Areej Yusuf         |      |
 | User Authentication & Preferences| User Authentication                  | Mayyar Sakhnini     |          |
-|  | User Profiles and Settings           | Mayyar Sakhnini     | Areej Yusuf         |
+|  | User Profiles and Settings           | Mayyar Sakhnini     |          |
 |Admin Controls & Platform Management| Content Moderation Tool              | Manar Alsetrawi     |         |
 |  | Job Posting                          | Manar Alsetrawi     |          |
 |  | Application Review & Scheduling      | Manar Alsetrawi     |      |
@@ -77,18 +77,18 @@ To set up this project, follow these steps:
 ## Simulators Used for Testing
 
 - iPhone 15 Pro
-- 
+  
 ## Admin Login Credentials
 
 - **Email:** admin@hirely.com
-- **Password:** AdminPass123
+- **Password:** admin@123
 
 ## Applicant Login Credentials
 
-- **Email:** admin@hirely.com
-- **Password:** AdminPass123
+- **Email:** khalidali@gmail.com
+- **Password:** khalid@123
 
 ## Employer Login Credentials
 
-- **Email:** admin@hirely.com
-- **Password:** AdminPass123
+- **Email:** miaclark@gmail.com
+- **Password:** mia@12345
