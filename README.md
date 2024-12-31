@@ -44,9 +44,9 @@
 
 |**Category**                                  | **Feature**                          | **Developer**       | **Changes**         |
 |----------------------------------------------|--------------------------------------|---------------------|---------------------|
-|Job Discovery & Career Recommendations        | Job Details & Recommendations        | Ayah Meftah         |   Adjustments in the height were made to the buttons on top in the Applicant Dashboard. Their heights are now all equal unlike the prototype. This is because we faced some problems with the constraints.|
+|Job Discovery & Career Recommendations        | Job Details & Recommendations        | Ayah Meftah         |   Adjustments in the height were made to the buttons on top in the Applicant Dashboard. Their heights are now all equal, unlike the prototype. This is because we faced some problems with the constraints.|
 |                                              | Job Searching & Listing              | Ayah Meftah         |  The search bar is now not displayed on the results page. The user can return to the search page to search again.|
-|Job Application                               | Job Application                      | Khadija Abdulla     |  1- The upload Cover Letter button was removed from the Job Application screen. |
+|Job Application                               | Job Application                      | Khadija Abdulla     |  The upload Cover Letter button was removed from the Job Application screen. |
 |                                              | Application Status Tracker           | Khadija Abdulla     |   1- The location of the status bar was changed and went to the bottom of the cell rather than the centre-right in the Application Status Update screen. 2- The button for the interview details was replaced with a tab bar button item. 3- Adjustments were made to the Interview Details screen to look similar to the previous screen.   |
 |CV Creation & Career Resources                | CV Builder                           | Areej Yusuf         |    No changes  |
 |                                              | Career Resources Hub                 | Areej Yusuf         |    No changes|
