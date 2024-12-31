@@ -25,13 +25,13 @@ class ApplyJobViewController: UIViewController, UIDocumentPickerDelegate {
     var jobPosting: JobPosting? // Holds the fetched job posting data
     var companyDetails: CompanyDetails? // Holds the fetched company details
     
-    //need to adjust
-    //let userId = currentUser().getCurrentUserId()
-    var userId = "ppRloi8VPTvhItiWAYTT"
+    
+    let userId = currentUser().getCurrentUserId()
+    //var userId = "ppRloi8VPTvhItiWAYTT"
     
     //need adjustments
     //passed from the previouse page
-    var jobId = "8bHjOwYbcxXWMvyjXhI1"
+    var jobId: String?
     var companyId = "RYINaYeqoq6WXBkdCOoK"
     
     // Cloudinary configuration
@@ -65,7 +65,7 @@ class ApplyJobViewController: UIViewController, UIDocumentPickerDelegate {
 
     func fetchUserData() {
         let db = Firestore.firestore()
-        let userDocRef = db.collection("Users").document(userId) // Use the current user ID
+        let userDocRef = db.collection("Users").document(userId!) // Use the current user ID
 
         userDocRef.getDocument { snapshot, error in
             if let error = error {
@@ -74,7 +74,7 @@ class ApplyJobViewController: UIViewController, UIDocumentPickerDelegate {
             }
 
             guard let data = snapshot?.data() else {
-                print("No data found for user ID: \(self.userId)")
+                print("No data found for user ID: \(self.userId ?? "")")
                 return
             }
 
@@ -117,7 +117,7 @@ class ApplyJobViewController: UIViewController, UIDocumentPickerDelegate {
 
     func fetchJobPostingData() {
         let db = Firestore.firestore()
-        db.collection("jobPostings").document(jobId).getDocument { snapshot, error in
+        db.collection("jobPostings").document(jobId!).getDocument { snapshot, error in
             if let error = error {
                 print("Error fetching job posting: \(error.localizedDescription)")
                 return
@@ -251,9 +251,9 @@ class ApplyJobViewController: UIViewController, UIDocumentPickerDelegate {
                     "cv": validCVLink,
                     "dateApplied": Timestamp(date: Date()),
                     "applicationStatus": "New",
-                    "jobId": self.jobId,
+                    "jobId": self.jobId!,
                     "scheduledInterviewId": "",
-                    "userId": self.userId
+                    "userId": self.userId!
                 ]
 
                 self.saveApplicationData(data: applicationData)
@@ -266,8 +266,8 @@ class ApplyJobViewController: UIViewController, UIDocumentPickerDelegate {
         let db = Firestore.firestore()
         let appliedJobsRef = db.collection("appliedJobs")
         
-        appliedJobsRef.whereField("userId", isEqualTo: userId)
-            .whereField("jobId", isEqualTo: jobId)
+        appliedJobsRef.whereField("userId", isEqualTo: userId!)
+            .whereField("jobId", isEqualTo: jobId!)
             .getDocuments { snapshot, error in
                 if let error = error {
                     print("Error checking existing applications: \(error.localizedDescription)")
@@ -319,7 +319,7 @@ class ApplyJobViewController: UIViewController, UIDocumentPickerDelegate {
 
     func updateUserAppliedJobs(with applicationId: String) {
         let db = Firestore.firestore()
-        let userDocRef = db.collection("Users").document(userId)
+        let userDocRef = db.collection("Users").document(userId!)
         
         // Update the appliedJobs array in the user's document
         userDocRef.updateData([
@@ -393,7 +393,7 @@ class ApplyJobViewController: UIViewController, UIDocumentPickerDelegate {
     // Fetch CVs for the current user
     func getCVs(completion: @escaping ([String: String]) -> Void) {
         let db = Firestore.firestore()
-        let userDocRef = db.collection("Users").document(userId)
+        let userDocRef = db.collection("Users").document(userId!)
         var cvUrls: [String: String] = [:] // Dictionary to hold CV ID and URL pairs
 
         userDocRef.getDocument { snapshot, error in

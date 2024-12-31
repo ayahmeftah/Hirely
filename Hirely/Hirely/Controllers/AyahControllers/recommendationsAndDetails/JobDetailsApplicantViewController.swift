@@ -37,6 +37,7 @@ class JobDetailsApplicantViewController: UIViewController {
     
     @IBOutlet weak var SaveBtn: UIButton!
     
+    
     // Mock user skills for matching
     var userSoftSkills: [String] = ["Teamwork", "Communication"]
     var userTechnicalSkills: [String] = ["Swift", "Xcode", "SQL"]
@@ -47,6 +48,15 @@ class JobDetailsApplicantViewController: UIViewController {
     var jobPosting: JobPosting? // Selected job data
     
     @IBAction func didTapApply(_ sender: Any) {
+        performSegue(withIdentifier: "goToApplyJob", sender: sender)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToApplyJob"{
+            if let destinationVC = segue.destination as? ApplyJobViewController{
+                destinationVC.jobId = (self.jobPosting?.docId as? String)!
+            }
+        }
     }
     
     @IBAction func didTapReport(_ sender: Any) {

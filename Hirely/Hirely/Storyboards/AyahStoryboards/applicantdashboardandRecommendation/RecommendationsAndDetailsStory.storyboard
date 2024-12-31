@@ -431,7 +431,7 @@
                                                 </buttonConfiguration>
                                                 <connections>
                                                     <action selector="didTapApply:" destination="Wvm-6S-HcD" eventType="touchUpInside" id="17z-a7-Io1"/>
-                                                    <segue destination="G07-Pm-R6h" kind="show" id="4S2-pa-IRp"/>
+                                                    <segue destination="G07-Pm-R6h" kind="show" identifier="goToApplyJob" id="4S2-pa-IRp"/>
                                                 </connections>
                                             </button>
                                         </subviews>
