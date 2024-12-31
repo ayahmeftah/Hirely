@@ -48,8 +48,8 @@
 |                                              | Job Searching & Listing              | Ayah Meftah         |      |
 |Job Application                               | Job Application                      | Khadija Abdulla     |          |
 |                                              | Application Status Tracker           | Khadija Abdulla     |      |
-|CV Creation & Career Resources                | CV Builder                           | Areej Yusuf         |      |
-|                                              | Career Resources Hub                 | Areej Yusuf         |      |
+|CV Creation & Career Resources                | CV Builder                           | Areej Yusuf         |    No changes  |
+|                                              | Career Resources Hub                 | Areej Yusuf         |    No changes|
 | User Authentication & Preferences            | User Authentication                  | Mayyar Sakhnini     |          |
 |                                              | User Profiles and Settings           | Mayyar Sakhnini     |          |
 |Admin Controls & Platform Management          | Content Moderation Tool              | Manar Alsetrawi     |         |
