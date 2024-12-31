@@ -14,6 +14,13 @@ class ViewJobsViewController: UIViewController, UITableViewDelegate, UITableView
     
     var jobPostings: [JobPosting] = [] //array to store job postings
     
+    var companies: [(name: String, imageName: String)] = [
+        ("Google Inc", "google"),
+        ("Microsoft", "microsoft"),
+        ("AWS", "aws"),
+        ("NBB Bank", "nbb")
+    ]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         jobPosts.backgroundColor = .clear
@@ -97,9 +104,12 @@ extension ViewJobsViewController{
         
         let job = jobPostings[indexPath.row]
         
+        // Get the company data based on the index path row, cycling through the array
+        let company = companies[indexPath.row % companies.count]
+        
         // Use postInit to configure the cell
         
-        cell.postInit("Google Inc", job.jobType, job.jobTitle, "google", job.postedDate, job.deadline, job.docId, job.isFlagged)
+        cell.postInit(company.name, job.jobType, job.jobTitle, company.imageName, job.postedDate, job.deadline, job.docId, job.isFlagged)
         
         cell.backgroundColor = .clear
         cell.parentViewController = self //pass view controller to cell
