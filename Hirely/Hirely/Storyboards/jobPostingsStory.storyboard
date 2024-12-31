@@ -77,6 +77,13 @@
                     </view>
                     <navigationItem key="navigationItem" title="Job Postings" largeTitleDisplayMode="always" id="CpR-V9-Ima">
                         <barButtonItem key="backBarButtonItem" title="Back" id="qJO-l8-hTE"/>
+                        <barButtonItem key="rightBarButtonItem" id="jYH-dQ-YN7">
+                            <imageReference key="image" image="rectangle.portrait.and.arrow.right.fill" catalog="system" symbolScale="large"/>
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="logoutButtonTapped:" destination="ccK-0i-S8Y" id="e4R-nO-B4E"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="qnd-wN-eFx" id="fJS-Zh-LDn"/>
@@ -1746,6 +1753,7 @@
         <image name="doc.text.magnifyingglass" catalog="system" width="110" height="128"/>
         <image name="line.3.horizontal.decrease.circle.fill" catalog="system" width="128" height="123"/>
         <image name="plus.circle.fill" catalog="system" width="128" height="123"/>
+        <image name="rectangle.portrait.and.arrow.right.fill" catalog="system" width="128" height="108"/>
         <image name="sort:filter-bg" width="224" height="50"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
         <namedColor name="size_red">

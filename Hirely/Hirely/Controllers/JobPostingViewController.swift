@@ -7,11 +7,12 @@
 
 import UIKit
 import FirebaseFirestore
+import FirebaseAuth
+
 
 protocol JobPostingsRefreshDelegate: AnyObject {
     func refreshJobPostings()
 }
-
 
 class JobPostingViewController: UIViewController, UITableViewDelegate, UITableViewDataSource,JobPostingsRefreshDelegate{
     
@@ -23,6 +24,57 @@ class JobPostingViewController: UIViewController, UITableViewDelegate, UITableVi
         // This method is intentionally left empty.
         // It will serve as the target for the unwind segue.
     }
+ 
+    @IBAction func logoutButtonTapped(_ sender: UIBarButtonItem) {
+        showLogoutAlert()
+    }
+    
+    
+    func showErrorAlert(_ errorMessage: String){
+            let alert = UIAlertController(title: "Error",
+                                          message: errorMessage,
+                                          preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            
+            self.present(alert, animated: true, completion: nil)
+        }
+        
+        // Call this function when you want to show the logout confirmation alert
+        func showLogoutAlert() {
+            // Create an alert controller
+            let alertController = UIAlertController(title: "Log Out", message: "Are you sure you want to log out?", preferredStyle: .alert)
+            
+            // Create the "Yes" action
+            let yesAction = UIAlertAction(title: "Yes", style: .destructive) { (action) in
+                // Handle the log out action
+                self.logOut()
+            }
+            
+            // Create the "No" action
+            let noAction = UIAlertAction(title: "No", style: .cancel) { (action) in
+                // Handle the cancel action (do nothing)
+                print("User canceled log out.")
+            }
+            
+            // Add actions to the alert controller
+            alertController.addAction(yesAction)
+            alertController.addAction(noAction)
+            
+            // Present the alert controller
+            self.present(alertController, animated: true, completion: nil)
+        }
+        
+        func logOut(){
+            let auth = Auth.auth()
+            do{
+                try auth.signOut()
+                UserDefaults.standard.set(false, forKey: "isUserLoggedIn")
+                self.dismiss(animated: true)
+            }catch let signOutError{
+                showErrorAlert("\(signOutError)")
+            }
+        }
     
     override func viewDidLoad() {
         super.viewDidLoad()
