@@ -81,14 +81,14 @@ To set up this project, follow these steps:
 ## Admin Login Credentials
 
 - **Email:** admin@hirely.com
-- **Password:** AdminPass123
+- **Password:** admin@123
 
 ## Applicant Login Credentials
 
-- **Email:** admin@hirely.com
-- **Password:** AdminPass123
+- **Email:** khalidali@gmail.com
+- **Password:** khalid@123
 
 ## Employer Login Credentials
 
-- **Email:** admin@hirely.com
-- **Password:** AdminPass123
+- **Email:** miaclark@gmail.com
+- **Password:** mia@12345
